@@ -1,0 +1,186 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Templates
+// ---------------------------------------------------------
+
+// Navigation
+// ---------------------------------------------------------
+
+$bd-nav-padding-vertical: spacing(4) !default;
+$bd-nav--link-padding-vertical: spacing(1.5) !default;
+$bd-nav--link-padding-horizontal: spacing(2) !default;
+
+$bd-nav-height: 100px !default;
+$bd-nav-padding-horizontal: spacing(4) !default;
+$bd-nav-color: $color-grey-light !default;
+$bd-nav-color-text: $color-dark !default;
+$bd-nav-color-text-hover: $color-red !default;
+$bd-nav-color-background-hover: $color-grey-light-accent !default;
+$bd-nav-border: 1px solid $color-grey-light-accent !default;
+$bd-nav-list-item-padding: spacing(1) !default;
+$bd-nav-logo-width: 200px !default;
+$bd-nav-logo-margin-right: spacing(4) !default;
+
+@mixin navigation-list-styling() {
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0;
+      @include paddingHorizontal($bd-nav--link-padding-horizontal);
+      @include paddingVertical(0);
+
+      a {
+        display: block;
+        margin: 0;
+        transition: $base-animation;
+        color: $bd-nav-color-text;
+        @include paddingVertical($bd-nav--link-padding-vertical);
+
+        &:hover {
+          background: $bd-nav-color-background-hover;
+          color: $bd-nav-color-text-hover;
+          cursor: pointer;
+        }
+        @include activeState {
+          background: $bd-nav-color-background-hover;
+          color: $bd-nav-color-text-hover;
+
+          &:hover {
+            color: rgba($bd-nav-color-text-hover, .7);
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+    }
+  }
+
+}
+
+.tmpl__nav {
+  @include fade();
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  @include paddingVertical($bd-nav-padding-vertical);
+  @include paddingHorizontal($bd-nav-padding-horizontal);
+  height: $bd-nav-height;
+
+  background: $bd-nav-color;
+  border-bottom: $bd-nav-border;
+
+  .tmpl__nav__brand {
+    order: 2;
+    width: $bd-nav-logo-width * .7;
+  }
+
+  .tmpl__nav__burger {
+    order: 1;
+  }
+
+  .tmpl__nav__aside {
+    order: 3;
+
+    .avatar {
+      .avatar__content {
+        display: none;
+      }
+
+      .avatar__img {
+        margin: 0;
+      }
+    }
+  }
+
+  // nav List
+  // ---------------------------------------------------------
+
+  .tmpl__nav__main {
+    display: none;
+    @include navigation-list-styling();
+  }
+
+  // Margin resets
+  // ---------------------------------------------------------
+
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  .avatar {
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+
+    .tmpl__nav__brand {
+      width: $bd-nav-logo-width;
+      order: 1;
+      margin-right: $bd-nav-logo-margin-right;
+    }
+
+    .tmpl__nav__burger {
+      display: none;
+    }
+
+    .tmpl__nav__aside {
+      order: 3;
+      .avatar {
+        .avatar__content {
+          display: flex;
+        }
+
+        .avatar__img {
+          margin-right: spacing(2);
+        }
+      }
+    }
+
+    .tmpl__nav__main {
+      order: 2;
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .tmpl__nav__brand {
+      margin-right: $bd-nav-logo-margin-right * 2;
+    }
+  }
+
+  // Actions
+  // ---------------------------------------------------------
+  &.tmpl__nav--mobile-open {
+
+    .tmpl__nav__main {
+      display: flex;
+    }
+  }
+}
+
+
+.tmpl__nav__sub {
+  .tmpl__nav__sub__mobile {
+    @include navigation-list-styling();
+    transition: $base-animation;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}

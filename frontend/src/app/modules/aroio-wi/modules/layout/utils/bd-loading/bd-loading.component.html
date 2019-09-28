@@ -1,0 +1,30 @@
+<!--
+  ~ @author Felix Baltruschat <fb@braune-digital.com>
+  ~ @company Braune Digital GmbH
+  -->
+
+<ng-container *ngIf="isLoading">
+    <ng-container *ngIf="!overlay">
+        <div class="loading">
+          <label>
+            {{ text | translate }}
+          </label>
+          <ng-content></ng-content>
+
+          <div class="loading__circles">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="overlay">
+        <div class="loading-overlay" [@fadeInOut]>
+            <div class="loading">
+              <label>
+                {{ 'global.loading' | translate }}
+              </label>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>

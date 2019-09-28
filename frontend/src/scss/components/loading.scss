@@ -1,0 +1,107 @@
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Button
+// ---------------------------------------------------------
+
+.loading {
+  @include fade();
+
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+  margin: spacing(10) auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  opacity: 1;
+  transition: $base-animation;
+
+  .loading__circles {
+    display: block;
+
+    span {
+      display: inline-block;
+      width: spacing(1.5);
+      height: spacing(1.5);
+      border-radius: 50%;
+      background: getColor(primary);
+      margin: 0 spacing(.4);
+
+      animation: circles-loader .99s infinite;
+
+      &:nth-child(2) {
+        animation-delay: .1s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: .2s;
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    margin-bottom: spacing(1);
+    z-index: 10;
+  }
+}
+
+
+.loading--fullscreen {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  .loading {
+    margin: 0;
+  }
+}
+
+
+.loading-overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, .8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: -($base-border-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: getZindex(contentOverlay);
+}
+
+
+@keyframes circles-loader {
+  from {
+    opacity: .4;
+    transform: scale(1)
+  }
+
+  30% {
+    opacity: .7;
+    transform: scale(1.1)
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4)
+  }
+
+  80% {
+    opacity: .7;
+    transform: scale(1.1)
+  }
+
+  to {
+    opacity: .4;
+    transform: scale(1)
+  }
+}
+

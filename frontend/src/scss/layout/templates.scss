@@ -1,0 +1,220 @@
+/*!
+ * @author Felix Baltruschat <fb@braune-digital.com>
+ * @copyright 2/7/19 2:23 PM Braune Digital GmbH
+ */
+
+//
+// Braune-Digital CSS Framework
+// ---------------------------------------------------------
+
+//
+// Templates
+// ---------------------------------------------------------
+
+// Events
+// ---------------------------------------------------------
+
+// These events can be triggered by adding a class on the ".tmpl" container.
+// This can modify subparts, which is defined in includes. Possible events are:
+//
+// ".tmpl--contact-in": Shows the top content of the .head part with contact information
+// ".tmpl--nav-in": Shows the navigation on mobile devices, desktop is always visible
+//
+//
+
+$tmpl-base-padding-horizontal: spacing(2) !default;
+
+$tmpl-content-aside-margin-md: spacing(6) !default;
+$tmpl-content-aside-margin-lg: spacing(6) !default;
+$tmpl-content-aside-margin-xl: spacing(10) !default;
+
+$tmpl-content-aside-width-md: 140px !default;
+$tmpl-content-aside-width-lg: 200px !default;
+$tmpl-content-aside-width-xl: 260px !default;
+
+$tmpl-background: getColor(grey-light) !default;
+$tmpl-background-content: getColor(white) !default;
+
+.tmpl {
+
+  animation: fadeIn $base-animation-duration * 2;
+
+  .tmpl__layout__nav {
+
+    // Navigation
+    // ---------------------------------------------------------
+    @import "template/nav";
+
+  }
+
+  .tmpl__layout {
+    display: flex;
+    flex-direction: row;
+    //height: 100vh;
+    background: $tmpl-background;
+
+    .tmpl__layout__sidebar {
+      @include fade();
+      order: 1;
+
+      // Sidebar
+      // ---------------------------------------------------------
+      @import "template/sidebar";
+
+    }
+    .tmpl__layout__content {
+      @include fade();
+      animation: fadeIn $base-animation-duration * 2;
+      order: 2;
+      flex-grow: 1;
+      overflow: auto;
+
+      // Header
+      // ---------------------------------------------------------
+
+      @import "template/header";
+
+      // Header-Post
+      // ---------------------------------------------------------
+
+      @import "template/header-post";
+
+      // Content Header
+      // ---------------------------------------------------------
+
+      @import "template/content-header";
+
+      // Content Centered
+      // ---------------------------------------------------------
+
+      @import "template/content-cendered";
+
+      // Main Content
+      // ---------------------------------------------------------
+
+      @import "template/content";
+
+      // Content Lock
+      // ---------------------------------------------------------
+
+      @import "template/content-lock";
+
+      // Aside
+      // ---------------------------------------------------------
+
+      @import "template/aside";
+
+      // Overlay
+      // ---------------------------------------------------------
+
+      @import "template/overlay";
+
+      // Popup
+      // ---------------------------------------------------------
+
+      @import "template/popup";
+
+      // Footer
+      // ---------------------------------------------------------
+
+      @import "template/footer";
+
+      // Content Backgrounds
+      // ---------------------------------------------------------
+
+      .tmpl__header,
+      .tmpl__content {
+        background: $tmpl-background-content;
+      }
+
+      // Responsiv fixes
+      // ---------------------------------------------------------
+
+      .tmpl__head,
+      .tmpl__nav,
+      .tmpl__content,
+      .tmpl__footer,
+      .tmpl__header,
+      .tmpl__lock {
+        @include paddingHorizontal($tmpl-base-padding-horizontal);
+      }
+
+      @include media-breakpoint-up(md) {
+        .tmpl__head,
+        .tmpl__nav,
+        .tmpl__content,
+        .tmpl__footer,
+        .tmpl__header,
+        .tmpl__lock {
+          padding-right: $tmpl-base-padding-horizontal + $tmpl-aside-left-width-desktop;
+        }
+
+        &.tmpl--aside-left {
+          .tmpl__head,
+          .tmpl__nav,
+          .tmpl__content,
+          .tmpl__footer,
+          .tmpl__header,
+          .tmpl__lock {
+            padding-right: $tmpl-base-padding-horizontal;
+            padding-left: $tmpl-base-padding-horizontal + $tmpl-aside-left-width-desktop;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        .tmpl__head,
+        .tmpl__nav,
+        .tmpl__content,
+        .tmpl__footer,
+        .tmpl__header,
+        .tmpl__lock {
+          padding-right: $tmpl-base-padding-horizontal * 2 + $tmpl-base-padding-horizontal * 2;
+          padding-left: $tmpl-base-padding-horizontal * 2.5;
+        }
+
+        &.tmpl--aside-left {
+          .tmpl__head,
+          .tmpl__nav,
+          .tmpl__content,
+          .tmpl__footer,
+          .tmpl__header,
+          .tmpl__lock {
+            padding-left: $tmpl-base-padding-horizontal * 2.5 + $tmpl-aside-left-width-desktop;
+          }
+        }
+      }
+
+      // ---------------------------------------------------------
+      // Options
+      // ---------------------------------------------------------
+
+      // Disable Scrolling for Content Lock
+      // ---------------------------------------------------------
+      &.tmpl--no-scrolling {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+      }
+
+      @include media-breakpoint-down(xs) {
+        overflow-x: hidden;
+      }
+    }
+  }
+}
+
+// Fade-In Animation to hide moving elements an page load
+// ---------------------------------------------------------
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

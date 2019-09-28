@@ -1,0 +1,26 @@
+
+$brand-color: getColor(text) !default;
+$brand-label-color: getColor(text) !default;
+$brand-width: spacing(8) !default;
+
+.brand {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .brand__logo {
+    width: $brand-width;
+    @include paddingVertical(spacing(1));
+    svg {
+      fill: $brand-color;
+    }
+  }
+
+  .brand__label {
+    color: $brand-label-color;
+    font-weight: getFontWeight(bold);
+    font-size: getFontSize(md);
+  }
+}

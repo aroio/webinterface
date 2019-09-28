@@ -1,0 +1,29 @@
+<bd-header>
+  <bd-header-main>
+    <h2>Konfiguration</h2>
+  </bd-header-main>
+
+  <bd-header-aside>
+    <bd-button [color]="'primary'" (click)="openModal(testModal, 0)">Öffne ein Modal</bd-button>
+  </bd-header-aside>
+</bd-header>
+
+
+<bd-content [hasAside]="false">
+  <bd-content-main>
+    <bd-grid>
+      <bd-col>
+        <aroio-content-item>
+
+          <h4>test</h4>
+
+          <div class="form-help">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquam est expedita magnam minima numquam, odio, quibusdam quo saepe sint voluptates? Blanditiis consequuntur itaque laudantium magnam maiores nesciunt sequi.
+          </div>
+
+        </aroio-content-item>
+      </bd-col>
+    </bd-grid>
+
+  </bd-content-main>
+</bd-content>
