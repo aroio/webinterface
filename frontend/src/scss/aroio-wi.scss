@@ -42,15 +42,9 @@
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-// Fontawesome
+// Font Inter
 // ---------------------------------------------------------
-
-@import "fonts/fontawesome5/fontawesome";
-$fa-font-path: '/assets/fonts/fontawesome5';
-@import "fonts/fontawesome5/brands";
-@import "fonts/fontawesome5/light";
-@import "fonts/fontawesome5/regular";
-@import "fonts/fontawesome5/solid";
+@import "fonts/fonts";
 
 // Components
 // ---------------------------------------------------------
