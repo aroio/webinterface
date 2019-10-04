@@ -30,6 +30,8 @@ $base-spacing: 10px !default;
 
 $base-border-radius: 2px !default;
 
+$base-border: 1px solid rgba(getColor(grey-medium), .3);
+
 $base-border-width: 3px !default;
 $base-stripe-width: 8px !default;
 $base-box-shadow: 0 0 0 $base-border-width rgba(0,0,0,0.2) !default;

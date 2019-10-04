@@ -47,7 +47,7 @@ $btn-disabled-background: getColor(grey-light) !default;
   z-index: 1;
   line-height: 1;
   @include btnSize($btn-padding-x, $btn-padding-y);
-  transition: background-color .3s ease;
+  transition: $base-animation;
   display: inline-block;
   color: getColor(text);
   border-radius: $btn-border-radius;
@@ -62,18 +62,6 @@ $btn-disabled-background: getColor(grey-light) !default;
   text-transform: $base-text-transform;
   overflow: hidden;
 
-  &:before {
-    display: block;
-    content: '';
-    position: absolute;
-    //transition: all $base-animation-duration $btn-background-animation;
-    transition: $base-animation;
-    z-index: -1;
-    width: 100%;
-    height: $btn-background-height;
-    bottom: 0;
-    left: 0;
-  }
 }
 
 
@@ -90,11 +78,8 @@ $btn-disabled-background: getColor(grey-light) !default;
     cursor: pointer;
     color: getColor(text);
     text-decoration: none;
+    opacity: .8;
 
-    &:before {
-      opacity: .8;
-      height: 100%;
-    }
   }
 
 
@@ -312,9 +297,7 @@ $btn-disabled-background: getColor(grey-light) !default;
   @each $name, $color in $colorsAndStates {
     &.btn--#{'' + $name} {
 
-      &:before {
-        background: $color;
-      }
+      background: $color;
 
       i {
         color: color-contrast($color);

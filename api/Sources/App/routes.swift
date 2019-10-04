@@ -11,10 +11,15 @@ public func routes(_ router: Router) throws {
     router.get("hello") { req in
         return "Hello, world!"
     }
+    // Basic "Hello, world!" example
+    router.get("test") { req in
+        return "Hello, test!"
+    }
 
     // Example of configuring a controller
-    let todoController = TodoController()
-    router.get("todos", use: todoController.index)
-    router.post("todos", use: todoController.create)
-    router.delete("todos", Todo.parameter, use: todoController.delete)
+    let aroioController = AroioController()
+    router.get("aroios", use: aroioController.index)
+    router.post("aroios", use: aroioController.create)
+    router.delete("aroios", Todo.parameter, use: aroioController.delete)
+    
 }

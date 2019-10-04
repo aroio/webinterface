@@ -53,6 +53,8 @@ $tmpl-background-content: getColor(white) !default;
     //height: 100vh;
     background: $tmpl-background;
 
+    padding: 60px;
+
     .tmpl__layout__sidebar {
       @include fade();
       order: 1;
