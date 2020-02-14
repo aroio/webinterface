@@ -49,6 +49,7 @@ import {BdItemComponent} from './components/bd-item/bd-item.component';
 import {BdIconComponent} from './components/bd-icon/bd-icon.component';
 import {BdButtonComponent} from './components/bd-button/bd-button.component';
 import {AroioContentItemComponent} from './components/aroio-content-item/aroio-content-item.component';
+import {AngularResizedEventModule} from 'angular-resize-event';
 
 @NgModule({
   imports: [
@@ -60,7 +61,8 @@ import {AroioContentItemComponent} from './components/aroio-content-item/aroio-c
     BrowserModule,
     BrowserAnimationsModule,
     TooltipModule,
-    AngularStickyThingsModule
+    AngularStickyThingsModule,
+    AngularResizedEventModule
   ],
   declarations: [
     // ---------------------------
