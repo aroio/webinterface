@@ -20,6 +20,7 @@ import {AroioTabsetComponent} from './components/aroio-tabset/aroio-tabset.compo
 import {AroioHeaderComponent} from './components/aroio-header/aroio-header.component';
 import {AroioFooterComponent} from './components/aroio-footer/aroio-footer.component';
 import {AroioContentComponent} from './components/aroio-content/aroio-content.component';
+import {AroioSidebarComponent} from './components/aroio-sidebar/aroio-sidebar.component';
 
 @NgModule({
   imports: [
@@ -50,6 +51,7 @@ import {AroioContentComponent} from './components/aroio-content/aroio-content.co
     AroioLoadingComponent,
     AroioButtonComponent,
     AroioTabsetComponent,
+    AroioSidebarComponent,
     // ---------------------------
     // ---------------------------
     AroioBadgeComponent,
@@ -71,6 +73,7 @@ import {AroioContentComponent} from './components/aroio-content/aroio-content.co
     AroioLoadingComponent,
     AroioButtonComponent,
     AroioTabsetComponent,
+    AroioSidebarComponent,
     // ---------------------------
     // Utils
     // ---------------------------

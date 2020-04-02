@@ -6,6 +6,8 @@
 // Base
 // ---------------------------------------------------------
 
+$grid-gutter-width: 20px;
+
 @import "~bootstrap/scss/bootstrap";
 
 // Mixins & Variables
@@ -46,7 +48,8 @@
 @import "layout/header";
 @import "layout/footer";
 @import "layout/template";
-@import "layout/aroio-tabs";
+@import "layout/tabs";
+@import "layout/sidebar";
 @import "layout/typography";
 
 // Components

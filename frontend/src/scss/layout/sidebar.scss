@@ -1,0 +1,11 @@
+.aroio-sidebar {
+  margin-top: $navigation-font-size + $navigation-padding-vertical * 2;
+  overflow: auto;
+  height: $base-content-height;
+
+  .aroio-sidebar__item {
+    padding: spacing(2);
+    margin-bottom: spacing(2);
+    background-color: getColor(black-200);
+  }
+}

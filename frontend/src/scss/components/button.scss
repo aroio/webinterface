@@ -10,7 +10,7 @@
   transition: $base-animation;
 
   &:hover {
-    background-color: rgba(getColor(primary), .3);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0, .2);
   }
 
 
@@ -19,12 +19,12 @@
 
   @each $name, $color in $colorsAndStates {
     &.btn--#{'' + $name} {
-      background-color: getColor(#{$name});
-      color: color-contrast(getColor(#{$name}));
+      background-color: $color;
+      color: color-contrast($color);
 
-      //&:hover {
-      //  background-color: rgba(getColor(#{$name}), .3);
-      //}
+      &:hover {
+        background-color: darken($color, 1.5);
+      }
     }
   }
 

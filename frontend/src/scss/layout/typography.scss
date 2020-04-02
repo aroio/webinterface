@@ -16,7 +16,10 @@ html, body {
     color: getColor(black-700);
 }
 
-
+::selection {
+  color: getColor(white);
+  background: getColor(primary);
+}
 // Headings
 // ------------------------------------
 
