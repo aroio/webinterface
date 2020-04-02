@@ -1,0 +1,21 @@
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: getColor(black-100);
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: getColor(primary-500);
+  transition: $base-animation;
+
+  &:hover {
+    color: getColor(primary-200);
+    text-decoration: none;
+  }
+}

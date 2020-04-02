@@ -30,10 +30,10 @@ export class AroioWiComponent {
   ) {
     this.isLoading = true;
 
-    // defineLocale('de', deLocale);
-    // this.translate.use(environment.defaultLocale).subscribe(() => {
-    //   this.currentTranslation = this.translate.currentLang;
-    //   this.isLoading = false;
-    // });
+    defineLocale('de', deLocale);
+    this.translate.use(environment.defaultLocale).subscribe(() => {
+      this.currentTranslation = this.translate.currentLang;
+      this.isLoading = false;
+    });
   }
 }

@@ -1,0 +1,142 @@
+//
+// Sunset Website Template
+// ---------------------------------------------------------
+
+//
+// Typography
+// ---------------------------------------------------------
+
+// General
+// ---------------------------------------------------------
+
+
+html, body {
+    font-family: $font-stack-base;
+    -webkit-font-smoothing: antialiased;
+    color: getColor(black-700);
+}
+
+
+// Headings
+// ------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-stack-base;
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+h5 {
+    color: getColor(tertiary);
+    font-size: 0.9rem;
+}
+
+h6 {
+    font-size: 0.3535rem;
+}
+
+
+// Links
+// ------------------------------------
+
+a {
+    color: getColor(primary);
+    transition: $base-animation;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: '';
+        transition: $base-animation;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 1px;
+        background-color: getColor(primary);
+        opacity: 0;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: getColor(primary);
+
+        &:before {
+            opacity: 1;
+            left: 0;
+            width: 100%;
+            background-color: getColor(primary);
+        }
+    }
+
+    // Link colors
+    // ---------------------------------------------------------
+
+    @each $name, $color in $colors {
+        &.link--#{'' + $name} {
+            color: $color;
+        }
+    }
+}
+
+
+// Media Breakpoint down MD
+// ---------------------------
+
+@include media-breakpoint-down(md) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+//.max-lines {
+//    display: block; /* or inline-block */
+//    text-overflow: ellipsis;
+//    word-wrap: break-word;
+//    overflow: hidden;
+//    max-height: 4.5em;
+//}
+
+
+.max-lines p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

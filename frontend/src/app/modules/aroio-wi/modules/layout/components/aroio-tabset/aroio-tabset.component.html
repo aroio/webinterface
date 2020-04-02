@@ -1,0 +1,17 @@
+
+
+<div class="aroio-tabs">
+  <div class="aroio-tabs__navigation">
+    <a class="aroio-tabs__navigation__item"
+         *ngFor="let tab of aroioTabs"
+         [ngClass]="{'aroio-tabs__navigation__item--active': tab.id === activeTab}"
+         id="{{ tab.id }}"
+       [routerLink]="['/', translate.currentLang, tab.route]"
+    >
+        {{ tab.label }}
+    </a>
+  </div>
+  <div class="aroio-tabs__content">
+      <ng-content></ng-content>
+  </div>
+</div>

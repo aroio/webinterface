@@ -16,12 +16,11 @@ $path-to-fonts: "../assets/fonts/";
 // ---------------------------------------------------------
 
 @import "variables/type";
-@import "variables/grid";
 @import "variables/colors";
 
 // Base Shit
 // ---------------------------------------------------------
-
+$font-stack-base: 'Inter', Arial, Helvetica, sans-serif;
 $base-spacing: 10px !default;
 
 @function spacing($mod: 1) {
@@ -30,7 +29,7 @@ $base-spacing: 10px !default;
 
 $base-border-radius: 2px !default;
 
-$base-border: 1px solid rgba(getColor(grey-medium), .3);
+$base-border: 1px solid rgba(getColor(black-200), .3);
 
 $base-border-width: 3px !default;
 $base-stripe-width: 8px !default;
@@ -100,7 +99,7 @@ $tmpl-aside-head-height-desktop: spacing(5) !default;
 $tmpl-aside-bottom-height-desktop: spacing(2) !default;
 $tmpl-head-logo-height: spacing(4) !default;
 $tmpl-head-background-mobile: getColor(white) !default;
-$tmpl-head-background-desktop: getColor(grey-light) !default;
+$tmpl-head-background-desktop: getColor(black-200) !default;
 $tmpl-head-logo-height-mobile: 14px !default;
 $tmpl-head-logo-height-desktop: 20px !default;
 

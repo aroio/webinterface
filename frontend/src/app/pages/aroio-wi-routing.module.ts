@@ -2,11 +2,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {environment} from '../../environments/environment';
 import {NgModule} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
-import {ModalModule, PaginationModule, TabsModule} from 'ngx-bootstrap';
-import {ConfigurationPageModule} from './aroio-wi/configuration/configuration.routing';
+import {ModalModule, PaginationModule} from 'ngx-bootstrap';
+import {AroioAudioPageModule} from './aroio-wi/audio/audio.routing';
+import {AroioConvolverPageModule} from './aroio-wi/convolver/convolver.routing';
+import {AroioNetworkPageModule} from './aroio-wi/network/network.routing';
+import {AroioStreamingPageModule} from './aroio-wi/streaming/streaming.routing';
+import {AroioSystemPageModule} from './aroio-wi/system/system.routing';
 
 export const routes: Routes = [
-  {path: '', redirectTo: environment.defaultLocale + '/configuration', pathMatch: 'full'},
+  {path: '', redirectTo: environment.defaultLocale + '/network', pathMatch: 'full'},
   {path: ':lang', redirectTo: ':lang/configuration', pathMatch: 'full'},
 
   // 404 Route (has to initialized at the end)
@@ -29,11 +33,14 @@ export const routes: Routes = [
     // Ngx-Bootstrap
     PaginationModule.forRoot(),
     ModalModule.forRoot(),
-    TabsModule.forRoot(),
 
     ////////////////////////////////////////
     // Aroio Webinterface Imports
-    ConfigurationPageModule
+    AroioAudioPageModule,
+    AroioConvolverPageModule,
+    AroioNetworkPageModule,
+    AroioStreamingPageModule,
+    AroioSystemPageModule
   ],
   declarations: [
   ],

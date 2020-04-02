@@ -1,0 +1,57 @@
+.aroio-tabs {
+  .aroio-tabs__navigation {
+    display: flex;
+
+    .aroio-tabs__navigation__item {
+      padding: spacing(1) spacing(2);
+      background-color: rgba(getColor(black-200), .33);
+      transition: $base-animation;
+      position: relative;
+      overflow: hidden;
+      color:rgba(getColor(black-700), .33);
+
+
+      &.aroio-tabs__navigation__item--active {
+        background-color: rgba(getColor(black-200), 1);
+        color:rgba(getColor(black-700), 1);
+        pointer-events: none;
+
+        &:after {
+          width: 100%;
+          left: 0;
+        }
+      }
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        transition: $base-animation;
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 3px;
+        background-color:  getColor(primary);
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(getColor(black-200), .55);
+        color:rgba(getColor(black-700), 1);
+
+        &:after {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .aroio-tabs__content {
+    padding: spacing(2) spacing(4);
+    background-color: getColor(black-200);
+  }
+}

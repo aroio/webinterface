@@ -6,8 +6,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MissingTranslationHandler, MissingTranslationHandlerParams, TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {TooltipModule} from 'ngx-bootstrap';
+import {TabsModule, TooltipModule} from 'ngx-bootstrap';
 import {AroioWiRoutingModule} from './pages/aroio-wi-routing.module';
+import {AroioCoreModule} from './modules/core/core.module';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -26,12 +27,14 @@ export class TranslateHandler implements MissingTranslationHandler {
     AroioWiComponent
   ],
   imports: [
+    AroioCoreModule,
     BrowserModule,
     CommonModule,
     BrowserAnimationsModule,
     AroioWiRoutingModule,
     HttpClientModule,
     TooltipModule.forRoot(),
+    TabsModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
