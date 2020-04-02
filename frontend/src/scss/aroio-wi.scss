@@ -42,8 +42,11 @@
 
 // Layout
 // ---------------------------------------------------------
-@import "layout/aroio-tabs";
 @import "layout/base";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/template";
+@import "layout/aroio-tabs";
 @import "layout/typography";
 
 // Components

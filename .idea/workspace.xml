@@ -2,246 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5380b783-44db-464c-8690-ebcfbed22818" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/convolver.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-tabset/aroio-tabset.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-tabset/aroio-tabset.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/components/index/index.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/components/index/index.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/network.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/components/index/index.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/components/index/index.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/streaming.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/components/index/index.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/components/index/index.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/system.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/core/core.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/convolver.routing.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/root/root.page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/network.routing.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/root/root.page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/root/root.page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/streaming.routing.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/index/index.page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/index/index.page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/root/root.page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/system.routing.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/scss/layout/aroio-tabs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/scss/layout/base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/scss/layout/typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/scss/utilities/functions/functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-content/aroio-content.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-content/aroio-content.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-footer/aroio-footer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-footer/aroio-footer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-header/aroio-header.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-header/aroio-header.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/logo_dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/scss/layout/footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/scss/layout/header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/scss/layout/template.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/.build/checkouts/vapor/Sources/Vapor/Server/NIOServerConfig.swift" beforeDir="false" afterPath="$PROJECT_DIR$/api/.build/checkouts/vapor/Sources/Vapor/Server/NIOServerConfig.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/aroio-wi.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/aroio-wi.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/configuration/components/index/index.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/configuration/components/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/configuration/configuration.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-navigation/aroio-navigation.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-navigation/aroio-navigation.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar-nav/aroio-sidebar-nav.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar-nav/aroio-sidebar-nav.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-brand/bd-brand.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-brand/bd-brand.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-button/bd-button.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-button/aroio-button.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-button/bd-button.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-button/aroio-button.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-col/bd-col.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-col/bd-col.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-content/bd-content-aside/bd-content-aside.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-content/bd-content-aside/bd-content-aside.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-content/bd-content-centered/bd-content-centered.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-content/bd-content-centered/bd-content-centered.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-content/bd-content-header/bd-content-header.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-content/bd-content-header/bd-content-header.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-content/bd-content-main/bd-content-main.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-content/bd-content-main/bd-content-main.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-content/bd-content.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-content/bd-content.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-grid/bd-grid.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-grid/bd-grid.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-hamburger/bd-hamburger.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-hamburger/bd-hamburger.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-header/bd-header-aside/bd-header-aside.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-header/bd-header-aside/bd-header-aside.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-header/bd-header-main/bd-header-main.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-header/bd-header-main/bd-header-main.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-header/bd-header-post-aside/bd-header-post-aside.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-header/bd-header-post-aside/bd-header-post-aside.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-header/bd-header-post-main/bd-header-post-main.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-header/bd-header-post-main/bd-header-post-main.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-header/bd-header.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-header/bd-header.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-icon/bd-icon.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-icon/bd-icon.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-image/bd-image.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-image/bd-image.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-item/bd-item.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-item/bd-item.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-layout/bd-layout-content/bd-layout-content.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-layout/bd-layout-content/bd-layout-content.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-layout/bd-layout-nav/bd-layout-nav.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-layout/bd-layout-nav/bd-layout-nav.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-layout/bd-layout-sidebar/bd-layout-sidebar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-layout/bd-layout-sidebar/bd-layout-sidebar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-layout/bd-layout.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-layout/bd-layout.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-nav/bd-nav-aside/bd-nav-aside.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-nav/bd-nav-aside/bd-nav-aside.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-nav/bd-nav-main/bd-nav-main.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-nav/bd-nav-main/bd-nav-main.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-nav/bd-nav-sub/bd-nav-sub.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-nav/bd-nav-sub/bd-nav-sub.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-nav/bd-nav.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-nav/bd-nav.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-overlay/bd-overlay.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-overlay/bd-overlay.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-action/bd-sidebar-action.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-action/bd-sidebar-action.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-list-item/bd-sidebar-list-item.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-list-item/bd-sidebar-list-item.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-list/bd-sidebar-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-list/bd-sidebar-list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-main/bd-sidebar-main.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-main/bd-sidebar-main.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-post/bd-sidebar-post.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-post/bd-sidebar-post.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-pre/bd-sidebar-pre.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar-pre/bd-sidebar-pre.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/bd-sidebar/bd-sidebar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-badge/bd-badge.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/aroio-badge/aroio-badge.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-badge/bd-badge.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/aroio-badge/aroio-badge.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-loading/bd-loading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/aroio-loading/aroio-loading.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-loading/bd-loading.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/aroio-loading/aroio-loading.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-message/bd-message.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/aroio-message/aroio-message.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-message/bd-message.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/aroio-message/aroio-message.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-progress-bar/bd-progress-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/aroio-progress-bar/aroio-progress-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-progress-bar/bd-progress-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/aroio-progress-bar/aroio-progress-bar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-progress-circle/bd-progress-circle.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/aroio-progress-circle/aroio-progress-circle.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-progress-circle/bd-progress-circle.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/aroio-progress-circle/aroio-progress-circle.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-progress/bd-progress.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/utils/bd-progress/bd-progress.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/configuration/configuration.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/audio.routing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/configuration/index/index.page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/configuration/index/index.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/configuration/root/root.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/root/root.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/index/index.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/index/index.page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/scss/aroio-wi.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/aroio-wi.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/action-bar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/action-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/alert.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/approval.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/avatar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/badge.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/bookmark.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/brand.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/breadcrumb.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/button-formutilites.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/button-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/components/button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/code.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/divider.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/dropdown.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/embed.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/example.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/file.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/hamburger.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/icon.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/info-box.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/item.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/launchpad.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/lection-list.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/link-list.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/loading.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/message.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/nav-arrow.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/order.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/popover.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/progress-bar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/progress-circle.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/section-nav.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/social-links.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/social-share.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/table-container.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/tabs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/tags.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/thumbnail-list.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/tooltip.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/version.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/dragdrop.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/checkbox.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/datepicker.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/dynamic-filters.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/form-actions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/form-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/form.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/input-group.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/input.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/rte.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/select.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/uploader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/utilities/form-counter.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/utilities/form-errors.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/utilities/form-help.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/utilities/form-label.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/utilities/form-required.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/media.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/tables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/aside.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/content-cendered.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/content-header.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/content-lock.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/content.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/footer.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/header-post.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/header.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/nav.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/overlay.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/popup.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/template/sidebar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/templates.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/type.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/type/headlines.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/type/helper.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/utilities.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/modules/content-element.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/modules/dropdown.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/modules/masonry.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/modules/modal.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/modules/pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/modules/popup.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/modules/progress-indicator.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/core/services/navigation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/modules/serp-preview.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/modules/social-share.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/utils/aroio-tabs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/functions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/functions/_arrays.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/functions/_color.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/functions/_helper.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/mixins/_breakpoints.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/mixins/_form.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/mixins/_hover.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/mixins/_sizing.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/mixins/_type.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/aroio-tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/layout/aroio-tabs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/layout/base.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/utilities/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/variables/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/utilities/variables/_colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/variables/_grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tslint.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/scss/utilities/variables/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/utilities/variables/_type.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -255,37 +40,85 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/scss/aroio-wi.scss">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
+            <state relative-caret-position="225">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="3" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/index/index.page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
               <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/src/scss/components/button.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="15">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="2" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/aroio-tabs.scss">
+        <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/footer.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="555">
+              <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-header/aroio-header.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -302,9 +135,14 @@
       <find>icon</find>
       <find>grey-medium</find>
       <find>getColor(</find>
+      <find>$navigation-padding-horizontal</find>
+      <find>$navigation-padding-bottom</find>
+      <find>$tmpl-base-spacing-vertical</find>
+      <find>header</find>
     </findStrings>
     <replaceStrings>
       <replace>bd</replace>
+      <replace>footer</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -313,16 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/components/index/index.component.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/configuration/index/index.page.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/convolver.module.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/network.module.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/streaming.module.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/configuration/configuration.routing.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/system.module.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/root/root.page.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/root/root.page.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/root/root.page.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/root/root.page.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/root/root.page.ts" />
@@ -330,40 +158,50 @@
         <option value="$PROJECT_DIR$/frontend/src/app/modules/core/core.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/aroio-wi.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/core/services/navigation.service.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/audio.routing.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/network.routing.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/convolver.routing.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/streaming.routing.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/system.routing.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/components/index/index.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/components/index/index.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/components/index/index.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/index/index.page.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/index/index.page.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/utils/aroio-tabs.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-tabset/aroio-tabset.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-tabset/aroio-tabset.component.html" />
-        <option value="$PROJECT_DIR$/frontend/src/scss/layout/base.scss" />
-        <option value="$PROJECT_DIR$/frontend/src/scss/utilities/variables.scss" />
         <option value="$PROJECT_DIR$/frontend/src/scss/utilities/variables/_colors.scss" />
         <option value="$PROJECT_DIR$/frontend/src/scss/layout/typography.scss" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/scss/utilities/functions/functions.scss" />
-        <option value="$PROJECT_DIR$/frontend/src/scss/aroio-wi.scss" />
-        <option value="$PROJECT_DIR$/frontend/src/scss/layout/aroio-tabs.scss" />
         <option value="$PROJECT_DIR$/frontend/src/scss/components/button.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/utilities/variables/_type.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/layout/base.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/layout/template.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/layout/aroio-tabs.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-header/aroio-header.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/layout/header.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-footer/aroio-header.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/aroio-wi.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-footer/aroio-footer.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/utilities/variables.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-content/aroio-content.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-content/aroio-content.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/index/index.page.html" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/layout/footer.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-header/aroio-header.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts" />
       </list>
     </option>
   </component>
@@ -439,7 +277,7 @@
               <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="audio" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
@@ -450,7 +288,7 @@
               <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="audio" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -462,8 +300,72 @@
               <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="audio" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-content" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-footer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-header" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="audio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="audio" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -472,52 +374,9 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-tabset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="convolver" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
@@ -527,6 +386,71 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="convolver" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="streaming" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="streaming" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
@@ -535,6 +459,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="aroio-wi" type="b2602c69:ProjectViewProjectNode" />
@@ -595,15 +526,15 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/frontend/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend/src/scss/layout" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-tabset" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/modules/core" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components" />
+      <recent name="$PROJECT_DIR$/frontend/src/scss/layout" />
+      <recent name="$PROJECT_DIR$/frontend/src/assets" />
+      <recent name="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-tabset" />
+      <recent name="$PROJECT_DIR$/frontend/src/app/modules/core" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -677,169 +608,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/components/index/index.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/components/index/index.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/core/core.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/audio.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/streaming.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/convolver.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/utils/breakpoints.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/utils/bem.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/components/index/index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/node_modules/ngx-bootstrap/tabs/tabset.component.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/components/index/index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/components/index/index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -847,13 +615,6 @@
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/index/index.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -884,37 +645,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/environments/environment.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -924,29 +658,6 @@
           <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-tabset/aroio-tabset.component.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -972,28 +683,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/utilities/reboot.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="59" column="15" lean-forward="true" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/utilities/variables/_type.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-642" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/scss/fonts/inter/inter.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2259" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/base.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-tabset/aroio-tabset.component.html">
@@ -1010,17 +702,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/aroio-wi.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/scss/utilities/functions/functions.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/utilities/variables/_colors.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="766">
+          <caret line="147" column="16" selection-start-line="147" selection-end-line="147" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/utilities/reboot.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="59" column="15" lean-forward="true" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/components/button.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
@@ -1031,38 +747,222 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/utilities/variables/_colors.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/utilities/variables/_type.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="147" column="16" selection-start-line="147" selection-end-line="147" selection-end-column="16" />
+        <state relative-caret-position="210">
+          <caret line="14" column="15" selection-start-line="14" selection-end-line="14" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/utilities/variables.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/src/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/typography.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="16" selection-start-line="22" selection-end-line="22" selection-end-column="16" />
+        <state relative-caret-position="1125">
+          <caret line="75" column="36" lean-forward="true" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/template.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="226" selection-start-line="9" selection-start-column="226" selection-end-line="9" selection-end-column="226" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/assets/logo_dark.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/assets/logo_blue.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/assets/abacus_logo_wide.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/assets/logo_white.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-header/aroio-header.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/audio.routing.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/aroio-tabs.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="765">
+          <caret line="58" column="19" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/typography.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="75" column="36" lean-forward="true" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+        <state relative-caret-position="60">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/components/button.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/header.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="105">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/aroio-wi.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-footer/aroio-footer.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-footer/aroio-footer.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/utilities/variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="31" column="39" lean-forward="true" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="68" column="26" lean-forward="true" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-content/aroio-content.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-content/aroio-content.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/convolver/index/index.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/network/index/index.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/index/index.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-header/aroio-header.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/system/index/index.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/index/index.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
         </state>
       </provider>
     </entry>

@@ -17,6 +17,9 @@ import {AroioProgressBarComponent} from './utils/aroio-progress-bar/aroio-progre
 import {AroioProgressCircleComponent} from './utils/aroio-progress-circle/aroio-progress-circle.component';
 import {AroioButtonComponent} from './components/aroio-button/aroio-button.component';
 import {AroioTabsetComponent} from './components/aroio-tabset/aroio-tabset.component';
+import {AroioHeaderComponent} from './components/aroio-header/aroio-header.component';
+import {AroioFooterComponent} from './components/aroio-footer/aroio-footer.component';
+import {AroioContentComponent} from './components/aroio-content/aroio-content.component';
 
 @NgModule({
   imports: [
@@ -41,6 +44,9 @@ import {AroioTabsetComponent} from './components/aroio-tabset/aroio-tabset.compo
     // ---------------------------
     // Layout
     // ---------------------------
+    AroioHeaderComponent,
+    AroioContentComponent,
+    AroioFooterComponent,
     AroioLoadingComponent,
     AroioButtonComponent,
     AroioTabsetComponent,
@@ -59,6 +65,9 @@ import {AroioTabsetComponent} from './components/aroio-tabset/aroio-tabset.compo
     // ---------------------------
     // Layout
     // ---------------------------
+    AroioHeaderComponent,
+    AroioContentComponent,
+    AroioFooterComponent,
     AroioLoadingComponent,
     AroioButtonComponent,
     AroioTabsetComponent,

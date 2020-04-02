@@ -3,7 +3,6 @@ import {environment} from '../environments/environment';
 import {registerLocaleData} from '@angular/common';
 import {TranslateService} from '@ngx-translate/core';
 import {defineLocale, deLocale} from 'ngx-bootstrap';
-import {ActivatedRoute, Router} from '@angular/router';
 
 import localeDE from '@angular/common/locales/de';
 import localeDEextra from '@angular/common/locales/extra/de';

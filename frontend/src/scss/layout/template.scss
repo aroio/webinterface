@@ -1,0 +1,11 @@
+
+
+.tmpl {
+  display: flex;
+  align-items: center;
+  margin: $tmpl-base-spacing-top 0 $tmpl-base-spacing-bottom 0;
+
+  &.tmpl--centered {
+
+  }
+}

@@ -3,7 +3,10 @@
     display: flex;
 
     .aroio-tabs__navigation__item {
-      padding: spacing(1) spacing(2);
+      font-size: $navigation-font-size;
+      line-height: $navigation-font-size;
+
+      padding: $navigation-padding-vertical $navigation-padding-horizontal;
       background-color: rgba(getColor(black-200), .33);
       transition: $base-animation;
       position: relative;
@@ -53,5 +56,7 @@
   .aroio-tabs__content {
     padding: spacing(2) spacing(4);
     background-color: getColor(black-200);
+    overflow: auto;
+    height: calc(100vh - #{$tmpl-base-spacing-top} - #{$tmpl-base-spacing-bottom} - #{$navigation-font-size} - (2 * #{$navigation-padding-vertical}));
   }
 }

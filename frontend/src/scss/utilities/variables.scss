@@ -27,6 +27,21 @@ $base-spacing: 10px !default;
   @return $base-spacing * $mod;
 }
 
+$tmpl-base-spacing-top: spacing(7);
+$tmpl-base-spacing-bottom: spacing(5);
+$navigation-font-size: $base-font-size;
+$navigation-padding-horizontal: spacing(2);
+$navigation-padding-vertical: spacing(1);
+
+
+
+
+// Old Shit
+// ---------------------------------------------------------
+
+
+
+
 $base-border-radius: 2px !default;
 
 $base-border: 1px solid rgba(getColor(black-200), .3);

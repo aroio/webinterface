@@ -1,0 +1,35 @@
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: spacing(.5) spacing(1.5);
+  font-size: getFontSize(sm);
+
+  .header__brand {
+    opacity: .2;
+    img {
+      width: 120px;
+    }
+  }
+
+  .header__actions {
+    .header__actions__item {
+      opacity: .2;
+      transition: $base-animation;
+      display: flex;
+      align-items: center;
+
+      i {
+        padding: 0 spacing(.5);
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+  }
+}
