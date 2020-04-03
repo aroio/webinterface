@@ -5,7 +5,7 @@
 
 .btn {
   padding: spacing(.5) spacing(1.5);
-  //border-radius: 0;
+  border-radius: $base-border-radius;
   background-color: getColor(white);
   transition: $base-animation;
 

@@ -1,1 +1,9 @@
-<ng-content></ng-content>
+
+<div class="aroio-content-item">
+  <div class="aroio-content-item__title" *ngIf="title">
+    {{ title }}
+  </div>
+  <div class="aroio-content-item__content">
+    <ng-content></ng-content>
+  </div>
+</div>

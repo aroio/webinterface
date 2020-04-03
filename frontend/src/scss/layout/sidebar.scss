@@ -1,11 +1,16 @@
 .aroio-sidebar {
   margin-top: $navigation-font-size + $navigation-padding-vertical * 2;
   overflow: auto;
-  height: $base-content-height;
+  //height: $base-content-height;
+  border-radius: $base-border-radius;
 
-  .aroio-sidebar__item {
+  .aroio-sidebar__widget {
     padding: spacing(2);
     margin-bottom: spacing(2);
     background-color: getColor(black-200);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

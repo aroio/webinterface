@@ -2,44 +2,25 @@ import {Component, OnInit, TemplateRef} from '@angular/core';
 import UserInterface from '../../../../../../models/interfaces/user.interface';
 import {HttpClient} from '@angular/common/http';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
-    selector: '<aroio-network-index-component>',
-    templateUrl: './index.component.html'
+  selector: '<aroio-network-index-component>',
+  templateUrl: './index.component.html'
 })
 export class NetworkIndexComponent implements OnInit {
 
-    test2;
 
-    employments: any;
+  form: FormGroup;
 
-    // Modal Specific
-    modalIndex = 0;
-    modalRef: BsModalRef;
+  constructor() {
+  }
 
-    constructor(
-        private  _api: HttpClient,
-        private modalService: BsModalService,
-    ) {
-    }
+  ngOnInit() {
+    this.form = new FormGroup({});
+  }
 
-    ngOnInit() {
-    }
-
-
-    // Modal Specific
-    // -----------------------
-
-    openModal(template: TemplateRef<any>, _index: number) {
-        this.modalIndex = _index;
-        this.modalRef = this.modalService.show(template, {class: 'modal--lg'});
-    }
-
-    modalAccept() {
-        this.modalRef.hide();
-    }
-
-    modalClose() {
-        this.modalRef.hide();
-    }
+  doThonething(){
+    console.log('switch switched');
+  }
 }

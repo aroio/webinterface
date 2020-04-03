@@ -4,7 +4,7 @@ html, body {
   height: 100%;
   width: 100%;
   background-color: getColor(black-100);
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 img {
@@ -19,4 +19,9 @@ a {
     color: getColor(primary-200);
     text-decoration: none;
   }
+}
+
+
+label {
+  margin: 0;
 }

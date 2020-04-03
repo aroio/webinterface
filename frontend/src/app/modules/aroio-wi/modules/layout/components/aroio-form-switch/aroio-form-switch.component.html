@@ -1,0 +1,15 @@
+
+<div class="aroio-form-switch">
+  <div class="aroio-form-switch__head">
+    <div class="aroio-form-switch__head__label">
+      {{ label }}
+    </div>
+    <div class="aroio-form-switch__head__action">
+      <aroio-switch [id]="id" (switched)="switched($event)"></aroio-switch>
+    </div>
+  </div>
+
+  <div class="aroio-form-switch__content" *ngIf="switchState && hasContent" [@fadeHeightInOut]>
+    <ng-content></ng-content>
+  </div>
+</div>

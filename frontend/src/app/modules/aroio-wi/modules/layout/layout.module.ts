@@ -21,6 +21,8 @@ import {AroioHeaderComponent} from './components/aroio-header/aroio-header.compo
 import {AroioFooterComponent} from './components/aroio-footer/aroio-footer.component';
 import {AroioContentComponent} from './components/aroio-content/aroio-content.component';
 import {AroioSidebarComponent} from './components/aroio-sidebar/aroio-sidebar.component';
+import {AroioSwitchComponent} from './components/aroio-switch/aroio-switch.component';
+import {AroioFormSwitchComponent} from './components/aroio-form-switch/aroio-form-switch.component';
 
 @NgModule({
   imports: [
@@ -52,6 +54,8 @@ import {AroioSidebarComponent} from './components/aroio-sidebar/aroio-sidebar.co
     AroioButtonComponent,
     AroioTabsetComponent,
     AroioSidebarComponent,
+    AroioSwitchComponent,
+    AroioFormSwitchComponent,
     // ---------------------------
     // ---------------------------
     AroioBadgeComponent,
@@ -74,6 +78,8 @@ import {AroioSidebarComponent} from './components/aroio-sidebar/aroio-sidebar.co
     AroioButtonComponent,
     AroioTabsetComponent,
     AroioSidebarComponent,
+    AroioSwitchComponent,
+    AroioFormSwitchComponent,
     // ---------------------------
     // Utils
     // ---------------------------

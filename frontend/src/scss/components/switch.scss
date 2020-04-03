@@ -1,0 +1,98 @@
+// Slider
+// ---------------------------------------------------------
+
+$slider-base-height: spacing(1.8);
+$slider-base-width: spacing(6);
+$slider-base-border-width: 2px;
+$switch-offset: 2px;
+
+// switch - the box around the slider
+// ---------------------------------------------------------
+.switch {
+  position: relative;
+  display: inline-block;
+  width: $slider-base-width;
+  height: $slider-base-height;
+
+  // Hide default HTML checkbox
+  // ---------------------------------------------------------
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .slider {
+      color: getColor(cyan);
+      background-color: getColor(primary);
+      border-color: getColor(primary);
+
+      &:before {
+        background-color: getColor(white);
+      }
+
+      .slider--label-left {
+        color: getColor(white);
+      }
+      .slider--label-right {
+        color: getColor(primary);
+      }
+
+    }
+
+    &:checked + .slider:before {
+      transform: translateX((($slider-base-width - $slider-base-border-width*2) / 2) - $switch-offset);
+    }
+  }
+
+
+  // the Slider
+  // ---------------------------------------------------------
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: getColor(white);
+    border: $slider-base-border-width solid getColor(black-300);
+    transition: $base-animation;
+    border-radius: 50px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: $slider-base-height - $slider-base-border-width*2 - ($switch-offset*2);
+      width: $slider-base-width / 2 - $slider-base-border-width - $switch-offset;
+      left: $switch-offset;
+      bottom: $switch-offset;
+      background-color: getColor(black-200);
+      transition: $base-animation;
+      border-radius: 50px;
+    }
+
+    .slider--label-left, .slider--label-right {
+      display: flex;
+      position: relative;
+      width: 50%;
+      justify-content: center;
+      font-size: getFontSize(sm);
+      transition: $base-animation;
+    }
+
+    .slider--label-left {
+      color: getColor(black-300);
+    }
+
+    .slider--label-right {
+      color: getColor(black-300);
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,43 @@
+
+.aroio-form-switch {
+  margin-bottom: spacing(2);
+
+  .aroio-form-switch__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: getColor(black-300);
+    padding: spacing(1) spacing(2);
+    margin-bottom: spacing(2);
+    border-radius: $base-border-radius;
+
+
+    .aroio-form-switch__head__label {
+      display: flex;
+      align-items: center;
+    }
+
+    .aroio-form-switch__head__action {
+      display: flex;
+      align-items: center;
+
+      .switch {
+        .slider {
+          border-color: getColor(black-400);
+        }
+
+        input {
+
+          &:checked + .slider {
+            border-color: getColor(primary);
+          }
+        }
+      }
+    }
+  }
+
+  .aroio-form-switch__content {
+      overflow: hidden;
+      margin-bottom: spacing(2);
+  }
+}

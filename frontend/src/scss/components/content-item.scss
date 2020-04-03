@@ -1,0 +1,14 @@
+.aroio-content-item {
+  .aroio-content-item__title {
+    width: 100%;
+    font-size: getFontSize(sm);
+    font-weight: bold;
+    border-bottom: 1px solid getColor(black-900);
+    opacity: .3;
+    margin-bottom: spacing(1);
+  }
+
+  .aroio-content-item__content {
+    margin-bottom: spacing(4);
+  }
+}

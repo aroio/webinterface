@@ -1,12 +1,14 @@
 
 .footer {
-  position: fixed;
+  //position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: spacing(.5) spacing(1.5);
   font-size: getFontSize(sm);
+  margin-bottom: -($footer-height);
+  height: $footer-height;
 
   .footer__brand {
     opacity: .2;

@@ -27,20 +27,20 @@ $base-spacing: 10px !default;
   @return $base-spacing * $mod;
 }
 
-$tmpl-base-spacing-top: spacing(7);
-$tmpl-base-spacing-bottom: spacing(5);
+$tmpl-base-spacing-top: spacing(4);
+$tmpl-base-spacing-bottom: spacing(6);
 $navigation-font-size: $base-font-size;
 $navigation-padding-horizontal: spacing(2);
 $navigation-padding-vertical: spacing(1);
 $base-content-height: calc(100vh - #{$tmpl-base-spacing-top} - #{$tmpl-base-spacing-bottom} - #{$navigation-font-size} - (2 * #{$navigation-padding-vertical}));
+$base-border-radius: .25em;
+$footer-height: spacing(4);
 
 // Old Shit
 // ---------------------------------------------------------
 
 
 
-
-$base-border-radius: 2px !default;
 
 $base-border: 1px solid rgba(getColor(black-200), .3);
 
