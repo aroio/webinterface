@@ -72,6 +72,7 @@ a {
     color: getColor(primary);
     transition: $base-animation;
     position: relative;
+    text-decoration: none;
 
     &:before {
         position: absolute;
