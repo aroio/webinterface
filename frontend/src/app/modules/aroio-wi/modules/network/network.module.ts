@@ -6,6 +6,7 @@ import {TabsModule} from 'ngx-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AroioLayoutModule} from '../layout/layout.module';
 import {NetworkIndexComponent} from './components/index/index.component';
+import {FormUtilitiesModule} from '@braune-digital/form-utilities';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {NetworkIndexComponent} from './components/index/index.component';
     ReactiveFormsModule,
     FormsModule,
     TabsModule,
-    AroioLayoutModule
+    AroioLayoutModule,
+    FormUtilitiesModule
   ],
   declarations: [
     NetworkIndexComponent,

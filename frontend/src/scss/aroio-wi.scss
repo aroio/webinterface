@@ -8,14 +8,14 @@
 
 $grid-gutter-width: 20px;
 
-@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~@braune-digital/layout/scss/bd-layout-utilities";
 
 // Mixins & Variables
 // ---------------------------------------------------------
 @import "utilities/variables";
 @import "utilities/reboot";
 @import "utilities/functions/functions";
-
 
 // Layout
 // ---------------------------------------------------------
@@ -45,6 +45,7 @@ $grid-gutter-width: 20px;
 // Layout
 // ---------------------------------------------------------
 @import "layout/base";
+@import "layout/forms";
 @import "layout/header";
 @import "layout/footer";
 @import "layout/template";

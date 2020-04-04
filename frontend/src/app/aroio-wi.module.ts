@@ -9,6 +9,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TabsModule, TooltipModule} from 'ngx-bootstrap';
 import {AroioWiRoutingModule} from './pages/aroio-wi-routing.module';
 import {AroioCoreModule} from './modules/core/core.module';
+import {FormUtilitiesModule} from '@braune-digital/form-utilities';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -29,6 +30,29 @@ export class TranslateHandler implements MissingTranslationHandler {
   imports: [
     AroioCoreModule,
     BrowserModule,
+    FormUtilitiesModule.forRoot(
+      {
+        displayErrors: true,
+        classFormGroup: 'form-group',
+        classFromInput: 'form-input',
+        classFormInputGroup: 'input-group',
+        classFormInputGroupPrepend: 'input-group-prepend',
+        classFormInputGroupAppend: 'input-group-append',
+        classFormInputGroupText: 'input-group-text',
+        classFromLegend: 'form-legend',
+        classFormLabel: 'form-label',
+        classFormControl: 'form-control',
+        classFormCounter: 'form-counter',
+        classFormError: 'form-errors',
+        classFormHelp: 'form-help',
+        classFormRequired: 'form-required',
+        classIconBase: 'far',
+        requiredString: '*',
+        maxLengthString: 'Noch %s Zeichen',
+        minLengthString: 'Es fehlen noch %s Zeichen',
+        counterBefore: false
+      }
+    ),
     CommonModule,
     BrowserAnimationsModule,
     AroioWiRoutingModule,

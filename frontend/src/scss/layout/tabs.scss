@@ -12,7 +12,8 @@
       position: relative;
       overflow: hidden;
       color:rgba(getColor(black-700), .33);
-
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
 
       &.aroio-tabs__navigation__item--active {
         background-color: rgba(getColor(black-200), 1);

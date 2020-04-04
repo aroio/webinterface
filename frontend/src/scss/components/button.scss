@@ -4,12 +4,14 @@
 
 
 .btn {
-  padding: spacing(.5) spacing(1.5);
+  padding: spacing(1) spacing(2);
   border-radius: $base-border-radius;
   background-color: getColor(white);
   transition: $base-animation;
+  border: none;
 
   &:hover {
+    cursor: pointer;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0, .2);
   }
 

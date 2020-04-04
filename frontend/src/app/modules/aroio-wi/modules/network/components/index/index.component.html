@@ -2,40 +2,10 @@
   <aroio-content-item [title]="'Verbindung'">
 
     <aroio-form-switch [id]="'test-id-01'" [label]="'WLAN'" [hasContent]="true">
-      <div class="form-group">
-        <label for="hostname">Hostname</label>
-        <input type="email"
-               class="form-control"
-               id="hostname"
-               aria-describedby="emailHelp"
-               placeholder="Aroio Küche ABC">
-      </div>
-      <div class="form-group">
-        <div class="input-group">
-          <label for="hostname">IP Addresse</label>
-          <input type="number" aria-label="192" class="form-control">
-          <input type="number" aria-label="168" class="form-control">
-          <input type="number" aria-label="2" class="form-control">
-          <input type="number" aria-label="12" class="form-control">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="subnet">Subnetzmaske</label>
-        <input type="text"
-               class="form-control"
-               id="subnet"
-               aria-describedby="emailHelp"
-               placeholder="Subnetzmaske">
-      </div>
-      <div class="form-group">
-        <label for="gateway">Gateway</label>
-        <input type="text"
-               class="form-control"
-               id="gateway"
-               aria-describedby="emailHelp"
-               placeholder="Enter email">
-      </div>
-
+      <bd-input [type]="'text'" [formControl]="form.get('hostname')" label="Hostname" placeholder="Hostname"></bd-input>
+      <bd-input [type]="'text'" [formControl]="form.get('ip')" label="IP Adresse" placeholder="IP Adresse"></bd-input>
+      <bd-input [type]="'text'" [formControl]="form.get('subnet')" label="Subnetzmaske" placeholder="Subnetzmaske"></bd-input>
+      <bd-input [type]="'text'" [formControl]="form.get('gateway')" label="Gateway" placeholder="Gateway"></bd-input>
     </aroio-form-switch>
 
 
@@ -47,15 +17,11 @@
 
 
   <aroio-content-item [title]="'Webinterface'">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Passwort</label>
-      <input type="password" class="form-control" id="exampleInputPassword" aria-describedby="emailHelp"
-             placeholder="Enter email">
-      <small id="emailPassword" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
+    <bd-input [type]="'password'" [formControl]="form.get('password')" label="Passwort" placeholder="Passwort"></bd-input>
+
   </aroio-content-item>
   <aroio-content-item [title]="'Hardware'">
-
+    <bd-input [type]="'select'" [formControl]="form.get('platform')" label="Plattform" placeholder="Auswählen"></bd-input>
   </aroio-content-item>
 
   <div class="action-bar">
