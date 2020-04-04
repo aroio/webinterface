@@ -35,6 +35,7 @@ $navigation-padding-vertical: spacing(1);
 $base-content-height: calc(100vh - #{$tmpl-base-spacing-top} - #{$tmpl-base-spacing-bottom} - #{$navigation-font-size} - (2 * #{$navigation-padding-vertical}));
 $base-border-radius: .25em;
 $footer-height: spacing(4);
+$base-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
 
 // Old Shit
 // ---------------------------------------------------------
@@ -46,7 +47,6 @@ $base-border: 1px solid rgba(getColor(black-200), .3);
 
 $base-border-width: 3px !default;
 $base-stripe-width: 8px !default;
-$base-box-shadow: 0 0 0 $base-border-width rgba(0,0,0,0.2) !default;
 $base-box-shadow-large: 0 0 0 $base-stripe-width rgba(0,0,0,0.2) !default;
 $base-box-shadow-vertical: ($base-border-width * -1) 0 0 0 rgba(0,0,0,0.2) !default;
 $base-box-shadow-bottom: 0 $base-border-width 0 0 rgba(0,0,0,0.2) !default;

@@ -1,0 +1,49 @@
+<div class="{{ options.classFormGroup }}" [ngClass]="{'focus': focus, 'has-errors': errors.length, 'has-value': formControl.value}">
+
+  <div class="{{ options.classFromInput }}">
+
+    <div class="{{ options.classFromLegend }}">
+
+      <bd-form-label [label]="label" [inputId]="uniqueId"></bd-form-label>
+      <bd-form-required [required]="requiredMarker" *ngIf="requiredMarker"></bd-form-required>
+      <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
+      <bd-form-counter [maxLength]="maxLength" [form]="formControl" *ngIf="maxLength && options.counterBefore"></bd-form-counter>
+      <bd-form-label-icon [icon]="icon" (click)="handleIconClicked($event)"></bd-form-label-icon>
+    </div>
+
+    <div class="{{ inputGroupClass }}">
+
+      <bd-form-addon [text]="prepend" position="prepend" *ngIf="prepend"></bd-form-addon>
+
+      <input [type]="type"
+             [step]="step"
+             class="{{ options.classFormControl }} {{ inputClass }}"
+             [placeholder]="placeholder"
+             [autocomplete]="autocomplete"
+             [attr.id]="uniqueId"
+             [attr.maxlength]="maxLength"
+             [attr.aria-label]="placeholder"
+             (focusout)="handleOnFocusOut($event.target.value)"
+             (focus)="handleOnFocus($event.target.value)"
+             (change)="handleOnInputChange($event.target.value)"
+             (keypress)="handleOnInputKeypress($event.target.value)"
+             (keyup)="handleOnInputKeyup($event.target.value)"
+             (keydown)="handleOnKeydown($event)"
+             ngDefaultControl>
+
+      <bd-form-addon [text]="append" position="append" *ngIf="append"></bd-form-addon>
+
+      <div class="form-errors-sign" *ngIf="errors.length">
+        <div class="form-errors-sign__sign">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <bd-form-errors [errors]="errors"></bd-form-errors>
+      </div>
+
+
+    </div>
+  </div>
+
+  <bd-form-counter [maxLength]="maxLength" [form]="formControl" *ngIf="maxLength && !options.counterBefore"></bd-form-counter>
+  <bd-form-help [label]="help" *ngIf="help"></bd-form-help>
+</div>

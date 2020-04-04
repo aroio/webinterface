@@ -2,10 +2,26 @@
   <aroio-content-item [title]="'Verbindung'">
 
     <aroio-form-switch [id]="'test-id-01'" [label]="'WLAN'" [hasContent]="true">
-      <bd-input [type]="'text'" [formControl]="form.get('hostname')" label="Hostname" placeholder="Hostname"></bd-input>
-      <bd-input [type]="'text'" [formControl]="form.get('ip')" label="IP Adresse" placeholder="IP Adresse"></bd-input>
-      <bd-input [type]="'text'" [formControl]="form.get('subnet')" label="Subnetzmaske" placeholder="Subnetzmaske"></bd-input>
-      <bd-input [type]="'text'" [formControl]="form.get('gateway')" label="Gateway" placeholder="Gateway"></bd-input>
+      <aroio-input [type]="'text'"
+                   [formControl]="form.get('hostname')"
+                   label="Hostname"
+                   placeholder="Hostname"
+      ></aroio-input>
+      <bd-input [type]="'text'"
+                [formControl]="form.get('ip')"
+                label="IP Adresse"
+                placeholder="IP Adresse"
+      ></bd-input>
+      <bd-input [type]="'text'"
+                [formControl]="form.get('subnet')"
+                label="Subnetzmaske"
+                placeholder="Subnetzmaske"
+      ></bd-input>
+      <bd-input [type]="'text'"
+                [formControl]="form.get('gateway')"
+                label="Gateway"
+                placeholder="Gateway"
+      ></bd-input>
     </aroio-form-switch>
 
 

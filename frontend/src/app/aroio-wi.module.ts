@@ -9,7 +9,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TabsModule, TooltipModule} from 'ngx-bootstrap';
 import {AroioWiRoutingModule} from './pages/aroio-wi-routing.module';
 import {AroioCoreModule} from './modules/core/core.module';
-import {FormUtilitiesModule} from '@braune-digital/form-utilities';
+import {FormErrorService, FormUtilitiesModule} from '@braune-digital/form-utilities';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -68,7 +68,9 @@ export class TranslateHandler implements MissingTranslationHandler {
       missingTranslationHandler: [{ provide: MissingTranslationHandler, useClass: TranslateHandler }]
     }),
   ],
-  providers: [],
+  providers: [
+    FormErrorService
+  ],
   bootstrap: [AroioWiComponent]
 })
 export class AroioWiModule { }

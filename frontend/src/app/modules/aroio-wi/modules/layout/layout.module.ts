@@ -23,6 +23,8 @@ import {AroioContentComponent} from './components/aroio-content/aroio-content.co
 import {AroioSidebarComponent} from './components/aroio-sidebar/aroio-sidebar.component';
 import {AroioSwitchComponent} from './components/aroio-switch/aroio-switch.component';
 import {AroioFormSwitchComponent} from './components/aroio-form-switch/aroio-form-switch.component';
+import {AroioInputComponent} from './components/aroio-input/aroio-input.component';
+import {FormErrorService, FormUtilitiesModule} from '@braune-digital/form-utilities';
 
 @NgModule({
   imports: [
@@ -31,6 +33,7 @@ import {AroioFormSwitchComponent} from './components/aroio-form-switch/aroio-for
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
+    FormUtilitiesModule,
     BrowserModule,
     BrowserAnimationsModule,
     TooltipModule,
@@ -56,6 +59,8 @@ import {AroioFormSwitchComponent} from './components/aroio-form-switch/aroio-for
     AroioSidebarComponent,
     AroioSwitchComponent,
     AroioFormSwitchComponent,
+
+    AroioInputComponent,
     // ---------------------------
     // ---------------------------
     AroioBadgeComponent,
@@ -80,6 +85,8 @@ import {AroioFormSwitchComponent} from './components/aroio-form-switch/aroio-for
     AroioSidebarComponent,
     AroioSwitchComponent,
     AroioFormSwitchComponent,
+
+    AroioInputComponent,
     // ---------------------------
     // Utils
     // ---------------------------
@@ -89,7 +96,7 @@ import {AroioFormSwitchComponent} from './components/aroio-form-switch/aroio-for
     AroioProgressCircleComponent,
   ],
   providers: [
-    ElementHeightService
+    FormErrorService
   ],
   entryComponents: [],
 
