@@ -6,6 +6,12 @@ import {TabsModule} from 'ngx-bootstrap';
 import {FormsModule} from '@angular/forms';
 import {AroioLayoutModule} from '../layout/layout.module';
 import {AudioIndexComponent} from './components/index/index.component';
+import {SWIPER_CONFIG, SwiperConfigInterface, SwiperModule} from 'ngx-swiper-wrapper';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
 
 @NgModule({
   imports: [
@@ -14,7 +20,8 @@ import {AudioIndexComponent} from './components/index/index.component';
     TranslateModule,
     FormsModule,
     TabsModule,
-    AroioLayoutModule
+    AroioLayoutModule,
+    SwiperModule
   ],
   declarations: [
     AudioIndexComponent,
@@ -22,7 +29,12 @@ import {AudioIndexComponent} from './components/index/index.component';
   exports: [
     AudioIndexComponent,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
+  ],
 })
 export class AroioAudioModule {
 }

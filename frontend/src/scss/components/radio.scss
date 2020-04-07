@@ -1,0 +1,95 @@
+//
+// Radio
+// ---------------------------------------------------------
+
+.radio {
+  display: flex;
+  align-items: center;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"] + label {
+    //display: flex;
+    //align-items: center;
+    width: spacing(2);
+    height: spacing(2);
+    box-shadow: inset 0px 0px 0px 3px getColor(black-300);
+    background: getColor(white);
+    border-radius: 50%;
+    transition: $base-animation;
+    white-space: nowrap;
+    user-select: none;
+
+    position: relative;
+
+    .radio-label {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+
+      transition: $base-animation;
+      font-weight: 400;
+      padding-left: spacing(3);
+    }
+
+  }
+
+  @include hoverState {
+
+    .radio-label {
+      cursor: pointer;
+      //color: getColor(primary);
+    }
+
+    input[type="radio"] + label {
+      cursor: pointer;
+      box-shadow: inset 0px 0px 0px 5px getColor(primary);
+    }
+  }
+
+  .radio-label__link {
+    font-weight: getFontWeight(light);
+    padding-left: spacing(1);
+
+    @include hoverState {
+      cursor: pointer;
+    }
+  }
+
+  input[type="radio"]:checked + label {
+    box-shadow: inset 0px 0px 0px 7px getColor(primary);
+  }
+
+  @include disabledState {
+    pointer-events: none;
+    opacity: .3;
+  }
+
+  // Checkbox colors
+  // ---------------------------------------------------------
+
+  @each $name, $color in $colorsAndStates {
+    &.radio--#{$name} {
+      color: $color;
+
+      .radio-label {
+        //color: $color;
+      }
+
+      input[type="radio"] + label {
+        border-color: $color;
+
+        &:after {
+          border-color: $color;
+        }
+      }
+
+    }
+  }
+}
+
+

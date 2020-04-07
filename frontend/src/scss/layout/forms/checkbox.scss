@@ -18,7 +18,8 @@
   input[type="checkbox"] + label {
     width: $base-spacing * 2;
     height: $base-spacing * 2;
-    border: 2px solid getColor(black);
+    border: 2px solid getColor(black-300);
+    background: getColor(white);
     border-radius: 15%;
     top: 50%;
     left: 10%;
@@ -37,8 +38,8 @@
       position: absolute;
       width: 0;
       height: 8px;
-      border-bottom: 2px solid getColor(black);
-      border-left: 2px solid getColor(black);
+      border-bottom: 2px solid getColor(primary);
+      border-left: 2px solid getColor(primary);
       top: 30%;
       left: 41%;
       transform-origin: bottom left;

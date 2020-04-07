@@ -6,4 +6,8 @@
   .action-bar__item {
 
   }
+
+  &.action-bar--evenly {
+    justify-content: space-evenly;
+  }
 }
