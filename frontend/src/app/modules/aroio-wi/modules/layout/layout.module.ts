@@ -5,7 +5,6 @@ import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {TabsModule, TooltipModule} from 'ngx-bootstrap';
 import {ElementHeightService} from './services/elementHeight.service';
 import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
 import {AroioContentItemComponent} from './components/aroio-content-item/aroio-content-item.component';
@@ -25,6 +24,8 @@ import {AroioSwitchComponent} from './components/aroio-switch/aroio-switch.compo
 import {AroioFormSwitchComponent} from './components/aroio-form-switch/aroio-form-switch.component';
 import {AroioInputComponent} from './components/aroio-input/aroio-input.component';
 import {FormErrorService, FormUtilitiesModule} from '@braune-digital/form-utilities';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
+import {TabsModule} from 'ngx-bootstrap/tabs';
 
 @NgModule({
   imports: [

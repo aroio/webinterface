@@ -2,12 +2,13 @@ import {RouterModule, Routes} from '@angular/router';
 import {environment} from '../../environments/environment';
 import {NgModule} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
-import {ModalModule, PaginationModule} from 'ngx-bootstrap';
 import {AroioAudioPageModule} from './aroio-wi/audio/audio.routing';
 import {AroioConvolverPageModule} from './aroio-wi/convolver/convolver.routing';
 import {AroioNetworkPageModule} from './aroio-wi/network/network.routing';
 import {AroioStreamingPageModule} from './aroio-wi/streaming/streaming.routing';
 import {AroioSystemPageModule} from './aroio-wi/system/system.routing';
+import {PaginationModule} from 'ngx-bootstrap/pagination';
+import {ModalModule} from 'ngx-bootstrap/modal';
 
 export const routes: Routes = [
   {path: '', redirectTo: environment.defaultLocale + '/network', pathMatch: 'full'},

@@ -1,7 +1,4 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
-import UserInterface from '../../../../../../models/interfaces/user.interface';
-import {HttpClient} from '@angular/common/http';
-import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({

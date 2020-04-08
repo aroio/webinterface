@@ -4,7 +4,6 @@ import {AroioLayoutModule} from '../../../modules/aroio-wi/modules/layout/layout
 import {AroioAudioIndexPage} from './index/index.page';
 import {AroioAudioRootPage} from './root/root.page';
 import {CommonModule} from '@angular/common';
-import {TabsModule} from 'ngx-bootstrap';
 import {AroioAudioModule} from '../../../modules/aroio-wi/modules/audio/audio.module';
 
 export const AudioRoutes: Routes = [

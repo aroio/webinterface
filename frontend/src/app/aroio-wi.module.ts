@@ -6,11 +6,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MissingTranslationHandler, MissingTranslationHandlerParams, TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {TabsModule, TooltipModule} from 'ngx-bootstrap';
 import {AroioWiRoutingModule} from './pages/aroio-wi-routing.module';
 import {AroioCoreModule} from './modules/core/core.module';
 import {FormErrorService, FormUtilitiesModule} from '@braune-digital/form-utilities';
 import {SwiperModule} from 'ngx-swiper-wrapper';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
+import {TabsModule} from 'ngx-bootstrap/tabs';
 
 
 export function createTranslateLoader(http: HttpClient) {

@@ -2,12 +2,12 @@ import {Component} from '@angular/core';
 import {environment} from '../environments/environment';
 import {registerLocaleData} from '@angular/common';
 import {TranslateService} from '@ngx-translate/core';
-import {defineLocale, deLocale} from 'ngx-bootstrap';
 
 import localeDE from '@angular/common/locales/de';
 import localeDEextra from '@angular/common/locales/extra/de';
 import localeEN from '@angular/common/locales/en';
 import localeENextra from '@angular/common/locales/extra/en';
+import {defineLocale, deLocale} from 'ngx-bootstrap/chronos';
 
 
 registerLocaleData(localeDE, 'de', localeDEextra);

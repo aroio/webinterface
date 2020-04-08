@@ -1,7 +1,5 @@
-import {AfterViewInit, Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NavigationService} from '../../../../../core/services/navigation.service';
-import {AroioTabs} from '../../../../../../utils/aroio-tabs';
-import {TabsetComponent} from 'ngx-bootstrap';
 import {Subscription} from 'rxjs';
 import {TranslateService} from '@ngx-translate/core';
 
