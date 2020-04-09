@@ -24,7 +24,4 @@ export class NetworkIndexComponent implements OnInit {
     });
   }
 
-  doThonething() {
-    console.log('switch switched');
-  }
 }

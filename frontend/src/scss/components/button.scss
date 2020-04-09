@@ -37,6 +37,17 @@
     box-shadow: 0px 0px 5px 0px rgba(0,0,0, .2);
   }
 
+  &.btn--link {
+    background-color: transparent;
+
+    &:hover {
+      .btn__text {
+        color: getColor(primray);
+      }
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0);
+    }
+
+  }
 
   // Button colors
   // ---------------------------------------------------------

@@ -25,6 +25,8 @@ import {AroioInputComponent} from './components/aroio-input/aroio-input.componen
 import {FormErrorService, FormUtilitiesModule} from '@braune-digital/form-utilities';
 import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {TabsModule} from 'ngx-bootstrap/tabs';
+import {AroioFilterListComponent} from './components/aroio-filter-list/aroio-filter-list.component';
+import {AroioFilterListItemComponent} from './components/aroio-filter-list/aroio-filter-list-item/aroio-filter-list-item.component';
 
 @NgModule({
   imports: [
@@ -45,7 +47,9 @@ import {TabsModule} from 'ngx-bootstrap/tabs';
     // Aroio Stuff
     // ---------------------------
     AroioContentItemComponent,
-
+    AroioMessageComponent,
+    AroioFilterListComponent,
+    AroioFilterListItemComponent,
     // ---------------------------
     // Layout
     // ---------------------------
@@ -72,6 +76,9 @@ import {TabsModule} from 'ngx-bootstrap/tabs';
     // Aroio Stuff
     // ---------------------------
     AroioContentItemComponent,
+    AroioMessageComponent,
+    AroioFilterListComponent,
+    AroioFilterListItemComponent,
     // ---------------------------
     // Layout
     // ---------------------------

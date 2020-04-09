@@ -1,0 +1,8 @@
+<div class="message message--{{ color }} message--{{ size }}">
+    <div class="message__title" *ngIf="title">
+        {{ title }}
+    </div>
+    <div class="message__body">
+        <ng-content></ng-content>
+    </div>
+</div>

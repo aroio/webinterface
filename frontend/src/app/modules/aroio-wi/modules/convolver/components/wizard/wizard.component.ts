@@ -2,23 +2,21 @@ import {Component, OnInit, TemplateRef} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Animations} from '../../../layout/animations/animations';
-import {TranslateService} from '@ngx-translate/core';
 
 @Component({
-  selector: '<aroio-convolver-index-component>',
-  templateUrl: './index.component.html',
+  selector: '<aroio-convolver-wizard-component>',
+  templateUrl: './wizard.component.html',
   animations: [
     Animations.fadeHeightInOut,
   ]
 })
-export class ConvolverIndexComponent implements OnInit {
+export class ConvolverWizardComponent implements OnInit {
 
   form: FormGroup;
   convolutionEnabled = true;
 
   constructor(
     private  _api: HttpClient,
-    public translate: TranslateService
   ) {
   }
 

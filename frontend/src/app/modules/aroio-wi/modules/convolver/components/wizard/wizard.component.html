@@ -1,0 +1,109 @@
+<form [formGroup]="form">
+  <h4>Wizard zur Audio Korrektur Messung</h4>
+
+  <aw-wizard>
+    <aw-wizard-step stepTitle="Start">
+
+      <div class="wizard-steps__content">
+        <p>
+          Möchten Sie eine neue Messung vornehmen?
+        </p>
+
+        <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Wizard starten</button>
+      </div>
+
+      <!--<div class="action-bar">-->
+        <!--<div class="action-bar__item">-->
+        <!--</div>-->
+<!---->
+        <!--<div class="action-bar__item">-->
+          <!--<button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>-->
+        <!--</div>-->
+      <!--</div>-->
+
+    </aw-wizard-step>
+
+    <aw-wizard-step stepTitle="Ausrichtung Mikrofon">
+      <div class="wizard-steps__content">
+        Content of Step 2
+      </div>
+
+      <div class="action-bar">
+        <div class="action-bar__item">
+          <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+        </div>
+
+        <div class="action-bar__item">
+          <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>
+        </div>
+      </div>
+
+    </aw-wizard-step>
+
+    <aw-wizard-step stepTitle="Start der Messung">
+      <div class="wizard-steps__content">
+        Content of Step 3
+      </div>
+
+      <div class="action-bar">
+        <div class="action-bar__item">
+          <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+        </div>
+
+        <div class="action-bar__item">
+          <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>
+        </div>
+      </div>
+    </aw-wizard-step>
+
+    <aw-wizard-step stepTitle="Messung läuft">
+      <div class="wizard-steps__content">
+        Content of Step 4
+      </div>
+
+      <div class="action-bar">
+        <div class="action-bar__item">
+          <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+        </div>
+
+        <div class="action-bar__item">
+          <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>
+        </div>
+      </div>
+    </aw-wizard-step>
+
+    <aw-wizard-step stepTitle="Filter berechnen">
+      <div class="wizard-steps__content">
+        Content of Step 5
+      </div>
+
+      <div class="action-bar">
+        <div class="action-bar__item">
+          <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+        </div>
+
+        <div class="action-bar__item">
+          <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>
+        </div>
+      </div>
+    </aw-wizard-step>
+
+    <aw-wizard-step stepTitle="Messung abschließen">
+      <div class="wizard-steps__content">
+        Content of Step 6
+      </div>
+
+
+      <div class="action-bar">
+        <div class="action-bar__item">
+          <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+        </div>
+
+        <div class="action-bar__item">
+          <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>
+        </div>
+      </div>
+    </aw-wizard-step>
+  </aw-wizard>
+
+</form>

@@ -1,12 +1,34 @@
+<form [formGroup]="form">
+  <aroio-content-item [title]="'Einstellung'">
+    <aroio-form-switch [id]="'audio-convolution-form'" [label]="'Audio Convolution'" [hasContent]="false" (switched)="convolutionEnabled = $event"></aroio-form-switch>
+    <aroio-form-switch [id]="'pre-filter-form'" [label]="'Pre-Filter beim Booten'"></aroio-form-switch>
+  </aroio-content-item>
 
-<aroio-content-item>
-  <h2>convolver index</h2>
+  <aroio-content-item [title]="'Filter'">
+    <aroio-message [color]="'black-300'" *ngIf="!convolutionEnabled; else filterListe">Convolution ist nicht aktiviert</aroio-message>
 
-  <aroio-button [color]="'primary'">Test</aroio-button>
+    <ng-template #filterListe>
+      <aroio-filter-list>
+        <aroio-filter-list-item>
 
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, culpa deserunt eligendi fugiat harum, inventore iure magni modi molestias natus nesciunt nihil odio quam suscipit totam velit voluptatum? Laudantium, quibusdam.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, culpa deserunt eligendi fugiat harum, inventore iure magni modi molestias natus nesciunt nihil odio quam suscipit totam velit voluptatum? Laudantium, quibusdam.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, culpa deserunt eligendi fugiat harum, inventore iure magni modi molestias natus nesciunt nihil odio quam suscipit totam velit voluptatum? Laudantium, quibusdam.
-  </p>
-</aroio-content-item>
+        </aroio-filter-list-item>
+        <aroio-filter-list-item></aroio-filter-list-item>
+        <aroio-filter-list-item></aroio-filter-list-item>
+      </aroio-filter-list>
+    </ng-template>
+  </aroio-content-item>
+
+
+
+  <div class="action-bar">
+    <div class="action-bar__item">
+      <a [routerLink]="['/', translate.currentLang, 'convolver', 'wizard']">
+        <button aroio-btn type="submit" [color]="'primary'">Filter Hinzufügen</button>
+      </a>
+    </div>
+    <div class="action-bar__item">
+      <button aroio-btn type="submit" [color]="'primary'">Speichern</button>
+    </div>
+  </div>
+
+</form>

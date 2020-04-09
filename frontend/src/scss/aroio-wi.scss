@@ -10,7 +10,7 @@ $grid-gutter-width: 20px;
 
 @import "~bootstrap/scss/bootstrap-grid";
 @import "~@braune-digital/layout/scss/bd-layout-utilities";
-@import "~angular-archwizard/archwizard.css";
+//@import "~angular-archwizard/archwizard.css";
 
 // Mixins & Variables
 // ---------------------------------------------------------
@@ -57,6 +57,9 @@ $grid-gutter-width: 20px;
 // Components
 // ---------------------------------------------------------
 @import "components/action-bar";
+@import "components/aw-wizard";
+@import "components/message";
+@import "components/filter-list";
 @import "components/audio-carousel";
 @import "components/radio";
 @import "components/button";

@@ -5,6 +5,7 @@ import {AroioConvolverIndexPage} from './index/index.page';
 import {AroioConvolverRootPage} from './root/root.page';
 import {CommonModule} from '@angular/common';
 import {AroioConvolverModule} from '../../../modules/aroio-wi/modules/convolver/convolver.module';
+import {AroioConvolverWizardPage} from './wizard/wizard.page';
 
 export const ConvolverRoutes: Routes = [
   // ---------------------------
@@ -28,6 +29,20 @@ export const ConvolverRoutes: Routes = [
         path: '',
         component: AroioConvolverIndexPage,
       },
+      {
+        path: 'wizard',
+        pathMatch: 'full',
+        component: AroioConvolverWizardPage,
+        data: {
+          routeName: 'convolver_wizard',
+          meta: {
+            title: 'pages.convolver.meta.title',
+            description: 'pages.convolver.meta.description',
+            'og:description': 'pages.convolver.meta.description',
+            keywords: 'pages.convolver.meta.tags',
+          }
+        },
+      },
     ]
   },
 ];
@@ -43,7 +58,8 @@ export const ConvolverRoutes: Routes = [
   ],
   declarations: [
     AroioConvolverRootPage,
-    AroioConvolverIndexPage
+    AroioConvolverIndexPage,
+    AroioConvolverWizardPage
   ],
   exports: [RouterModule]
 })

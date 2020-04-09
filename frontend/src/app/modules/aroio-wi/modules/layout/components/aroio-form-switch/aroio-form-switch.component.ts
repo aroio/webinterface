@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Animations} from '../../animations/animations';
 
 @Component({
@@ -13,12 +13,7 @@ export class AroioFormSwitchComponent {
   @Input() id: string;
   @Input() label: string;
   @Input() hasContent = false;
-
-  switchState = false;
-
-
-  switched(event: any) {
-    this.switchState = event;
-  }
+  @Output() switched: EventEmitter<boolean> = new EventEmitter<boolean>();
+  switchState = true;
 
 }

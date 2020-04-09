@@ -1,7 +1,7 @@
 <form [formGroup]="form">
   <aroio-content-item [title]="'Verbindung'">
 
-    <aroio-form-switch [id]="'test-id-01'" [label]="'WLAN'" [hasContent]="true">
+    <aroio-form-switch [id]="'wifi-form'" [label]="'WLAN'" [hasContent]="true">
       <aroio-input [type]="'text'"
                    [formControl]="form.get('hostname')"
                    label="Hostname"
@@ -25,7 +25,7 @@
     </aroio-form-switch>
 
 
-    <aroio-form-switch [id]="'test-id-02'" [label]="'Automatische Konfiguration'">
+    <aroio-form-switch [id]="'automatic-config-form'" [label]="'Automatische Konfiguration'">
 
     </aroio-form-switch>
 
