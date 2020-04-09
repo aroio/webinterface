@@ -6,7 +6,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ElementHeightService} from './services/elementHeight.service';
-import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
 import {AroioContentItemComponent} from './components/aroio-content-item/aroio-content-item.component';
 import {AngularResizedEventModule} from 'angular-resize-event';
 import {AroioLoadingComponent} from './utils/aroio-loading/aroio-loading.component';
@@ -39,7 +38,6 @@ import {TabsModule} from 'ngx-bootstrap/tabs';
     BrowserAnimationsModule,
     TooltipModule,
     TabsModule,
-    AngularStickyThingsModule,
     AngularResizedEventModule
   ],
   declarations: [

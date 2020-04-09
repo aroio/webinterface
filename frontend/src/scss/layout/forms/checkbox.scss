@@ -37,11 +37,11 @@
       content: "";
       position: absolute;
       width: 0;
-      height: 8px;
-      border-bottom: 2px solid getColor(primary);
-      border-left: 2px solid getColor(primary);
-      top: 30%;
-      left: 41%;
+      height: 10px;
+      border-bottom: 3px solid getColor(primary);
+      border-left: 3px solid getColor(primary);
+      top: 28%;
+      left: 46%;
       transform-origin: bottom left;
       transform: rotate(-45deg);
       opacity: 0;
@@ -52,16 +52,8 @@
       }
     }
 
-    div{
-      padding-left: 30px;
-      text-indent: 0;
-      img{
-        width: 20px;
-      }
-    }
-
     .checkbox-label{
-      font-weight: getFontWeight(light);
+      font-weight: 400;
 
       @include hoverState {
         cursor: pointer;
@@ -92,7 +84,7 @@
 
     &:after {
       opacity: 1;
-      width: 12px;
+      width: 19px;
     }
   }
 

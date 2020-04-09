@@ -5,23 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/aroio-wi.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/aroio-wi.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/convolver.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/convolver.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-tabset/aroio-tabset.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-tabset/aroio-tabset.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/components/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/components/index/index.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/network.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/network.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/components/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/components/index/index.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/streaming.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/streaming.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/components/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/components/index/index.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/system.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/system.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/audio.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/audio.routing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/streaming.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/streaming/streaming.routing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/audio-carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/components/audio-carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/scss/components/radio.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/components/radio.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/scss/layout/forms/checkbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/layout/forms/checkbox.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,115 +26,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/system.module.ts">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="315">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#61#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/animations/animations.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="38" column="11" lean-forward="true" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/audio.routing.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/components/index/index.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#0#61#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" selection-start-line="22" selection-start-column="21" selection-end-line="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi-routing.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="12" column="132" selection-start-line="12" selection-start-column="132" selection-end-line="12" selection-end-column="132" />
             </state>
           </provider>
         </entry>
@@ -152,7 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wid</find>
       <find>hover</find>
       <find>yed</find>
       <find>ywd</find>
@@ -180,12 +77,18 @@
       <find>aroio-content-item__title</find>
       <find>ngx-boot</find>
       <find>ngx-boots</find>
+      <find>enableIvy</find>
+      <find>angular-sticky</find>
+      <find>weigh</find>
     </findStrings>
     <replaceStrings>
       <replace>bd</replace>
       <replace>footer</replace>
       <replace>primary</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/frontend</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -193,7 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/animations/animations.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-form-switch/aroio-form-switch.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-form-switch/aroio-form-switch.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/components/aroio-form/aroio-form-base.component.html" />
@@ -218,20 +120,12 @@
         <option value="$PROJECT_DIR$/frontend/src/scss/layout/tabs.scss" />
         <option value="$PROJECT_DIR$/frontend/src/scss/components/button.scss" />
         <option value="$PROJECT_DIR$/frontend/src/scss/components/action-bar.scss" />
-        <option value="$PROJECT_DIR$/frontend/src/scss/components/radio.scss" />
         <option value="$PROJECT_DIR$/frontend/src/app/utils/audio-configuration.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/scss/components/audio-carousel.scss" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/scss/components/content-item.scss" />
-        <option value="$PROJECT_DIR$/frontend/src/scss/layout/forms/checkbox.scss" />
         <option value="$PROJECT_DIR$/frontend/src/scss/aroio-wi.scss" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html" />
-        <option value="$PROJECT_DIR$/frontend/package.json" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi/audio/audio.routing.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/components/index/index.component.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/convolver.module.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/network/network.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/streaming/streaming.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/system.module.ts" />
@@ -244,12 +138,21 @@
         <option value="$PROJECT_DIR$/frontend/src/app/aroio-wi.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/aroio-wi-routing.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/components/radio.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts" />
+        <option value="$PROJECT_DIR$/frontend/tsconfig.json" />
+        <option value="$PROJECT_DIR$/frontend/package.json" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/components/audio-carousel.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/scss/layout/forms/checkbox.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
-    <option name="width" value="1572" />
+    <option name="y" value="23" />
+    <option name="width" value="1522" />
     <option name="height" value="997" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -357,42 +260,6 @@
               <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="convolver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webinterface" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="convolver" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webinterface" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="convolver" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webinterface" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -400,80 +267,15 @@
               <item name="webinterface" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="animations" type="462c0819:PsiDirectoryNode" />
+              <item name="scss" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webinterface" type="b2602c69:ProjectViewProjectNode" />
               <item name="webinterface" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="network" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webinterface" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="streaming" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webinterface" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webinterface" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webinterface" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webinterface" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="aroio-wi" type="462c0819:PsiDirectoryNode" />
-              <item name="audio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webinterface" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="scss" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -523,10 +325,10 @@
   </component>
   <component name="TYPO3Settings" version="182.3.26" />
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1572" height="997" extended-state="0" />
+    <frame x="0" y="23" width="1522" height="997" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834254" visible="true" weight="0.35074145" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834254" visible="true" weight="0.21785477" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5016575" side_tool="true" weight="0.35074145" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -560,31 +362,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/forms/_select.scss" />
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/forms/rte.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/utilities/variables/_colors.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="25" column="11" selection-start-line="25" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/node_modules/@braune-digital/layout/scss/utilities/mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/node_modules/bootstrap/scss/bootstrap.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/scss/components/form-switch.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -737,31 +514,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/utils/audio-configuration.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/components/radio.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/scss/components/content-item.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/forms/checkbox.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
         </state>
       </provider>
     </entry>
@@ -782,44 +538,10 @@
     <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/template.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scss/components/audio-carousel.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/convolver.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -866,29 +588,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" selection-start-line="22" selection-start-column="21" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/system/system.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -896,7 +601,7 @@
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/convolver/components/index/index.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>
@@ -906,7 +611,54 @@
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/animations/animations.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="38" column="11" lean-forward="true" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aroio-wi/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/tsconfig.spec.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -920,23 +672,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/aroio-wi-routing.module.ts">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/layout/layout.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+        <state relative-caret-position="753">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/aroio-wi.component.ts">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/audio.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        <state relative-caret-position="315">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/layout/forms/checkbox.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/components/radio.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/utils/audio-configuration.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/components/audio-carousel.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scss/components/switch.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/aroio-wi/modules/audio/components/index/index.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="132" selection-start-line="12" selection-start-column="132" selection-end-line="12" selection-end-column="132" />
         </state>
       </provider>
     </entry>

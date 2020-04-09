@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SwiperConfigInterface} from 'ngx-swiper-wrapper';
 import {AroioOutputs} from '../../../../../../utils/audio-configuration';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: '<aroio-audio-index-component>',
@@ -12,6 +13,9 @@ export class AudioIndexComponent implements OnInit {
   audioOutputs = AroioOutputs;
   activeOutput = 1;
   index = 0;
+  switchState = [];
+
+  form: FormGroup;
 
   config: SwiperConfigInterface = {
     direction: 'horizontal',
@@ -26,9 +30,29 @@ export class AudioIndexComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.form = new FormGroup({});
+    this.audioOutputs.forEach( output => {
+      output.player.forEach( player => {
+        this.form.addControl(output.id + '_' + player.id, new FormControl(''));
+      })
+    });
   }
 
 
+
+  getCheckboxState(switchState, id) {
+    return this.switchState[id];
+  }
+
+
+  changeStatus(switchState, id) {
+    console.log('changeStatus', id);
+    if (this.switchState[id]) {
+      this.switchState[id] = false;
+    } else {
+      this.switchState[id] = true;
+    }
+  }
 
   changeSelect(index) {
     setTimeout(_ => {

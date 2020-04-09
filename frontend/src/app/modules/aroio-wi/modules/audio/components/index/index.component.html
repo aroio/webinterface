@@ -8,9 +8,9 @@
 
 <aroio-content-item [title]="'Output'">
   <div class="action-bar action-bar--evenly">
-    <div class="action-bar__item" *ngFor="let output of audioOutputs">
+    <div class="action-bar__item" *ngFor="let output of audioOutputs; let outputIndex = index">
       <div class="radio">
-        <input id="{{ output.id }}" type="radio" value="{{ output.position }}" name="{{ output.id }}">
+        <input id="{{ output.id }}" type="radio" value="{{ output.position }}" name="audio_outputs" [checked]="index === outputIndex" (change)="index = outputIndex">
         <label for="{{ output.id }}">
           <span class="radio-label">{{ output.label }}</span>
         </label>
@@ -20,21 +20,21 @@
 </aroio-content-item>
 
 <aroio-content-item [title]="'Player'">
-  <swiper class="carousel">
+  <!--<swiper class="carousel">-->
   <swiper class="audio-carousel" [(index)]="index" (indexChange)="changeSelect($event)" [config]="config">
     <div class="audio-carousel__item" *ngFor="let output of audioOutputs">
       <ul>
         <li *ngFor="let player of output.player">
           <div class="radio" *ngIf="!output.multiselectable; else checkbox">
-            <input id="{{ player.id }}" type="radio" value="{{ player.position }}" name="{{ player.id }}">
-            <label for="{{ player.id }}">
+            <input id="{{ output.id }}_{{ player.id }}" type="radio" value="{{ player.position }}" name="{{ output.id }}">
+            <label for="{{ output.id }}_{{ player.id }}">
               <span class="radio-label">{{ player.label }}</span>
             </label>
           </div>
           <ng-template #checkbox>
             <div class="checkbox">
-              <input type="checkbox" id="{{ player.id }}"/>
-              <label for="{{ player.id }}">
+              <input type="checkbox" id="{{ output.id }}_{{ player.id }}" [formControl]="form.get(output.id + '_' + player.id)"/>
+              <label for="{{ output.id }}_{{ player.id }}">
                 <span class="checkbox-label">{{ player.label }}</span>
               </label>
             </div>

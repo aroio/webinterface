@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AroioLayoutModule} from '../layout/layout.module';
 import {AudioIndexComponent} from './components/index/index.component';
 import {SWIPER_CONFIG, SwiperConfigInterface, SwiperModule} from 'ngx-swiper-wrapper';
@@ -19,6 +19,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     RouterModule,
     TranslateModule,
     FormsModule,
+    ReactiveFormsModule,
     TabsModule,
     AroioLayoutModule,
     SwiperModule

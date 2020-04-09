@@ -21,7 +21,7 @@
 
 
     &.swiper-slide {
-      transition: $base-animation;
+      transition: transform ease-in-out .33s, opacity ease-in-out .33s;
       transform: scale(.8);
       opacity: .33;
 
