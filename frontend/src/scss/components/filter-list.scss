@@ -6,6 +6,7 @@
 
   .aroio-filter-list__item {
 
+
     &:nth-child(odd) {
       li {
         background-color: darken(getColor(black-200), 1.7);
@@ -23,6 +24,7 @@
       align-items: center;
       justify-content: space-between;
       padding: spacing(1) spacing(2);
+      transition: $base-animation;
 
       > * {
         padding-right: spacing(2);
@@ -32,31 +34,12 @@
         }
       }
 
-      .aroio-filter-list__item__switch {
-        min-width: 20%;
+      .radio input[type=radio] + label, .radio input[type=radio] + label .radio-label {
+        transition: none;
       }
 
-      .aroio-filter-list__item__comments {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-
-        .aroio-filter-list__item__comments__item {
-          padding: spacing(.5) spacing(3) spacing(.5) 0;
-
-          .aroio-filter-list__item__comments__item__label {
-            font-size: getFontSize(xs);
-            font-weight: 300;
-            padding-bottom: spacing(.5);
-
-          }
-
-          .aroio-filter-list__item__comments__item__text {
-            font-size: getFontSize(sm);
-            font-weight: 500;
-          }
-        }
+      .aroio-filter-list__item__switch {
+        min-width: 20%;
       }
 
       .aroio-filter-list__item__actions {
@@ -67,14 +50,63 @@
         .aroio-filter-list__item__actions__item {
           padding-left: spacing(1);
           opacity: .5;
-          transition: $base-animation;
 
           &:hover {
             cursor: pointer;
             opacity: 1;
           }
+
+          &.aroio-filter-list__item__actions__item--info {
+            transition: $base-animation;
+            color: getColor(primary);
+            padding-right: spacing(2);
+            opacity: 1;
+          }
         }
       }
+
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      li {
+        //box-shadow: inset 0px 0px 0px 2px getColor(primary);
+        background-color: getColor(primary);
+        color: getColor(white);
+
+        .aroio-filter-list__item__actions {
+          .aroio-filter-list__item__actions__item {
+            &.aroio-filter-list__item__actions__item--info {
+              color: getColor(white);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.aroio-filter-list__details {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .aroio-filter-list__details__item {
+    width: 33%;
+    padding: spacing(.5) spacing(3) spacing(2) 0;
+
+    .aroio-filter-list__details__item__label {
+      font-size: getFontSize(xs);
+      font-weight: 300;
+      padding-bottom: spacing(.5);
+
+    }
+
+    .aroio-filter-list__details__item__text {
+      font-size: getFontSize(sm);
+      font-weight: 500;
     }
   }
 }

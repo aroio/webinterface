@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"form\">\n  <aroio-content-item [title]=\"'Einstellung'\">\n    <aroio-form-switch [id]=\"'audio-convolution-form'\" [label]=\"'Audio Convolution'\" [hasContent]=\"false\" (switched)=\"convolutionEnabled = $event\"></aroio-form-switch>\n    <aroio-form-switch [id]=\"'pre-filter-form'\" [label]=\"'Pre-Filter beim Booten'\"></aroio-form-switch>\n  </aroio-content-item>\n\n  <aroio-content-item [title]=\"'Filter'\">\n    <aroio-message [color]=\"'black-300'\" *ngIf=\"!convolutionEnabled; else filterListe\">Convolution ist nicht aktiviert</aroio-message>\n\n    <ng-template #filterListe>\n      <aroio-filter-list>\n        <aroio-filter-list-item>\n\n        </aroio-filter-list-item>\n        <aroio-filter-list-item></aroio-filter-list-item>\n        <aroio-filter-list-item></aroio-filter-list-item>\n      </aroio-filter-list>\n    </ng-template>\n  </aroio-content-item>\n\n\n\n  <div class=\"action-bar\">\n    <div class=\"action-bar__item\">\n      <a [routerLink]=\"['/', translate.currentLang, 'convolver', 'wizard']\">\n        <button aroio-btn type=\"submit\" [color]=\"'primary'\">Filter Hinzufügen</button>\n      </a>\n    </div>\n    <div class=\"action-bar__item\">\n      <button aroio-btn type=\"submit\" [color]=\"'primary'\">Speichern</button>\n    </div>\n  </div>\n\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"form\">\n  <aroio-content-item [title]=\"'Einstellung'\">\n    <aroio-form-switch [id]=\"'audio-convolution-form'\" [label]=\"'Audio Convolution'\" [hasContent]=\"false\" (switched)=\"convolutionEnabled = $event\"></aroio-form-switch>\n    <aroio-form-switch [id]=\"'pre-filter-form'\" [label]=\"'Pre-Filter beim Booten'\"></aroio-form-switch>\n  </aroio-content-item>\n\n  <aroio-content-item [title]=\"'Filter'\">\n    <aroio-message [color]=\"'black-300'\" *ngIf=\"!convolutionEnabled; else filterListe\">Convolution ist nicht aktiviert</aroio-message>\n\n    <ng-template #filterListe>\n      <aroio-filter-list>\n        <aroio-filter-list-item></aroio-filter-list-item>\n        <aroio-filter-list-item></aroio-filter-list-item>\n        <aroio-filter-list-item></aroio-filter-list-item>\n      </aroio-filter-list>\n    </ng-template>\n  </aroio-content-item>\n\n\n\n  <div class=\"action-bar\">\n    <div class=\"action-bar__item\">\n      <a [routerLink]=\"['/', translate.currentLang, 'convolver', 'wizard']\">\n        <button aroio-btn type=\"submit\" [color]=\"'primary'\">Filter Hinzufügen</button>\n      </a>\n    </div>\n    <div class=\"action-bar__item\">\n      <button aroio-btn type=\"submit\" [color]=\"'primary'\">Speichern</button>\n    </div>\n  </div>\n\n</form>\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<li>\n  <div class=\"aroio-filter-list__item__switch\">\n    <div class=\"radio\">\n      <input id=\"{{ id }}\" type=\"radio\" value=\"{{ id }}\" name=\"{{ id }}\">\n      <label for=\"{{ id }}\">\n        <span class=\"radio-label\">{{ id }}</span>\n      </label>\n    </div>\n  </div>\n  <div class=\"aroio-filter-list__item__comments\">\n    <div class=\"aroio-filter-list__item__comments__item\">\n      <div class=\"aroio-filter-list__item__comments__item__label\">Kommentar:</div>\n      <div class=\"aroio-filter-list__item__comments__item__text\">Blablabla Blablabla Blablabla</div>\n    </div>\n    <div class=\"aroio-filter-list__item__comments__item\">\n      <div class=\"aroio-filter-list__item__comments__item__label\">Pegelabschwächung:</div>\n      <div class=\"aroio-filter-list__item__comments__item__text\">8dB</div>\n    </div>\n    <div class=\"aroio-filter-list__item__comments__item\">\n      <div class=\"aroio-filter-list__item__comments__item__label\">Verfügbare Samplingraten:</div>\n      <div class=\"aroio-filter-list__item__comments__item__text\">44.1kHz <strong>48kHz</strong> <strong>96kHz</strong> 192kHz</div>\n    </div>\n  </div>\n  <div class=\"aroio-filter-list__item__actions\">\n    <div class=\"aroio-filter-list__item__actions__item\">\n      <i class=\"fas fa-pencil-alt\"></i>\n    </div>\n    <div class=\"aroio-filter-list__item__actions__item\">\n      <i class=\"far fa-trash-alt\"></i>\n    </div>\n  </div>\n</li>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<li (click)=\"openModal(filterDetailsModal, 0)\">\n  <div class=\"aroio-filter-list__item__switch\">\n    <div class=\"radio\">\n      <input id=\"{{ id }}\" type=\"radio\" value=\"{{ id }}\" name=\"{{ id }}\">\n      <label for=\"{{ id }}\">\n        <span class=\"radio-label\">{{ id }}</span>\n      </label>\n    </div>\n  </div>\n  <!--<div class=\"aroio-filter-list__item__comments\">-->\n  <!--<div class=\"aroio-filter-list__item__comments__item\">-->\n  <!--<div class=\"aroio-filter-list__item__comments__item__label\">Kommentar:</div>-->\n  <!--<div class=\"aroio-filter-list__item__comments__item__text\">Blablabla Blablabla Blablabla</div>-->\n  <!--</div>-->\n  <!--<div class=\"aroio-filter-list__item__comments__item\">-->\n  <!--<div class=\"aroio-filter-list__item__comments__item__label\">Pegelabschwächung:</div>-->\n  <!--<div class=\"aroio-filter-list__item__comments__item__text\">8dB</div>-->\n  <!--</div>-->\n  <!--<div class=\"aroio-filter-list__item__comments__item\">-->\n  <!--<div class=\"aroio-filter-list__item__comments__item__label\">Verfügbare Samplingraten:</div>-->\n  <!--<div class=\"aroio-filter-list__item__comments__item__text\">44.1kHz <strong>48kHz</strong> <strong>96kHz</strong> 192kHz</div>-->\n  <!--</div>-->\n  <!--</div>-->\n\n  <div class=\"aroio-filter-list__item__actions\">\n    <div class=\"aroio-filter-list__item__actions__item aroio-filter-list__item__actions__item--info\">\n      Details\n      <i class=\"fas fa-info-circle\"></i>\n    </div>\n\n\n    <div class=\"aroio-filter-list__item__actions__item\">\n      <i class=\"fas fa-pencil-alt\"></i>\n    </div>\n    <div class=\"aroio-filter-list__item__actions__item\">\n      <i class=\"far fa-trash-alt\"></i>\n    </div>\n  </div>\n</li>\n\n\n<ng-template #filterDetailsModal>\n  <div class=\"modal-header\">\n    <h3>Filter Name</h3>\n  </div>\n  <div class=\"modal-content\">\n    <div class=\"aroio-filter-list__details\">\n      <div class=\"aroio-filter-list__details__item\">\n        <div class=\"aroio-filter-list__details__item__label\">Kommentar:</div>\n        <div class=\"aroio-filter-list__details__item__text\">Blablabla Blablabla Blablabla</div>\n      </div>\n      <div class=\"aroio-filter-list__details__item\">\n        <div class=\"aroio-filter-list__details__item__label\">Pegelabschwächung:</div>\n        <div class=\"aroio-filter-list__details__item__text\">8dB</div>\n      </div>\n      <div class=\"aroio-filter-list__details__item\">\n        <div class=\"aroio-filter-list__details__item__label\">Kommentar:</div>\n        <div class=\"aroio-filter-list__details__item__text\">Blablabla Blablabla Blablabla</div>\n      </div>\n      <div class=\"aroio-filter-list__details__item\">\n        <div class=\"aroio-filter-list__details__item__label\">Pegelabschwächung:</div>\n        <div class=\"aroio-filter-list__details__item__text\">8dB</div>\n      </div>\n      <div class=\"aroio-filter-list__details__item\">\n        <div class=\"aroio-filter-list__details__item__label\">Verfügbare Samplingraten:</div>\n        <div class=\"aroio-filter-list__details__item__text\">44.1kHz <strong>48kHz</strong> <strong>96kHz</strong>\n          192kHz\n        </div>\n      </div>\n      <div class=\"aroio-filter-list__details__item\">\n        <div class=\"aroio-filter-list__details__item__label\">Pegelabschwächung:</div>\n        <div class=\"aroio-filter-list__details__item__text\">8dB</div>\n      </div>\n      <div class=\"aroio-filter-list__details__item\">\n        <div class=\"aroio-filter-list__details__item__label\">Verfügbare Samplingraten:</div>\n        <div class=\"aroio-filter-list__details__item__text\">44.1kHz <strong>48kHz</strong> <strong>96kHz</strong>\n          192kHz\n        </div>\n      </div>\n    </div>\n\n  </div>\n  <div class=\"modal-footer\">\n    <div class=\"action-bar\">\n      <div class=\"action-bar__item\">\n        <aroio-button (click)=\"modalRef.hide()\" [type]=\"'button'\" [color]=\"'primary'\"\n                      [size]=\"'sm'\">Schließen</aroio-button>\n      </div>\n      <div class=\"action-bar__item\"></div>\n    </div>\n  </div>\n\n</ng-template>\n");
 
 /***/ }),
 
@@ -754,6 +754,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/fesm5/ngx-swiper-wrapper.js");
 /* harmony import */ var ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-bootstrap/tooltip */ "./node_modules/ngx-bootstrap/tooltip/fesm5/ngx-bootstrap-tooltip.js");
 /* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/fesm5/ngx-bootstrap-tabs.js");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/fesm5/ngx-bootstrap-modal.js");
+
 
 
 
@@ -819,6 +821,7 @@ var AroioWiModule = /** @class */ (function () {
                 _pages_aroio_wi_routing_module__WEBPACK_IMPORTED_MODULE_9__["AroioWiRoutingModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
                 ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_12__["SwiperModule"],
+                ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_15__["ModalModule"].forRoot(),
                 ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_13__["TooltipModule"].forRoot(),
                 ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_14__["TabsModule"].forRoot(),
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_6__["TranslateModule"].forRoot({
@@ -1414,13 +1417,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioFilterListItemComponent", function() { return AroioFilterListItemComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/fesm5/ngx-bootstrap-modal.js");
+
 
 
 var AroioFilterListItemComponent = /** @class */ (function () {
-    function AroioFilterListItemComponent() {
+    function AroioFilterListItemComponent(modalService) {
+        this.modalService = modalService;
         this.class = 'aroio-filter-list__item';
         this.id = Math.random().toString(36).substring(7);
+        // Modal Specific
+        this.modalIndex = 0;
     }
+    // Modal Specific
+    // -----------------------
+    AroioFilterListItemComponent.prototype.openModal = function (template, _index) {
+        this.modalRef = this.modalService.show(template, { class: 'modal--lg' });
+    };
+    AroioFilterListItemComponent.prototype.modalAccept = function (_index) {
+        console.log('Modal Accepted');
+        this.modalRef.hide();
+    };
+    AroioFilterListItemComponent.prototype.modalClose = function (_index) {
+        console.log('Modal Closed');
+        this.modalRef.hide();
+    };
+    AroioFilterListItemComponent.ctorParameters = function () { return [
+        { type: ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_2__["BsModalService"] }
+    ]; };
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('class')
     ], AroioFilterListItemComponent.prototype, "class", void 0);
@@ -1832,6 +1856,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/fesm5/ngx-bootstrap-tabs.js");
 /* harmony import */ var _components_aroio_filter_list_aroio_filter_list_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/aroio-filter-list/aroio-filter-list.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-filter-list/aroio-filter-list.component.ts");
 /* harmony import */ var _components_aroio_filter_list_aroio_filter_list_item_aroio_filter_list_item_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/aroio-filter-list/aroio-filter-list-item/aroio-filter-list-item.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-filter-list/aroio-filter-list-item/aroio-filter-list-item.component.ts");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/fesm5/ngx-bootstrap-modal.js");
+
 
 
 
@@ -1874,6 +1900,7 @@ var AroioLayoutModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
                 _braune_digital_form_utilities__WEBPACK_IMPORTED_MODULE_24__["FormUtilitiesModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["BrowserModule"],
+                ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_29__["ModalModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
                 ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_25__["TooltipModule"],
                 ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_26__["TabsModule"],

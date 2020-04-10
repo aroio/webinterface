@@ -12,6 +12,7 @@ import {FormErrorService, FormUtilitiesModule} from '@braune-digital/form-utilit
 import {SwiperModule} from 'ngx-swiper-wrapper';
 import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {TabsModule} from 'ngx-bootstrap/tabs';
+import {ModalModule} from 'ngx-bootstrap/modal';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -60,6 +61,7 @@ export class TranslateHandler implements MissingTranslationHandler {
     AroioWiRoutingModule,
     HttpClientModule,
     SwiperModule,
+    ModalModule.forRoot(),
     TooltipModule.forRoot(),
     TabsModule.forRoot(),
     TranslateModule.forRoot({

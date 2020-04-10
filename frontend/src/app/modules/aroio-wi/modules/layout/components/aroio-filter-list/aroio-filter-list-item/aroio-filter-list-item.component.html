@@ -1,4 +1,4 @@
-<li>
+<li (click)="openModal(filterDetailsModal, 0)">
   <div class="aroio-filter-list__item__switch">
     <div class="radio">
       <input id="{{ id }}" type="radio" value="{{ id }}" name="{{ id }}">
@@ -7,21 +7,28 @@
       </label>
     </div>
   </div>
-  <div class="aroio-filter-list__item__comments">
-    <div class="aroio-filter-list__item__comments__item">
-      <div class="aroio-filter-list__item__comments__item__label">Kommentar:</div>
-      <div class="aroio-filter-list__item__comments__item__text">Blablabla Blablabla Blablabla</div>
-    </div>
-    <div class="aroio-filter-list__item__comments__item">
-      <div class="aroio-filter-list__item__comments__item__label">Pegelabschwächung:</div>
-      <div class="aroio-filter-list__item__comments__item__text">8dB</div>
-    </div>
-    <div class="aroio-filter-list__item__comments__item">
-      <div class="aroio-filter-list__item__comments__item__label">Verfügbare Samplingraten:</div>
-      <div class="aroio-filter-list__item__comments__item__text">44.1kHz <strong>48kHz</strong> <strong>96kHz</strong> 192kHz</div>
-    </div>
-  </div>
+  <!--<div class="aroio-filter-list__item__comments">-->
+  <!--<div class="aroio-filter-list__item__comments__item">-->
+  <!--<div class="aroio-filter-list__item__comments__item__label">Kommentar:</div>-->
+  <!--<div class="aroio-filter-list__item__comments__item__text">Blablabla Blablabla Blablabla</div>-->
+  <!--</div>-->
+  <!--<div class="aroio-filter-list__item__comments__item">-->
+  <!--<div class="aroio-filter-list__item__comments__item__label">Pegelabschwächung:</div>-->
+  <!--<div class="aroio-filter-list__item__comments__item__text">8dB</div>-->
+  <!--</div>-->
+  <!--<div class="aroio-filter-list__item__comments__item">-->
+  <!--<div class="aroio-filter-list__item__comments__item__label">Verfügbare Samplingraten:</div>-->
+  <!--<div class="aroio-filter-list__item__comments__item__text">44.1kHz <strong>48kHz</strong> <strong>96kHz</strong> 192kHz</div>-->
+  <!--</div>-->
+  <!--</div>-->
+
   <div class="aroio-filter-list__item__actions">
+    <div class="aroio-filter-list__item__actions__item aroio-filter-list__item__actions__item--info">
+      Details
+      <i class="fas fa-info-circle"></i>
+    </div>
+
+
     <div class="aroio-filter-list__item__actions__item">
       <i class="fas fa-pencil-alt"></i>
     </div>
@@ -30,3 +37,57 @@
     </div>
   </div>
 </li>
+
+
+<ng-template #filterDetailsModal>
+  <div class="modal-header">
+    <h3>Filter Name</h3>
+  </div>
+  <div class="modal-content">
+    <div class="aroio-filter-list__details">
+      <div class="aroio-filter-list__details__item">
+        <div class="aroio-filter-list__details__item__label">Kommentar:</div>
+        <div class="aroio-filter-list__details__item__text">Blablabla Blablabla Blablabla</div>
+      </div>
+      <div class="aroio-filter-list__details__item">
+        <div class="aroio-filter-list__details__item__label">Pegelabschwächung:</div>
+        <div class="aroio-filter-list__details__item__text">8dB</div>
+      </div>
+      <div class="aroio-filter-list__details__item">
+        <div class="aroio-filter-list__details__item__label">Kommentar:</div>
+        <div class="aroio-filter-list__details__item__text">Blablabla Blablabla Blablabla</div>
+      </div>
+      <div class="aroio-filter-list__details__item">
+        <div class="aroio-filter-list__details__item__label">Pegelabschwächung:</div>
+        <div class="aroio-filter-list__details__item__text">8dB</div>
+      </div>
+      <div class="aroio-filter-list__details__item">
+        <div class="aroio-filter-list__details__item__label">Verfügbare Samplingraten:</div>
+        <div class="aroio-filter-list__details__item__text">44.1kHz <strong>48kHz</strong> <strong>96kHz</strong>
+          192kHz
+        </div>
+      </div>
+      <div class="aroio-filter-list__details__item">
+        <div class="aroio-filter-list__details__item__label">Pegelabschwächung:</div>
+        <div class="aroio-filter-list__details__item__text">8dB</div>
+      </div>
+      <div class="aroio-filter-list__details__item">
+        <div class="aroio-filter-list__details__item__label">Verfügbare Samplingraten:</div>
+        <div class="aroio-filter-list__details__item__text">44.1kHz <strong>48kHz</strong> <strong>96kHz</strong>
+          192kHz
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <div class="action-bar">
+      <div class="action-bar__item">
+        <aroio-button (click)="modalRef.hide()" [type]="'button'" [color]="'primary'"
+                      [size]="'sm'">Schließen</aroio-button>
+      </div>
+      <div class="action-bar__item"></div>
+    </div>
+  </div>
+
+</ng-template>

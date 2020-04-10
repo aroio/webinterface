@@ -27,6 +27,7 @@ import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {TabsModule} from 'ngx-bootstrap/tabs';
 import {AroioFilterListComponent} from './components/aroio-filter-list/aroio-filter-list.component';
 import {AroioFilterListItemComponent} from './components/aroio-filter-list/aroio-filter-list-item/aroio-filter-list-item.component';
+import {ModalModule} from 'ngx-bootstrap/modal';
 
 @NgModule({
   imports: [
@@ -37,6 +38,7 @@ import {AroioFilterListItemComponent} from './components/aroio-filter-list/aroio
     FormsModule,
     FormUtilitiesModule,
     BrowserModule,
+    ModalModule,
     BrowserAnimationsModule,
     TooltipModule,
     TabsModule,
