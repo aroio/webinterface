@@ -1937,6 +1937,7 @@ var AroioLayoutModule = /** @class */ (function () {
                 _components_aroio_sidebar_aroio_sidebar_component__WEBPACK_IMPORTED_MODULE_20__["AroioSidebarComponent"],
                 _components_aroio_switch_aroio_switch_component__WEBPACK_IMPORTED_MODULE_21__["AroioSwitchComponent"],
                 _components_aroio_form_switch_aroio_form_switch_component__WEBPACK_IMPORTED_MODULE_22__["AroioFormSwitchComponent"],
+                _utils_aroio_loading_aroio_loading_component__WEBPACK_IMPORTED_MODULE_10__["AroioLoadingComponent"],
                 _components_aroio_input_aroio_input_component__WEBPACK_IMPORTED_MODULE_23__["AroioInputComponent"],
                 // ---------------------------
                 // ---------------------------
@@ -1953,6 +1954,7 @@ var AroioLayoutModule = /** @class */ (function () {
                 _utils_aroio_message_aroio_message_component__WEBPACK_IMPORTED_MODULE_12__["AroioMessageComponent"],
                 _components_aroio_filter_list_aroio_filter_list_component__WEBPACK_IMPORTED_MODULE_27__["AroioFilterListComponent"],
                 _components_aroio_filter_list_aroio_filter_list_item_aroio_filter_list_item_component__WEBPACK_IMPORTED_MODULE_28__["AroioFilterListItemComponent"],
+                _utils_aroio_loading_aroio_loading_component__WEBPACK_IMPORTED_MODULE_10__["AroioLoadingComponent"],
                 // ---------------------------
                 // Layout
                 // ---------------------------

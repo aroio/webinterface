@@ -64,6 +64,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
     AroioSidebarComponent,
     AroioSwitchComponent,
     AroioFormSwitchComponent,
+    AroioLoadingComponent,
 
     AroioInputComponent,
     // ---------------------------
@@ -81,6 +82,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
     AroioMessageComponent,
     AroioFilterListComponent,
     AroioFilterListItemComponent,
+    AroioLoadingComponent,
     // ---------------------------
     // Layout
     // ---------------------------
