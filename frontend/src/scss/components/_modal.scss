@@ -66,6 +66,15 @@ $zindex-modal: $zindex-modal-backdrop + 10;
       display: block;
     }
   }
+
+  &.modal-header--underlined {
+    width: 100%;
+    font-size: getFontSize(sm);
+    font-weight: bold;
+    border-bottom: 1px solid getColor(black-900);
+    opacity: .3;
+    margin-bottom: spacing(2);
+  }
 }
 
 // Modal Content

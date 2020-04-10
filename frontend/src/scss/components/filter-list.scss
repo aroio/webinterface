@@ -68,7 +68,6 @@
     }
 
     &:hover {
-      cursor: pointer;
 
       li {
         //box-shadow: inset 0px 0px 0px 2px getColor(primary);
@@ -78,6 +77,7 @@
         .aroio-filter-list__item__actions {
           .aroio-filter-list__item__actions__item {
             &.aroio-filter-list__item__actions__item--info {
+              cursor: pointer;
               color: getColor(white);
             }
           }

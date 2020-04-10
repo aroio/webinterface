@@ -1,7 +1,12 @@
 <form [formGroup]="form">
   <aroio-content-item [title]="'Verbindung'">
 
-    <aroio-form-switch [id]="'wifi-form'" [label]="'WLAN'" [hasContent]="true">
+    <aroio-form-switch [id]="'wifi-form'" [label]="'WLAN'" >
+
+    </aroio-form-switch>
+
+
+    <aroio-form-switch [id]="'automatic-config-form'" [label]="'Automatische Konfiguration'" [hasContent]="true">
       <aroio-input [type]="'text'"
                    [formControl]="form.get('hostname')"
                    label="Hostname"
@@ -22,11 +27,6 @@
                 label="Gateway"
                 placeholder="Gateway"
       ></bd-input>
-    </aroio-form-switch>
-
-
-    <aroio-form-switch [id]="'automatic-config-form'" [label]="'Automatische Konfiguration'">
-
     </aroio-form-switch>
 
   </aroio-content-item>

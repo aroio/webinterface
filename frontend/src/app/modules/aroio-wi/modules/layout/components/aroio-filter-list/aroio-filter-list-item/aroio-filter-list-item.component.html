@@ -1,4 +1,4 @@
-<li (click)="openModal(filterDetailsModal, 0)">
+<li>
   <div class="aroio-filter-list__item__switch">
     <div class="radio">
       <input id="{{ id }}" type="radio" value="{{ id }}" name="{{ id }}">
@@ -7,30 +7,16 @@
       </label>
     </div>
   </div>
-  <!--<div class="aroio-filter-list__item__comments">-->
-  <!--<div class="aroio-filter-list__item__comments__item">-->
-  <!--<div class="aroio-filter-list__item__comments__item__label">Kommentar:</div>-->
-  <!--<div class="aroio-filter-list__item__comments__item__text">Blablabla Blablabla Blablabla</div>-->
-  <!--</div>-->
-  <!--<div class="aroio-filter-list__item__comments__item">-->
-  <!--<div class="aroio-filter-list__item__comments__item__label">Pegelabschwächung:</div>-->
-  <!--<div class="aroio-filter-list__item__comments__item__text">8dB</div>-->
-  <!--</div>-->
-  <!--<div class="aroio-filter-list__item__comments__item">-->
-  <!--<div class="aroio-filter-list__item__comments__item__label">Verfügbare Samplingraten:</div>-->
-  <!--<div class="aroio-filter-list__item__comments__item__text">44.1kHz <strong>48kHz</strong> <strong>96kHz</strong> 192kHz</div>-->
-  <!--</div>-->
-  <!--</div>-->
 
   <div class="aroio-filter-list__item__actions">
-    <div class="aroio-filter-list__item__actions__item aroio-filter-list__item__actions__item--info">
+    <div class="aroio-filter-list__item__actions__item aroio-filter-list__item__actions__item--info" (click)="openModal(filterDetailsModal, 0)">
       Details
       <i class="fas fa-info-circle"></i>
     </div>
 
 
     <div class="aroio-filter-list__item__actions__item">
-      <i class="fas fa-pencil-alt"></i>
+      <i class="fas fa-pencil-alt" (click)="openModal(filterEditModal, 1)"></i>
     </div>
     <div class="aroio-filter-list__item__actions__item">
       <i class="far fa-trash-alt"></i>
@@ -39,9 +25,43 @@
 </li>
 
 
+<ng-template #filterEditModal>
+  <div class="modal-header modal-header--underlined">
+    Filter Name bearbeiten
+  </div>
+  <div class="modal-content">
+    <aroio-input [type]="'text'"
+                 [formControl]="form.get('filterName')"
+                 label="Filter"
+                 placeholder="Filter"
+    ></aroio-input>
+    <aroio-input [type]="'text'"
+                 [formControl]="form.get('comment')"
+                 label="Notiz"
+                 placeholder="Ihre persönliche Notiz"
+    ></aroio-input>
+    <aroio-input [type]="'text'"
+                 [formControl]="form.get('pegel')"
+                 label="Pegel"
+                 placeholder="-0dB"
+    ></aroio-input>
+  </div>
+  <div class="modal-footer">
+    <div class="action-bar">
+      <div class="action-bar__item">
+        <aroio-button (click)="modalClose()" [type]="'button'" [color]="'black-300'">Schließen</aroio-button>
+      </div>
+      <div class="action-bar__item">
+        <aroio-button (click)="modalClose()" [type]="'button'" [color]="'primary'">Speichern</aroio-button>
+      </div>
+    </div>
+  </div>
+
+</ng-template>
+
 <ng-template #filterDetailsModal>
-  <div class="modal-header">
-    <h3>Filter Name</h3>
+  <div class="modal-header modal-header--underlined">
+    Filter Name
   </div>
   <div class="modal-content">
     <div class="aroio-filter-list__details">
@@ -83,8 +103,9 @@
   <div class="modal-footer">
     <div class="action-bar">
       <div class="action-bar__item">
-        <aroio-button (click)="modalRef.hide()" [type]="'button'" [color]="'primary'"
-                      [size]="'sm'">Schließen</aroio-button>
+        <aroio-button (click)="modalClose()" [type]="'button'" [color]="'primary'"
+                      [size]="'sm'">Schließen
+        </aroio-button>
       </div>
       <div class="action-bar__item"></div>
     </div>
