@@ -11,7 +11,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
   selector: 'aroio-input',
   templateUrl: './aroio-input.component.html'
 })
-export class AroioInputComponent extends InputComponent {
+export class AroioInputComponent extends InputComponent implements ControlValueAccessor {
 
   get inputGroupClass(): string {
     if (this.prepend) {

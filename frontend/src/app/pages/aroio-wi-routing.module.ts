@@ -12,7 +12,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
 
 export const routes: Routes = [
   {path: '', redirectTo: environment.defaultLocale + '/network', pathMatch: 'full'},
-  {path: ':lang', redirectTo: ':lang/configuration', pathMatch: 'full'},
+  {path: ':lang', redirectTo: ':lang/network', pathMatch: 'full'},
 
   // 404 Route (has to initialized at the end)
   // { path: '**', component: NotFoundPage },

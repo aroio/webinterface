@@ -1,4 +1,5 @@
 import {Component, EventEmitter, HostBinding, Input, OnInit, Output} from '@angular/core';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'aroio-switch',
@@ -7,8 +8,8 @@ import {Component, EventEmitter, HostBinding, Input, OnInit, Output} from '@angu
 export class AroioSwitchComponent implements OnInit {
 
   @Input() id: string;
-  @Input() value = true;
   @Input() checked = true;
+  @Input() formControl: FormControl;
   @Input() switchState = true;
   @Output() switched: EventEmitter<any> = new EventEmitter<any>();
 

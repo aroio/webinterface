@@ -5,11 +5,11 @@
       {{ label }}
     </div>
     <div class="aroio-form-switch__head__action">
-      <aroio-switch [id]="id" (switched)="switched.emit($event); switchState = $event"></aroio-switch>
+      <aroio-switch [id]="id" [switchState]="switchState" (switched)="switched.emit($event); switchState = $event"></aroio-switch>
     </div>
   </div>
 
-  <div class="aroio-form-switch__content" *ngIf="switchState && hasContent" [@fadeHeightInOut]>
+  <div class="aroio-form-switch__content" *ngIf="(inverted ? !switchState : switchState) && hasContent" [@fadeHeightInOut]>
     <ng-content></ng-content>
   </div>
 </div>

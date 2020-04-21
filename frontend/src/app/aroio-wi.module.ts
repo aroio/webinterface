@@ -13,10 +13,11 @@ import {SwiperModule} from 'ngx-swiper-wrapper';
 import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {TabsModule} from 'ngx-bootstrap/tabs';
 import {ModalModule} from 'ngx-bootstrap/modal';
+import {environment} from '../environments/environment';
 
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, '/content/translations/', '');
+  return new TranslateHttpLoader(http, environment.api + 'translations/', '');
 }
 // Handler for missing translations debuggin
 export class TranslateHandler implements MissingTranslationHandler {

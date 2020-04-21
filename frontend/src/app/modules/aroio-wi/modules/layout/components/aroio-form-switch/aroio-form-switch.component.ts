@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Animations} from '../../animations/animations';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'aroio-form-switch',
@@ -13,7 +14,8 @@ export class AroioFormSwitchComponent {
   @Input() id: string;
   @Input() label: string;
   @Input() hasContent = false;
+  @Input() inverted = false;
+  @Input() switchState = false;
   @Output() switched: EventEmitter<boolean> = new EventEmitter<boolean>();
-  switchState = true;
 
 }
