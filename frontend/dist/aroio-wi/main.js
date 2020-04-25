@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<router-outlet></router-outlet>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<aroio-alert [closeable]=\"true\"></aroio-alert>\n<router-outlet></router-outlet>\n");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>\n  Hier kann das Ausgang-Routing des Aroio System eingestellt werden. Wählen Sie zuerst den gewünschten Ausgang. In\n  Abhängigkeit zu dem Ausgang können Sie dann die gewünschten Player auswhlen. Eine Mehrfachauswahl ist nur bei dem\n  Ausgang „Bus“ und „Convolver“ möglich. Am Ende können Sie die Kodierung des physikalischen Audio Ausgangs wählen.\n  Mid/Side macht nur in zusammenhang mit unserer Geräte sinn, wenn Sie dort die Hardwareseitige Cleaner-Funktion Nutzen\n  können.\n</p>\n\n<aroio-content-item [title]=\"'Output'\">\n  <div class=\"action-bar action-bar--evenly\">\n    <div class=\"action-bar__item\" *ngFor=\"let output of audioOutputs; let outputIndex = index\">\n      <div class=\"radio\">\n        <input id=\"{{ output.id }}\" type=\"radio\" value=\"{{ output.position }}\" name=\"audio_outputs\" [checked]=\"index === outputIndex\" (change)=\"index = outputIndex\">\n        <label for=\"{{ output.id }}\">\n          <span class=\"radio-label\">{{ output.label }}</span>\n        </label>\n      </div>\n    </div>\n  </div>\n</aroio-content-item>\n\n<aroio-content-item [title]=\"'Player'\">\n  <!--<swiper class=\"carousel\">-->\n  <swiper class=\"audio-carousel\" [(index)]=\"index\" (indexChange)=\"changeSelect($event)\" [config]=\"config\">\n    <div class=\"audio-carousel__item\" *ngFor=\"let output of audioOutputs\">\n      <ul>\n        <li *ngFor=\"let player of output.player\">\n          <div class=\"radio\" *ngIf=\"!output.multiselectable; else checkbox\">\n            <input id=\"{{ output.id }}_{{ player.id }}\" type=\"radio\" value=\"{{ player.position }}\" name=\"{{ output.id }}\">\n            <label for=\"{{ output.id }}_{{ player.id }}\">\n              <span class=\"radio-label\">{{ player.label }}</span>\n            </label>\n          </div>\n          <ng-template #checkbox>\n            <div class=\"checkbox\">\n              <input type=\"checkbox\" id=\"{{ output.id }}_{{ player.id }}\" [formControl]=\"form.get(output.id + '_' + player.id)\"/>\n              <label for=\"{{ output.id }}_{{ player.id }}\">\n                <span class=\"checkbox-label\">{{ player.label }}</span>\n              </label>\n            </div>\n          </ng-template>\n        </li>\n      </ul>\n    </div>\n  </swiper>\n\n</aroio-content-item>\n\n<aroio-content-item [title]=\"'Kodierung'\">\n  <div class=\"action-bar action-bar--evenly\">\n    <div class=\"action-bar__item\" *ngFor=\"let coding of audioOutputs[activeOutput].codings\">\n      <div class=\"radio\">\n        <input id=\"{{ coding.id }}\" type=\"radio\" value=\"{{ coding.position }}\" name=\"{{ coding.id }}\">\n        <label for=\"{{ coding.id }}\">\n          <span class=\"radio-label\">{{ coding.label }}</span>\n        </label>\n      </div>\n    </div>\n  </div>\n\n</aroio-content-item>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>\n  Hier kann das Ausgang-Routing des Aroio System eingestellt werden. Wählen Sie zuerst den gewünschten Ausgang. In\n  Abhängigkeit zu dem Ausgang können Sie dann die gewünschten Player auswhlen. Eine Mehrfachauswahl ist nur bei dem\n  Ausgang „Bus“ und „Convolver“ möglich. Am Ende können Sie die Kodierung des physikalischen Audio Ausgangs wählen.\n  Mid/Side macht nur in zusammenhang mit unserer Geräte sinn, wenn Sie dort die Hardwareseitige Cleaner-Funktion Nutzen\n  können.\n</p>\n\n<aroio-content-item [title]=\"'Output'\">\n  <div class=\"action-bar action-bar--evenly\">\n    <div class=\"action-bar__item\" *ngFor=\"let output of audioOutputs; let outputIndex = index\">\n      <div class=\"radio\">\n        <input id=\"{{ output.id }}\" type=\"radio\" value=\"{{ output.position }}\" name=\"audio_outputs\" [checked]=\"index === outputIndex\" (change)=\"index = outputIndex\">\n        <label for=\"{{ output.id }}\">\n          <span class=\"radio-label\">{{ output.label }}</span>\n        </label>\n      </div>\n    </div>\n  </div>\n</aroio-content-item>\n\n<aroio-content-item [title]=\"'Player'\">\n  <!--<swiper class=\"carousel\">-->\n  <swiper class=\"audio-carousel\" [(index)]=\"index\" (indexChange)=\"changeSelect($event)\" [config]=\"config\">\n    <div class=\"audio-carousel__item\" *ngFor=\"let output of audioOutputs\">\n      <ul>\n        <li *ngFor=\"let player of output.player\">\n          <div class=\"radio\" *ngIf=\"!output.multiselectable; else checkbox\">\n            <input id=\"{{ output.id }}_{{ player.id }}\" type=\"radio\" value=\"{{ player.position }}\" name=\"{{ output.id }}\">\n            <label for=\"{{ output.id }}_{{ player.id }}\">\n              <span class=\"radio-label\">{{ player.label }}</span>\n            </label>\n          </div>\n          <ng-template #checkbox>\n            <div class=\"checkbox\">\n              <input type=\"checkbox\" id=\"{{ output.id }}_{{ player.id }}\" [formControl]=\"form.get(output.id + '_' + player.id)\"/>\n              <label for=\"{{ output.id }}_{{ player.id }}\">\n                <span class=\"checkbox-label\">{{ player.label }}</span>\n              </label>\n            </div>\n          </ng-template>\n        </li>\n      </ul>\n    </div>\n  </swiper>\n\n</aroio-content-item>\n\n<aroio-content-item [title]=\"'Kodierung'\">\n  <div class=\"action-bar action-bar--evenly\">\n    <div class=\"action-bar__item\" *ngFor=\"let coding of audioOutputs[activeOutput].codings\">\n      <div class=\"radio\">\n        <input id=\"{{ coding.id }}\" type=\"radio\" value=\"{{ coding.position }}\" name=\"{{ coding.id }}\">\n        <label for=\"{{ coding.id }}\">\n          <span class=\"radio-label\">{{ coding.label }}</span>\n        </label>\n      </div>\n    </div>\n  </div>\n</aroio-content-item>\n\n\n\n<div class=\"action-bar\">\n  <div class=\"action-bar__item\">\n    <!--<a [routerLink]=\"['/', translate.currentLang, 'convolver', 'wizard']\">-->\n      <!--<button aroio-btn type=\"submit\" [color]=\"'primary'\">Filter Hinzufügen</button>-->\n    <!--</a>-->\n  </div>\n  <div class=\"action-bar__item\">\n    <button aroio-btn type=\"submit\" [color]=\"'primary'\">Speichern</button>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"form\">\n  <aroio-content-item [title]=\"'Einstellung'\">\n    <aroio-form-switch [id]=\"'audio-convolution-form'\" [label]=\"'Audio Convolution'\" [hasContent]=\"false\" (switched)=\"convolutionEnabled = $event\"></aroio-form-switch>\n    <aroio-form-switch [id]=\"'pre-filter-form'\" [label]=\"'Pre-Filter beim Booten'\"></aroio-form-switch>\n  </aroio-content-item>\n\n  <aroio-content-item [title]=\"'Filter'\">\n    <aroio-message [color]=\"'black-300'\" *ngIf=\"!convolutionEnabled; else filterListe\">Convolution ist nicht aktiviert</aroio-message>\n\n    <ng-template #filterListe>\n      <aroio-filter-list>\n        <aroio-filter-list-item></aroio-filter-list-item>\n        <aroio-filter-list-item></aroio-filter-list-item>\n        <aroio-filter-list-item></aroio-filter-list-item>\n      </aroio-filter-list>\n    </ng-template>\n  </aroio-content-item>\n\n\n\n  <div class=\"action-bar\">\n    <div class=\"action-bar__item\">\n      <a [routerLink]=\"['/', translate.currentLang, 'convolver', 'wizard']\">\n        <button aroio-btn type=\"submit\" [color]=\"'primary'\">Filter Hinzufügen</button>\n      </a>\n    </div>\n    <div class=\"action-bar__item\">\n      <button aroio-btn type=\"submit\" [color]=\"'primary'\">Speichern</button>\n    </div>\n  </div>\n\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"form\" (submit)=\"submitForm($event)\" *ngIf=\"form\">\n  <aroio-content-item [title]=\"'Einstellungen'\">\n\n    <aroio-form-switch [id]=\"'pre-filter-form'\"\n                       [label]=\"'Pre-Filter beim Booten'\"\n                       [switchState]=\"form.get('load_prefilter').value\"\n                       (switched)=\"form.get('load_prefilter').setValue($event)\"\n    ></aroio-form-switch>\n    <aroio-form-switch [id]=\"'audio-convolution-form'\"\n                       [label]=\"'Audio Convolution'\"\n                       [hasContent]=\"true\"\n                       [switchState]=\"form.get('brutefir').value\"\n                       (switched)=\"form.get('brutefir').setValue($event)\"\n    >\n\n\n      <aroio-content-item [title]=\"'Filter'\">\n        <aroio-message [color]=\"'black-300'\"\n                       *ngIf=\"!form.get('brutefir').value; else filterListe\"\n        >Convolution ist nicht aktiviert\n        </aroio-message>\n\n        <ng-template #filterListe>\n          <aroio-filter-list>\n            <aroio-filter-list-item></aroio-filter-list-item>\n            <aroio-filter-list-item></aroio-filter-list-item>\n            <aroio-filter-list-item></aroio-filter-list-item>\n          </aroio-filter-list>\n        </ng-template>\n      </aroio-content-item>\n\n\n    </aroio-form-switch>\n  </aroio-content-item>\n\n  <div class=\"action-bar\">\n    <div class=\"action-bar__item\">\n      <a [routerLink]=\"['/', translate.currentLang, 'convolver', 'wizard']\">\n        <button aroio-btn type=\"submit\" [color]=\"'primary'\">Filter Hinzufügen</button>\n      </a>\n    </div>\n    <div class=\"action-bar__item\">\n      <button aroio-btn type=\"submit\" [color]=\"'primary'\">Speichern</button>\n    </div>\n  </div>\n\n</form>\n");
 
 /***/ }),
 
@@ -72,6 +72,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"form\">\n  <h4>Wizard zur Audio Korrektur Messung</h4>\n\n  <aw-wizard>\n    <aw-wizard-step stepTitle=\"Start\">\n\n      <div class=\"wizard-steps__content\">\n        <p>\n          Möchten Sie eine neue Messung vornehmen?\n        </p>\n\n        <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Wizard starten</button>\n      </div>\n\n      <!--<div class=\"action-bar\">-->\n        <!--<div class=\"action-bar__item\">-->\n        <!--</div>-->\n<!---->\n        <!--<div class=\"action-bar__item\">-->\n          <!--<button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>-->\n        <!--</div>-->\n      <!--</div>-->\n\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Ausrichtung Mikrofon\">\n      <div class=\"wizard-steps__content\">\n        Content of Step 2\n      </div>\n\n      <div class=\"action-bar\">\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n        </div>\n\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>\n        </div>\n      </div>\n\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Start der Messung\">\n      <div class=\"wizard-steps__content\">\n        Content of Step 3\n      </div>\n\n      <div class=\"action-bar\">\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n        </div>\n\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>\n        </div>\n      </div>\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Messung läuft\">\n      <div class=\"wizard-steps__content\">\n        Content of Step 4\n      </div>\n\n      <div class=\"action-bar\">\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n        </div>\n\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>\n        </div>\n      </div>\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Filter berechnen\">\n      <div class=\"wizard-steps__content\">\n        Content of Step 5\n      </div>\n\n      <div class=\"action-bar\">\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n        </div>\n\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>\n        </div>\n      </div>\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Messung abschließen\">\n      <div class=\"wizard-steps__content\">\n        Content of Step 6\n      </div>\n\n\n      <div class=\"action-bar\">\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n        </div>\n\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>\n        </div>\n      </div>\n    </aw-wizard-step>\n  </aw-wizard>\n\n</form>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/layout/components/aroio-alert/aroio-alert.component.html":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/layout/components/aroio-alert/aroio-alert.component.html ***!
+  \*****************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div [ngClass]=\"[hasNavbar ? 'alert-box' : 'alert-box  alert-box--no-navigation']\">\n  <div class=\"alert alert--{{ item.type }} flash\"  *ngFor=\"let item of _alerts\" [@slideRightOut] (@slideRightOut.done)=\"removeAlertWithTimeout(item)\">\n    <div class=\"alert__title\" *ngIf=\"item.title\">\n      {{ item.title | translate }}\n    </div>\n    <div class=\"alert__body\" *ngIf=\"item.message\">\n      {{ item.message | translate }}\n    </div>\n\n    <div class=\"alert__close\" *ngIf=\"closeable\">\n      <div class=\"icon\" (click)=\"removeAlert(item)\">\n        <i class=\"fas fa-times\"></i>\n      </div>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -162,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"aroio-form-switch\">\n  <div class=\"aroio-form-switch__head\">\n    <div class=\"aroio-form-switch__head__label\">\n      {{ label }}\n    </div>\n    <div class=\"aroio-form-switch__head__action\">\n      <aroio-switch [id]=\"id\" (switched)=\"switched.emit($event); switchState = $event\"></aroio-switch>\n    </div>\n  </div>\n\n  <div class=\"aroio-form-switch__content\" *ngIf=\"switchState && hasContent\" [@fadeHeightInOut]>\n    <ng-content></ng-content>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"aroio-form-switch\" [ngClass]=\"{'aroio-form-switch--disabled': disabled}\">\n  <div class=\"aroio-form-switch__head\">\n    <div class=\"aroio-form-switch__head__label\">\n      {{ label }}\n    </div>\n    <div class=\"aroio-form-switch__head__action\">\n      <aroio-switch [id]=\"id\" [switchState]=\"switchState\" (switched)=\"switched.emit($event); switchState = $event\"></aroio-switch>\n    </div>\n  </div>\n\n  <div class=\"aroio-form-switch__content\" *ngIf=\"(inverted ? !switchState : switchState) && hasContent && !disabled\" [@fadeHeightInOut]>\n    <ng-content></ng-content>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -175,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header\">\n  <div class=\"header__brand\">\n    <img src=\"/assets/abacus_logo_wide.png\" alt=\"Abacus Electronics Logo\">\n  </div>\n\n  <div class=\"header__title\">\n    <!--AroioOS Webinterface 2.0-->\n  </div>\n\n  <div class=\"header__actions\">\n    <div class=\"header__actions__item\">\n        Webinterface <i class=\"fas fa-cog\"></i>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"header\">\n  <div class=\"header__brand\">\n    <img src=\"/assets/abacus_logo_wide.png\" alt=\"Abacus Electronics Logo\">\n  </div>\n\n  <div class=\"header__title\">\n    <!--AroioOS Webinterface 2.0-->\n  </div>\n\n  <div class=\"header__actions\">\n    <div class=\"header__actions__item\">\n        Webinterface <i class=\"fas fa-cog\"></i>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -188,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"{{ options.classFormGroup }}\" [ngClass]=\"{'focus': focus, 'has-errors': errors.length, 'has-value': formControl.value}\">\n\n  <div class=\"{{ options.classFromInput }}\">\n\n    <div class=\"{{ options.classFromLegend }}\">\n\n      <bd-form-label [label]=\"label\" [inputId]=\"uniqueId\"></bd-form-label>\n      <bd-form-required [required]=\"requiredMarker\" *ngIf=\"requiredMarker\"></bd-form-required>\n      <bd-form-tips [tips]=\"tips\" *ngIf=\"tips\"></bd-form-tips>\n      <bd-form-counter [maxLength]=\"maxLength\" [form]=\"formControl\" *ngIf=\"maxLength && options.counterBefore\"></bd-form-counter>\n      <bd-form-label-icon [icon]=\"icon\" (click)=\"handleIconClicked($event)\"></bd-form-label-icon>\n    </div>\n\n    <div class=\"{{ inputGroupClass }}\">\n\n      <bd-form-addon [text]=\"prepend\" position=\"prepend\" *ngIf=\"prepend\"></bd-form-addon>\n\n      <input [type]=\"type\"\n             [step]=\"step\"\n             class=\"{{ options.classFormControl }} {{ inputClass }}\"\n             [placeholder]=\"placeholder\"\n             [autocomplete]=\"autocomplete\"\n             [attr.id]=\"uniqueId\"\n             [attr.maxlength]=\"maxLength\"\n             [attr.aria-label]=\"placeholder\"\n             (focusout)=\"handleOnFocusOut($event.target.value)\"\n             (focus)=\"handleOnFocus($event.target.value)\"\n             (change)=\"handleOnInputChange($event.target.value)\"\n             (keypress)=\"handleOnInputKeypress($event.target.value)\"\n             (keyup)=\"handleOnInputKeyup($event.target.value)\"\n             (keydown)=\"handleOnKeydown($event)\"\n             ngDefaultControl>\n\n      <bd-form-addon [text]=\"append\" position=\"append\" *ngIf=\"append\"></bd-form-addon>\n\n      <div class=\"form-errors-sign\" *ngIf=\"errors.length\">\n        <div class=\"form-errors-sign__sign\">\n          <i class=\"fas fa-exclamation-triangle\"></i>\n        </div>\n        <bd-form-errors [errors]=\"errors\"></bd-form-errors>\n      </div>\n\n\n    </div>\n  </div>\n\n  <bd-form-counter [maxLength]=\"maxLength\" [form]=\"formControl\" *ngIf=\"maxLength && !options.counterBefore\"></bd-form-counter>\n  <bd-form-help [label]=\"help\" *ngIf=\"help\"></bd-form-help>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"{{ options.classFormGroup }}\" [ngClass]=\"{'focus': focus, 'has-errors': errors.length, 'has-value': formControl.value}\">\n\n  <div class=\"{{ options.classFromInput }}\">\n\n    <div class=\"{{ options.classFromLegend }}\">\n\n      <bd-form-label [label]=\"label\" [inputId]=\"uniqueId\"></bd-form-label>\n      <bd-form-required [required]=\"requiredMarker\" *ngIf=\"requiredMarker\"></bd-form-required>\n      <bd-form-tips [tips]=\"tips\" *ngIf=\"tips\"></bd-form-tips>\n      <bd-form-counter [maxLength]=\"maxLength\" [form]=\"formControl\" *ngIf=\"maxLength && options.counterBefore\"></bd-form-counter>\n      <bd-form-label-icon [icon]=\"icon\" (click)=\"handleIconClicked($event)\"></bd-form-label-icon>\n    </div>\n\n    <div class=\"{{ inputGroupClass }}\">\n\n      <bd-form-addon [text]=\"prepend\" position=\"prepend\" *ngIf=\"prepend\"></bd-form-addon>\n\n      <input [type]=\"type\"\n             [step]=\"step\"\n             class=\"{{ options.classFormControl }} {{ inputClass }}\"\n             [placeholder]=\"placeholder\"\n             [autocomplete]=\"autocomplete\"\n             [attr.id]=\"uniqueId\"\n             [attr.maxlength]=\"maxLength\"\n             [attr.aria-label]=\"placeholder\"\n             (focusout)=\"handleOnFocusOut($event.target.value)\"\n             (focus)=\"handleOnFocus($event.target.value)\"\n             (change)=\"handleOnInputChange($event.target.value)\"\n             (keypress)=\"handleOnInputKeypress($event.target.value)\"\n             (keyup)=\"handleOnInputKeyup($event.target.value)\"\n             ngDefaultControl>\n\n      <bd-form-addon [text]=\"append\" position=\"append\" *ngIf=\"append\"></bd-form-addon>\n\n      <div class=\"form-errors-sign\" *ngIf=\"errors.length\">\n        <div class=\"form-errors-sign__sign\">\n          <i class=\"fas fa-exclamation-triangle\"></i>\n        </div>\n        <bd-form-errors [errors]=\"errors\"></bd-form-errors>\n      </div>\n\n\n    </div>\n  </div>\n\n  <bd-form-counter [maxLength]=\"maxLength\" [form]=\"formControl\" *ngIf=\"maxLength && !options.counterBefore\"></bd-form-counter>\n  <bd-form-help [label]=\"help\" *ngIf=\"help\"></bd-form-help>\n</div>\n");
 
 /***/ }),
 
@@ -305,7 +318,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"form\">\n  <aroio-content-item [title]=\"'Verbindung'\">\n\n    <aroio-form-switch [id]=\"'wifi-form'\" [label]=\"'WLAN'\" >\n\n    </aroio-form-switch>\n\n\n    <aroio-form-switch [id]=\"'automatic-config-form'\" [label]=\"'Automatische Konfiguration'\" [hasContent]=\"true\">\n      <aroio-input [type]=\"'text'\"\n                   [formControl]=\"form.get('hostname')\"\n                   label=\"Hostname\"\n                   placeholder=\"Hostname\"\n      ></aroio-input>\n      <bd-input [type]=\"'text'\"\n                [formControl]=\"form.get('ip')\"\n                label=\"IP Adresse\"\n                placeholder=\"IP Adresse\"\n      ></bd-input>\n      <bd-input [type]=\"'text'\"\n                [formControl]=\"form.get('subnet')\"\n                label=\"Subnetzmaske\"\n                placeholder=\"Subnetzmaske\"\n      ></bd-input>\n      <bd-input [type]=\"'text'\"\n                [formControl]=\"form.get('gateway')\"\n                label=\"Gateway\"\n                placeholder=\"Gateway\"\n      ></bd-input>\n    </aroio-form-switch>\n\n  </aroio-content-item>\n\n\n  <aroio-content-item [title]=\"'Webinterface'\">\n    <bd-input [type]=\"'password'\" [formControl]=\"form.get('password')\" label=\"Passwort\" placeholder=\"Passwort\"></bd-input>\n\n  </aroio-content-item>\n  <aroio-content-item [title]=\"'Hardware'\">\n    <bd-input [type]=\"'select'\" [formControl]=\"form.get('platform')\" label=\"Plattform\" placeholder=\"Auswählen\"></bd-input>\n  </aroio-content-item>\n\n  <div class=\"action-bar\">\n    <div class=\"action-bar__item\"></div>\n    <div class=\"action-bar__item\">\n      <button aroio-btn type=\"submit\" [color]=\"'primary'\">Speichern</button>\n    </div>\n  </div>\n\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"form\" (submit)=\"submitForm($event)\" *ngIf=\"form\">\n  <aroio-content-item [title]=\"'aroio.pages.network.connection.title' | translate\">\n\n    <aroio-input [type]=\"'text'\"\n                 [formControl]=\"form.get('hostname')\"\n                 [label]=\"'aroio.pages.network.forms.hostname.label' | translate\"\n                 [placeholder]=\"'aroio.pages.network.forms.hostname.placeholder' | translate\"\n    ></aroio-input>\n\n    <aroio-form-switch [id]=\"'lan-dhcp-form'\"\n                       [label]=\"'aroio.pages.network.forms.lan_dhcp.label' | translate\"\n                       [hasContent]=\"true\"\n                       [inverted]=\"true\"\n                       [switchState]=\"form.get('lan_dhcp').value\"\n                       (switched)=\"form.get('lan_dhcp').setValue($event)\"\n                       [disabled]=\"form.get('wifi').value\"\n    >\n      <aroio-input [type]=\"'text'\"\n                   [formControl]=\"form.get('lan_ipaddr')\"\n                   [label]=\"'aroio.pages.network.forms.lan_ipaddr.label' | translate\"\n                   [placeholder]=\"'aroio.pages.network.forms.lan_ipaddr.placeholder' | translate\"\n      ></aroio-input>\n      <aroio-input [type]=\"'text'\"\n                   [formControl]=\"form.get('lan_netmask')\"\n                   [label]=\"'aroio.pages.network.forms.lan_netmask.label' | translate\"\n                   [placeholder]=\"'aroio.pages.network.forms.lan_netmask.placeholder' | translate\"\n      ></aroio-input>\n      <aroio-input [type]=\"'text'\"\n                   [formControl]=\"form.get('lan_gateway')\"\n                   [label]=\"'aroio.pages.network.forms.lan_gateway.label' | translate\"\n                   [placeholder]=\"'aroio.pages.network.forms.lan_gateway.placeholder' | translate\"\n      ></aroio-input>\n      <aroio-input [type]=\"'text'\"\n                   [formControl]=\"form.get('lan_dnsserv')\"\n                   [label]=\"'aroio.pages.network.forms.lan_dnsserv.label' | translate\"\n                   [placeholder]=\"'aroio.pages.network.forms.lan_dnsserv.placeholder' | translate\"\n      ></aroio-input>\n    </aroio-form-switch>\n\n    <aroio-form-switch [id]=\"'wifi-form'\"\n                       [label]=\"'aroio.pages.network.forms.wifi.label' | translate\"\n                       [hasContent]=\"true\"\n                       [switchState]=\"form.get('wifi').value\"\n                       (switched)=\"form.get('wifi').setValue($event)\"\n    >\n      <aroio-input [type]=\"'text'\"\n                   [formControl]=\"form.get('wlanssid')\"\n                   [label]=\"'aroio.pages.network.forms.wlan_ssid.label' | translate\"\n                   [placeholder]=\"'aroio.pages.network.forms.wlan_ssid.placeholder' | translate\"\n      ></aroio-input>\n      <aroio-input [type]=\"'password'\"\n                   [formControl]=\"form.get('wlanpwd')\"\n                   [label]=\"'aroio.pages.network.forms.wlanpwd.label' | translate\"\n                  [placeholder]=\"'aroio.pages.network.forms.wlanpwd.placeholder' | translate\"\n      ></aroio-input>\n\n\n\n      <aroio-form-switch [id]=\"'wifi-dhcp-form'\"\n                         [label]=\"'aroio.pages.network.forms.wlan_dhcp.label' | translate\"\n                         [hasContent]=\"true\"\n                         [inverted]=\"true\"\n                         [switchState]=\"form.get('wlan_dhcp').value\"\n                         (switched)=\"form.get('wlan_dhcp').setValue($event)\"\n      >\n        <aroio-input [type]=\"'text'\"\n                     [formControl]=\"form.get('wlan_ipaddr')\"\n                     [label]=\"'aroio.pages.network.forms.wlan_ipaddr.label' | translate\"\n                     [placeholder]=\"'aroio.pages.network.forms.wlan_ipaddr.placeholder' | translate\"\n        ></aroio-input>\n        <aroio-input [type]=\"'text'\"\n                     [formControl]=\"form.get('wlan_netmask')\"\n                     [label]=\"'aroio.pages.network.forms.wlan_netmask.label' | translate\"\n                     [placeholder]=\"'aroio.pages.network.forms.wlan_netmask.placeholder' | translate\"\n        ></aroio-input>\n        <aroio-input [type]=\"'text'\"\n                     [formControl]=\"form.get('wlan_gateway')\"\n                     [label]=\"'aroio.pages.network.forms.wlan_gateway.label' | translate\"\n                     [placeholder]=\"'aroio.pages.network.forms.wlan_gateway.placeholder' | translate\"\n        ></aroio-input>\n        <aroio-input [type]=\"'text'\"\n                     [formControl]=\"form.get('wlan_dnsserv')\"\n                     [label]=\"'aroio.pages.network.forms.wlan_dnsserv.label' | translate\"\n                     [placeholder]=\"'aroio.pages.network.forms.wlan_dnsserv.placeholder' | translate\"\n        ></aroio-input>\n      </aroio-form-switch>\n\n    </aroio-form-switch>\n\n  </aroio-content-item>\n\n\n  <aroio-content-item [title]=\"'aroio.pages.network.webinterface.title' | translate\">\n\n\n  </aroio-content-item>\n  <!--<aroio-content-item [title]=\"'Hardware'\">-->\n  <!--<bd-input [type]=\"'select'\" [formControl]=\"form.get('platform')\" label=\"Plattform\" placeholder=\"Auswählen\"></bd-input>-->\n  <!--</aroio-content-item>-->\n\n  <div class=\"action-bar\">\n    <div class=\"action-bar__item\"></div>\n    <div class=\"action-bar__item\">\n      <button aroio-btn type=\"submit\" [color]=\"'primary'\">Speichern</button>\n    </div>\n  </div>\n\n</form>\n");
 
 /***/ }),
 
@@ -672,10 +685,10 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioWiComponent", function() { return AroioWiComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
 /* harmony import */ var _angular_common_locales_de__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/locales/de */ "./node_modules/@angular/common/locales/de.js");
 /* harmony import */ var _angular_common_locales_de__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_angular_common_locales_de__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _angular_common_locales_extra_de__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/locales/extra/de */ "./node_modules/@angular/common/locales/extra/de.js");
@@ -684,7 +697,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_locales_en__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_angular_common_locales_en__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _angular_common_locales_extra_en__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/locales/extra/en */ "./node_modules/@angular/common/locales/extra/en.js");
 /* harmony import */ var _angular_common_locales_extra_en__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_angular_common_locales_extra_en__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var ngx_bootstrap_chronos__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-bootstrap/chronos */ "./node_modules/ngx-bootstrap/chronos/fesm5/ngx-bootstrap-chronos.js");
+/* harmony import */ var ngx_bootstrap_chronos__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-bootstrap/chronos */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/chronos/fesm5/ngx-bootstrap-chronos.js");
 
 
 
@@ -740,21 +753,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TranslateHandler", function() { return TranslateHandler; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioWiModule", function() { return AroioWiModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm5/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _aroio_wi_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./aroio-wi.component */ "./src/app/aroio-wi.component.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/fesm5/ngx-translate-http-loader.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm5/animations.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/__ivy_ngcc__/fesm5/ngx-translate-http-loader.js");
 /* harmony import */ var _pages_aroio_wi_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/aroio-wi-routing.module */ "./src/app/pages/aroio-wi-routing.module.ts");
 /* harmony import */ var _modules_core_core_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/core/core.module */ "./src/app/modules/core/core.module.ts");
 /* harmony import */ var _braune_digital_form_utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @braune-digital/form-utilities */ "./node_modules/@braune-digital/form-utilities/__ivy_ngcc__/fesm5/braune-digital-form-utilities.js");
-/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/fesm5/ngx-swiper-wrapper.js");
-/* harmony import */ var ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-bootstrap/tooltip */ "./node_modules/ngx-bootstrap/tooltip/fesm5/ngx-bootstrap-tooltip.js");
-/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/fesm5/ngx-bootstrap-tabs.js");
-/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/fesm5/ngx-bootstrap-modal.js");
+/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/__ivy_ngcc__/fesm5/ngx-swiper-wrapper.js");
+/* harmony import */ var ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-bootstrap/tooltip */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/tooltip/fesm5/ngx-bootstrap-tooltip.js");
+/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/tabs/fesm5/ngx-bootstrap-tabs.js");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/modal/fesm5/ngx-bootstrap-modal.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _modules_aroio_wi_modules_layout_layout_module__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/aroio-wi/modules/layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
+
+
 
 
 
@@ -772,7 +789,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function createTranslateLoader(http) {
-    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_8__["TranslateHttpLoader"](http, '/content/translations/', '');
+    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_8__["TranslateHttpLoader"](http, _environments_environment__WEBPACK_IMPORTED_MODULE_16__["environment"].api + 'translations/', '');
 }
 // Handler for missing translations debuggin
 var TranslateHandler = /** @class */ (function () {
@@ -794,6 +811,7 @@ var AroioWiModule = /** @class */ (function () {
             ],
             imports: [
                 _modules_core_core_module__WEBPACK_IMPORTED_MODULE_10__["AroioCoreModule"],
+                _modules_aroio_wi_modules_layout_layout_module__WEBPACK_IMPORTED_MODULE_17__["AroioLayoutModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _braune_digital_form_utilities__WEBPACK_IMPORTED_MODULE_11__["FormUtilitiesModule"].forRoot({
                     displayErrors: true,
@@ -857,15 +875,15 @@ var AroioWiModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioAudioModule", function() { return AroioAudioModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
 /* harmony import */ var _layout_layout_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
 /* harmony import */ var _components_index_index_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/index/index.component */ "./src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts");
-/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/fesm5/ngx-swiper-wrapper.js");
-/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/fesm5/ngx-bootstrap-tabs.js");
+/* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/__ivy_ngcc__/fesm5/ngx-swiper-wrapper.js");
+/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/tabs/fesm5/ngx-bootstrap-tabs.js");
 
 
 
@@ -927,9 +945,9 @@ var AroioAudioModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AudioIndexComponent", function() { return AudioIndexComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _utils_audio_configuration__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../utils/audio-configuration */ "./src/app/utils/audio-configuration.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
 
 
 
@@ -999,11 +1017,13 @@ var AudioIndexComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConvolverIndexComponent", function() { return ConvolverIndexComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _layout_animations_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../layout/animations/animations */ "./src/app/modules/aroio-wi/modules/layout/animations/animations.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _layout_animations_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../layout/animations/animations */ "./src/app/modules/aroio-wi/modules/layout/animations/animations.ts");
+/* harmony import */ var _core_services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../core/services/aroio-settings.service */ "./src/app/modules/core/services/aroio-settings.service.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
+/* harmony import */ var _core_services_alert_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../core/services/alert.service */ "./src/app/modules/core/services/alert.service.ts");
+
 
 
 
@@ -1011,31 +1031,52 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ConvolverIndexComponent = /** @class */ (function () {
-    function ConvolverIndexComponent(_api, translate) {
-        this._api = _api;
+    function ConvolverIndexComponent(translate, settingsSerivce, alert) {
         this.translate = translate;
-        this.convolutionEnabled = true;
+        this.settingsSerivce = settingsSerivce;
+        this.alert = alert;
+        this.form = null;
+        this.subscriptions = [];
     }
-    ConvolverIndexComponent.prototype.ngOnInit = function () {
-        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
-            hostname: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
-            ip: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
-            gateway: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
-            subnet: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
-            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
-            platform: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+    ConvolverIndexComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        this.subscriptions.push(this.settingsSerivce.getAroioSettings().subscribe(function (aroioSettings) {
+            _this.buildForm(aroioSettings);
+        }));
+    };
+    ConvolverIndexComponent.prototype.buildForm = function (aroioSettings) {
+        if (aroioSettings === void 0) { aroioSettings = null; }
+        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            brutefir: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.convolver.brutefir ? aroioSettings.configuration.convolver.brutefir : false),
+            load_prefilter: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.convolver.load_prefilter ? aroioSettings.configuration.convolver.load_prefilter : false),
+            def_coeff: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.convolver.def_coeff ? aroioSettings.configuration.convolver.def_coeff : ''),
+            filter: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormArray"]([]),
+        });
+    };
+    ConvolverIndexComponent.prototype.submitForm = function (event) {
+        var _this = this;
+        this.subscriptions.push(this.settingsSerivce.setAroioSettingsConvolver(this.form.getRawValue()).subscribe(function (_) {
+            _this.alert.alert$.next({ message: 'Convolver erfolgreich gespeichert', type: 'success' });
+        }, function (error) {
+            _this.alert.alert$.next({ message: 'Es ist ein Fehler aufgetreten.', type: 'error' });
+        }));
+    };
+    ConvolverIndexComponent.prototype.ngOnDestroy = function () {
+        this.subscriptions.forEach(function (_) {
+            _.unsubscribe();
         });
     };
     ConvolverIndexComponent.ctorParameters = function () { return [
-        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
-        { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__["TranslateService"] }
+        { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__["TranslateService"] },
+        { type: _core_services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_4__["AroioSettingsService"] },
+        { type: _core_services_alert_service__WEBPACK_IMPORTED_MODULE_6__["AroioAlertService"] }
     ]; };
     ConvolverIndexComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: '<aroio-convolver-index-component>',
             template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./index.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/convolver/components/index/index.component.html")).default,
             animations: [
-                _layout_animations_animations__WEBPACK_IMPORTED_MODULE_4__["Animations"].fadeHeightInOut,
+                _layout_animations_animations__WEBPACK_IMPORTED_MODULE_3__["Animations"].fadeHeightInOut,
             ]
         })
     ], ConvolverIndexComponent);
@@ -1057,9 +1098,9 @@ var ConvolverIndexComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConvolverWizardComponent", function() { return ConvolverWizardComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
 /* harmony import */ var _layout_animations_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../layout/animations/animations */ "./src/app/modules/aroio-wi/modules/layout/animations/animations.ts");
 
 
@@ -1111,17 +1152,17 @@ var ConvolverWizardComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioConvolverModule", function() { return AroioConvolverModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
 /* harmony import */ var _layout_layout_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
 /* harmony import */ var _components_index_index_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/index/index.component */ "./src/app/modules/aroio-wi/modules/convolver/components/index/index.component.ts");
-/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/fesm5/ngx-bootstrap-tabs.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/tabs/fesm5/ngx-bootstrap-tabs.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm5/animations.js");
 /* harmony import */ var _components_wizard_wizard_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/wizard/wizard.component */ "./src/app/modules/aroio-wi/modules/convolver/components/wizard/wizard.component.ts");
-/* harmony import */ var angular_archwizard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! angular-archwizard */ "./node_modules/angular-archwizard/fesm5/angular-archwizard.js");
+/* harmony import */ var angular_archwizard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! angular-archwizard */ "./node_modules/angular-archwizard/__ivy_ngcc__/fesm5/angular-archwizard.js");
 
 
 
@@ -1179,76 +1220,146 @@ var AroioConvolverModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Animations", function() { return Animations; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/__ivy_ngcc__/fesm5/animations.js");
 
 
 var Animations = {
     slideRightOut: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('slideRightOut', [
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('void', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ transform: 'translateY(-100%)', opacity: 0 })),
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('void => *', [
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ transform: 'translateY(0)', opacity: 1 })),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ transform: 'translateY(0)', opacity: 1 })),
         ]),
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('* => void', [
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ transform: 'translateX(100%)', opacity: 0 }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ transform: 'translateX(100%)', opacity: 0 }))
         ])
     ]),
     fadeHeightInOut: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('fadeHeightInOut', [
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':enter', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0', height: '0', 'padding-top': '0', 'padding-bottom': '0' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1', height: '*', 'padding-top': '*', 'padding-bottom': '*' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1', height: '*', 'padding-top': '*', 'padding-bottom': '*' }))
         ]),
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':leave', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1', height: '*', 'padding-top': '*', 'padding-bottom': '*' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0', height: '0', 'padding-top': '0', 'padding-bottom': '0' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0', height: '0', 'padding-top': '0', 'padding-bottom': '0' }))
         ])
     ]),
     fadeInOut: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('fadeInOut', [
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':enter', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1' }))
         ]),
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':leave', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0' }))
         ])
     ]),
     halfFadeInOut: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('halfFadeInOut', [
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':enter', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '.5' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '.5' }))
         ]),
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':leave', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '.5' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0' }))
         ])
     ]),
     fadeWidthOut: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('fadeWidthOut', [
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':leave', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ width: '*', opacity: '1' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ width: '0', opacity: '0' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ width: '0', opacity: '0' }))
         ])
     ]),
     showNavLinkBackwards: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('showNavLinkBackwards', [
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':enter', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0', transform: 'translateX(-90px)' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1', transform: 'translateX(-130px)' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1', transform: 'translateX(-130px)' }))
         ]),
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':leave', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1', transform: 'translateX(-130px)' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0', transform: 'translateX(-90px)' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0', transform: 'translateX(-90px)' }))
         ])
     ]),
     showNavLinkForwards: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('showNavLinkForwards', [
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':enter', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0', transform: 'translateX(90px)' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1', transform: 'translateX(130px)' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1', transform: 'translateX(130px)' }))
         ]),
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])(':leave', [
             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '1', transform: 'translateX(130px)' }),
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('333ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0', transform: 'translateX(90px)' }))
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])('250ms ease', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({ opacity: '0', transform: 'translateX(90px)' }))
         ])
     ])
 };
+
+
+/***/ }),
+
+/***/ "./src/app/modules/aroio-wi/modules/layout/components/aroio-alert/aroio-alert.component.ts":
+/*!*************************************************************************************************!*\
+  !*** ./src/app/modules/aroio-wi/modules/layout/components/aroio-alert/aroio-alert.component.ts ***!
+  \*************************************************************************************************/
+/*! exports provided: AroioAlertComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioAlertComponent", function() { return AroioAlertComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _core_services_alert_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../core/services/alert.service */ "./src/app/modules/core/services/alert.service.ts");
+/* harmony import */ var _animations_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../animations/animations */ "./src/app/modules/aroio-wi/modules/layout/animations/animations.ts");
+
+
+
+
+var AroioAlertComponent = /** @class */ (function () {
+    function AroioAlertComponent(_alertService) {
+        var _this = this;
+        this._alertService = _alertService;
+        this.closeable = false;
+        this.timeout = 6500;
+        this._alerts = [];
+        this._alertService.alert$.subscribe(function (_alert) {
+            _this._alerts.push(_alert);
+        });
+    }
+    Object.defineProperty(AroioAlertComponent.prototype, "alert", {
+        get: function () {
+            return this._alerts[this._alerts.length - 1];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AroioAlertComponent.prototype.removeAlert = function (alert) {
+        this._alerts = this._alerts.filter(function (obj) { return obj !== alert; });
+    };
+    AroioAlertComponent.prototype.removeAlertWithTimeout = function (alert) {
+        var _this = this;
+        setTimeout(function () {
+            _this._alerts = _this._alerts.filter(function (obj) { return obj !== alert; });
+        }, this.timeout);
+    };
+    AroioAlertComponent.ctorParameters = function () { return [
+        { type: _core_services_alert_service__WEBPACK_IMPORTED_MODULE_2__["AroioAlertService"] }
+    ]; };
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], AroioAlertComponent.prototype, "closeable", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], AroioAlertComponent.prototype, "timeout", void 0);
+    AroioAlertComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'aroio-alert, [aroio-alert]',
+            template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./aroio-alert.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/layout/components/aroio-alert/aroio-alert.component.html")).default,
+            animations: [
+                _animations_animations__WEBPACK_IMPORTED_MODULE_3__["Animations"].slideRightOut
+            ]
+        })
+    ], AroioAlertComponent);
+    return AroioAlertComponent;
+}());
+
 
 
 /***/ }),
@@ -1264,7 +1375,7 @@ var Animations = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioButtonComponent", function() { return AroioButtonComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _utils_bem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../utils/bem */ "./src/app/utils/bem.ts");
 
 
@@ -1349,7 +1460,7 @@ var AroioButtonComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioContentItemComponent", function() { return AroioContentItemComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioContentItemComponent = /** @class */ (function () {
@@ -1382,7 +1493,7 @@ var AroioContentItemComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioContentComponent", function() { return AroioContentComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioContentComponent = /** @class */ (function () {
@@ -1416,9 +1527,9 @@ var AroioContentComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioFilterListItemComponent", function() { return AroioFilterListItemComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/fesm5/ngx-bootstrap-modal.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/modal/fesm5/ngx-bootstrap-modal.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
 
 
 
@@ -1483,7 +1594,7 @@ var AroioFilterListItemComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioFilterListComponent", function() { return AroioFilterListComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioFilterListComponent = /** @class */ (function () {
@@ -1513,7 +1624,7 @@ var AroioFilterListComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioFooterComponent", function() { return AroioFooterComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioFooterComponent = /** @class */ (function () {
@@ -1543,7 +1654,7 @@ var AroioFooterComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioFormSwitchComponent", function() { return AroioFormSwitchComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _animations_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../animations/animations */ "./src/app/modules/aroio-wi/modules/layout/animations/animations.ts");
 
 
@@ -1551,8 +1662,10 @@ __webpack_require__.r(__webpack_exports__);
 var AroioFormSwitchComponent = /** @class */ (function () {
     function AroioFormSwitchComponent() {
         this.hasContent = false;
+        this.inverted = false;
+        this.switchState = false;
+        this.disabled = false;
         this.switched = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.switchState = true;
     }
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
@@ -1563,6 +1676,15 @@ var AroioFormSwitchComponent = /** @class */ (function () {
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
     ], AroioFormSwitchComponent.prototype, "hasContent", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], AroioFormSwitchComponent.prototype, "inverted", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], AroioFormSwitchComponent.prototype, "switchState", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], AroioFormSwitchComponent.prototype, "disabled", void 0);
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
     ], AroioFormSwitchComponent.prototype, "switched", void 0);
@@ -1593,7 +1715,7 @@ var AroioFormSwitchComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioHeaderComponent", function() { return AroioHeaderComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioHeaderComponent = /** @class */ (function () {
@@ -1624,8 +1746,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioInputComponent", function() { return AroioInputComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _braune_digital_form_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @braune-digital/form-utilities */ "./node_modules/@braune-digital/form-utilities/__ivy_ngcc__/fesm5/braune-digital-form-utilities.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
 
 
 
@@ -1679,9 +1801,9 @@ var AroioInputComponent = /** @class */ (function (_super) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioSidebarComponent", function() { return AroioSidebarComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _core_services_navigation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../core/services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
 
 
 
@@ -1728,12 +1850,11 @@ var AroioSidebarComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioSwitchComponent", function() { return AroioSwitchComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioSwitchComponent = /** @class */ (function () {
     function AroioSwitchComponent() {
-        this.value = true;
         this.checked = true;
         this.switchState = true;
         this.switched = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
@@ -1747,10 +1868,10 @@ var AroioSwitchComponent = /** @class */ (function () {
     ], AroioSwitchComponent.prototype, "id", void 0);
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-    ], AroioSwitchComponent.prototype, "value", void 0);
+    ], AroioSwitchComponent.prototype, "checked", void 0);
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-    ], AroioSwitchComponent.prototype, "checked", void 0);
+    ], AroioSwitchComponent.prototype, "formControl", void 0);
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
     ], AroioSwitchComponent.prototype, "switchState", void 0);
@@ -1784,10 +1905,10 @@ var AroioSwitchComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioTabsetComponent", function() { return AroioTabsetComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _core_services_navigation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../core/services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
 /* harmony import */ var _utils_aroio_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../utils/aroio-tabs */ "./src/app/utils/aroio-tabs.ts");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
 
 
 
@@ -1839,15 +1960,15 @@ var AroioTabsetComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioLayoutModule", function() { return AroioLayoutModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm5/platform-browser.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm5/animations.js");
 /* harmony import */ var _components_aroio_content_item_aroio_content_item_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/aroio-content-item/aroio-content-item.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-content-item/aroio-content-item.component.ts");
-/* harmony import */ var angular_resize_event__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! angular-resize-event */ "./node_modules/angular-resize-event/fesm5/angular-resize-event.js");
+/* harmony import */ var angular_resize_event__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! angular-resize-event */ "./node_modules/angular-resize-event/__ivy_ngcc__/fesm5/angular-resize-event.js");
 /* harmony import */ var _utils_aroio_loading_aroio_loading_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./utils/aroio-loading/aroio-loading.component */ "./src/app/modules/aroio-wi/modules/layout/utils/aroio-loading/aroio-loading.component.ts");
 /* harmony import */ var _utils_aroio_badge_aroio_badge_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./utils/aroio-badge/aroio-badge.component */ "./src/app/modules/aroio-wi/modules/layout/utils/aroio-badge/aroio-badge.component.ts");
 /* harmony import */ var _utils_aroio_message_aroio_message_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./utils/aroio-message/aroio-message.component */ "./src/app/modules/aroio-wi/modules/layout/utils/aroio-message/aroio-message.component.ts");
@@ -1863,11 +1984,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_aroio_form_switch_aroio_form_switch_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/aroio-form-switch/aroio-form-switch.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-form-switch/aroio-form-switch.component.ts");
 /* harmony import */ var _components_aroio_input_aroio_input_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/aroio-input/aroio-input.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-input/aroio-input.component.ts");
 /* harmony import */ var _braune_digital_form_utilities__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @braune-digital/form-utilities */ "./node_modules/@braune-digital/form-utilities/__ivy_ngcc__/fesm5/braune-digital-form-utilities.js");
-/* harmony import */ var ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ngx-bootstrap/tooltip */ "./node_modules/ngx-bootstrap/tooltip/fesm5/ngx-bootstrap-tooltip.js");
-/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/fesm5/ngx-bootstrap-tabs.js");
+/* harmony import */ var ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ngx-bootstrap/tooltip */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/tooltip/fesm5/ngx-bootstrap-tooltip.js");
+/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/tabs/fesm5/ngx-bootstrap-tabs.js");
 /* harmony import */ var _components_aroio_filter_list_aroio_filter_list_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/aroio-filter-list/aroio-filter-list.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-filter-list/aroio-filter-list.component.ts");
 /* harmony import */ var _components_aroio_filter_list_aroio_filter_list_item_aroio_filter_list_item_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/aroio-filter-list/aroio-filter-list-item/aroio-filter-list-item.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-filter-list/aroio-filter-list-item/aroio-filter-list-item.component.ts");
-/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/fesm5/ngx-bootstrap-modal.js");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/modal/fesm5/ngx-bootstrap-modal.js");
+/* harmony import */ var _components_aroio_alert_aroio_alert_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/aroio-alert/aroio-alert.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-alert/aroio-alert.component.ts");
+
 
 
 
@@ -1938,6 +2061,7 @@ var AroioLayoutModule = /** @class */ (function () {
                 _components_aroio_switch_aroio_switch_component__WEBPACK_IMPORTED_MODULE_21__["AroioSwitchComponent"],
                 _components_aroio_form_switch_aroio_form_switch_component__WEBPACK_IMPORTED_MODULE_22__["AroioFormSwitchComponent"],
                 _utils_aroio_loading_aroio_loading_component__WEBPACK_IMPORTED_MODULE_10__["AroioLoadingComponent"],
+                _components_aroio_alert_aroio_alert_component__WEBPACK_IMPORTED_MODULE_30__["AroioAlertComponent"],
                 _components_aroio_input_aroio_input_component__WEBPACK_IMPORTED_MODULE_23__["AroioInputComponent"],
                 // ---------------------------
                 // ---------------------------
@@ -1958,6 +2082,7 @@ var AroioLayoutModule = /** @class */ (function () {
                 // ---------------------------
                 // Layout
                 // ---------------------------
+                _components_aroio_alert_aroio_alert_component__WEBPACK_IMPORTED_MODULE_30__["AroioAlertComponent"],
                 _components_aroio_header_aroio_header_component__WEBPACK_IMPORTED_MODULE_17__["AroioHeaderComponent"],
                 _components_aroio_content_aroio_content_component__WEBPACK_IMPORTED_MODULE_19__["AroioContentComponent"],
                 _components_aroio_footer_aroio_footer_component__WEBPACK_IMPORTED_MODULE_18__["AroioFooterComponent"],
@@ -2000,7 +2125,7 @@ var AroioLayoutModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioBadgeComponent", function() { return AroioBadgeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _utils_bem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../utils/bem */ "./src/app/utils/bem.ts");
 
 
@@ -2076,8 +2201,8 @@ var AroioBadgeComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioLoadingComponent", function() { return AroioLoadingComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/__ivy_ngcc__/fesm5/animations.js");
 
 
 
@@ -2128,7 +2253,7 @@ var AroioLoadingComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioMessageComponent", function() { return AroioMessageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioMessageComponent = /** @class */ (function () {
@@ -2165,7 +2290,7 @@ var AroioMessageComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioProgressBarComponent", function() { return AroioProgressBarComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioProgressBarComponent = /** @class */ (function () {
@@ -2209,7 +2334,7 @@ var AroioProgressBarComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioProgressCircleComponent", function() { return AroioProgressCircleComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioProgressCircleComponent = /** @class */ (function () {
@@ -2262,24 +2387,64 @@ var AroioProgressCircleComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NetworkIndexComponent", function() { return NetworkIndexComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _core_services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../core/services/aroio-settings.service */ "./src/app/modules/core/services/aroio-settings.service.ts");
+/* harmony import */ var _core_services_alert_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../core/services/alert.service */ "./src/app/modules/core/services/alert.service.ts");
+
+
 
 
 
 var NetworkIndexComponent = /** @class */ (function () {
-    function NetworkIndexComponent() {
+    function NetworkIndexComponent(settingsSerivce, alert) {
+        this.settingsSerivce = settingsSerivce;
+        this.alert = alert;
+        this.form = null;
+        this.subscriptions = [];
     }
-    NetworkIndexComponent.prototype.ngOnInit = function () {
+    NetworkIndexComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        this.subscriptions.push(this.settingsSerivce.getAroioSettings().subscribe(function (aroioSettings) {
+            _this.buildForm(aroioSettings);
+        }));
+    };
+    NetworkIndexComponent.prototype.buildForm = function (aroioSettings) {
+        if (aroioSettings === void 0) { aroioSettings = null; }
         this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
-            hostname: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            ip: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
-            gateway: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
-            subnet: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
-            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
-            platform: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
+            hostname: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.hostname ? aroioSettings.configuration.network.hostname : '', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            wifi: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.wifi ? aroioSettings.configuration.network.wifi : false, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            lan_dhcp: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.lan_dhcp ? aroioSettings.configuration.network.lan_dhcp : false, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            lan_ipaddr: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.lan_ipaddr ? aroioSettings.configuration.network.lan_ipaddr : ''),
+            lan_gateway: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.lan_gateway ? aroioSettings.configuration.network.lan_gateway : ''),
+            lan_netmask: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.lan_netmask ? aroioSettings.configuration.network.lan_netmask : ''),
+            lan_dnsserv: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.lan_dnsserv ? aroioSettings.configuration.network.lan_dnsserv : ''),
+            wlan_dhcp: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.wlan_dhcp ? aroioSettings.configuration.network.wlan_dhcp : false, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            wlan_ipaddr: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.wlan_ipaddr ? aroioSettings.configuration.network.wlan_ipaddr : ''),
+            wlan_gateway: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.wlan_gateway ? aroioSettings.configuration.network.wlan_gateway : ''),
+            wlan_netmask: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.wlan_netmask ? aroioSettings.configuration.network.wlan_netmask : ''),
+            wlan_dnsserv: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.wlan_dnsserv ? aroioSettings.configuration.network.wlan_dnsserv : ''),
+            wlanpwd: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.wlanpwd ? aroioSettings.configuration.network.wlanpwd : ''),
+            wlanssid: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings && aroioSettings.configuration.network.wlanssid ? aroioSettings.configuration.network.wlanssid : '')
         });
     };
+    NetworkIndexComponent.prototype.submitForm = function (event) {
+        var _this = this;
+        this.subscriptions.push(this.settingsSerivce.setAroioSettingsNetwork(this.form.getRawValue()).subscribe(function (_) {
+            _this.alert.alert$.next({ message: 'Netzwerk erfolgreich gespeichert', type: 'success' });
+        }, function (error) {
+            _this.alert.alert$.next({ message: 'Es ist ein Fehler aufgetreten.', type: 'error' });
+        }));
+    };
+    NetworkIndexComponent.prototype.ngOnDestroy = function () {
+        this.subscriptions.forEach(function (_) {
+            _.unsubscribe();
+        });
+    };
+    NetworkIndexComponent.ctorParameters = function () { return [
+        { type: _core_services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_3__["AroioSettingsService"] },
+        { type: _core_services_alert_service__WEBPACK_IMPORTED_MODULE_4__["AroioAlertService"] }
+    ]; };
     NetworkIndexComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: '<aroio-network-index-component>',
@@ -2304,15 +2469,15 @@ var NetworkIndexComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioNetworkModule", function() { return AroioNetworkModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
 /* harmony import */ var _layout_layout_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
 /* harmony import */ var _components_index_index_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/index/index.component */ "./src/app/modules/aroio-wi/modules/network/components/index/index.component.ts");
 /* harmony import */ var _braune_digital_form_utilities__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @braune-digital/form-utilities */ "./node_modules/@braune-digital/form-utilities/__ivy_ngcc__/fesm5/braune-digital-form-utilities.js");
-/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/fesm5/ngx-bootstrap-tabs.js");
+/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/tabs/fesm5/ngx-bootstrap-tabs.js");
 
 
 
@@ -2365,8 +2530,8 @@ var AroioNetworkModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StreamingIndexComponent", function() { return StreamingIndexComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
 
 
 
@@ -2403,14 +2568,14 @@ var StreamingIndexComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioStreamingModule", function() { return AroioStreamingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
 /* harmony import */ var _layout_layout_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
 /* harmony import */ var _components_index_index_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/index/index.component */ "./src/app/modules/aroio-wi/modules/streaming/components/index/index.component.ts");
-/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/fesm5/ngx-bootstrap-tabs.js");
+/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/tabs/fesm5/ngx-bootstrap-tabs.js");
 
 
 
@@ -2460,7 +2625,7 @@ var AroioStreamingModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SystemIndexComponent", function() { return SystemIndexComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var SystemIndexComponent = /** @class */ (function () {
@@ -2490,14 +2655,14 @@ var SystemIndexComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioSystemModule", function() { return AroioSystemModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
 /* harmony import */ var _layout_layout_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
 /* harmony import */ var _components_index_index_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/index/index.component */ "./src/app/modules/aroio-wi/modules/system/components/index/index.component.ts");
-/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/fesm5/ngx-bootstrap-tabs.js");
+/* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/tabs/fesm5/ngx-bootstrap-tabs.js");
 
 
 
@@ -2547,10 +2712,10 @@ var AroioSystemModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioCoreModule", function() { return AroioCoreModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
 /* harmony import */ var _services_navigation_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
 
 
@@ -2582,6 +2747,111 @@ var AroioCoreModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/modules/core/services/alert.abstract.service.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/modules/core/services/alert.abstract.service.ts ***!
+  \*****************************************************************/
+/*! exports provided: AroioAbstractAlertService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioAbstractAlertService", function() { return AroioAbstractAlertService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var AroioAbstractAlertService = /** @class */ (function () {
+    function AroioAbstractAlertService() {
+    }
+    return AroioAbstractAlertService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/core/services/alert.service.ts":
+/*!********************************************************!*\
+  !*** ./src/app/modules/core/services/alert.service.ts ***!
+  \********************************************************/
+/*! exports provided: AroioAlertService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioAlertService", function() { return AroioAlertService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _alert_abstract_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./alert.abstract.service */ "./src/app/modules/core/services/alert.abstract.service.ts");
+
+
+
+
+var AroioAlertService = /** @class */ (function (_super) {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(AroioAlertService, _super);
+    function AroioAlertService() {
+        var _this = _super.call(this) || this;
+        _this.alert$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        return _this;
+    }
+    AroioAlertService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], AroioAlertService);
+    return AroioAlertService;
+}(_alert_abstract_service__WEBPACK_IMPORTED_MODULE_3__["AroioAbstractAlertService"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/core/services/aroio-settings.service.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/modules/core/services/aroio-settings.service.ts ***!
+  \*****************************************************************/
+/*! exports provided: AroioSettingsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioSettingsService", function() { return AroioSettingsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+var AroioSettingsService = /** @class */ (function () {
+    function AroioSettingsService(_api) {
+        this._api = _api;
+    }
+    AroioSettingsService.prototype.getAroioSettings = function () {
+        return this._api.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + 'settings');
+    };
+    AroioSettingsService.prototype.setAroioSettingsNetwork = function (form) {
+        return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + 'settings/network', form);
+    };
+    AroioSettingsService.prototype.setAroioSettingsConvolver = function (form) {
+        return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + 'settings/convolver', form);
+    };
+    AroioSettingsService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    ]; };
+    AroioSettingsService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], AroioSettingsService);
+    return AroioSettingsService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/modules/core/services/navigation.service.ts":
 /*!*************************************************************!*\
   !*** ./src/app/modules/core/services/navigation.service.ts ***!
@@ -2593,7 +2863,7 @@ var AroioCoreModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavigationService", function() { return NavigationService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 
 
@@ -2626,17 +2896,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return routes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioWiRoutingModule", function() { return AroioWiRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
 /* harmony import */ var _aroio_wi_audio_audio_routing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./aroio-wi/audio/audio.routing */ "./src/app/pages/aroio-wi/audio/audio.routing.ts");
 /* harmony import */ var _aroio_wi_convolver_convolver_routing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./aroio-wi/convolver/convolver.routing */ "./src/app/pages/aroio-wi/convolver/convolver.routing.ts");
 /* harmony import */ var _aroio_wi_network_network_routing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./aroio-wi/network/network.routing */ "./src/app/pages/aroio-wi/network/network.routing.ts");
 /* harmony import */ var _aroio_wi_streaming_streaming_routing__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./aroio-wi/streaming/streaming.routing */ "./src/app/pages/aroio-wi/streaming/streaming.routing.ts");
 /* harmony import */ var _aroio_wi_system_system_routing__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./aroio-wi/system/system.routing */ "./src/app/pages/aroio-wi/system/system.routing.ts");
-/* harmony import */ var ngx_bootstrap_pagination__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ngx-bootstrap/pagination */ "./node_modules/ngx-bootstrap/pagination/fesm5/ngx-bootstrap-pagination.js");
-/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/fesm5/ngx-bootstrap-modal.js");
+/* harmony import */ var ngx_bootstrap_pagination__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ngx-bootstrap/pagination */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/pagination/fesm5/ngx-bootstrap-pagination.js");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/modal/fesm5/ngx-bootstrap-modal.js");
 
 
 
@@ -2651,7 +2921,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: '', redirectTo: _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].defaultLocale + '/network', pathMatch: 'full' },
-    { path: ':lang', redirectTo: ':lang/configuration', pathMatch: 'full' },
+    { path: ':lang', redirectTo: ':lang/network', pathMatch: 'full' },
 ];
 var AroioWiRoutingModule = /** @class */ (function () {
     function AroioWiRoutingModule() {
@@ -2702,12 +2972,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AudioRoutes", function() { return AudioRoutes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioAudioPageModule", function() { return AroioAudioPageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
 /* harmony import */ var _modules_aroio_wi_modules_layout_layout_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../modules/aroio-wi/modules/layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
 /* harmony import */ var _index_index_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index/index.page */ "./src/app/pages/aroio-wi/audio/index/index.page.ts");
 /* harmony import */ var _root_root_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./root/root.page */ "./src/app/pages/aroio-wi/audio/root/root.page.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
 /* harmony import */ var _modules_aroio_wi_modules_audio_audio_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../modules/aroio-wi/modules/audio/audio.module */ "./src/app/modules/aroio-wi/modules/audio/audio.module.ts");
 
 
@@ -2778,7 +3048,7 @@ var AroioAudioPageModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioAudioIndexPage", function() { return AroioAudioIndexPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _modules_core_services_navigation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../modules/core/services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
 
 
@@ -2816,7 +3086,7 @@ var AroioAudioIndexPage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioAudioRootPage", function() { return AroioAudioRootPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioAudioRootPage = /** @class */ (function () {
@@ -2847,12 +3117,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConvolverRoutes", function() { return ConvolverRoutes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioConvolverPageModule", function() { return AroioConvolverPageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
 /* harmony import */ var _modules_aroio_wi_modules_layout_layout_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../modules/aroio-wi/modules/layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
 /* harmony import */ var _index_index_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index/index.page */ "./src/app/pages/aroio-wi/convolver/index/index.page.ts");
 /* harmony import */ var _root_root_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./root/root.page */ "./src/app/pages/aroio-wi/convolver/root/root.page.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
 /* harmony import */ var _modules_aroio_wi_modules_convolver_convolver_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../modules/aroio-wi/modules/convolver/convolver.module */ "./src/app/modules/aroio-wi/modules/convolver/convolver.module.ts");
 /* harmony import */ var _wizard_wizard_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./wizard/wizard.page */ "./src/app/pages/aroio-wi/convolver/wizard/wizard.page.ts");
 
@@ -2940,7 +3210,7 @@ var AroioConvolverPageModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioConvolverIndexPage", function() { return AroioConvolverIndexPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _modules_core_services_navigation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../modules/core/services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
 
 
@@ -2978,7 +3248,7 @@ var AroioConvolverIndexPage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioConvolverRootPage", function() { return AroioConvolverRootPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioConvolverRootPage = /** @class */ (function () {
@@ -3008,7 +3278,7 @@ var AroioConvolverRootPage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioConvolverWizardPage", function() { return AroioConvolverWizardPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _modules_core_services_navigation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../modules/core/services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
 
 
@@ -3046,7 +3316,7 @@ var AroioConvolverWizardPage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioNetworkIndexPage", function() { return AroioNetworkIndexPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _modules_core_services_navigation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../modules/core/services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
 
 
@@ -3085,12 +3355,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioNetworkRoutes", function() { return AroioNetworkRoutes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioNetworkPageModule", function() { return AroioNetworkPageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
 /* harmony import */ var _modules_aroio_wi_modules_layout_layout_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../modules/aroio-wi/modules/layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
 /* harmony import */ var _index_index_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index/index.page */ "./src/app/pages/aroio-wi/network/index/index.page.ts");
 /* harmony import */ var _root_root_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./root/root.page */ "./src/app/pages/aroio-wi/network/root/root.page.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
 /* harmony import */ var _modules_aroio_wi_modules_network_network_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../modules/aroio-wi/modules/network/network.module */ "./src/app/modules/aroio-wi/modules/network/network.module.ts");
 
 
@@ -3161,7 +3431,7 @@ var AroioNetworkPageModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioNetworkRootPage", function() { return AroioNetworkRootPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioNetworkRootPage = /** @class */ (function () {
@@ -3191,7 +3461,7 @@ var AroioNetworkRootPage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioStreamingIndexPage", function() { return AroioStreamingIndexPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _modules_core_services_navigation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../modules/core/services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
 
 
@@ -3229,7 +3499,7 @@ var AroioStreamingIndexPage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioStreamingRootPage", function() { return AroioStreamingRootPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioStreamingRootPage = /** @class */ (function () {
@@ -3260,12 +3530,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioStreamingRoutes", function() { return AroioStreamingRoutes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioStreamingPageModule", function() { return AroioStreamingPageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
 /* harmony import */ var _modules_aroio_wi_modules_layout_layout_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../modules/aroio-wi/modules/layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
 /* harmony import */ var _index_index_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index/index.page */ "./src/app/pages/aroio-wi/streaming/index/index.page.ts");
 /* harmony import */ var _root_root_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./root/root.page */ "./src/app/pages/aroio-wi/streaming/root/root.page.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
 /* harmony import */ var _modules_aroio_wi_modules_streaming_streaming_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../modules/aroio-wi/modules/streaming/streaming.module */ "./src/app/modules/aroio-wi/modules/streaming/streaming.module.ts");
 
 
@@ -3336,7 +3606,7 @@ var AroioStreamingPageModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioSystemIndexPage", function() { return AroioSystemIndexPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _modules_core_services_navigation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../modules/core/services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
 
 
@@ -3374,7 +3644,7 @@ var AroioSystemIndexPage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioSystemRootPage", function() { return AroioSystemRootPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 
 
 var AroioSystemRootPage = /** @class */ (function () {
@@ -3405,12 +3675,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioSystemRoutes", function() { return AroioSystemRoutes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioSystemPageModule", function() { return AroioSystemPageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
 /* harmony import */ var _modules_aroio_wi_modules_layout_layout_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../modules/aroio-wi/modules/layout/layout.module */ "./src/app/modules/aroio-wi/modules/layout/layout.module.ts");
 /* harmony import */ var _index_index_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index/index.page */ "./src/app/pages/aroio-wi/system/index/index.page.ts");
 /* harmony import */ var _root_root_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./root/root.page */ "./src/app/pages/aroio-wi/system/root/root.page.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
 /* harmony import */ var _modules_aroio_wi_modules_system_system_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../modules/aroio-wi/modules/system/system.module */ "./src/app/modules/aroio-wi/modules/system/system.module.ts");
 
 
@@ -3675,7 +3945,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var environment = {
     production: false,
-    api: 'http://0.0.0.0:8000',
+    api: 'http://127.0.0.1:8000/',
     version: '1.0',
     defaultLocale: 'de',
     defaultPage: {
@@ -3705,8 +3975,8 @@ var environment = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/__ivy_ngcc__/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _app_aroio_wi_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app/aroio-wi.module */ "./src/app/aroio-wi.module.ts");
 
