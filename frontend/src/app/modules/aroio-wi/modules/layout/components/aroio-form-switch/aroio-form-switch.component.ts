@@ -16,6 +16,7 @@ export class AroioFormSwitchComponent {
   @Input() hasContent = false;
   @Input() inverted = false;
   @Input() switchState = false;
+  @Input() disabled = false;
   @Output() switched: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 }

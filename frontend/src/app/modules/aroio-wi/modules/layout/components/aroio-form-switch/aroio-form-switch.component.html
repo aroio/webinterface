@@ -1,5 +1,5 @@
 
-<div class="aroio-form-switch">
+<div class="aroio-form-switch" [ngClass]="{'aroio-form-switch--disabled': disabled}">
   <div class="aroio-form-switch__head">
     <div class="aroio-form-switch__head__label">
       {{ label }}
@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="aroio-form-switch__content" *ngIf="(inverted ? !switchState : switchState) && hasContent" [@fadeHeightInOut]>
+  <div class="aroio-form-switch__content" *ngIf="(inverted ? !switchState : switchState) && hasContent && !disabled" [@fadeHeightInOut]>
     <ng-content></ng-content>
   </div>
 </div>

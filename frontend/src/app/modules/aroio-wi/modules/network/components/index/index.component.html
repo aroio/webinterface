@@ -1,60 +1,97 @@
 <form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form">
-  <aroio-content-item [title]="'Verbindung'">
+  <aroio-content-item [title]="'aroio.pages.network.connection.title' | translate">
+
+    <aroio-input [type]="'text'"
+                 [formControl]="form.get('hostname')"
+                 [label]="'aroio.pages.network.forms.hostname.label' | translate"
+                 [placeholder]="'aroio.pages.network.forms.hostname.placeholder' | translate"
+    ></aroio-input>
+
+    <aroio-form-switch [id]="'lan-dhcp-form'"
+                       [label]="'aroio.pages.network.forms.lan_dhcp.label' | translate"
+                       [hasContent]="true"
+                       [inverted]="true"
+                       [switchState]="form.get('lan_dhcp').value"
+                       (switched)="form.get('lan_dhcp').setValue($event)"
+                       [disabled]="form.get('wifi').value"
+    >
+      <aroio-input [type]="'text'"
+                   [formControl]="form.get('lan_ipaddr')"
+                   [label]="'aroio.pages.network.forms.lan_ipaddr.label' | translate"
+                   [placeholder]="'aroio.pages.network.forms.lan_ipaddr.placeholder' | translate"
+      ></aroio-input>
+      <aroio-input [type]="'text'"
+                   [formControl]="form.get('lan_netmask')"
+                   [label]="'aroio.pages.network.forms.lan_netmask.label' | translate"
+                   [placeholder]="'aroio.pages.network.forms.lan_netmask.placeholder' | translate"
+      ></aroio-input>
+      <aroio-input [type]="'text'"
+                   [formControl]="form.get('lan_gateway')"
+                   [label]="'aroio.pages.network.forms.lan_gateway.label' | translate"
+                   [placeholder]="'aroio.pages.network.forms.lan_gateway.placeholder' | translate"
+      ></aroio-input>
+      <aroio-input [type]="'text'"
+                   [formControl]="form.get('lan_dnsserv')"
+                   [label]="'aroio.pages.network.forms.lan_dnsserv.label' | translate"
+                   [placeholder]="'aroio.pages.network.forms.lan_dnsserv.placeholder' | translate"
+      ></aroio-input>
+    </aroio-form-switch>
 
     <aroio-form-switch [id]="'wifi-form'"
-                       [label]="'WLAN'"
+                       [label]="'aroio.pages.network.forms.wifi.label' | translate"
                        [hasContent]="true"
                        [switchState]="form.get('wifi').value"
                        (switched)="form.get('wifi').setValue($event)"
     >
       <aroio-input [type]="'text'"
                    [formControl]="form.get('wlanssid')"
-                   label="WLAN SSID"
-                   placeholder="SSID"
+                   [label]="'aroio.pages.network.forms.wlan_ssid.label' | translate"
+                   [placeholder]="'aroio.pages.network.forms.wlan_ssid.placeholder' | translate"
       ></aroio-input>
-    </aroio-form-switch>
+      <aroio-input [type]="'password'"
+                   [formControl]="form.get('wlanpwd')"
+                   [label]="'aroio.pages.network.forms.wlanpwd.label' | translate"
+                  [placeholder]="'aroio.pages.network.forms.wlanpwd.placeholder' | translate"
+      ></aroio-input>
 
 
-    <aroio-form-switch [id]="'automatic-config-form'"
-                       [label]="'Automatische Konfiguration'"
-                       [hasContent]="true"
-                       [inverted]="true"
-                       [switchState]="form.get('dhcp').value"
-                       (switched)="form.get('dhcp').setValue($event)"
-    >
-      <aroio-input [type]="'text'"
-                   [formControl]="form.get('hostname')"
-                   label="Hostname"
-                   placeholder="Hostname"
-      ></aroio-input>
-      <aroio-input [type]="'text'"
-                   [formControl]="form.get('ipaddr')"
-                   label="IP Adresse"
-                   placeholder="IP Adresse"
-      ></aroio-input>
-      <aroio-input [type]="'text'"
-                   [formControl]="form.get('netmask')"
-                   label="Subnetzmaske"
-                   placeholder="Subnetzmaske"
-      ></aroio-input>
-      <aroio-input [type]="'text'"
-                   [formControl]="form.get('gateway')"
-                   label="Gateway"
-                   placeholder="Gateway"
-      ></aroio-input>
-      <aroio-input [type]="'text'"
-                   [formControl]="form.get('dnsserv')"
-                   label="DNS Server"
-                   placeholder="DNS Server"
-      ></aroio-input>
+
+      <aroio-form-switch [id]="'wifi-dhcp-form'"
+                         [label]="'aroio.pages.network.forms.wlan_dhcp.label' | translate"
+                         [hasContent]="true"
+                         [inverted]="true"
+                         [switchState]="form.get('wlan_dhcp').value"
+                         (switched)="form.get('wlan_dhcp').setValue($event)"
+      >
+        <aroio-input [type]="'text'"
+                     [formControl]="form.get('wlan_ipaddr')"
+                     [label]="'aroio.pages.network.forms.wlan_ipaddr.label' | translate"
+                     [placeholder]="'aroio.pages.network.forms.wlan_ipaddr.placeholder' | translate"
+        ></aroio-input>
+        <aroio-input [type]="'text'"
+                     [formControl]="form.get('wlan_netmask')"
+                     [label]="'aroio.pages.network.forms.wlan_netmask.label' | translate"
+                     [placeholder]="'aroio.pages.network.forms.wlan_netmask.placeholder' | translate"
+        ></aroio-input>
+        <aroio-input [type]="'text'"
+                     [formControl]="form.get('wlan_gateway')"
+                     [label]="'aroio.pages.network.forms.wlan_gateway.label' | translate"
+                     [placeholder]="'aroio.pages.network.forms.wlan_gateway.placeholder' | translate"
+        ></aroio-input>
+        <aroio-input [type]="'text'"
+                     [formControl]="form.get('wlan_dnsserv')"
+                     [label]="'aroio.pages.network.forms.wlan_dnsserv.label' | translate"
+                     [placeholder]="'aroio.pages.network.forms.wlan_dnsserv.placeholder' | translate"
+        ></aroio-input>
+      </aroio-form-switch>
+
     </aroio-form-switch>
 
   </aroio-content-item>
 
 
-  <aroio-content-item [title]="'Webinterface'">
-    <bd-input [type]="'password'" [formControl]="form.get('wlanpwd')" label="Passwort"
-              placeholder="Passwort"></bd-input>
+  <aroio-content-item [title]="'aroio.pages.network.webinterface.title' | translate">
+
 
   </aroio-content-item>
   <!--<aroio-content-item [title]="'Hardware'">-->

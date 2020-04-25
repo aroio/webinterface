@@ -28,6 +28,7 @@ import {TabsModule} from 'ngx-bootstrap/tabs';
 import {AroioFilterListComponent} from './components/aroio-filter-list/aroio-filter-list.component';
 import {AroioFilterListItemComponent} from './components/aroio-filter-list/aroio-filter-list-item/aroio-filter-list-item.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
+import {AroioAlertComponent} from './components/aroio-alert/aroio-alert.component';
 
 @NgModule({
   imports: [
@@ -65,6 +66,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
     AroioSwitchComponent,
     AroioFormSwitchComponent,
     AroioLoadingComponent,
+    AroioAlertComponent,
 
     AroioInputComponent,
     // ---------------------------
@@ -86,6 +88,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
     // ---------------------------
     // Layout
     // ---------------------------
+    AroioAlertComponent,
     AroioHeaderComponent,
     AroioContentComponent,
     AroioFooterComponent,

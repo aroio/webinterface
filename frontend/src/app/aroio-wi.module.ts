@@ -14,6 +14,7 @@ import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {TabsModule} from 'ngx-bootstrap/tabs';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {environment} from '../environments/environment';
+import {AroioLayoutModule} from './modules/aroio-wi/modules/layout/layout.module';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -33,6 +34,7 @@ export class TranslateHandler implements MissingTranslationHandler {
   ],
   imports: [
     AroioCoreModule,
+    AroioLayoutModule,
     BrowserModule,
     FormUtilitiesModule.forRoot(
       {

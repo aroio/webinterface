@@ -39,5 +39,12 @@
   .aroio-form-switch__content {
       overflow: hidden;
       margin-bottom: spacing(2);
+      margin-left: spacing(4);
+  }
+
+
+  &.aroio-form-switch--disabled {
+    opacity: .5;
+    pointer-events: none;
   }
 }

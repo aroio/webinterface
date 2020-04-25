@@ -19,4 +19,8 @@ export class AroioSettingsService {
   setAroioSettingsNetwork(form: FormData): Observable<AroioSettingsInterface> {
     return this._api.patch<AroioSettingsInterface>( environment.api + 'settings/network', form);
   }
+
+  setAroioSettingsConvolver(form: FormData): Observable<AroioSettingsInterface> {
+    return this._api.patch<AroioSettingsInterface>( environment.api + 'settings/convolver', form);
+  }
 }

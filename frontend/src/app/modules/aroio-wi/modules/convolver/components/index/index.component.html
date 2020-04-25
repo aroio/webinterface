@@ -1,22 +1,37 @@
-<form [formGroup]="form">
-  <aroio-content-item [title]="'Einstellung'">
-    <aroio-form-switch [id]="'audio-convolution-form'" [label]="'Audio Convolution'" [hasContent]="false" (switched)="convolutionEnabled = $event"></aroio-form-switch>
-    <aroio-form-switch [id]="'pre-filter-form'" [label]="'Pre-Filter beim Booten'"></aroio-form-switch>
+<form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form">
+  <aroio-content-item [title]="'Einstellungen'">
+
+    <aroio-form-switch [id]="'pre-filter-form'"
+                       [label]="'Pre-Filter beim Booten'"
+                       [switchState]="form.get('load_prefilter').value"
+                       (switched)="form.get('load_prefilter').setValue($event)"
+    ></aroio-form-switch>
+    <aroio-form-switch [id]="'audio-convolution-form'"
+                       [label]="'Audio Convolution'"
+                       [hasContent]="true"
+                       [switchState]="form.get('brutefir').value"
+                       (switched)="form.get('brutefir').setValue($event)"
+    >
+
+
+      <aroio-content-item [title]="'Filter'">
+        <aroio-message [color]="'black-300'"
+                       *ngIf="!form.get('brutefir').value; else filterListe"
+        >Convolution ist nicht aktiviert
+        </aroio-message>
+
+        <ng-template #filterListe>
+          <aroio-filter-list>
+            <aroio-filter-list-item></aroio-filter-list-item>
+            <aroio-filter-list-item></aroio-filter-list-item>
+            <aroio-filter-list-item></aroio-filter-list-item>
+          </aroio-filter-list>
+        </ng-template>
+      </aroio-content-item>
+
+
+    </aroio-form-switch>
   </aroio-content-item>
-
-  <aroio-content-item [title]="'Filter'">
-    <aroio-message [color]="'black-300'" *ngIf="!convolutionEnabled; else filterListe">Convolution ist nicht aktiviert</aroio-message>
-
-    <ng-template #filterListe>
-      <aroio-filter-list>
-        <aroio-filter-list-item></aroio-filter-list-item>
-        <aroio-filter-list-item></aroio-filter-list-item>
-        <aroio-filter-list-item></aroio-filter-list-item>
-      </aroio-filter-list>
-    </ng-template>
-  </aroio-content-item>
-
-
 
   <div class="action-bar">
     <div class="action-bar__item">
