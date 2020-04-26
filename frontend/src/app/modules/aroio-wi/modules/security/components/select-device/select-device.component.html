@@ -1,0 +1,22 @@
+
+  <aroio-content-item [singleItem]="true" [title]="'aroio.pages.security.select_device.title' | translate">
+
+    <form [formGroup]="form" (submit)="setAroio()" *ngIf="form">
+      <ng-select
+        bdSelect
+        bindLabel="label"
+        bindValue="value"
+        [formControl]="form.get('configuration').get('network').get('hostname')"
+        [placeholder]="'aroio.pages.security.select_device.form.device.placeholder' | translate"
+        [items]="options"
+      ></ng-select>
+
+
+      <div class="action-bar">
+        <div class="action-bar__item"></div>
+        <div class="action-bar__item">
+          <button aroio-btn type="submit" [color]="'primary'">Speichern</button>
+        </div>
+      </div>
+    </form>
+  </aroio-content-item>

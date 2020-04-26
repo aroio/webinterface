@@ -124,5 +124,6 @@ export interface AroioSettingsInterface {
   name: string,
   timestamp: string,
   description: string,
+  initial_config: boolean
   configuration: ConfigurationInterface
 }

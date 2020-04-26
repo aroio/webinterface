@@ -9,5 +9,6 @@ import {Bem} from '../../../../../../utils/bem';
 export class AroioContentItemComponent {
 
   @Input() title: string;
+  @Input() singleItem = false;
 
 }

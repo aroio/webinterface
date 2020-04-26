@@ -16,6 +16,10 @@ export class AroioSettingsService {
     return this._api.get<AroioSettingsInterface>( environment.api + 'settings');
   }
 
+  setAroioSettings(form: FormData): Observable<AroioSettingsInterface> {
+    return this._api.patch<AroioSettingsInterface>( environment.api + 'settings', form);
+  }
+
   setAroioSettingsNetwork(form: FormData): Observable<AroioSettingsInterface> {
     return this._api.patch<AroioSettingsInterface>( environment.api + 'settings/network', form);
   }
