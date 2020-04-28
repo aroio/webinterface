@@ -1,19 +1,19 @@
 export const AroioTabs = [
   {
     id: 'tab-audio',
-    position: 0,
+    position: 3,
     label: 'Audio',
     route: 'audio'
   },
   {
     id: 'tab-convolver',
-    position: 1,
+    position: 4,
     label: 'Convolver',
     route: 'convolver'
   },
   {
     id: 'tab-network',
-    position: 2,
+    position: 1,
     label: 'Network',
     route: 'network'
   },
@@ -25,7 +25,7 @@ export const AroioTabs = [
   },
   {
     id: 'tab-system',
-    position: 4,
+    position: 0,
     label: 'System',
     route: 'system'
   },

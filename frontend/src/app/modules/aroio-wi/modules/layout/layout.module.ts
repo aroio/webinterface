@@ -29,6 +29,7 @@ import {AroioFilterListComponent} from './components/aroio-filter-list/aroio-fil
 import {AroioFilterListItemComponent} from './components/aroio-filter-list/aroio-filter-list-item/aroio-filter-list-item.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {AroioAlertComponent} from './components/aroio-alert/aroio-alert.component';
+import {OrderModule} from 'ngx-order-pipe';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import {AroioAlertComponent} from './components/aroio-alert/aroio-alert.componen
     BrowserAnimationsModule,
     TooltipModule,
     TabsModule,
-    AngularResizedEventModule
+    AngularResizedEventModule,
+    OrderModule
   ],
   declarations: [
     // ---------------------------

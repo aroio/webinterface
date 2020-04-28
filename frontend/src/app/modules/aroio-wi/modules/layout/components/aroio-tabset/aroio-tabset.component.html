@@ -3,7 +3,7 @@
 <div class="aroio-tabs">
   <div class="aroio-tabs__navigation">
     <a class="aroio-tabs__navigation__item"
-         *ngFor="let tab of aroioTabs"
+         *ngFor="let tab of aroioTabs | orderBy: 'position'"
          [ngClass]="{'aroio-tabs__navigation__item--active': tab.id === activeTab}"
          id="{{ tab.id }}"
        [routerLink]="['/', translate.currentLang, tab.route]"

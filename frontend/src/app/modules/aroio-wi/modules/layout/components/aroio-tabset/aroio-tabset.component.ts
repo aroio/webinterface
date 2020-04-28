@@ -22,6 +22,7 @@ export class AroioTabsetComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+
     this.subscription = this.navigationService.$activeTab.subscribe(_ => {
       this.activeTab = _;
     });
