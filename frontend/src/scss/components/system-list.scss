@@ -1,0 +1,21 @@
+ul {
+  &.aroio-system-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: spacing(2);
+
+    .aroio-system-list__item {
+      padding-bottom: spacing(0);
+
+      li {
+        margin: 0;
+      }
+
+      &.aroio-system-list__item--title {
+        font-size: getFontSize(sm);
+        font-weight: bold;
+      }
+    }
+  }
+}

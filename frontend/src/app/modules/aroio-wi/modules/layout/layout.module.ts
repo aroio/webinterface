@@ -30,6 +30,8 @@ import {AroioFilterListItemComponent} from './components/aroio-filter-list/aroio
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {AroioAlertComponent} from './components/aroio-alert/aroio-alert.component';
 import {OrderModule} from 'ngx-order-pipe';
+import {AroioSystemListComponent} from './components/aroio-system-list/aroio-system-list.component';
+import {AroioSystemListItemComponent} from './components/aroio-system-list/aroio-filter-list-item/aroio-system-list-item.component';
 
 @NgModule({
   imports: [
@@ -71,6 +73,8 @@ import {OrderModule} from 'ngx-order-pipe';
     AroioAlertComponent,
 
     AroioInputComponent,
+    AroioSystemListComponent,
+    AroioSystemListItemComponent,
     // ---------------------------
     // ---------------------------
     AroioBadgeComponent,
@@ -102,6 +106,8 @@ import {OrderModule} from 'ngx-order-pipe';
     AroioFormSwitchComponent,
 
     AroioInputComponent,
+    AroioSystemListComponent,
+    AroioSystemListItemComponent,
     // ---------------------------
     // Utils
     // ---------------------------

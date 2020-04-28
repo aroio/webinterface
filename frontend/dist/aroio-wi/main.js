@@ -2046,8 +2046,8 @@ var AroioLayoutModule = /** @class */ (function () {
                 // ---------------------------
                 _components_aroio_content_item_aroio_content_item_component__WEBPACK_IMPORTED_MODULE_8__["AroioContentItemComponent"],
                 _utils_aroio_message_aroio_message_component__WEBPACK_IMPORTED_MODULE_12__["AroioMessageComponent"],
-                _components_aroio_filter_list_aroio_filter_list_component__WEBPACK_IMPORTED_MODULE_27__["AroioFilterListComponent"],
-                _components_aroio_filter_list_aroio_filter_list_item_aroio_filter_list_item_component__WEBPACK_IMPORTED_MODULE_28__["AroioFilterListItemComponent"],
+                _components_aroio_filter_list_aroio_filter_list_component__WEBPACK_IMPORTED_MODULE_27__["AroioSystemListComponent"],
+                _components_aroio_filter_list_aroio_filter_list_item_aroio_filter_list_item_component__WEBPACK_IMPORTED_MODULE_28__["AroioSystemListItemComponent"],
                 // ---------------------------
                 // Layout
                 // ---------------------------
@@ -2076,8 +2076,8 @@ var AroioLayoutModule = /** @class */ (function () {
                 // ---------------------------
                 _components_aroio_content_item_aroio_content_item_component__WEBPACK_IMPORTED_MODULE_8__["AroioContentItemComponent"],
                 _utils_aroio_message_aroio_message_component__WEBPACK_IMPORTED_MODULE_12__["AroioMessageComponent"],
-                _components_aroio_filter_list_aroio_filter_list_component__WEBPACK_IMPORTED_MODULE_27__["AroioFilterListComponent"],
-                _components_aroio_filter_list_aroio_filter_list_item_aroio_filter_list_item_component__WEBPACK_IMPORTED_MODULE_28__["AroioFilterListItemComponent"],
+                _components_aroio_filter_list_aroio_filter_list_component__WEBPACK_IMPORTED_MODULE_27__["AroioSystemListComponent"],
+                _components_aroio_filter_list_aroio_filter_list_item_aroio_filter_list_item_component__WEBPACK_IMPORTED_MODULE_28__["AroioSystemListItemComponent"],
                 _utils_aroio_loading_aroio_loading_component__WEBPACK_IMPORTED_MODULE_10__["AroioLoadingComponent"],
                 // ---------------------------
                 // Layout

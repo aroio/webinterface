@@ -1,6 +1,19 @@
 
-<aroio-content-item>
-  <h2>system index</h2>
+<aroio-content-item [title]="'Übersicht'">
 
-  <aroio-button [color]="'primary'">Test</aroio-button>
+  <div class="row">
+    <div class="col-6">
+
+      <aroio-system-list  *ngFor="let config of getKeyValues(aroioSettings.configuration)" [title]="config.key">
+        <aroio-system-list-item *ngFor="let inner of getKeyValues(aroioSettings.configuration[config.key])" >{{ inner.key}}: {{ inner.value }}</aroio-system-list-item>
+      </aroio-system-list>
+
+    </div>
+
+    <div class="col-6">
+      <img src="/assets/aroio_lt.svg" alt="AroioLT">
+    </div>
+
+  </div>
+
 </aroio-content-item>
