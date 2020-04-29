@@ -1,6 +1,38 @@
 
 <aroio-content-item>
-  <h2>streaming index</h2>
+  <form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form">
+    <aroio-input [type]="'text'"
+                 [formControl]="form.get('playername')"
+                 [label]="'aroio.pages.streaming.forms.playername.label' | translate"
+                 [placeholder]="'aroio.pages.streaming.forms.playername.placeholder' | translate"
+    ></aroio-input>
+    <aroio-input [type]="'text'"
+                 [formControl]="form.get('servername')"
+                 [label]="'aroio.pages.streaming.forms.servername.label' | translate"
+                 [placeholder]="'aroio.pages.streaming.forms.servername.placeholder' | translate"
+    ></aroio-input>
+    <aroio-input [type]="'text'"
+                 [formControl]="form.get('serverport')"
+                 [label]="'aroio.pages.streaming.forms.serverport.label' | translate"
+                 [placeholder]="'aroio.pages.streaming.forms.serverport.placeholder' | translate"
+    ></aroio-input>
+    <aroio-input [type]="'text'"
+                 [formControl]="form.get('squeezeuser')"
+                 [label]="'aroio.pages.streaming.forms.squeezeuser.label' | translate"
+                 [placeholder]="'aroio.pages.streaming.forms.squeezeuser.placeholder' | translate"
+    ></aroio-input>
+    <aroio-input [type]="'text'"
+                 [formControl]="form.get('squeezepwd')"
+                 [label]="'aroio.pages.streaming.forms.squeezepwd.label' | translate"
+                 [placeholder]="'aroio.pages.streaming.forms.squeezepwd.placeholder' | translate"
+    ></aroio-input>
+    <div class="action-bar">
+      <div class="action-bar__item"></div>
+      <div class="action-bar__item">
+        <button aroio-btn type="submit" [color]="'primary'">Speichern</button>
+      </div>
+    </div>
+  </form>
 
-  <aroio-button [color]="'primary'">Test</aroio-button>
+
 </aroio-content-item>

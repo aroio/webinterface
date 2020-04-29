@@ -24,6 +24,10 @@ export class AroioSettingsService {
     return this._api.patch<AroioSettingsInterface>( environment.api + 'settings/network', form);
   }
 
+  setAroioSettingsStreaming(form: FormData): Observable<AroioSettingsInterface> {
+    return this._api.patch<AroioSettingsInterface>( environment.api + 'settings/streaming', form);
+  }
+
   setAroioSettingsConvolver(form: FormData): Observable<AroioSettingsInterface> {
     return this._api.patch<AroioSettingsInterface>( environment.api + 'settings/convolver', form);
   }
