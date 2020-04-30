@@ -23,8 +23,11 @@
     .footer__center__item {
       padding: 0 spacing(2);
       position: relative;
-      color: getColor(black-300);
       transition: $base-animation;
+
+      a {
+        color: getColor(black-300);
+      }
 
       &:before {
         position: absolute;
@@ -37,7 +40,9 @@
       }
 
       &:hover {
-        color: getColor(primary);
+        a {
+          color: getColor(primary);
+        }
         cursor: pointer;
       }
 

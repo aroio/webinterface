@@ -27,8 +27,8 @@ export class LoginComponent {
         private route: ActivatedRoute
     ) {
         this.form = new FormGroup({
-            username: new FormControl('', [Validators.required, isEmail]),
-            password: new FormControl('', [Validators.required, Validators.minLength(6)])
+            username: new FormControl('', [Validators.required]),
+            password: new FormControl('', [Validators.required, Validators.minLength(4)])
         });
 
         this.currentLang = this.translate.currentLang;

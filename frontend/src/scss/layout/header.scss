@@ -14,11 +14,28 @@
   align-items: center;
 
   .header__brand {
-    opacity: .2;
-    img {
-      width: 120px;
+
+    a {
+      opacity: .2;
+
+      img {
+        width: 120px;
+      }
+      
+      &:after, &:before {
+        display: none;
+      }
+    }
+
+
+    &:hover {
+      a {
+        cursor: pointer;
+        opacity: .7;
+      }
     }
   }
+
 
   .header__actions {
     .header__actions__item {

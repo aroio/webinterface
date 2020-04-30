@@ -1,6 +1,6 @@
 .login {
   width: 100%;
-  height: calc(100vh - #{$base-header-height} - #{$base-footer-height});
+  height: calc(100vh - #{$base-header-height} - #{$base-footer-height * 2} - #{$tmpl-base-spacing-top + $tmpl-base-spacing-bottom});
   display: flex;
   justify-content: center;
   align-items: center;

@@ -47,7 +47,7 @@ import {AroioSystemListItemComponent} from './components/aroio-system-list/aroio
     TooltipModule,
     TabsModule,
     AngularResizedEventModule,
-    OrderModule
+    OrderModule,
   ],
   declarations: [
     // ---------------------------

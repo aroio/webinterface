@@ -9,32 +9,31 @@ import {AroioSettingsInterface} from '../interfaces/aroio-settings.interface';
 })
 export class AroioSettingsService {
 
-  constructor(private _api: HttpClient) {
-  }
+  constructor(private _api: HttpClient) {}
 
   //////////////////////////
   // Get Routes
   //////////////////////////
   getAroioSettings(): Observable<AroioSettingsInterface> {
-    return this._api.get<AroioSettingsInterface>( environment.api + 'aroio');
+    return this._api.get<AroioSettingsInterface>( environment.api + '/aroio');
   }
 
   //////////////////////////
   // Patch Routes
   //////////////////////////
   setAroioSettings(form: FormData): Observable<AroioSettingsInterface> {
-    return this._api.patch<AroioSettingsInterface>( environment.api + 'settings', form);
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/settings', form);
   }
 
   setAroioSettingsNetwork(form: FormData): Observable<AroioSettingsInterface> {
-    return this._api.patch<AroioSettingsInterface>( environment.api + 'settings/network', form);
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/settings/network', form);
   }
 
   setAroioSettingsStreaming(form: FormData): Observable<AroioSettingsInterface> {
-    return this._api.patch<AroioSettingsInterface>( environment.api + 'settings/streaming', form);
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/settings/streaming', form);
   }
 
   setAroioSettingsConvolver(form: FormData): Observable<AroioSettingsInterface> {
-    return this._api.patch<AroioSettingsInterface>( environment.api + 'settings/convolver', form);
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/settings/convolver', form);
   }
 }

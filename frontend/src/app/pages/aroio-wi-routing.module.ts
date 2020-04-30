@@ -11,6 +11,7 @@ import {PaginationModule} from 'ngx-bootstrap/pagination';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {AroioSecurityPageModule} from './aroio-wi/security/security.routing';
 import {SecurityModule} from '../modules/security/security.module';
+import {AroioImprintPageModule} from './aroio-wi/imprint/imprint.routing';
 
 export const routes: Routes = [
   {path: '', redirectTo: environment.defaultLocale + '/network', pathMatch: 'full'},
@@ -45,7 +46,8 @@ export const routes: Routes = [
     AroioNetworkPageModule,
     AroioStreamingPageModule,
     AroioSystemPageModule,
-    AroioSecurityPageModule
+    AroioSecurityPageModule,
+    AroioImprintPageModule
   ],
   declarations: [],
   exports: [

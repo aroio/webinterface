@@ -1,13 +1,12 @@
+<div class="login">
+  <aroio-content-item [singleItem]="true" [title]="'aroio.pages.security.select_device.title' | translate">
 
-<aroio-content-item [singleItem]="true" [title]="'aroio.pages.security.select_device.title' | translate">
-
-  <h4>
-    Password Reset
-    <!--{{ 'security.password_reset.title' | translate }}-->
-  </h4>
-  <p>
-    Please type in your new password. Use a secure password with random numbers, lower-/uppercase and symbols.
-    <!--{{ 'security.password_request.description' | translate }}-->
-  </p>
-  <security-password-reset-component></security-password-reset-component>
-</aroio-content-item>
+    <h4>
+      {{ 'security.password_reset.title' | translate }}
+    </h4>
+    <p>
+      {{ 'security.password_request.description' | translate }}
+    </p>
+    <security-password-reset-component></security-password-reset-component>
+  </aroio-content-item>
+</div>

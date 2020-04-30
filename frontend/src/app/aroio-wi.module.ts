@@ -19,7 +19,7 @@ import {SecurityModule} from './modules/security/security.module';
 
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, environment.api + 'translations/', '');
+  return new TranslateHttpLoader(http, environment.api + '/translations/', '');
 }
 // Handler for missing translations debuggin
 export class TranslateHandler implements MissingTranslationHandler {

@@ -3,9 +3,9 @@
   </div>
 
   <div class="footer__center">
-    <div class="footer__center__item">Impressum</div>
-    <div class="footer__center__item">ABACUS</div>
-    <div class="footer__center__item">AroioOS - Support</div>
+    <div class="footer__center__item"><a [routerLink]="['/', translate.currentLang, 'impressum']">{{ 'aroio.pages.imprint.title' | translate }}</a></div>
+    <div class="footer__center__item"><a [routerLink]="['/', translate.currentLang, 'abacus']">{{ 'aroio.pages.abacus.title' | translate }}</a></div>
+    <div class="footer__center__item"><a [routerLink]="['/', translate.currentLang, 'support']">{{ 'aroio.pages.support.title' | translate }}</a></div>
   </div>
 
   <div class="footer__actions">
