@@ -9,9 +9,8 @@ import {AroioStreamingPageModule} from './aroio-wi/streaming/streaming.routing';
 import {AroioSystemPageModule} from './aroio-wi/system/system.routing';
 import {PaginationModule} from 'ngx-bootstrap/pagination';
 import {ModalModule} from 'ngx-bootstrap/modal';
-import {AroioSecuritySelectDeviceIndexPage} from './aroio-wi/security/select-device/select-device.page';
-import {AroioSecurityRootPage} from './aroio-wi/security/root/root.page';
 import {AroioSecurityPageModule} from './aroio-wi/security/security.routing';
+import {SecurityModule} from '../modules/security/security.module';
 
 export const routes: Routes = [
   {path: '', redirectTo: environment.defaultLocale + '/network', pathMatch: 'full'},
@@ -32,6 +31,7 @@ export const routes: Routes = [
       anchorScrolling: 'enabled'
     }),
     TranslateModule,
+    SecurityModule,
 
     ////////////////////////////////////////
     // Ngx-Bootstrap

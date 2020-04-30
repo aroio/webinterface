@@ -1,11 +1,10 @@
-import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {AroioSettingsService} from '../../../../../core/services/aroio-settings.service';
-import {AroioSettingsInterface} from '../../../../../core/interfaces/aroio-settings.interface';
 import {Subscription} from 'rxjs';
-import {AroioAlertService} from '../../../../../core/services/alert.service';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import {AroioSettingsService} from '../../../core/services/aroio-settings.service';
+import {AroioAlertService} from '../../../core/services/alert.service';
 
 @Component({
   selector: '<aroio-security-select-device-component>',
@@ -19,7 +18,8 @@ export class SecuritySelectDeviceComponent implements OnInit, OnDestroy {
   options = [
     {label: 'AroioSU', value: 'AroioSU'},
     {label: 'AroioEX', value: 'AroioEX'},
-    {label: 'AroioLT', value: 'AroioLT'}
+    {label: 'AroioLT', value: 'AroioLT'},
+    {label: 'RaspberryPI', value: 'RaspberryPI'}
   ];
 
   constructor(

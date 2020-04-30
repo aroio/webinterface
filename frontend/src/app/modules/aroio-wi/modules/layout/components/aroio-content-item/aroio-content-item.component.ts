@@ -10,5 +10,6 @@ export class AroioContentItemComponent {
 
   @Input() title: string;
   @Input() singleItem = false;
+  @Input() slim = false;
 
 }

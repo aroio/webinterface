@@ -1,0 +1,19 @@
+.login {
+  width: 100%;
+  height: calc(100vh - #{$base-header-height} - #{$base-footer-height});
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .aroio-content-item {
+    padding: spacing(6) spacing(8);
+    min-width: 440px;
+
+    .aroio-content-item__title {
+    }
+
+    .aroio-content-item__content {
+    }
+  }
+
+}

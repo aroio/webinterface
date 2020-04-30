@@ -3,12 +3,16 @@
 .tmpl {
   display: flex;
   align-items: center;
-  padding: $tmpl-base-spacing-top 0 $tmpl-base-spacing-bottom 0;
+  padding: $tmpl-base-spacing-top/2 0 $tmpl-base-spacing-bottom/2 0;
 
-  margin-bottom: $footer-height;
+  margin-bottom: $base-footer-height;
 
   &.tmpl--centered {
 
   }
 
+
+  @include media-breakpoint-up(md) {
+    padding: $tmpl-base-spacing-top 0 $tmpl-base-spacing-bottom 0;
+  }
 }

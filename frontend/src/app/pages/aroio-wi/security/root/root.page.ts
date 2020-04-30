@@ -4,6 +4,4 @@ import { Component} from '@angular/core';
     selector: 'aroio-security-root-page',
     template: '<router-outlet></router-outlet>'
 })
-export class AroioSecurityRootPage {
-    constructor() {}
-}
+export class AroioSecurityRootPage {}

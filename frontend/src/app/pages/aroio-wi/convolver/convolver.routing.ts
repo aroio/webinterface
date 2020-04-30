@@ -6,6 +6,7 @@ import {AroioConvolverRootPage} from './root/root.page';
 import {CommonModule} from '@angular/common';
 import {AroioConvolverModule} from '../../../modules/aroio-wi/modules/convolver/convolver.module';
 import {AroioConvolverWizardPage} from './wizard/wizard.page';
+import {AuthGuard} from '../../../modules/security/guards/authentication.guard';
 
 export const ConvolverRoutes: Routes = [
   // ---------------------------
@@ -15,6 +16,7 @@ export const ConvolverRoutes: Routes = [
   {
     path: ':lang/convolver',
     component: AroioConvolverRootPage,
+    canActivate: [AuthGuard],
     data: {
       routeName: 'convolver',
       meta: {

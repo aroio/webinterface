@@ -12,10 +12,16 @@ export class AroioSettingsService {
   constructor(private _api: HttpClient) {
   }
 
+  //////////////////////////
+  // Get Routes
+  //////////////////////////
   getAroioSettings(): Observable<AroioSettingsInterface> {
-    return this._api.get<AroioSettingsInterface>( environment.api + 'settings');
+    return this._api.get<AroioSettingsInterface>( environment.api + 'aroio');
   }
 
+  //////////////////////////
+  // Patch Routes
+  //////////////////////////
   setAroioSettings(form: FormData): Observable<AroioSettingsInterface> {
     return this._api.patch<AroioSettingsInterface>( environment.api + 'settings', form);
   }

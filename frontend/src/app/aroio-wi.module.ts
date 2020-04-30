@@ -15,6 +15,7 @@ import {TabsModule} from 'ngx-bootstrap/tabs';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {environment} from '../environments/environment';
 import {AroioLayoutModule} from './modules/aroio-wi/modules/layout/layout.module';
+import {SecurityModule} from './modules/security/security.module';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -75,6 +76,7 @@ export class TranslateHandler implements MissingTranslationHandler {
       },
       missingTranslationHandler: [{ provide: MissingTranslationHandler, useClass: TranslateHandler }]
     }),
+    SecurityModule.forRoot(),
   ],
   providers: [
     FormErrorService

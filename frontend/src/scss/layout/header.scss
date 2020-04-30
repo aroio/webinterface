@@ -8,6 +8,11 @@
   padding: spacing(.5) spacing(1.5);
   font-size: getFontSize(sm);
 
+  height: $base-header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   .header__brand {
     opacity: .2;
     img {

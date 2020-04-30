@@ -7,8 +7,8 @@
   justify-content: space-between;
   padding: spacing(.5) spacing(1.5);
   font-size: getFontSize(sm);
-  margin-bottom: -($footer-height);
-  height: $footer-height;
+  margin-bottom: -($base-footer-height);
+  height: $base-footer-height;
 
   .footer__brand {
     opacity: .2;

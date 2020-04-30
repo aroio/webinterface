@@ -1,0 +1,21 @@
+
+<form class="form" [formGroup]="form" *ngIf="form" (submit)="handleSubmit()">
+    <ng-content></ng-content>
+    <aroio-input [formControl]="form.get('username')"
+                 [label]="'security.login.labels.email' | translate"
+                 [placeholder]="'aroio'"
+    ></aroio-input>
+    <aroio-input type="password" [formControl]="form.get('password')"
+                 [label]="'security.login.labels.password' | translate"
+                 [placeholder]="'abacus'"
+    ></aroio-input>
+
+
+    <button aroio-button [disabled]="form.invalid" [loading]="isSendingRequest" color="primary" [block]="'true'" type="submit">
+        {{ 'security.login.labels.login' | translate }}
+    </button>
+
+    <div class="form-help">
+        <a href="" [routerLink]="['/', currentLang,'password-request']">{{ 'security.login.labels.reset' | translate }}</a>
+    </div>
+</form>
