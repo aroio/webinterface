@@ -68,7 +68,7 @@ import {AroioCoreModule} from '../core/core.module';
         IsAuthorizedDirective,
         IsNotAuthorizedDirective,
         ModuleAccessDirective,
-        SecuritySelectDeviceComponent,
+      SecuritySelectDeviceComponent,
         NoAccessComponent,
         NoAccessIndexComponent
     ],

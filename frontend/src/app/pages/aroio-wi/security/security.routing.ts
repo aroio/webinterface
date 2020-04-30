@@ -143,7 +143,8 @@ export const AroioSecurityRoutes: Routes = [
     NotFoundPage,
     NoAccessPage,
     PasswordRequestPage,
-    PasswordResetPage
+    PasswordResetPage,
+    AroioSecuritySelectDeviceIndexPage
   ],
   exports: [RouterModule]
 })

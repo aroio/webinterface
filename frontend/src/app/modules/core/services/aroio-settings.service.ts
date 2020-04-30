@@ -22,18 +22,18 @@ export class AroioSettingsService {
   // Patch Routes
   //////////////////////////
   setAroioSettings(form: FormData): Observable<AroioSettingsInterface> {
-    return this._api.patch<AroioSettingsInterface>( environment.api + '/settings', form);
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/config', form);
   }
 
   setAroioSettingsNetwork(form: FormData): Observable<AroioSettingsInterface> {
-    return this._api.patch<AroioSettingsInterface>( environment.api + '/settings/network', form);
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/config/network', form);
   }
 
   setAroioSettingsStreaming(form: FormData): Observable<AroioSettingsInterface> {
-    return this._api.patch<AroioSettingsInterface>( environment.api + '/settings/streaming', form);
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/config/streaming', form);
   }
 
   setAroioSettingsConvolver(form: FormData): Observable<AroioSettingsInterface> {
-    return this._api.patch<AroioSettingsInterface>( environment.api + '/settings/convolver', form);
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/config/convolver', form);
   }
 }

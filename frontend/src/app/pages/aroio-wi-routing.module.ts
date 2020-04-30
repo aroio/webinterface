@@ -12,6 +12,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
 import {AroioSecurityPageModule} from './aroio-wi/security/security.routing';
 import {SecurityModule} from '../modules/security/security.module';
 import {AroioImprintPageModule} from './aroio-wi/imprint/imprint.routing';
+import {AroioLayoutModule} from '../modules/aroio-wi/modules/layout/layout.module';
 
 export const routes: Routes = [
   {path: '', redirectTo: environment.defaultLocale + '/network', pathMatch: 'full'},
@@ -33,6 +34,7 @@ export const routes: Routes = [
     }),
     TranslateModule,
     SecurityModule,
+    AroioLayoutModule,
 
     ////////////////////////////////////////
     // Ngx-Bootstrap
