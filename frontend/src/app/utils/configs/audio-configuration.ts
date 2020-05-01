@@ -1,3 +1,4 @@
+
 export const AroioCodings = [
   {
     id: 'coding_stereo',
@@ -16,51 +17,45 @@ export const AroioCodings = [
 ];
 export const AroioPlayer = [
   {
-    id: 'player_sqeeze',
+    id: 'squeezelite',
     position: 0,
-    value: 'squeezelite',
     label: 'Squeezelite',
     description: 'Direkter Raspberry Pi Ausgang'
   },
   {
-    id: 'player_upnp',
+    id: 'gmediarender',
     position: 1,
-    value: 'gmediarender',
     label: 'UPnP',
     description: 'Direkter Raspberry Pi Ausgang'
   },
   {
-    id: 'player_shairplay',
+    id: 'shairportsync',
     position: 2,
-    value: 'shairportsync',
     label: 'ShAirPlay',
     description: 'Apple Airplay Support'
   },
   {
-    id: 'player_bluetooth',
+    id: 'bluealsaaplay',
     position: 3,
-    value: 'bluealsaaplay',
     label: 'Bluetooth',
     description: 'Direkter Raspberry Pi Ausgang'
   },
   {
-    id: 'player_line',
+    id: 'input',
     position: 4,
-    value: 'input',
     label: 'Line In',
     description: 'Direkter Raspberry Pi Ausgang'
   },
   {
-    id: 'player_netjack',
+    id: 'netjack',
     position: 5,
-    value: 'netjack',
     label: 'NetJack',
     description: 'Direkter Raspberry Pi Ausgang'
   }
 ];
 export const AroioOutputs = [
   {
-    id: 'output_direct',
+    id: 'direct_config',
     position: 0,
     value: 'vol-plug',
     label: 'Direkt',
@@ -70,7 +65,7 @@ export const AroioOutputs = [
     codings: AroioCodings
   },
   {
-    id: 'output_bus',
+    id: 'bus_config',
     position: 1,
     value: 'jack',
     label: 'Bus',
@@ -80,7 +75,7 @@ export const AroioOutputs = [
     codings: AroioCodings
   },
   {
-    id: 'output_convolver',
+    id: 'convolver_config',
     position: 2,
     value: 'jack-bf',
     label: 'Convolver',

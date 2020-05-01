@@ -17,7 +17,8 @@ export class AroioHeaderComponent {
   // Modal Specific
   modalIndex = 0;
   modalRef: BsModalRef;
-  form: FormGroup;
+  formBase: FormGroup;
+  formWebinterface: FormGroup;
   passwordForm: FormGroup;
 
   subscriptions: Array<Subscription> = [];
@@ -32,15 +33,18 @@ export class AroioHeaderComponent {
   }
 
   buildForm(aroioSettings: AroioSettingsInterface = null) {
-    this.form = new FormGroup({
-      username: new FormControl(aroioSettings.username ? aroioSettings.username : ''),
+    this.formBase = new FormGroup({
+      name: new FormControl(aroioSettings.username ? aroioSettings.username : ''),
+      password: new FormControl(aroioSettings.password ? aroioSettings.password : ''),
+      old_password: new FormControl(aroioSettings.password ? aroioSettings.password : ''),
       description: new FormControl(aroioSettings.description ? aroioSettings.description : ''),
-      authentication_enabled: new FormControl(aroioSettings.authentication_enabled ? aroioSettings.authentication_enabled : true),
-      webinterface: new FormGroup({
-        dark_mode: new FormControl(aroioSettings.configuration.webinterface.dark_mode ? aroioSettings.configuration.webinterface.dark_mode : false),
-        initial_setup: new FormControl(aroioSettings.configuration.webinterface.initial_setup ? aroioSettings.configuration.webinterface.initial_setup : false),
-        advanced_configuration: new FormControl(aroioSettings.configuration.webinterface.advanced_configuration ? aroioSettings.configuration.webinterface.advanced_configuration : false),
-      })
+      authentication_enabled: new FormControl(aroioSettings.authentication_enabled ? aroioSettings.authentication_enabled : true)
+    });
+
+    this.formWebinterface = new FormGroup({
+      dark_mode: new FormControl(aroioSettings.configuration.webinterface.dark_mode ? aroioSettings.configuration.webinterface.dark_mode : false),
+      initial_setup: new FormControl(aroioSettings.configuration.webinterface.initial_setup ? aroioSettings.configuration.webinterface.initial_setup : false),
+      advanced_configuration: new FormControl(aroioSettings.configuration.webinterface.advanced_configuration ? aroioSettings.configuration.webinterface.advanced_configuration : false),
     });
   }
 
@@ -52,10 +56,15 @@ export class AroioHeaderComponent {
   }
 
 
-  submitForm(event) {
+  submitForm() {
     this.subscriptions.push(
-      this.settingsSerivce.setAroioSettings(this.form.getRawValue()).subscribe(_ => {
-        this.alert.alert$.next({message: 'Die Konfiguration erfolgreich gespeichert.', type: 'success'});
+      this.settingsSerivce.setAroioBaseInformation(this.formBase.getRawValue()).subscribe(_ => {
+        this.alert.alert$.next({message: 'Die Basiskonfiguration wurde erfolgreich gespeichert.', type: 'success'});
+      }, error => {
+        this.alert.alert$.next({message: 'Es ist ein Fehler aufgetreten.', type: 'error'});
+      }),
+      this.settingsSerivce.setAroioSettingsWebinterface(this.formWebinterface.getRawValue()).subscribe(_ => {
+        this.alert.alert$.next({message: 'Die Webinterfacekonfiguration erfolgreich gespeichert.', type: 'success'});
       }, error => {
         this.alert.alert$.next({message: 'Es ist ein Fehler aufgetreten.', type: 'error'});
       })
@@ -64,7 +73,7 @@ export class AroioHeaderComponent {
 
   submitPassswordForm(event) {
     this.subscriptions.push(
-      this.settingsSerivce.setAroioPasswort(this.form.getRawValue()).subscribe(_ => {
+      this.settingsSerivce.setAroioPasswort(this.passwordForm.getRawValue()).subscribe(_ => {
         this.alert.alert$.next({message: 'Das Passwort wurde erfolgreich geändert.', type: 'success'});
       }, error => {
         this.alert.alert$.next({message: 'Es ist ein Fehler aufgetreten.', type: 'error'});

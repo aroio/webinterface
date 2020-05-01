@@ -40,48 +40,54 @@
     <aroio-loading *ngIf="isLoading"></aroio-loading>
 
     <aroio-content-item [title]="'aroio.pages.webinterface.settings' | translate">
-      <form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form && !isLoading">
+      <form [formGroup]="formBase" (submit)="submitForm($event)" *ngIf="formBase && !isLoading">
         <aroio-input [type]="'text'"
-                     [formControl]="form.get('username')"
+                     [formControl]="formBase.get('name')"
                      [label]="'aroio.pages.webinterface.forms.username.label' | translate"
                      [placeholder]="'aroio.pages.webinterface.forms.username.placeholder' | translate"
         ></aroio-input>
 
-        <bd-textarea [formControl]="form.get('description')"
+        <bd-textarea [formControl]="formBase.get('description')"
                      [label]="'aroio.pages.webinterface.forms.description.label' | translate"
                      [placeholder]="'aroio.pages.webinterface.forms.description.placeholder' | translate"
         ></bd-textarea>
 
-        <div class="checkbox">
-          <input type="checkbox" id="authentication_enabled" [formControl]="form.get('authentication_enabled')"/>
-          <label for="authentication_enabled">
-            <span class="checkbox-label">{{ 'aroio.pages.webinterface.forms.authentication_enabled.label' | translate }}</span>
-          </label>
+        <div class="form-group">
+          <div class="checkbox">
+            <input type="checkbox" id="authentication_enabled" [formControl]="formBase.get('authentication_enabled')"/>
+            <label for="authentication_enabled">
+              <span class="checkbox-label">{{ 'aroio.pages.webinterface.forms.authentication_enabled.label' | translate }}</span>
+            </label>
+          </div>
         </div>
-
-        <div class="checkbox">
-          <input type="checkbox" id="dark_mode" [formControl]="form.get('webinterface').get('dark_mode')"/>
-          <label for="dark_mode">
-            <span class="checkbox-label">{{ 'aroio.pages.webinterface.forms.dark_mode.label' | translate }}</span>
-          </label>
-        </div>
-
-        <div class="checkbox">
-          <input type="checkbox" id="advanced_configuration" [formControl]="form.get('webinterface').get('advanced_configuration')"/>
-          <label for="advanced_configuration">
-            <span class="checkbox-label">{{ 'aroio.pages.webinterface.forms.advanced_configuration.label' | translate }}</span>
-          </label>
-        </div>
-
-
-        <div class="action-bar">
-          <div class="action-bar__item"></div>
-          <div class="action-bar__item">
-            <button aroio-btn type="submit" [color]="'primary'">{{ 'aroio.cta.save' | translate }}</button>
+      </form>
+      <form [formGroup]="formWebinterface" (submit)="submitForm($event)" *ngIf="formWebinterface && !isLoading">
+        <div class="form-group">
+          <div class="checkbox">
+            <input type="checkbox" id="dark_mode" [formControl]="formWebinterface.get('dark_mode')"/>
+            <label for="dark_mode">
+              <span class="checkbox-label">{{ 'aroio.pages.webinterface.forms.dark_mode.label' | translate }}</span>
+            </label>
           </div>
         </div>
 
+        <div class="form-group">
+          <div class="checkbox">
+            <input type="checkbox" id="advanced_configuration" [formControl]="formWebinterface.get('advanced_configuration')"/>
+            <label for="advanced_configuration">
+              <span class="checkbox-label">{{ 'aroio.pages.webinterface.forms.advanced_configuration.label' | translate }}</span>
+            </label>
+          </div>
+        </div>
       </form>
+
+      <div class="action-bar">
+        <div class="action-bar__item"></div>
+        <div class="action-bar__item">
+          <aroio-button [color]="'primary'" (click)="submitForm()">{{ 'aroio.cta.save' | translate }}</aroio-button>
+        </div>
+      </div>
+
     </aroio-content-item>
     <aroio-content-item [title]="'aroio.pages.webinterface.password' | translate">
       <form [formGroup]="passwordForm" (submit)="submitPassswordForm($event)" *ngIf="passwordForm && !isLoading">

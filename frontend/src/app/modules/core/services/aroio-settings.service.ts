@@ -21,6 +21,10 @@ export class AroioSettingsService {
   //////////////////////////
   // Patch Routes
   //////////////////////////
+  setAroioBaseInformation(form: FormData): Observable<AroioSettingsInterface> {
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/aroio', form);
+  }
+
   setAroioSettings(form: FormData): Observable<AroioSettingsInterface> {
     return this._api.patch<AroioSettingsInterface>( environment.api + '/config', form);
   }
@@ -28,6 +32,19 @@ export class AroioSettingsService {
 
   setAroioSettingsNetwork(form: FormData): Observable<AroioSettingsInterface> {
     return this._api.patch<AroioSettingsInterface>( environment.api + '/config/network', form);
+  }
+
+
+  setAroioSettingsAudio(form: FormData): Observable<AroioSettingsInterface> {
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/config/audio', form);
+  }
+
+  setAroioSettingsAudioOutputConfig(form: FormData): Observable<AroioSettingsInterface> {
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/config/audio/output-configuration', form);
+  }
+
+  setAroioSettingsWebinterface(form: FormData): Observable<AroioSettingsInterface> {
+    return this._api.patch<AroioSettingsInterface>( environment.api + '/config/webinterface', form);
   }
 
   setAroioSettingsStreaming(form: FormData): Observable<AroioSettingsInterface> {

@@ -28,6 +28,7 @@
       &.swiper-slide-active {
         transform: scale(1);
         opacity: 1;
+        pointer-events: initial;
       }
     }
   }

@@ -46,10 +46,32 @@ export interface WebinterfaceConfigInterface {
 }
 
 
+
+export interface PlayerConfigInterface {
+  mscoding: boolean,
+  measurement_output: string,
+  rate: number,
+  channels: number,
+  squeezelite: boolean,
+  gmediarender: boolean,
+  shairportsync: boolean,
+  bluealsaaplay: boolean,
+  input: boolean,
+  netjack: boolean
+}
+
+export interface OutputConfigInterface {
+  audio_output: string,
+  direct_config: PlayerConfigInterface,
+  bus_config: PlayerConfigInterface,
+  convolver_config: PlayerConfigInterface
+}
+
+
 export interface AudioConfigInterface {
   audioplayer: string,
   rate: string,
-  sprate: string,
+  shairplayrate: string,
   channels: string,
   mscoding: string,
   volume: string,
@@ -69,39 +91,7 @@ export interface AudioConfigInterface {
   sp_outbuffer: string,
   sp_period: string,
   bf_partitions: string,
-  dmix_squeezelite?: boolean,
-  dmix_gmediarender?: boolean,
-  dmix_shairportsync?: boolean,
-  dmix_bluealsaaplay?: boolean,
-  dmixms_squeezelite?: boolean,
-  dmixms_gmediarender?: boolean,
-  dmixms_shairportsync?: boolean,
-  dmixms_bluealsaaplay?: boolean,
-  jack_squeezelite?: boolean,
-  jack_gmediarender?: boolean,
-  jack_shairportsync?: boolean,
-  jack_bluealsaaplay?: boolean,
-  jack_netjack?: boolean,
-  jack_input?: boolean,
-  jackms_squeezelite?: boolean,
-  jackms_gmediarender?: boolean,
-  jackms_shairportsync?: boolean,
-  jackms_bluealsaaplay?: boolean,
-  jackms_netjack?: boolean,
-  jackms_input?: boolean,
-  jackbf_squeezelite?: boolean,
-  jackbf_gmediarender?: boolean,
-  jackbf_shairportsync?: boolean,
-  jackbf_bluealsaaplay?: boolean,
-  jackbf_netjack?: boolean,
-  jackbf_input?: boolean,
-  jackbfms_squeezelite?: boolean,
-  jackbfms_gmediarender?: boolean,
-  jackbfms_shairportsync?: boolean,
-  jackbfms_bluealsaaplay?: boolean,
-  jackbfms_netjack?: boolean,
-  jackbfms_input?: boolean
-
+  output_configuration: OutputConfigInterface
 }
 
 export interface AroioFilter {
