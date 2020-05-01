@@ -6,7 +6,7 @@
         bdSelect
         bindLabel="label"
         bindValue="value"
-        [formControl]="form.get('configuration').get('network').get('hostname')"
+        [formControl]="form.get('network').get('hostname')"
         [placeholder]="'aroio.pages.security.select_device.form.device.placeholder' | translate"
         [items]="options"
       ></ng-select>
@@ -15,7 +15,7 @@
       <div class="action-bar">
         <div class="action-bar__item"></div>
         <div class="action-bar__item">
-          <button aroio-btn type="submit" [color]="'primary'">Speichern</button>
+          <button aroio-btn type="submit" [color]="'primary'">{{ 'aroio.cta.save' | translate }}</button>
         </div>
       </div>
     </form>

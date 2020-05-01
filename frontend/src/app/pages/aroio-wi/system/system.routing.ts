@@ -6,6 +6,7 @@ import {AroioSystemRootPage} from './root/root.page';
 import {CommonModule} from '@angular/common';
 import {AroioSystemModule} from '../../../modules/aroio-wi/modules/system/system.module';
 import {AuthGuard} from '../../../modules/security/guards/authentication.guard';
+import {InitialSetupGuard} from '../../../modules/security/guards/initial-setup.guard';
 
 export const AroioSystemRoutes: Routes = [
   // ---------------------------
@@ -15,7 +16,7 @@ export const AroioSystemRoutes: Routes = [
   {
     path: ':lang/system',
     component: AroioSystemRootPage,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, InitialSetupGuard],
     data: {
       routeName: 'system',
       meta: {

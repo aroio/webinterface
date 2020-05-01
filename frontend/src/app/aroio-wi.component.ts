@@ -8,9 +8,6 @@ import localeDEextra from '@angular/common/locales/extra/de';
 import localeEN from '@angular/common/locales/en';
 import localeENextra from '@angular/common/locales/extra/en';
 import {defineLocale, deLocale} from 'ngx-bootstrap/chronos';
-import {AroioSettingsService} from './modules/core/services/aroio-settings.service';
-import {Router} from '@angular/router';
-
 
 registerLocaleData(localeDE, 'de', localeDEextra);
 registerLocaleData(localeEN, 'en', localeENextra);
@@ -28,8 +25,6 @@ export class AroioWiComponent {
 
   constructor(
     private translate: TranslateService,
-    private aroioService: AroioSettingsService,
-    private router: Router
   ) {
     this.isLoading = true;
 
@@ -38,11 +33,5 @@ export class AroioWiComponent {
       this.currentTranslation = this.translate.currentLang;
       this.isLoading = false;
     });
-
-    this.aroioService.getAroioSettings().subscribe( aroioSettings => {
-      if (aroioSettings.initial_config){
-        this.router.navigate([this.translate.currentLang, 'select-aroio'])
-      }
-    })
   }
 }

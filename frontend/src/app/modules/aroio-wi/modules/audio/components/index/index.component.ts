@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {SwiperConfigInterface} from 'ngx-swiper-wrapper';
 import {AroioOutputs} from '../../../../../../utils/audio-configuration';
 import {FormControl, FormGroup} from '@angular/forms';
-import {AroioSettingsService} from '../../../../../core/services/aroio-settings.service';
-import {AroioSettingsInterface} from '../../../../../core/interfaces/aroio-settings.interface';
 
 @Component({
   selector: '<aroio-audio-index-component>',

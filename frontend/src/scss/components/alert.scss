@@ -11,6 +11,7 @@ $alert-z-index: getZindex(alert);
 .alert {
   padding: $alert-padding-y $alert-padding-x;
   margin-bottom: $alert-padding-y;
+  z-index: 1400;
 
   .alert__title {
     font-weight: getFontWeight(bold);

@@ -42,7 +42,7 @@ export class LoginComponent {
                 if (this.route.snapshot.queryParams['returnUrl']) {
                     this.router.navigateByUrl(this.route.snapshot.queryParams['returnUrl']);
                 } else {
-                    this.router.navigate(this.defaultPageResolver.resolve());
+                    this.router.navigate(['/']);
                 }
 
 

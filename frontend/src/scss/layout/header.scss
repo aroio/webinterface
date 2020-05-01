@@ -38,11 +38,22 @@
 
 
   .header__actions {
+    display: flex;
+
     .header__actions__item {
       opacity: .2;
       transition: $base-animation;
       display: flex;
       align-items: center;
+      margin-right: spacing(2);
+
+      a {
+        color: getColor(black);
+
+        &:before, &:after {
+          display: none;
+        }
+      }
 
       i {
         padding: 0 spacing(.5);

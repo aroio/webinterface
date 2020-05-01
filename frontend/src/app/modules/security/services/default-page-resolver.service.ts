@@ -6,9 +6,6 @@ import {environment} from '../../../../environments/environment';
 @Injectable()
 export class DefaultPageResolverService {
 
-  constructor(private auth: AuthService) {
-  }
-
   resolve(): Array<string> {
     const roles = AuthService.user.roles.filter((role) => {
       if (environment.defaultPage[role]) {

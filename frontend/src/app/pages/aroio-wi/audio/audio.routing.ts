@@ -6,6 +6,7 @@ import {AroioAudioRootPage} from './root/root.page';
 import {CommonModule} from '@angular/common';
 import {AroioAudioModule} from '../../../modules/aroio-wi/modules/audio/audio.module';
 import {AuthGuard} from '../../../modules/security/guards/authentication.guard';
+import {InitialSetupGuard} from '../../../modules/security/guards/initial-setup.guard';
 
 export const AudioRoutes: Routes = [
   // ---------------------------
@@ -15,7 +16,7 @@ export const AudioRoutes: Routes = [
   {
     path: ':lang/audio',
     component: AroioAudioRootPage,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, InitialSetupGuard],
     data: {
       routeName: 'audio',
       meta: {

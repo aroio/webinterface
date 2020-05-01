@@ -38,8 +38,8 @@ export class ConvolverIndexComponent implements AfterViewInit, OnDestroy {
     this.form = new FormGroup({
       brutefir: new FormControl(aroioSettings.configuration.convolver.brutefir ? aroioSettings.configuration.convolver.brutefir : false),
       load_prefilter: new FormControl(aroioSettings.configuration.convolver.load_prefilter ? aroioSettings.configuration.convolver.load_prefilter : false),
-      def_coeff: new FormControl(aroioSettings.configuration.convolver.def_coeff ? aroioSettings.configuration.convolver.def_coeff : ''),
-      filter: new FormArray([]),
+      def_coeff: new FormControl(aroioSettings.configuration.convolver.def_coeff ? aroioSettings.configuration.convolver.def_coeff : 0),
+      filters: new FormArray([]),
     });
   }
 

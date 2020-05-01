@@ -9,7 +9,9 @@
     </div>
   </div>
 
-  <div class="aroio-form-switch__content" *ngIf="(inverted ? !switchState : switchState) && hasContent && !disabled" [@fadeHeightInOut]>
-    <ng-content></ng-content>
+  <div  [@hideEnterAnimation]>
+    <div class="aroio-form-switch__content" *ngIf="(inverted ? !switchState : switchState) && hasContent && !disabled" [@fadeHeightInOut]>
+      <ng-content></ng-content>
+    </div>
   </div>
 </div>

@@ -13,7 +13,7 @@ export class NetworkIndexComponent implements AfterViewInit, OnDestroy {
 
   form: FormGroup = null;
   subscriptions: Array<Subscription> = [];
-
+  isLoading = false;
 
   constructor(
     private settingsSerivce: AroioSettingsService,
@@ -22,9 +22,11 @@ export class NetworkIndexComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.isLoading = true;
     this.subscriptions.push(
       this.settingsSerivce.getAroioSettings().subscribe(aroioSettings => {
         this.buildForm(aroioSettings);
+        this.isLoading = false;
       })
     )
   }

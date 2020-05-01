@@ -1,4 +1,6 @@
-<form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form">
+<aroio-loading *ngIf="isLoading"></aroio-loading>
+
+<form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form && !isLoading">
   <aroio-content-item [title]="'aroio.pages.network.connection.title' | translate">
 
     <aroio-input [type]="'text'"

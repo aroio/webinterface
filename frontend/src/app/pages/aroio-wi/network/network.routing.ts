@@ -6,6 +6,7 @@ import {AroioNetworkRootPage} from './root/root.page';
 import {CommonModule} from '@angular/common';
 import {AroioNetworkModule} from '../../../modules/aroio-wi/modules/network/network.module';
 import {AuthGuard} from '../../../modules/security/guards/authentication.guard';
+import {InitialSetupGuard} from '../../../modules/security/guards/initial-setup.guard';
 
 export const AroioNetworkRoutes: Routes = [
   // ---------------------------
@@ -15,7 +16,7 @@ export const AroioNetworkRoutes: Routes = [
   {
     path: ':lang/network',
     component: AroioNetworkRootPage,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, InitialSetupGuard],
     data: {
       routeName: 'network',
       meta: {

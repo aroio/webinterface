@@ -43,13 +43,15 @@ h6 {
 h1 {
   font-size: 2.8rem;
   line-height: 3.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 h2 {
   font-size: 2.2rem;
   line-height: 2.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  color: getColor(primary);
+  font-weight: 300;
 }
 
 h3 {

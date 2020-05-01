@@ -11,6 +11,7 @@ import {NoAccessPage} from './no-access/no-access.page';
 import {PasswordRequestPage} from './password-request/password-request.page';
 import {PasswordResetPage} from './password-reset/password-reset.page';
 import {SecurityModule} from '../../../modules/security/security.module';
+import {AuthGuard} from '../../../modules/security/guards/authentication.guard';
 
 export const AroioSecurityRoutes: Routes = [
   // ---------------------------
@@ -20,6 +21,7 @@ export const AroioSecurityRoutes: Routes = [
   {
     path: ':lang/select-aroio',
     component: AroioSecurityRootPage,
+    canActivate: [AuthGuard],
     data: {
       routeName: 'select-aroio',
       meta: {

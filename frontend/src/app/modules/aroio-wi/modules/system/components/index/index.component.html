@@ -1,7 +1,7 @@
 <aroio-content-item [title]="'Ihr Aroio'">
   <img src="/assets/aroio_lt.svg" alt="AroioLT">
 </aroio-content-item>
-<aroio-content-item>
+<aroio-content-item *ngIf="aroioSettings?.configuration">
   <div class="container">
     <div class="row">
       <aroio-system-list class="col-6" *ngFor="let config of getKeyValues(aroioSettings.configuration)"

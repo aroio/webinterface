@@ -11,13 +11,105 @@
   </div>
 
   <div class="header__actions">
-    <div class="header__actions__item">
+    <div class="header__actions__item" (click)="openModal(webinterfaceSettingsModal, 0)">
         Webinterface <i class="fas fa-cog"></i>
     </div>
     <div class="header__actions__item">
       <a [routerLink]="['/', translate.currentLang, 'logout']">
-        Logout
+        Logout <i class="fas fa-lock"></i>
       </a>
     </div>
   </div>
 </div>
+
+<ng-template #webinterfaceSettingsModal>
+  <div class="modal-content__close">
+    <div class="modal-content__close__times" (click)="modalClose()">
+      <i class="fas fa-times"></i>
+    </div>
+  </div>
+  <div class="modal-header">
+    <h2>
+      {{ 'aroio.pages.webinterface.title' | translate }}
+    </h2>
+    <p>
+      {{ 'aroio.pages.webinterface.help' | translate }}
+    </p>
+  </div>
+  <div class="modal-content">
+    <aroio-loading *ngIf="isLoading"></aroio-loading>
+
+    <aroio-content-item [title]="'aroio.pages.webinterface.settings' | translate">
+      <form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form && !isLoading">
+        <aroio-input [type]="'text'"
+                     [formControl]="form.get('username')"
+                     [label]="'aroio.pages.webinterface.forms.username.label' | translate"
+                     [placeholder]="'aroio.pages.webinterface.forms.username.placeholder' | translate"
+        ></aroio-input>
+
+        <bd-textarea [formControl]="form.get('description')"
+                     [label]="'aroio.pages.webinterface.forms.description.label' | translate"
+                     [placeholder]="'aroio.pages.webinterface.forms.description.placeholder' | translate"
+        ></bd-textarea>
+
+        <div class="checkbox">
+          <input type="checkbox" id="authentication_enabled" [formControl]="form.get('authentication_enabled')"/>
+          <label for="authentication_enabled">
+            <span class="checkbox-label">{{ 'aroio.pages.webinterface.forms.authentication_enabled.label' | translate }}</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="dark_mode" [formControl]="form.get('webinterface').get('dark_mode')"/>
+          <label for="dark_mode">
+            <span class="checkbox-label">{{ 'aroio.pages.webinterface.forms.dark_mode.label' | translate }}</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="advanced_configuration" [formControl]="form.get('webinterface').get('advanced_configuration')"/>
+          <label for="advanced_configuration">
+            <span class="checkbox-label">{{ 'aroio.pages.webinterface.forms.advanced_configuration.label' | translate }}</span>
+          </label>
+        </div>
+
+
+        <div class="action-bar">
+          <div class="action-bar__item"></div>
+          <div class="action-bar__item">
+            <button aroio-btn type="submit" [color]="'primary'">{{ 'aroio.cta.save' | translate }}</button>
+          </div>
+        </div>
+
+      </form>
+    </aroio-content-item>
+    <aroio-content-item [title]="'aroio.pages.webinterface.password' | translate">
+      <form [formGroup]="passwordForm" (submit)="submitPassswordForm($event)" *ngIf="passwordForm && !isLoading">
+        <aroio-input [type]="'password'"
+                     [formControl]="passwordForm.get('password')"
+                     [label]="'aroio.pages.webinterface.forms.new_password.label' | translate"
+                     [placeholder]="'aroio.pages.webinterface.forms.new_password.placeholder' | translate"
+        ></aroio-input>
+        <aroio-input [type]="'password'"
+                     [formControl]="passwordForm.get('password_repeated')"
+                     [label]="'aroio.pages.webinterface.forms.password_repeated.label' | translate"
+                     [placeholder]="'aroio.pages.webinterface.forms.password_repeated.placeholder' | translate"
+        ></aroio-input>
+
+
+        <div class="action-bar">
+          <div class="action-bar__item"></div>
+          <div class="action-bar__item">
+            <button aroio-btn type="submit" [color]="'danger'">{{ 'aroio.cta.set_password' | translate }}</button>
+          </div>
+        </div>
+
+      </form>
+
+    </aroio-content-item>
+
+  </div>
+  <div class="modal-footer">
+  </div>
+
+</ng-template>

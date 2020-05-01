@@ -36,25 +36,25 @@ export class SecuritySelectDeviceComponent implements OnInit, OnDestroy {
 
   buildForm() {
     this.form = new FormGroup({
-      initial_config: new FormControl(false, Validators.required),
-      description: new FormControl('', Validators.required),
-      configuration: new FormGroup({
-        network: new FormGroup({
-          hostname: new FormControl(null, Validators.required),
-        }),
-        system: new FormGroup({
-          platform: new FormControl(null, Validators.required),
-        }),
-        streaming: new FormGroup({
-          playername: new FormControl(null, Validators.required),
-        })
+      webinterface: new FormGroup({
+        initial_setup: new FormControl(false, Validators.required),
+      }),
+      network: new FormGroup({
+        hostname: new FormControl(null, Validators.required),
+      }),
+      system: new FormGroup({
+        platform: new FormControl(null, Validators.required),
+      }),
+      streaming: new FormGroup({
+        playername: new FormControl(null, Validators.required),
       })
     });
   }
 
   setAroio() {
-    this.form.get('configuration').get('system').get('platform').setValue(this.form.get('configuration').get('network').get('hostname').value)
-    this.form.get('configuration').get('streaming').get('playername').setValue(this.form.get('configuration').get('network').get('hostname').value)
+    this.form.get('webinterface').get('initial_setup').setValue(false);
+    this.form.get('system').get('platform').setValue(this.form.get('network').get('hostname').value);
+    this.form.get('streaming').get('playername').setValue(this.form.get('network').get('hostname').value);
     this.subscriptions.push(
       this.settingsSerivce.setAroioSettings(this.form.getRawValue()).subscribe(_ => {
         this.alert.alert$.next({message: 'Ihre Grundkonfiguration wurde erfolgreich gespeichert', type: 'success'});

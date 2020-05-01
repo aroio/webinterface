@@ -81,6 +81,7 @@ $zindex-modal: $zindex-modal-backdrop + 10;
 // ---------------------------------------------------------
 
 .modal-content {
+  position: relative;
   display: flex;
   justify-content: center;
   //align-items: center;
@@ -98,6 +99,26 @@ $zindex-modal: $zindex-modal-backdrop + 10;
     font-weight: getFontWeight(regular);
     max-width: 450px;
   }
+
+
+  .modal-content__close {
+    position: absolute;
+    width: 100%;
+    text-align: right;
+    top: 0;
+
+    .modal-content__close__times {
+      color: getColor(black-300);
+      transition: $base-animation;
+      font-size: 20px;
+
+      &:hover {
+        color: getColor(danger);
+        cursor: pointer;
+      }
+    }
+  }
+
 }
 
 .modal-footer {

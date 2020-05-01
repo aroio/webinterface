@@ -1,5 +1,5 @@
 
-<aroio-content-item>
+<aroio-content-item [title]="'Squeezebox Einstellungen'">
   <form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form">
     <aroio-input [type]="'text'"
                  [formControl]="form.get('playername')"

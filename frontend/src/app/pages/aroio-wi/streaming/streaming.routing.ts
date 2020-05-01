@@ -6,6 +6,7 @@ import {AroioStreamingRootPage} from './root/root.page';
 import {CommonModule} from '@angular/common';
 import {AroioStreamingModule} from '../../../modules/aroio-wi/modules/streaming/streaming.module';
 import {AuthGuard} from '../../../modules/security/guards/authentication.guard';
+import {InitialSetupGuard} from '../../../modules/security/guards/initial-setup.guard';
 
 export const AroioStreamingRoutes: Routes = [
   // ---------------------------
@@ -15,7 +16,7 @@ export const AroioStreamingRoutes: Routes = [
   {
     path: ':lang/streaming',
     component: AroioStreamingRootPage,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, InitialSetupGuard],
     data: {
       routeName: 'streaming',
       meta: {

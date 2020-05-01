@@ -24,7 +24,8 @@ export interface SystemConfigInterface {
   usebeta: string,
   platform: string,
   userpasswd: string,
-  known_version: string
+  known_version: string,
+  display_rotate?: boolean
 }
 
 
@@ -35,6 +36,13 @@ export interface StreamingConfigInterface {
   squeezepwd?: string,
   playername: string
 
+}
+
+
+export interface WebinterfaceConfigInterface {
+  dark_mode?: boolean,
+  initial_setup?: boolean
+  advanced_configuration?: boolean
 }
 
 
@@ -107,8 +115,8 @@ export interface ConvolverConfigInterface {
   debug: string,
   load_prefilter: boolean,
   brutefir: boolean,
-  def_coeff: string,
-  filter?: Array<AroioFilter>
+  def_coeff: number,
+  filters?: Array<AroioFilter>
 }
 
 export interface ConfigurationInterface {
@@ -117,13 +125,16 @@ export interface ConfigurationInterface {
   streaming: StreamingConfigInterface,
   audio: AudioConfigInterface,
   convolver: ConvolverConfigInterface,
+  webinterface: WebinterfaceConfigInterface,
 }
 
 
 export interface AroioSettingsInterface {
-  name: string,
+  username: string,
   timestamp: string,
   description: string,
-  initial_config: boolean
+  authentication_enabled?: boolean
+  password?: string
+  password_repeated?: string
   configuration: ConfigurationInterface
 }
