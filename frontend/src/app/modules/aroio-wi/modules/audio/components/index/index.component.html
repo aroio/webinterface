@@ -34,6 +34,7 @@
 
 
       <div class="audio-carousel__item" *ngFor="let output of audioOutputs">
+        <aroio-content-item [title]="'Output Konfiguration'">
           <ul>
             <li *ngFor="let player of output.player">
               <div class="radio" *ngIf="!output.multiselectable; else checkbox">
@@ -59,37 +60,67 @@
               </ng-template>
             </li>
           </ul>
+        </aroio-content-item>
+        <aroio-content-item [title]="'Cleanvolver'">
+          <ul>
+            <li>
+              <div class="radio">
+                <input type="radio"
+                       id="radio_{{ output.id }}_stereo"
+                       [value]="!form.get(output.id).get('mscoding').value"
+                       [checked]="!form.get(output.id).get('mscoding').value"
+                       (change)="changeStereo(output.id, false)">
 
+                <label for="radio_{{ output.id }}_stereo">
+                  <span class="radio-label">Stereo</span>
+                </label>
+              </div>
+            </li>
+            <li>
+              <div class="radio">
+                <input type="radio"
+                       id="radio_{{ output.id }}_ms"
+                       [value]="form.get(output.id).get('mscoding').value"
+                       [checked]="form.get(output.id).get('mscoding').value"
+                       (change)="changeStereo(output.id, true)">
 
-        <!--<div class="action-bar action-bar&#45;&#45;evenly" [formControl]="form.get(output.id).get('mscoding')">-->
-          <!--<div class="action-bar__item">-->
-            <!--<div class="radio">-->
-              <!--<input id="{{ output.id }}_stereo"-->
-                     <!--type="radio"-->
-                     <!--name="mscoding"-->
-                     <!--formControlName="mscoding"-->
-              <!--&gt;-->
-              <!--<label for="{{ output.id }}_stereo">-->
-                <!--<span class="radio-label">Stereo</span>-->
-              <!--</label>-->
-            <!--</div>-->
-          <!--</div>-->
-          <!--<div class="action-bar__item">-->
-            <!--<div class="radio">-->
-              <!--<input id="{{ output.id }}_ms"-->
-                     <!--type="radio"-->
-                     <!--name="mscoding"-->
-                     <!--formControlName="mscoding"-->
-              <!--&gt;-->
-              <!--<label for="{{ output.id }}_ms">-->
-                <!--<span class="radio-label">M/S</span>-->
-              <!--</label>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-
-
+                <label for="radio_{{ output.id }}_ms">
+                  <span class="radio-label">M/S</span>
+                </label>
+              </div>
+            </li>
+          </ul>
+        </aroio-content-item>
       </div>
+
+      <!--<div class="action-bar action-bar&#45;&#45;evenly" [formControl]="form.get(output.id).get('mscoding')">-->
+      <!--<div class="action-bar__item">-->
+      <!--<div class="radio">-->
+      <!--<input id="{{ output.id }}_stereo"-->
+      <!--type="radio"-->
+      <!--name="mscoding"-->
+      <!--formControlName="mscoding"-->
+      <!--&gt;-->
+      <!--<label for="{{ output.id }}_stereo">-->
+      <!--<span class="radio-label">Stereo</span>-->
+      <!--</label>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<div class="action-bar__item">-->
+      <!--<div class="radio">-->
+      <!--<input id="{{ output.id }}_ms"-->
+      <!--type="radio"-->
+      <!--name="mscoding"-->
+      <!--formControlName="mscoding"-->
+      <!--&gt;-->
+      <!--<label for="{{ output.id }}_ms">-->
+      <!--<span class="radio-label">M/S</span>-->
+      <!--</label>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
+
+
     </swiper>
   </aroio-content-item>
 

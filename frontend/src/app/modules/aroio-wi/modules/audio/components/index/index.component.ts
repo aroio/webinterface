@@ -87,6 +87,10 @@ export class AudioIndexComponent implements AfterViewInit, OnDestroy {
     )
   }
 
+  changeStereo(outputID, value) {
+    this.form.get(outputID).get('mscoding').setValue(value);
+  }
+
   changeRadio(outputID, playerID) {
     this.audioOutputs.forEach(output => {
       output.player.forEach(player => {
