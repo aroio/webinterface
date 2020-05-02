@@ -1,112 +1,112 @@
 export const AroioSoundcards = [
   {
     value: 'Internal HDMI audio',
-    label: '',
+    label: 'HDMI Intern',
     rates: []
   },
   {
     value: 'Internal audio jack',
-    label: '',
+    label: 'Interner Audio Ausgang',
     rates: []
   },
   {
     value: 'M-Audio Fast Track Pro',
-    label: '',
+    label: 'M-Audio Fast Track Pro',
     rates: ['44100','48000']
   },
   {
     value: 'AudioQuest DragonFly',
-    label: '',
+    label: 'AudioQuest DragonFly',
     rates: []
   },
   {
     value: 'AudioQuest Beetle',
-    label: '',
+    label: 'AudioQuest Beetle',
     rates: []
   },
   {
     value: 'RME Fireface UCX',
-    label: '',
+    label: 'RME Fireface UCX',
     rates: []
   },
   {
     value: 'Focusrite Scarlett',
-    label: '',
+    label: 'Focusrite Scarlett',
     rates: []
   },
   {
     value: 'Dr. DAC prime',
-    label: '',
+    label: 'Dr. DAC prime',
     rates: ['44100','48000','96000']
   },
   {
     value: 'XMOS Evaluation Board',
-    label: '',
+    label: 'XMOS Evaluation Board',
     rates: []
   },
   {
     value: 'USB Class Compliant',
-    label: '',
+    label: 'USB Class Compliant',
     rates: []
   },
   {
     value: 'AroioDAC',
-    label: '',
+    label: 'ABACUS AroioDAC',
     rates: []
   },
   {
     value: 'AroioDAC-SRC',
-    label: '',
+    label: 'ABACUS AroioDAC-SRC',
     rates: []
   },
   {
     value: 'IQAudIO DAC',
-    label: '',
+    label: 'IQAudIO DAC',
     rates: []
   },
   {
     value: 'HiFiBerry Digi',
-    label: '',
+    label: 'HiFiBerry Digi',
     rates: []
   },
   {
     value: 'HiFiBerry DAC',
-    label: '',
+    label: 'HiFiBerry DAC',
     rates: []
   },
   {
     value: 'HiFiBerry DAC+',
-    label: '',
+    label: 'HiFiBerry DAC+',
     rates: []
   },
   {
     value: 'HiFiBerry DAC+ ADC',
-    label: '',
+    label: 'HiFiBerry DAC+ ADC',
     rates: []
   },
   {
     value: 'JustBoom DAC',
-    label: '',
+    label: 'JustBoom DAC',
     rates: []
   },
   {
     value: 'Allo Piano DAC',
-    label: '',
+    label: 'Allo Piano DAC',
     rates: []
   },
   {
     value: 'Allo Piano 2.1 DAC',
-    label: '',
+    label: 'Allo Piano 2.1 DAC',
     rates: []
   },
   {
     value: 'Allo Boss DAC',
-    label: '',
+    label: 'Allo Boss DAC',
     rates: []
   },
   {
     value: 'Allo DigiOne',
-    label: '',
+    label: 'Allo DigiOne',
     rates: ['44100','48000','96000','192000']
   },
 ];

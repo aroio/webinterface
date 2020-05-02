@@ -1,5 +1,5 @@
 
-export const AroioStartVolume = [
+export const AroioStartVolumes = [
   {
     value: 0,
     label: ' 0 dB'

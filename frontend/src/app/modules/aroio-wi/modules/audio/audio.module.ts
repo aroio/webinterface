@@ -7,6 +7,8 @@ import {AroioLayoutModule} from '../layout/layout.module';
 import {AudioIndexComponent} from './components/index/index.component';
 import {SWIPER_CONFIG, SwiperConfigInterface, SwiperModule} from 'ngx-swiper-wrapper';
 import {TabsModule} from 'ngx-bootstrap/tabs';
+import {AroioCoreModule} from '../../../core/core.module';
+import {FormUtilitiesModule} from '@braune-digital/form-utilities';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -20,8 +22,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     TranslateModule,
     FormsModule,
     ReactiveFormsModule,
+    FormUtilitiesModule,
     TabsModule,
     AroioLayoutModule,
+    AroioCoreModule,
     SwiperModule
   ],
   declarations: [

@@ -50,8 +50,6 @@ export interface WebinterfaceConfigInterface {
 export interface PlayerConfigInterface {
   mscoding: boolean,
   measurement_output: string,
-  rate: number,
-  channels: number,
   squeezelite: boolean,
   gmediarender: boolean,
   shairportsync: boolean,
@@ -62,6 +60,7 @@ export interface PlayerConfigInterface {
 
 export interface OutputConfigInterface {
   audio_output: string,
+  rate: string,
   direct_config: PlayerConfigInterface,
   bus_config: PlayerConfigInterface,
   convolver_config: PlayerConfigInterface
@@ -70,8 +69,6 @@ export interface OutputConfigInterface {
 
 export interface AudioConfigInterface {
   audioplayer: string,
-  rate: string,
-  shairplayrate: string,
   channels: string,
   mscoding: string,
   volume: string,
@@ -86,10 +83,13 @@ export interface AudioConfigInterface {
   raw_player: string,
   raw_playerms: string,
   squeeze_maxfrequency: string,
+  squeeze_alsabuffer: string,
+  squeeze_alsaperiod: string,
   squeeze_intbuffer: string,
   squeeze_outbuffer: string,
   sp_outbuffer: string,
   sp_period: string,
+  sp_samplerate: string,
   bf_partitions: string,
   output_configuration: OutputConfigInterface
 }

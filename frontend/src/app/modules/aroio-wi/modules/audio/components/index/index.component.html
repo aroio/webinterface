@@ -6,8 +6,8 @@
   können.
 </p>
 
-<aroio-loading *ngIf="isloading"></aroio-loading>
-<form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form && !isloading">
+<aroio-loading *ngIf="isLoading"></aroio-loading>
+<form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form && !isLoading">
 
   <aroio-content-item [title]="'Output'">
     <div class="action-bar action-bar--evenly">
@@ -16,9 +16,9 @@
           <input id="{{ output.id }}"
                  type="radio"
                  name="audio_outputs"
-                 [value]="form.get('audio_output').value"
-                 [checked]="form.get('audio_output').value === output.value"
-                 (change)="form.get('audio_output').setValue(output.value); index = output.position">
+                 [value]="form.get('output_configuration').get('audio_output').value"
+                 [checked]="form.get('output_configuration').get('audio_output').value === output.value"
+                 (change)="form.get('output_configuration').get('audio_output').setValue(output.value); index = output.position">
           <label for="{{ output.id }}">
             <span class="radio-label">{{ output.label }}</span>
           </label>
@@ -30,7 +30,7 @@
   <aroio-content-item [title]="'Player'">
     <!--<swiper class="carousel">-->
     <swiper class="audio-carousel" [(index)]="index"
-            (indexChange)="form.get('audio_output').setValue(audioOutputs[$event].value);" [config]="config">
+            (indexChange)="form.get('output_configuration').get('audio_output').setValue(audioOutputs[$event].value);" [config]="config">
 
 
       <div class="audio-carousel__item" *ngFor="let output of audioOutputs">
@@ -40,8 +40,8 @@
               <div class="radio" *ngIf="!output.multiselectable; else checkbox">
                 <input type="radio"
                        id="radio_{{ output.id }}_{{ player.id }}"
-                       [value]="form.get(output.id).get(player.id).value"
-                       [checked]="form.get(output.id).get(player.id).value"
+                       [value]="form.get('output_configuration').get(output.id).get(player.id).value"
+                       [checked]="form.get('output_configuration').get(output.id).get(player.id).value"
                        (change)="changeRadio(output.id, player.id)">
 
                 <label for="radio_{{ output.id }}_{{ player.id }}">
@@ -52,7 +52,7 @@
                 <div class="checkbox">
                   <input type="checkbox"
                          id="checkbox_{{ output.id }}_{{ player.id }}"
-                         [formControl]="form.get(output.id).get(player.id)"/>
+                         [formControl]="form.get('output_configuration').get(output.id).get(player.id)"/>
                   <label for="checkbox_{{ output.id }}_{{ player.id }}">
                     <span class="checkbox-label">{{ player.label }}</span>
                   </label>
@@ -67,8 +67,8 @@
               <div class="radio">
                 <input type="radio"
                        id="radio_{{ output.id }}_stereo"
-                       [value]="!form.get(output.id).get('mscoding').value"
-                       [checked]="!form.get(output.id).get('mscoding').value"
+                       [value]="!form.get('output_configuration').get(output.id).get('mscoding').value"
+                       [checked]="!form.get('output_configuration').get(output.id).get('mscoding').value"
                        (change)="changeStereo(output.id, false)">
 
                 <label for="radio_{{ output.id }}_stereo">
@@ -80,8 +80,8 @@
               <div class="radio">
                 <input type="radio"
                        id="radio_{{ output.id }}_ms"
-                       [value]="form.get(output.id).get('mscoding').value"
-                       [checked]="form.get(output.id).get('mscoding').value"
+                       [value]="form.get('output_configuration').get(output.id).get('mscoding').value"
+                       [checked]="form.get('output_configuration').get(output.id).get('mscoding').value"
                        (change)="changeStereo(output.id, true)">
 
                 <label for="radio_{{ output.id }}_ms">
@@ -92,52 +92,216 @@
           </ul>
         </aroio-content-item>
       </div>
-
-      <!--<div class="action-bar action-bar&#45;&#45;evenly" [formControl]="form.get(output.id).get('mscoding')">-->
-      <!--<div class="action-bar__item">-->
-      <!--<div class="radio">-->
-      <!--<input id="{{ output.id }}_stereo"-->
-      <!--type="radio"-->
-      <!--name="mscoding"-->
-      <!--formControlName="mscoding"-->
-      <!--&gt;-->
-      <!--<label for="{{ output.id }}_stereo">-->
-      <!--<span class="radio-label">Stereo</span>-->
-      <!--</label>-->
-      <!--</div>-->
-      <!--</div>-->
-      <!--<div class="action-bar__item">-->
-      <!--<div class="radio">-->
-      <!--<input id="{{ output.id }}_ms"-->
-      <!--type="radio"-->
-      <!--name="mscoding"-->
-      <!--formControlName="mscoding"-->
-      <!--&gt;-->
-      <!--<label for="{{ output.id }}_ms">-->
-      <!--<span class="radio-label">M/S</span>-->
-      <!--</label>-->
-      <!--</div>-->
-      <!--</div>-->
-      <!--</div>-->
-
-
     </swiper>
   </aroio-content-item>
 
-  <aroio-content-item [title]="'Kodierung'">
+  <aroio-content-item [title]="'Einfache Einstellung'">
+
+    <ng-select
+      bdSelect
+      bindLabel="label"
+      bindValue="value"
+      [formControl]="form.get('output_configuration').get('rate')"
+      [label]="'aroio.pages.audio.forms.rate.label' | translate"
+      [placeholder]="'aroio.pages.audio.forms.rate.placeholder' | translate"
+      [items]="resamplingFrequencies"
+      [hideSelected]="true"
+      [searchable]="false"
+      [clearable]="false"
+      (change)="setResamplingConfig($event)"
+    ></ng-select>
+
 
   </aroio-content-item>
 
+  <aroio-content-item [title]="'Erweiterte Einstellung'" *hasAdvanced>
+
+      <aroio-input [type]="'text'"
+                   [formControl]="form.get('audioplayer')"
+                   [label]="'aroio.pages.audio.forms.audioplayer.label' | translate"
+                   [placeholder]="'aroio.pages.audio.forms.audioplayer.placeholder' | translate"
+      ></aroio-input>
+
+        <aroio-content-item [title]="'Soundkarte'">
+          <div class="select-list">
+            <ng-select
+              bdSelect
+              bindLabel="label"
+              bindValue="value"
+              [formControl]="form.get('volume_start')"
+              [label]="'aroio.pages.audio.forms.volume_start.label' | translate"
+              [placeholder]="'aroio.pages.audio.forms.volume_start.placeholder' | translate"
+              [items]="startvolumes"
+              [hideSelected]="true"
+              [clearable]="false"
+              [searchable]="false"
+            ></ng-select>
+            <ng-select
+              bdSelect
+              bindLabel="label"
+              bindValue="value"
+              [formControl]="form.get('soundcard')"
+              [label]="'aroio.pages.audio.forms.soundcard.label' | translate"
+              [placeholder]="'aroio.pages.audio.forms.soundcard.placeholder' | translate"
+              [items]="soundcards"
+              [hideSelected]="true"
+              [clearable]="false"
+              [searchable]="false"
+            ></ng-select>
+          </div>
+        </aroio-content-item>
+
+        <aroio-content-item [title]="'Jack Audio'">
+          <div class="select-list">
+            <ng-select
+              bdSelect
+              bindLabel="label"
+              bindValue="value"
+              [formControl]="form.get('jackbuffer')"
+              [label]="'aroio.pages.audio.forms.jackbuffer.label' | translate"
+              [placeholder]="'aroio.pages.audio.forms.jackbuffer.placeholder' | translate"
+              [items]="jackPuffer"
+              [hideSelected]="true"
+              [clearable]="false"
+              [searchable]="false"
+            ></ng-select>
+            <ng-select
+              bdSelect
+              bindLabel="label"
+              bindValue="value"
+              [formControl]="form.get('jackperiod')"
+              [label]="'aroio.pages.audio.forms.jackperiod.label' | translate"
+              [placeholder]="'aroio.pages.audio.forms.jackperiod.placeholder' | translate"
+              [items]="jackPeriods"
+              [hideSelected]="true"
+              [clearable]="false"
+              [searchable]="false"
+            ></ng-select>
+          </div>
+        </aroio-content-item>
+
+        <aroio-content-item [title]="'Squeeze'">
+          <div class="select-list">
+            <ng-select
+              bdSelect
+              bindLabel="label"
+              bindValue="value"
+              [formControl]="form.get('squeeze_maxfrequency')"
+              [label]="'aroio.pages.audio.forms.squeeze_maxfrequency.label' | translate"
+              [placeholder]="'aroio.pages.audio.forms.squeeze_maxfrequency.placeholder' | translate"
+              [items]="resamplingFrequencies"
+              [hideSelected]="true"
+              [clearable]="false"
+              [searchable]="false"
+            ></ng-select>
+            <ng-select
+              bdSelect
+              bindLabel="label"
+              bindValue="value"
+              [formControl]="form.get('squeeze_intbuffer')"
+              [label]="'aroio.pages.audio.forms.squeeze_intbuffer.label' | translate"
+              [placeholder]="'aroio.pages.audio.forms.squeeze_intbuffer.placeholder' | translate"
+              [items]="bufferSizes"
+              [hideSelected]="true"
+              [clearable]="false"
+              [searchable]="false"
+            ></ng-select>
+            <ng-select
+              bdSelect
+              bindLabel="label"
+              bindValue="value"
+              [formControl]="form.get('squeeze_outbuffer')"
+              [label]="'aroio.pages.audio.forms.squeeze_outbuffer.label' | translate"
+              [placeholder]="'aroio.pages.audio.forms.squeeze_outbuffer.placeholder' | translate"
+              [items]="bufferSizes"
+              [hideSelected]="true"
+              [clearable]="false"
+              [searchable]="false"
+            ></ng-select>
+          </div>
+        </aroio-content-item>
+        <aroio-content-item [title]="'ShAirPlay'">
+          <div class="select-list">
+            <ng-select
+              bdSelect
+              bindLabel="label"
+              bindValue="value"
+              [formControl]="form.get('sp_outbuffer')"
+              [label]="'aroio.pages.audio.forms.sp_outbuffer.label' | translate"
+              [placeholder]="'aroio.pages.audio.forms.sp_outbuffer.placeholder' | translate"
+              [items]="bufferSizes"
+              [hideSelected]="true"
+              [clearable]="false"
+              [searchable]="false"
+            ></ng-select>
+            <ng-select
+              bdSelect
+              bindLabel="label"
+              bindValue="value"
+              [formControl]="form.get('sp_samplerate')"
+              [label]="'aroio.pages.audio.forms.sp_samplerate.label' | translate"
+              [placeholder]="'aroio.pages.audio.forms.sp_samplerate.placeholder' | translate"
+              [items]="shairplayFrequences"
+              [hideSelected]="true"
+              [clearable]="false"
+              [searchable]="false"
+            ></ng-select>
+          </div>
+        </aroio-content-item>
+        <aroio-content-item [title]="'Brutefir'">
+          <div class="select-list">
+            <ng-select
+              bdSelect
+              bindLabel="label"
+              bindValue="value"
+              [formControl]="form.get('bf_partitions')"
+              [label]="'aroio.pages.audio.forms.bf_partitions.label' | translate"
+              [placeholder]="'aroio.pages.audio.forms.bf_partitions.placeholder' | translate"
+              [items]="brutefirPartitions"
+              [hideSelected]="true"
+              [clearable]="false"
+              [searchable]="false"
+            ></ng-select>
+          </div>
+        </aroio-content-item>
+  </aroio-content-item>
 
   <div class="action-bar">
+    <div class="action-bar__item"></div>
     <div class="action-bar__item">
-      <!--<a [routerLink]="['/', translate.currentLang, 'convolver', 'wizard']">-->
-      <!--<button aroio-btn type="submit" [color]="'primary'">Filter Hinzufügen</button>-->
-      <!--</a>-->
-    </div>
-    <div class="action-bar__item">
-      <button aroio-btn type="submit" [color]="'primary'">Speichern</button>
+      <button aroio-btn type="submit" [color]="'primary'">{{ 'aroio.cta.save' | translate }}</button>
     </div>
   </div>
 </form>
 
+
+
+
+<ng-template #setAdvancedSetupModal>
+  <div class="modal-content__close">
+    <div class="modal-content__close__times" (click)="modalClose()">
+      <i class="fas fa-times"></i>
+    </div>
+  </div>
+  <div class="modal-header">
+    <h2>
+      {{ 'Erweiterte Einstellungen' | translate }}
+    </h2>
+    <p>
+      Möchten Sie, dass Ihre erweiterten Einstellungen beibehalten werden oder soll eine Grundkonfiguration für die ausgewählte Samplerate vorgenommen werden?
+    </p>
+  </div>
+  <div class="modal-content">
+    <div class="action-bar">
+      <div class="action-bar__item">
+        <button aroio-btn type="submit" [color]="'danger'" (click)="saveRate(false)">Enstellungen beibehalten</button>
+      </div>
+      <div class="action-bar__item">
+        <button aroio-btn type="submit" [color]="'primary'"(click)="saveRate(true)">Ja, Voreinstellungen nutzen</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+  </div>
+
+</ng-template>

@@ -285,6 +285,7 @@ $select-dropdown-font-size: getFontSize(md) !default;
   font-size: $select-dropdown-font-size;
   background: $select-background;
   left: 0;
+  box-shadow: $base-box-shadow;
 
   &.ng-select-bottom {
     top: 102%;

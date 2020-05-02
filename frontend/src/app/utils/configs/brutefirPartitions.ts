@@ -1,4 +1,4 @@
-export const BrutfirPartitions = [
+export const BrutefirPartitions = [
   {
     value: 1,
     label: '1'

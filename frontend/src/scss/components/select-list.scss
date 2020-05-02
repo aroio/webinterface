@@ -1,0 +1,14 @@
+
+.select-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .form-group {
+    margin-right: spacing(2);
+    flex-basis: calc(50% - #{spacing(1)});
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+  }
+}

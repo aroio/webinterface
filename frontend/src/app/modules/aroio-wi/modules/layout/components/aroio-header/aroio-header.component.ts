@@ -17,9 +17,12 @@ export class AroioHeaderComponent {
   // Modal Specific
   modalIndex = 0;
   modalRef: BsModalRef;
+
+
   formBase: FormGroup;
   formWebinterface: FormGroup;
   passwordForm: FormGroup;
+  aroioSettings: AroioSettingsInterface;
 
   subscriptions: Array<Subscription> = [];
   isLoading = true;
@@ -33,6 +36,7 @@ export class AroioHeaderComponent {
   }
 
   buildForm(aroioSettings: AroioSettingsInterface = null) {
+    this.aroioSettings = aroioSettings;
     this.formBase = new FormGroup({
       name: new FormControl(aroioSettings.username ? aroioSettings.username : ''),
       password: new FormControl(aroioSettings.password ? aroioSettings.password : ''),
@@ -65,6 +69,9 @@ export class AroioHeaderComponent {
       }),
       this.settingsSerivce.setAroioSettingsWebinterface(this.formWebinterface.getRawValue()).subscribe(_ => {
         this.alert.alert$.next({message: 'Die Webinterfacekonfiguration erfolgreich gespeichert.', type: 'success'});
+        if (_.advanced_configuration !== this.aroioSettings.configuration.webinterface.advanced_configuration) {
+          location.reload();
+        }
       }, error => {
         this.alert.alert$.next({message: 'Es ist ein Fehler aufgetreten.', type: 'error'});
       })
