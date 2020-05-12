@@ -96,7 +96,7 @@ export class AuthService {
     const decoded = jwt_decode(token);
     if (decoded['user']) {
       AuthService.user = { ...decoded['user'], 'roles': decoded['roles'] };
-      AuthService.user.token = token;
+      AuthService.user.access_token = token;
       AuthService.onAuthenticate.next(AuthService.user);
     }
   }
@@ -116,10 +116,10 @@ export class AuthService {
    */
   getToken(credentials: SimpleCredentials, storage: StorageAbstract): Observable<Object> {
     return new Observable((observable) => {
-      this.http.post('/token', credentials).subscribe(
-        (response: { token: string }) => {
-          AuthService.storeToken(response.token, storage);
-          AuthService.setUser(response.token);
+      this.http.post('/login', credentials).subscribe(
+        (response: { access_token: string }) => {
+          AuthService.storeToken(response.access_token, storage);
+          AuthService.setUser(response.access_token);
           observable.next(response);
         },
         error => {

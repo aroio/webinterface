@@ -52,7 +52,7 @@
     margin: 0;
     top: 50%;
     transform: translateY(-50%);
-    left: spacing(1);
+    right: spacing(1);
     color: getColor(danger);
 
 
@@ -60,7 +60,7 @@
       position: absolute;
       top: 0;
       transform: translateY(calc(-100% - 10px));
-      left: spacing(-3);
+      right: spacing(-3);
       margin: 0;
       padding: spacing(1) spacing(2);
       background-color: getColor(danger);
@@ -75,7 +75,7 @@
       &:after {
         position: absolute;
         content: '';
-        left: spacing(2.7);
+        right: spacing(2.75);
         bottom: -9px;
         //transform: translateX(-50%);
         width: 0;

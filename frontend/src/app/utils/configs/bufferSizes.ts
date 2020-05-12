@@ -45,6 +45,6 @@ export const BufferSizes = [
   },
   {
     value: 1048576,
-    label: '1024M'
+    label: '1G'
   },
 ];

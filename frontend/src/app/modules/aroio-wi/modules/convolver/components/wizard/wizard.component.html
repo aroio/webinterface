@@ -9,6 +9,9 @@
           Möchten Sie eine neue Messung vornehmen?
         </p>
 
+        <button aroio-btn class="btn" [color]="'primary'" type="button" >open</button>
+        <button aroio-btn class="btn" [color]="'primary'" type="button" (click)="send()">send message</button>
+        <button aroio-btn class="btn" [color]="'primary'" type="button" (click)="close()">close</button>
         <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Wizard starten</button>
       </div>
 
