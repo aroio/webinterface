@@ -7,6 +7,8 @@ import {WizardComponent, WizardStepComponent} from 'angular-archwizard';
 import {WIZARD_STEPS} from '../../../../../../utils/configs/wizard-steps';
 import {SidebarWidgetsService} from '../../../../../core/services/sidebar-widgets.service';
 import {Widgets} from '../../../../../../utils/configs/widgets';
+import {AroioCommandInterface} from '../../../../../core/interfaces/command.interface';
+import {AroioCommands, MeassurementCommands} from '../../../../../../utils/configs/commands';
 
 
 @Component({
@@ -70,19 +72,25 @@ export class ConvolverWizardComponent implements OnInit, AfterViewInit, OnDestro
         break;
       case this.stepNames[1]:
         this.socketOpen();
+        this.socketSend(AroioCommands[MeassurementCommands.MEASUREMENT_01_BEGINN]);
+        this.socketSend(AroioCommands[MeassurementCommands.MEASUREMENT_02_MICROPHONE_ADJUSTMENT]);
         console.log(this.stepNames[1], 'Socket connection openend');
         break;
       case this.stepNames[2]:
+        this.socketSend(AroioCommands[MeassurementCommands.MESSUREMENT_03_START]);
         this.widgetService.remove(Widgets['meassurement_links']);
         console.log(this.stepNames[2]);
         break;
       case this.stepNames[3]:
+        this.socketSend(AroioCommands[MeassurementCommands.MESSUREMENT_04_RUNNING]);
         console.log(this.stepNames[3]);
         break;
       case this.stepNames[4]:
+        this.socketSend(AroioCommands[MeassurementCommands.MEASUREMENT_05_CREATE_FILTER]);
         console.log(this.stepNames[4]);
         break;
       case this.stepNames[5]:
+        this.socketSend(AroioCommands[MeassurementCommands.MEASUREMENT_06_SAVE_FILTER]);
         console.log(this.stepNames[5]);
         break;
     }
@@ -91,8 +99,9 @@ export class ConvolverWizardComponent implements OnInit, AfterViewInit, OnDestro
   //////////////////////////////////////////////////
   // Fuctions for cpen and close Websocket to API
 
-  socketSend(content) {
-    this._socketService.send({message: 'test'});
+  socketSend(content: AroioCommandInterface) {
+    console.log(content);
+    this._socketService.send(content);
   }
 
   socketOpen() {

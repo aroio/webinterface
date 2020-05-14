@@ -4,6 +4,7 @@ import {environment} from '../../../../environments/environment';
 import {webSocket, WebSocketSubject} from 'rxjs/webSocket';
 import {AroioAlertService} from './alert.service';
 import {Observable} from 'rxjs';
+import {AroioCommandInterface} from '../interfaces/command.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class MeassurementSocketService {
   // Get Routes
   //////////////////////////
 
-  send(content) {
+  send(content: AroioCommandInterface) {
     this.measssurementSocket.next(content);
   }
 
