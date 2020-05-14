@@ -1,0 +1,63 @@
+
+<div class="aroio-sidebar__widget" [ngClass]="[widget?.classModifier ? 'aroio-sidebar__widget--' + widget.classModifier : '']">
+  <ng-container [ngSwitch]="widget.id">
+    <ng-container *ngSwitchCase="WidgetTypes.SPOTIFY">
+      <div class="aroio-sidebar__widget__title">
+        <h4>Spotify Widget</h4>
+      </div>
+      <div class="aroio-sidebar__widget__content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae consequatur libero nihil nisi quos ratione.
+        </p>
+      </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="WidgetTypes.NETWORK_INFO">
+      <div class="aroio-sidebar__widget__title">
+        <h4>Netzwerk Widget</h4>
+      </div>
+      <div class="aroio-sidebar__widget__content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae consequatur libero nihil nisi quos ratione.
+        </p>
+      </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="WidgetTypes.SYSTEM_INFO">
+      <div class="aroio-sidebar__widget__title">
+        <h4>System Widget</h4>
+      </div>
+      <div class="aroio-sidebar__widget__content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae consequatur libero nihil nisi quos ratione.
+        </p>
+      </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="WidgetTypes.HELPTEXT">
+      <div class="aroio-sidebar__widget__title" *ngIf="widget.title">
+        <h4>{{ widget.title }}</h4>
+      </div>
+      <div class="aroio-sidebar__widget__content" *ngIf="widget.content">
+        <div [innerHTML]="widget.content"></div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+      <div class="aroio-sidebar__widget__title">
+        <h4>Noch keine Widgets?</h4>
+      </div>
+      <div class="aroio-sidebar__widget__content">
+        <p>
+          Stellen Sie hier ihre persönlichen Widgets zusammen, so wie Sie es brauchen und nützlich finden. Zudem werden hier nützliche Informationen für Sie angezeigt.
+        </p>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
+
+
+
+
+
+

@@ -1,10 +1,12 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Animations} from '../../../layout/animations/animations';
 import {MeassurementSocketService} from '../../../../../core/services/meassurement-socket.service';
-import {WizardComponent} from 'angular-archwizard';
+import {WizardComponent, WizardStepComponent} from 'angular-archwizard';
 import {WIZARD_STEPS} from '../../../../../../utils/configs/wizard-steps';
+import {SidebarWidgetsService} from '../../../../../core/services/sidebar-widgets.service';
+import {Widgets} from '../../../../../../utils/configs/widgets';
 
 
 @Component({
@@ -14,7 +16,7 @@ import {WIZARD_STEPS} from '../../../../../../utils/configs/wizard-steps';
     Animations.fadeHeightInOut,
   ]
 })
-export class ConvolverWizardComponent implements OnInit {
+export class ConvolverWizardComponent implements OnInit, AfterViewInit, OnDestroy {
 
   form: FormGroup;
   convolutionEnabled = true;
@@ -30,16 +32,18 @@ export class ConvolverWizardComponent implements OnInit {
   @ViewChild(WizardComponent)
   public wizard: WizardComponent;
 
+  @ViewChildren(WizardStepComponent)
+  public wizardSteps: QueryList<WizardStepComponent>;
+
   constructor(
     private  _api: HttpClient,
-    private _socketService: MeassurementSocketService
+    private _socketService: MeassurementSocketService,
+    private widgetService: SidebarWidgetsService
   ) {
 
   }
 
   ngOnInit() {
-
-
     this.form = new FormGroup({
       hostname: new FormControl('', Validators.required),
       ip: new FormControl(''),
@@ -50,17 +54,54 @@ export class ConvolverWizardComponent implements OnInit {
     });
   }
 
-  send(content) {
+  ngAfterViewInit(): void {
+    console.log(this.wizard);
+  }
+
+  ngOnDestroy(): void {
+    this.widgetService.remove(Widgets['meassurement_links']);
+  }
+
+  enterStepAndSave(){
+    switch (this.wizard.currentStep.stepId) {
+      case this.stepNames[0]:
+        this.widgetService.add(Widgets['meassurement_links']);
+        this.socketClose();
+        break;
+      case this.stepNames[1]:
+        this.socketOpen();
+        console.log(this.stepNames[1], 'Socket connection openend');
+        break;
+      case this.stepNames[2]:
+        this.widgetService.remove(Widgets['meassurement_links']);
+        console.log(this.stepNames[2]);
+        break;
+      case this.stepNames[3]:
+        console.log(this.stepNames[3]);
+        break;
+      case this.stepNames[4]:
+        console.log(this.stepNames[4]);
+        break;
+      case this.stepNames[5]:
+        console.log(this.stepNames[5]);
+        break;
+    }
+  }
+
+  //////////////////////////////////////////////////
+  // Fuctions for cpen and close Websocket to API
+
+  socketSend(content) {
     this._socketService.send({message: 'test'});
   }
 
-  open() {
+  socketOpen() {
     this._socketService.open().subscribe( _ => {
       console.log(_);
     })
   }
 
-  close() {
+  socketClose() {
     this._socketService.close();
   }
 

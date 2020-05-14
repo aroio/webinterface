@@ -1,0 +1,57 @@
+
+//
+// Progress Bar
+// ---------------------------------------------------------
+
+@keyframes progress-bar-stripes {
+  from { background-position: $progress-height 0; }
+  to { background-position: 0 0; }
+}
+
+$progress-bar-height: $base-progress-bar-height;
+$progress-legend-font-size: $base-legend-font-size;
+$progress-legend-margin: $base-legend-margin;
+
+.progress {
+
+  .progress__legend {
+    display: flex;
+    justify-content: space-between;
+    font-size: $progress-legend-font-size;
+    margin-bottom: $progress-legend-margin;
+  }
+
+  .progres__help {
+    font-size: getFontSize(sm);
+    font-style: italic;
+    color: getColor(black-100);
+  }
+}
+
+
+.progress-bar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: $progress-bar-height;
+  margin-bottom: $progress-legend-margin;
+  line-height: 1;
+  font-weight: bold;
+  background-color: getColor(black-100);
+  width: 100%;
+
+  .progress-bar__stripe {
+    width: 0;
+    height: 100%;
+    white-space: nowrap;
+    background-color: getColor(primary);
+    transition: $base-animation;
+    animation: progress-bar-stripes $progress-bar-animation-timing;
+  }
+
+  .progress-bar__value {
+    position: absolute;
+    right: 2px;
+  }
+}

@@ -1,7 +1,11 @@
 .aroio-sidebar {
   margin-top: $navigation-font-size + $navigation-padding-vertical * 2;
-  overflow: auto;
+  //overflow: auto;
   //height: $base-content-height;
+
+  aroio-sidebar-widget {
+    display: block;
+  }
 
   .aroio-sidebar__widget {
     padding: spacing(2);

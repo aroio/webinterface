@@ -32,8 +32,9 @@ export class MeassurementSocketService {
   }
 
   close() {
-    this.measssurementSocket.unsubscribe();
-    this.measssurementSocket = null;
+    if (this.measssurementSocket) {
+      this.measssurementSocket.unsubscribe();
+      this.measssurementSocket = null;
+    }
   }
-
 }

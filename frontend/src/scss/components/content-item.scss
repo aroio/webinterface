@@ -15,7 +15,6 @@
   &.aroio-content-item--single-item {
     padding: spacing(2) spacing(4);
     background-color: getColor(black-200);
-    overflow: auto;
     border-radius: $base-border-radius;
     border-top-left-radius: 0;
   }

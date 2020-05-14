@@ -5,7 +5,6 @@ import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ElementHeightService} from './services/elementHeight.service';
 import {AroioContentItemComponent} from './components/aroio-content-item/aroio-content-item.component';
 import {AngularResizedEventModule} from 'angular-resize-event';
 import {AroioLoadingComponent} from './utils/aroio-loading/aroio-loading.component';
@@ -32,6 +31,7 @@ import {AroioAlertComponent} from './components/aroio-alert/aroio-alert.componen
 import {OrderModule} from 'ngx-order-pipe';
 import {AroioSystemListComponent} from './components/aroio-system-list/aroio-system-list.component';
 import {AroioSystemListItemComponent} from './components/aroio-system-list/aroio-filter-list-item/aroio-system-list-item.component';
+import {AroioSidebarWidgetComponent} from './components/aroio-sidebar/aroio-sidebar-widget/aroio-sidebar-widget.component';
 
 @NgModule({
   imports: [
@@ -67,6 +67,7 @@ import {AroioSystemListItemComponent} from './components/aroio-system-list/aroio
     AroioButtonComponent,
     AroioTabsetComponent,
     AroioSidebarComponent,
+    AroioSidebarWidgetComponent,
     AroioSwitchComponent,
     AroioFormSwitchComponent,
     AroioLoadingComponent,
@@ -102,6 +103,7 @@ import {AroioSystemListItemComponent} from './components/aroio-system-list/aroio
     AroioButtonComponent,
     AroioTabsetComponent,
     AroioSidebarComponent,
+    AroioSidebarWidgetComponent,
     AroioSwitchComponent,
     AroioFormSwitchComponent,
 
