@@ -10,27 +10,52 @@
         </h4>
 
         <p>
-          Zur Messung wird ein miniDSP UMIK-1 USB-Messmikrofon benötigt. Das Mikrofon wird an der Hörposition aufgestellt und an einem der USB-Anschlüsse am Aroio angeschlossen.
+          Zur Messung wird ein miniDSP UMIK-1 USB-Messmikrofon benötigt. Das Mikrofon wird an der Hörposition
+          aufgestellt und an einem der USB-Anschlüsse am Aroio angeschlossen.
         </p>
 
+      </div>
+
+      <div class="wizard-steps__footer">
         <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Wizard starten</button>
       </div>
 
     </aw-wizard-step>
 
-    <aw-wizard-step stepTitle="Ausrichtung Mikrofon" [stepId]="stepNames[1]" (stepEnter)="enterStepAndSave()">
+    <aw-wizard-step stepTitle="Ausrichtung Mikrofon" [stepId]="stepNames[1]" (stepEnter)="enterStepAndSave()" [canExit]="micPlugged">
       <div class="wizard-steps__content">
-        Content of Step 2
+        <p>
+          Bitte schließen Sie das Mikrofon an und richten es entsprechend unserem Tutorial Video aus.
+        </p>
+
+
+        <aroio-message [color]="micPlugged ? 'success' : 'warning'">
+          <ng-container *ngIf="micPlugged; else micNotPluggedTemplate">
+            Ihr Mikrofon ist korrekt angeschlossen und Sie können mit der Messung fortfahren.
+          </ng-container>
+          <ng-template #micNotPluggedTemplate>
+            Sie haben kein Mikrofon gesteckt. Bitte überprüfen Sie ob Ihr Mikrofon korrekt angeschlossen ist. Achten Sie darauf, dass die oberen beiden USB-Anschlüsse des Aroios zur reinen Stromversorgung dienen und keine weitere Funktion haben.
+          </ng-template>
+        </aroio-message>
       </div>
 
-      <div class="action-bar">
-        <div class="action-bar__item">
-          <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+      <div class="wizard-steps__footer">
+        <div class="action-bar">
+          <div class="action-bar__item">
+            <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+          </div>
+
+          <div class="action-bar__item">
+            <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep [disabled]="!wizard?.currentStep.canExit">Nächster Schritt</button>
+          </div>
         </div>
 
-        <div class="action-bar__item">
-          <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>
-        </div>
+
+        <ng-container *ngIf="wizard?.currentStep.stepId && wizard.currentStep.stepId === stepNames[1]">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/XmE-weP9M78?start=21" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </ng-container>
       </div>
 
     </aw-wizard-step>
@@ -38,27 +63,32 @@
     <aw-wizard-step stepTitle="Start der Messung" [stepId]="stepNames[2]" (stepEnter)="enterStepAndSave()">
       <div class="wizard-steps__content">
         <p>
-          Es wird das Mess-Signal geladen und der Messvorgang gestartet. Danach durchläuft das Signal alle Frequenzen von tief bis hoch einmal links, einmal rechts und noch einmal links.
+          Es wird das Mess-Signal geladen und der Messvorgang gestartet. Danach durchläuft das Signal alle Frequenzen
+          von tief bis hoch einmal links, einmal rechts und noch einmal links.
         </p>
 
         <aroio-message [color]="'warning'">
-          Die Lautstärke sollte so eingestellt werden, das der Pegel ausreichend hoch ist, ohne dass die Lautsprecher (vor allem im Bass) mechanisch an Grenzen stoßen.
+          Die Lautstärke sollte so eingestellt werden, das der Pegel ausreichend hoch ist, ohne dass die Lautsprecher
+          (vor allem im Bass) mechanisch an Grenzen stoßen.
         </aroio-message>
 
 
         <aroio-button>Test Pegel</aroio-button>
         <p>
-          spielt für 10 Sekunden ein Rauschen ab, das als Orientierung für die Lautstärke der Messung dient. Diese sollte so eingestellt werden, dass sie als angenehm und nicht als kräftig empfunden wird.
+          spielt für 10 Sekunden ein Rauschen ab, das als Orientierung für die Lautstärke der Messung dient. Diese
+          sollte so eingestellt werden, dass sie als angenehm und nicht als kräftig empfunden wird.
         </p>
       </div>
+      <div class="wizard-steps__footer">
 
-      <div class="action-bar">
-        <div class="action-bar__item">
-          <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
-        </div>
+        <div class="action-bar">
+          <div class="action-bar__item">
+            <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+          </div>
 
-        <div class="action-bar__item">
-          <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>
+          <div class="action-bar__item">
+            <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Nächster Schritt</button>
+          </div>
         </div>
       </div>
     </aw-wizard-step>
@@ -66,37 +96,42 @@
     <aw-wizard-step stepTitle="Messung läuft" [stepId]="stepNames[3]" (stepEnter)="enterStepAndSave()">
       <div class="wizard-steps__content">
 
-        <aroio-progress-bar [progress]="32"></aroio-progress-bar>
+        <aroio-progress-bar [progress]="progress"></aroio-progress-bar>
 
         <aroio-message [color]="'danger'">
           Während der Messung bitte die Lautstärke nicht ändern.
         </aroio-message>
       </div>
+      <div class="wizard-steps__footer">
+        <div class="action-bar">
+          <div class="action-bar__item">
+            <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+          </div>
 
-      <div class="action-bar">
-        <div class="action-bar__item">
-          <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+          <div class="action-bar__item">
+            <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Nächster Schritt</button>
+          </div>
         </div>
 
-        <div class="action-bar__item">
-          <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>
-        </div>
       </div>
     </aw-wizard-step>
 
     <aw-wizard-step stepTitle="Filter berechnen" [stepId]="stepNames[4]" (stepEnter)="enterStepAndSave()">
       <div class="wizard-steps__content">
-        <p>Nach erfolgreicher Messung kann das Ergebnis mit AudioVero Acourate oder AcourateCV von einem PC über das Netzwerk importiert und ausgewertet werden.</p>
+        <p>Nach erfolgreicher Messung kann das Ergebnis mit AudioVero Acourate oder AcourateCV von einem PC über das
+          Netzwerk importiert und ausgewertet werden.</p>
       </div>
+      <div class="wizard-steps__footer">
+        <div class="action-bar">
+          <div class="action-bar__item">
+            <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+          </div>
 
-      <div class="action-bar">
-        <div class="action-bar__item">
-          <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+          <div class="action-bar__item">
+            <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Nächster Schritt</button>
+          </div>
         </div>
 
-        <div class="action-bar__item">
-          <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>
-        </div>
       </div>
     </aw-wizard-step>
 
@@ -105,18 +140,22 @@
         <h3>Fertig</h3>
 
         <p>
-          Kontroll-Messung startet eine Messung durch den Convolver mit den im Reiter Convolver gesetzten Filtern. Dies ist unabhängig von dem im Reiter System ausgewählten Ausgabemodus. Dieser Modus dient der Kontrolle von bestehenden Filtern.
+          Kontroll-Messung startet eine Messung durch den Convolver mit den im Reiter Convolver gesetzten Filtern. Dies
+          ist unabhängig von dem im Reiter System ausgewählten Ausgabemodus. Dieser Modus dient der Kontrolle von
+          bestehenden Filtern.
         </p>
       </div>
 
+      <div class="wizard-steps__footer">
 
-      <div class="action-bar">
-        <div class="action-bar__item">
-          <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
-        </div>
+        <div class="action-bar">
+          <div class="action-bar__item">
+            <button aroio-btn class="btn" type="link" awPreviousStep>Zurück</button>
+          </div>
 
-        <div class="action-bar__item">
-          <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Vor</button>
+          <div class="action-bar__item">
+            <button aroio-btn class="btn" [color]="'primary'" type="button" awNextStep>Nächster Schritt</button>
+          </div>
         </div>
       </div>
     </aw-wizard-step>

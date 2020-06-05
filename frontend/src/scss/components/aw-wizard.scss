@@ -138,8 +138,15 @@ aw-wizard-navigation-bar {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      margin-bottom: spacing(4);
+      margin-bottom: spacing(2);
     }
 
+    .wizard-steps__footer {
+      @include paddingVertical(spacing(2));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 }

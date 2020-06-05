@@ -22,6 +22,8 @@ export class ConvolverWizardComponent implements OnInit, AfterViewInit, OnDestro
 
   form: FormGroup;
   convolutionEnabled = true;
+  progress = 0;
+  micPlugged = false;
   stepNames = [
     WIZARD_STEPS.STARTUP,
     WIZARD_STEPS.POSITIONING,
@@ -56,9 +58,7 @@ export class ConvolverWizardComponent implements OnInit, AfterViewInit, OnDestro
     });
   }
 
-  ngAfterViewInit(): void {
-    console.log(this.wizard);
-  }
+  ngAfterViewInit(): void {}
 
   ngOnDestroy(): void {
     this.widgetService.remove(Widgets['meassurement_links']);
@@ -66,32 +66,52 @@ export class ConvolverWizardComponent implements OnInit, AfterViewInit, OnDestro
 
   enterStepAndSave(){
     switch (this.wizard.currentStep.stepId) {
+      ///////////////
+      // Startup
+      ///////////////
       case this.stepNames[0]:
         this.widgetService.add(Widgets['meassurement_links']);
         this.socketClose();
         break;
+      ///////////////
+      // Begin with measurement routine and adjust microphone
+      ///////////////
       case this.stepNames[1]:
         this.socketOpen();
         this.socketSend(AroioCommands[MeassurementCommands.MEASUREMENT_01_BEGINN]);
         this.socketSend(AroioCommands[MeassurementCommands.MEASUREMENT_02_MICROPHONE_ADJUSTMENT]);
-        console.log(this.stepNames[1], 'Socket connection openend');
         break;
+      ///////////////
+      // Start Meassurement
+      ///////////////
       case this.stepNames[2]:
         this.socketSend(AroioCommands[MeassurementCommands.MESSUREMENT_03_START]);
         this.widgetService.remove(Widgets['meassurement_links']);
-        console.log(this.stepNames[2]);
         break;
+      ///////////////
+      // meassurement progress
+      ///////////////
       case this.stepNames[3]:
         this.socketSend(AroioCommands[MeassurementCommands.MESSUREMENT_04_RUNNING]);
-        console.log(this.stepNames[3]);
+
+        this._socketService.openProgress().subscribe( _ => {
+          console.log(_);
+          this._socketService.sendProgress(AroioCommands[MeassurementCommands.MESSUREMENT_04_RUNNING]);
+        });
+
         break;
+      ///////////////
+      // creat filter
+      ///////////////
       case this.stepNames[4]:
+        this._socketService.closeProgress();
         this.socketSend(AroioCommands[MeassurementCommands.MEASUREMENT_05_CREATE_FILTER]);
-        console.log(this.stepNames[4]);
         break;
+      ///////////////
+      // save filter and finish
+      ///////////////
       case this.stepNames[5]:
         this.socketSend(AroioCommands[MeassurementCommands.MEASUREMENT_06_SAVE_FILTER]);
-        console.log(this.stepNames[5]);
         break;
     }
   }
@@ -100,13 +120,16 @@ export class ConvolverWizardComponent implements OnInit, AfterViewInit, OnDestro
   // Fuctions for cpen and close Websocket to API
 
   socketSend(content: AroioCommandInterface) {
-    console.log(content);
     this._socketService.send(content);
   }
 
   socketOpen() {
     this._socketService.open().subscribe( _ => {
       console.log(_);
+      if (_["command"] === 'mic_plugged') {
+        console.log('true');
+        this.micPlugged = _.value as boolean;
+      }
     })
   }
 
