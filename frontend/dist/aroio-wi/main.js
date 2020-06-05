@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>\n  Hier kann das Ausgang-Routing des Aroio System eingestellt werden. Wählen Sie zuerst den gewünschten Ausgang. In\n  Abhängigkeit zu dem Ausgang können Sie dann die gewünschten Player auswhlen. Eine Mehrfachauswahl ist nur bei dem\n  Ausgang „Bus“ und „Convolver“ möglich. Am Ende können Sie die Kodierung des physikalischen Audio Ausgangs wählen.\n  Mid/Side macht nur in zusammenhang mit unserer Geräte sinn, wenn Sie dort die Hardwareseitige Cleaner-Funktion Nutzen\n  können.\n</p>\n\n<aroio-loading *ngIf=\"isloading\"></aroio-loading>\n<form [formGroup]=\"form\" (submit)=\"submitForm($event)\" *ngIf=\"form && !isloading\">\n\n  <aroio-content-item [title]=\"'Output'\">\n    <div class=\"action-bar action-bar--evenly\">\n      <div class=\"action-bar__item\" *ngFor=\"let output of audioOutputs;\">\n        <div class=\"radio\">\n          <input id=\"{{ output.id }}\"\n                 type=\"radio\"\n                 name=\"audio_outputs\"\n                 [value]=\"form.get('audio_output').value\"\n                 [checked]=\"form.get('audio_output').value === output.value\"\n                 (change)=\"form.get('audio_output').setValue(output.value); index = output.position\">\n          <label for=\"{{ output.id }}\">\n            <span class=\"radio-label\">{{ output.label }}</span>\n          </label>\n        </div>\n      </div>\n    </div>\n  </aroio-content-item>\n\n  <aroio-content-item [title]=\"'Player'\">\n    <!--<swiper class=\"carousel\">-->\n    <swiper class=\"audio-carousel\" [(index)]=\"index\"\n            (indexChange)=\"form.get('audio_output').setValue(audioOutputs[$event].value);\" [config]=\"config\">\n\n\n      <div class=\"audio-carousel__item\" *ngFor=\"let output of audioOutputs\">\n          <ul>\n            <li *ngFor=\"let player of output.player\">\n              <div class=\"radio\" *ngIf=\"!output.multiselectable; else checkbox\">\n                <input type=\"radio\"\n                       id=\"radio_{{ output.id }}_{{ player.id }}\"\n                       [value]=\"form.get(output.id).get(player.id).value\"\n                       [checked]=\"form.get(output.id).get(player.id).value\"\n                       (change)=\"changeRadio(output.id, player.id)\">\n\n                <label for=\"radio_{{ output.id }}_{{ player.id }}\">\n                  <span class=\"radio-label\">{{ player.label }}</span>\n                </label>\n              </div>\n              <ng-template #checkbox>\n                <div class=\"checkbox\">\n                  <input type=\"checkbox\"\n                         id=\"checkbox_{{ output.id }}_{{ player.id }}\"\n                         [formControl]=\"form.get(output.id).get(player.id)\"/>\n                  <label for=\"checkbox_{{ output.id }}_{{ player.id }}\">\n                    <span class=\"checkbox-label\">{{ player.label }}</span>\n                  </label>\n                </div>\n              </ng-template>\n            </li>\n          </ul>\n\n\n        <!--<div class=\"action-bar action-bar&#45;&#45;evenly\" [formControl]=\"form.get(output.id).get('mscoding')\">-->\n          <!--<div class=\"action-bar__item\">-->\n            <!--<div class=\"radio\">-->\n              <!--<input id=\"{{ output.id }}_stereo\"-->\n                     <!--type=\"radio\"-->\n                     <!--name=\"mscoding\"-->\n                     <!--formControlName=\"mscoding\"-->\n              <!--&gt;-->\n              <!--<label for=\"{{ output.id }}_stereo\">-->\n                <!--<span class=\"radio-label\">Stereo</span>-->\n              <!--</label>-->\n            <!--</div>-->\n          <!--</div>-->\n          <!--<div class=\"action-bar__item\">-->\n            <!--<div class=\"radio\">-->\n              <!--<input id=\"{{ output.id }}_ms\"-->\n                     <!--type=\"radio\"-->\n                     <!--name=\"mscoding\"-->\n                     <!--formControlName=\"mscoding\"-->\n              <!--&gt;-->\n              <!--<label for=\"{{ output.id }}_ms\">-->\n                <!--<span class=\"radio-label\">M/S</span>-->\n              <!--</label>-->\n            <!--</div>-->\n          <!--</div>-->\n        <!--</div>-->\n\n\n      </div>\n    </swiper>\n  </aroio-content-item>\n\n  <aroio-content-item [title]=\"'Kodierung'\">\n\n  </aroio-content-item>\n\n\n  <div class=\"action-bar\">\n    <div class=\"action-bar__item\">\n      <!--<a [routerLink]=\"['/', translate.currentLang, 'convolver', 'wizard']\">-->\n      <!--<button aroio-btn type=\"submit\" [color]=\"'primary'\">Filter Hinzufügen</button>-->\n      <!--</a>-->\n    </div>\n    <div class=\"action-bar__item\">\n      <button aroio-btn type=\"submit\" [color]=\"'primary'\">Speichern</button>\n    </div>\n  </div>\n</form>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>\n  Hier kann das Ausgang-Routing des Aroio System eingestellt werden. Wählen Sie zuerst den gewünschten Ausgang. In\n  Abhängigkeit zu dem Ausgang können Sie dann die gewünschten Player auswhlen. Eine Mehrfachauswahl ist nur bei dem\n  Ausgang „Bus“ und „Convolver“ möglich. Am Ende können Sie die Kodierung des physikalischen Audio Ausgangs wählen.\n  Mid/Side macht nur in zusammenhang mit unserer Geräte sinn, wenn Sie dort die Hardwareseitige Cleaner-Funktion Nutzen\n  können.\n</p>\n\n<aroio-loading *ngIf=\"isLoading\"></aroio-loading>\n<form [formGroup]=\"form\" (submit)=\"submitForm($event)\" *ngIf=\"form && !isLoading\">\n\n  <aroio-content-item [title]=\"'Output'\">\n    <div class=\"action-bar action-bar--evenly\">\n      <div class=\"action-bar__item\" *ngFor=\"let output of audioOutputs;\">\n        <div class=\"radio\">\n          <input id=\"{{ output.id }}\"\n                 type=\"radio\"\n                 name=\"audio_outputs\"\n                 [value]=\"form.get('output_configuration').get('audio_output').value\"\n                 [checked]=\"form.get('output_configuration').get('audio_output').value === output.value\"\n                 (change)=\"form.get('output_configuration').get('audio_output').setValue(output.value); index = output.position\">\n          <label for=\"{{ output.id }}\">\n            <span class=\"radio-label\">{{ output.label }}</span>\n          </label>\n        </div>\n      </div>\n    </div>\n  </aroio-content-item>\n\n  <aroio-content-item [title]=\"'Player'\">\n    <!--<swiper class=\"carousel\">-->\n    <swiper class=\"audio-carousel\" [(index)]=\"index\"\n            (indexChange)=\"form.get('output_configuration').get('audio_output').setValue(audioOutputs[$event].value);\" [config]=\"config\">\n\n\n      <div class=\"audio-carousel__item\" *ngFor=\"let output of audioOutputs\">\n        <aroio-content-item [title]=\"'Output Konfiguration'\">\n          <ul>\n            <li *ngFor=\"let player of output.player\">\n              <div class=\"radio\" *ngIf=\"!output.multiselectable; else checkbox\">\n                <input type=\"radio\"\n                       id=\"radio_{{ output.id }}_{{ player.id }}\"\n                       [value]=\"form.get('output_configuration').get(output.id).get(player.id).value\"\n                       [checked]=\"form.get('output_configuration').get(output.id).get(player.id).value\"\n                       (change)=\"changeRadio(output.id, player.id)\">\n\n                <label for=\"radio_{{ output.id }}_{{ player.id }}\">\n                  <span class=\"radio-label\">{{ player.label }}</span>\n                </label>\n              </div>\n              <ng-template #checkbox>\n                <div class=\"checkbox\">\n                  <input type=\"checkbox\"\n                         id=\"checkbox_{{ output.id }}_{{ player.id }}\"\n                         [formControl]=\"form.get('output_configuration').get(output.id).get(player.id)\"/>\n                  <label for=\"checkbox_{{ output.id }}_{{ player.id }}\">\n                    <span class=\"checkbox-label\">{{ player.label }}</span>\n                  </label>\n                </div>\n              </ng-template>\n            </li>\n          </ul>\n        </aroio-content-item>\n        <aroio-content-item [title]=\"'Cleanvolver'\">\n          <ul>\n            <li>\n              <div class=\"radio\">\n                <input type=\"radio\"\n                       id=\"radio_{{ output.id }}_stereo\"\n                       [value]=\"!form.get('output_configuration').get(output.id).get('mscoding').value\"\n                       [checked]=\"!form.get('output_configuration').get(output.id).get('mscoding').value\"\n                       (change)=\"changeStereo(output.id, false)\">\n\n                <label for=\"radio_{{ output.id }}_stereo\">\n                  <span class=\"radio-label\">Stereo</span>\n                </label>\n              </div>\n            </li>\n            <li>\n              <div class=\"radio\">\n                <input type=\"radio\"\n                       id=\"radio_{{ output.id }}_ms\"\n                       [value]=\"form.get('output_configuration').get(output.id).get('mscoding').value\"\n                       [checked]=\"form.get('output_configuration').get(output.id).get('mscoding').value\"\n                       (change)=\"changeStereo(output.id, true)\">\n\n                <label for=\"radio_{{ output.id }}_ms\">\n                  <span class=\"radio-label\">M/S</span>\n                </label>\n              </div>\n            </li>\n          </ul>\n        </aroio-content-item>\n      </div>\n    </swiper>\n  </aroio-content-item>\n\n  <aroio-content-item [title]=\"'Einfache Einstellung'\">\n\n    <ng-select\n      bdSelect\n      bindLabel=\"label\"\n      bindValue=\"value\"\n      [formControl]=\"form.get('output_configuration').get('rate')\"\n      [label]=\"'aroio.pages.audio.forms.rate.label' | translate\"\n      [placeholder]=\"'aroio.pages.audio.forms.rate.placeholder' | translate\"\n      [items]=\"resamplingFrequencies\"\n      [hideSelected]=\"true\"\n      [searchable]=\"false\"\n      [clearable]=\"false\"\n      (change)=\"setResamplingConfig($event)\"\n    ></ng-select>\n\n\n  </aroio-content-item>\n\n  <aroio-content-item [title]=\"'Erweiterte Einstellung'\" *hasAdvanced>\n\n      <aroio-input [type]=\"'text'\"\n                   [formControl]=\"form.get('audioplayer')\"\n                   [label]=\"'aroio.pages.audio.forms.audioplayer.label' | translate\"\n                   [placeholder]=\"'aroio.pages.audio.forms.audioplayer.placeholder' | translate\"\n      ></aroio-input>\n\n        <aroio-content-item [title]=\"'Soundkarte'\">\n          <div class=\"select-list\">\n            <ng-select\n              bdSelect\n              bindLabel=\"label\"\n              bindValue=\"value\"\n              [formControl]=\"form.get('volume_start')\"\n              [label]=\"'aroio.pages.audio.forms.volume_start.label' | translate\"\n              [placeholder]=\"'aroio.pages.audio.forms.volume_start.placeholder' | translate\"\n              [items]=\"startvolumes\"\n              [hideSelected]=\"true\"\n              [clearable]=\"false\"\n              [searchable]=\"false\"\n            ></ng-select>\n            <ng-select\n              bdSelect\n              bindLabel=\"label\"\n              bindValue=\"value\"\n              [formControl]=\"form.get('soundcard')\"\n              [label]=\"'aroio.pages.audio.forms.soundcard.label' | translate\"\n              [placeholder]=\"'aroio.pages.audio.forms.soundcard.placeholder' | translate\"\n              [items]=\"soundcards\"\n              [hideSelected]=\"true\"\n              [clearable]=\"false\"\n              [searchable]=\"false\"\n            ></ng-select>\n          </div>\n        </aroio-content-item>\n\n        <aroio-content-item [title]=\"'Jack Audio'\">\n          <div class=\"select-list\">\n            <ng-select\n              bdSelect\n              bindLabel=\"label\"\n              bindValue=\"value\"\n              [formControl]=\"form.get('jackbuffer')\"\n              [label]=\"'aroio.pages.audio.forms.jackbuffer.label' | translate\"\n              [placeholder]=\"'aroio.pages.audio.forms.jackbuffer.placeholder' | translate\"\n              [items]=\"jackPuffer\"\n              [hideSelected]=\"true\"\n              [clearable]=\"false\"\n              [searchable]=\"false\"\n            ></ng-select>\n            <ng-select\n              bdSelect\n              bindLabel=\"label\"\n              bindValue=\"value\"\n              [formControl]=\"form.get('jackperiod')\"\n              [label]=\"'aroio.pages.audio.forms.jackperiod.label' | translate\"\n              [placeholder]=\"'aroio.pages.audio.forms.jackperiod.placeholder' | translate\"\n              [items]=\"jackPeriods\"\n              [hideSelected]=\"true\"\n              [clearable]=\"false\"\n              [searchable]=\"false\"\n            ></ng-select>\n          </div>\n        </aroio-content-item>\n\n        <aroio-content-item [title]=\"'Squeeze'\">\n          <div class=\"select-list\">\n            <ng-select\n              bdSelect\n              bindLabel=\"label\"\n              bindValue=\"value\"\n              [formControl]=\"form.get('squeeze_maxfrequency')\"\n              [label]=\"'aroio.pages.audio.forms.squeeze_maxfrequency.label' | translate\"\n              [placeholder]=\"'aroio.pages.audio.forms.squeeze_maxfrequency.placeholder' | translate\"\n              [items]=\"resamplingFrequencies\"\n              [hideSelected]=\"true\"\n              [clearable]=\"false\"\n              [searchable]=\"false\"\n            ></ng-select>\n            <ng-select\n              bdSelect\n              bindLabel=\"label\"\n              bindValue=\"value\"\n              [formControl]=\"form.get('squeeze_intbuffer')\"\n              [label]=\"'aroio.pages.audio.forms.squeeze_intbuffer.label' | translate\"\n              [placeholder]=\"'aroio.pages.audio.forms.squeeze_intbuffer.placeholder' | translate\"\n              [items]=\"bufferSizes\"\n              [hideSelected]=\"true\"\n              [clearable]=\"false\"\n              [searchable]=\"false\"\n            ></ng-select>\n            <ng-select\n              bdSelect\n              bindLabel=\"label\"\n              bindValue=\"value\"\n              [formControl]=\"form.get('squeeze_outbuffer')\"\n              [label]=\"'aroio.pages.audio.forms.squeeze_outbuffer.label' | translate\"\n              [placeholder]=\"'aroio.pages.audio.forms.squeeze_outbuffer.placeholder' | translate\"\n              [items]=\"bufferSizes\"\n              [hideSelected]=\"true\"\n              [clearable]=\"false\"\n              [searchable]=\"false\"\n            ></ng-select>\n          </div>\n        </aroio-content-item>\n        <aroio-content-item [title]=\"'ShAirPlay'\">\n          <div class=\"select-list\">\n            <ng-select\n              bdSelect\n              bindLabel=\"label\"\n              bindValue=\"value\"\n              [formControl]=\"form.get('sp_outbuffer')\"\n              [label]=\"'aroio.pages.audio.forms.sp_outbuffer.label' | translate\"\n              [placeholder]=\"'aroio.pages.audio.forms.sp_outbuffer.placeholder' | translate\"\n              [items]=\"bufferSizes\"\n              [hideSelected]=\"true\"\n              [clearable]=\"false\"\n              [searchable]=\"false\"\n            ></ng-select>\n            <ng-select\n              bdSelect\n              bindLabel=\"label\"\n              bindValue=\"value\"\n              [formControl]=\"form.get('sp_samplerate')\"\n              [label]=\"'aroio.pages.audio.forms.sp_samplerate.label' | translate\"\n              [placeholder]=\"'aroio.pages.audio.forms.sp_samplerate.placeholder' | translate\"\n              [items]=\"shairplayFrequences\"\n              [hideSelected]=\"true\"\n              [clearable]=\"false\"\n              [searchable]=\"false\"\n            ></ng-select>\n          </div>\n        </aroio-content-item>\n        <aroio-content-item [title]=\"'Brutefir'\">\n          <div class=\"select-list\">\n            <ng-select\n              bdSelect\n              bindLabel=\"label\"\n              bindValue=\"value\"\n              [formControl]=\"form.get('bf_partitions')\"\n              [label]=\"'aroio.pages.audio.forms.bf_partitions.label' | translate\"\n              [placeholder]=\"'aroio.pages.audio.forms.bf_partitions.placeholder' | translate\"\n              [items]=\"brutefirPartitions\"\n              [hideSelected]=\"true\"\n              [clearable]=\"false\"\n              [searchable]=\"false\"\n            ></ng-select>\n          </div>\n        </aroio-content-item>\n  </aroio-content-item>\n\n  <div class=\"action-bar\">\n    <div class=\"action-bar__item\"></div>\n    <div class=\"action-bar__item\">\n      <button aroio-btn type=\"submit\" [color]=\"'primary'\">{{ 'aroio.cta.save' | translate }}</button>\n    </div>\n  </div>\n</form>\n\n\n\n\n<ng-template #setAdvancedSetupModal>\n  <div class=\"modal-content__close\">\n    <div class=\"modal-content__close__times\" (click)=\"modalClose()\">\n      <i class=\"fas fa-times\"></i>\n    </div>\n  </div>\n  <div class=\"modal-header\">\n    <h2>\n      {{ 'Erweiterte Einstellungen' | translate }}\n    </h2>\n    <p>\n      Möchten Sie, dass Ihre erweiterten Einstellungen beibehalten werden oder soll eine Grundkonfiguration für die ausgewählte Samplerate vorgenommen werden?\n    </p>\n  </div>\n  <div class=\"modal-content\">\n    <div class=\"action-bar\">\n      <div class=\"action-bar__item\">\n        <button aroio-btn type=\"submit\" [color]=\"'danger'\" (click)=\"saveRate(false)\">Enstellungen beibehalten</button>\n      </div>\n      <div class=\"action-bar__item\">\n        <button aroio-btn type=\"submit\" [color]=\"'primary'\"(click)=\"saveRate(true)\">Ja, Voreinstellungen nutzen</button>\n      </div>\n    </div>\n  </div>\n  <div class=\"modal-footer\">\n  </div>\n\n</ng-template>\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"form\">\n  <h4>Wizard zur Audio Korrektur Messung</h4>\n\n  <aw-wizard>\n    <aw-wizard-step stepTitle=\"Start\">\n\n      <div class=\"wizard-steps__content\">\n        <p>\n          Möchten Sie eine neue Messung vornehmen?\n        </p>\n\n        <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Wizard starten</button>\n      </div>\n\n      <!--<div class=\"action-bar\">-->\n        <!--<div class=\"action-bar__item\">-->\n        <!--</div>-->\n<!---->\n        <!--<div class=\"action-bar__item\">-->\n          <!--<button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>-->\n        <!--</div>-->\n      <!--</div>-->\n\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Ausrichtung Mikrofon\">\n      <div class=\"wizard-steps__content\">\n        Content of Step 2\n      </div>\n\n      <div class=\"action-bar\">\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n        </div>\n\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>\n        </div>\n      </div>\n\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Start der Messung\">\n      <div class=\"wizard-steps__content\">\n        Content of Step 3\n      </div>\n\n      <div class=\"action-bar\">\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n        </div>\n\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>\n        </div>\n      </div>\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Messung läuft\">\n      <div class=\"wizard-steps__content\">\n        Content of Step 4\n      </div>\n\n      <div class=\"action-bar\">\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n        </div>\n\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>\n        </div>\n      </div>\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Filter berechnen\">\n      <div class=\"wizard-steps__content\">\n        Content of Step 5\n      </div>\n\n      <div class=\"action-bar\">\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n        </div>\n\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>\n        </div>\n      </div>\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Messung abschließen\">\n      <div class=\"wizard-steps__content\">\n        Content of Step 6\n      </div>\n\n\n      <div class=\"action-bar\">\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n        </div>\n\n        <div class=\"action-bar__item\">\n          <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Vor</button>\n        </div>\n      </div>\n    </aw-wizard-step>\n  </aw-wizard>\n\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"form\">\n  <h4>Wizard zur Audio Korrektur Messung</h4>\n\n  <aw-wizard>\n    <aw-wizard-step stepTitle=\"Start\" [stepId]=\"stepNames[0]\" (stepEnter)=\"enterStepAndSave()\">\n\n      <div class=\"wizard-steps__content\">\n        <h4>\n          Möchten Sie eine neue Messung vornehmen?\n        </h4>\n\n        <p>\n          Zur Messung wird ein miniDSP UMIK-1 USB-Messmikrofon benötigt. Das Mikrofon wird an der Hörposition\n          aufgestellt und an einem der USB-Anschlüsse am Aroio angeschlossen.\n        </p>\n\n      </div>\n\n      <div class=\"wizard-steps__footer\">\n        <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Wizard starten</button>\n      </div>\n\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Ausrichtung Mikrofon\" [stepId]=\"stepNames[1]\" (stepEnter)=\"enterStepAndSave()\" [canExit]=\"micPlugged\">\n      <div class=\"wizard-steps__content\">\n        <p>\n          Bitte schließen Sie das Mikrofon an und richten es entsprechend unserem Tutorial Video aus.\n        </p>\n\n\n        <aroio-message [color]=\"micPlugged ? 'success' : 'warning'\">\n          <ng-container *ngIf=\"micPlugged; else micNotPluggedTemplate\">\n            Ihr Mikrofon ist korrekt angeschlossen und Sie können mit der Messung fortfahren.\n          </ng-container>\n          <ng-template #micNotPluggedTemplate>\n            Sie haben kein Mikrofon gesteckt. Bitte überprüfen Sie ob Ihr Mikrofon korrekt angeschlossen ist. Achten Sie darauf, dass die oberen beiden USB-Anschlüsse des Aroios zur reinen Stromversorgung dienen und keine weitere Funktion haben.\n          </ng-template>\n        </aroio-message>\n      </div>\n\n      <div class=\"wizard-steps__footer\">\n        <div class=\"action-bar\">\n          <div class=\"action-bar__item\">\n            <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n          </div>\n\n          <div class=\"action-bar__item\">\n            <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep [disabled]=\"!wizard?.currentStep.canExit\">Nächster Schritt</button>\n          </div>\n        </div>\n\n\n        <ng-container *ngIf=\"wizard?.currentStep.stepId && wizard.currentStep.stepId === stepNames[1]\">\n          <iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/XmE-weP9M78?start=21\" frameborder=\"0\"\n                  allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\"\n                  allowfullscreen></iframe>\n        </ng-container>\n      </div>\n\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Start der Messung\" [stepId]=\"stepNames[2]\" (stepEnter)=\"enterStepAndSave()\">\n      <div class=\"wizard-steps__content\">\n        <p>\n          Es wird das Mess-Signal geladen und der Messvorgang gestartet. Danach durchläuft das Signal alle Frequenzen\n          von tief bis hoch einmal links, einmal rechts und noch einmal links.\n        </p>\n\n        <aroio-message [color]=\"'warning'\">\n          Die Lautstärke sollte so eingestellt werden, das der Pegel ausreichend hoch ist, ohne dass die Lautsprecher\n          (vor allem im Bass) mechanisch an Grenzen stoßen.\n        </aroio-message>\n\n\n        <aroio-button>Test Pegel</aroio-button>\n        <p>\n          spielt für 10 Sekunden ein Rauschen ab, das als Orientierung für die Lautstärke der Messung dient. Diese\n          sollte so eingestellt werden, dass sie als angenehm und nicht als kräftig empfunden wird.\n        </p>\n      </div>\n      <div class=\"wizard-steps__footer\">\n\n        <div class=\"action-bar\">\n          <div class=\"action-bar__item\">\n            <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n          </div>\n\n          <div class=\"action-bar__item\">\n            <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Nächster Schritt</button>\n          </div>\n        </div>\n      </div>\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Messung läuft\" [stepId]=\"stepNames[3]\" (stepEnter)=\"enterStepAndSave()\">\n      <div class=\"wizard-steps__content\">\n\n        <aroio-progress-bar [progress]=\"progress\"></aroio-progress-bar>\n\n        <aroio-message [color]=\"'danger'\">\n          Während der Messung bitte die Lautstärke nicht ändern.\n        </aroio-message>\n      </div>\n      <div class=\"wizard-steps__footer\">\n        <div class=\"action-bar\">\n          <div class=\"action-bar__item\">\n            <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n          </div>\n\n          <div class=\"action-bar__item\">\n            <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Nächster Schritt</button>\n          </div>\n        </div>\n\n      </div>\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Filter berechnen\" [stepId]=\"stepNames[4]\" (stepEnter)=\"enterStepAndSave()\">\n      <div class=\"wizard-steps__content\">\n        <p>Nach erfolgreicher Messung kann das Ergebnis mit AudioVero Acourate oder AcourateCV von einem PC über das\n          Netzwerk importiert und ausgewertet werden.</p>\n      </div>\n      <div class=\"wizard-steps__footer\">\n        <div class=\"action-bar\">\n          <div class=\"action-bar__item\">\n            <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n          </div>\n\n          <div class=\"action-bar__item\">\n            <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Nächster Schritt</button>\n          </div>\n        </div>\n\n      </div>\n    </aw-wizard-step>\n\n    <aw-wizard-step stepTitle=\"Messung abschließen\" [stepId]=\"stepNames[5]\" (stepEnter)=\"enterStepAndSave()\">\n      <div class=\"wizard-steps__content\">\n        <h3>Fertig</h3>\n\n        <p>\n          Kontroll-Messung startet eine Messung durch den Convolver mit den im Reiter Convolver gesetzten Filtern. Dies\n          ist unabhängig von dem im Reiter System ausgewählten Ausgabemodus. Dieser Modus dient der Kontrolle von\n          bestehenden Filtern.\n        </p>\n      </div>\n\n      <div class=\"wizard-steps__footer\">\n\n        <div class=\"action-bar\">\n          <div class=\"action-bar__item\">\n            <button aroio-btn class=\"btn\" type=\"link\" awPreviousStep>Zurück</button>\n          </div>\n\n          <div class=\"action-bar__item\">\n            <button aroio-btn class=\"btn\" [color]=\"'primary'\" type=\"button\" awNextStep>Nächster Schritt</button>\n          </div>\n        </div>\n      </div>\n    </aw-wizard-step>\n  </aw-wizard>\n\n</form>\n");
 
 /***/ }),
 
@@ -244,6 +244,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar-widget/aroio-sidebar-widget.component.html":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar-widget/aroio-sidebar-widget.component.html ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"aroio-sidebar__widget\" [ngClass]=\"[widget?.classModifier ? 'aroio-sidebar__widget--' + widget.classModifier : '']\">\n  <ng-container [ngSwitch]=\"widget.id\">\n    <ng-container *ngSwitchCase=\"WidgetTypes.SPOTIFY\">\n      <div class=\"aroio-sidebar__widget__title\">\n        <h4>Spotify Widget</h4>\n      </div>\n      <div class=\"aroio-sidebar__widget__content\">\n        <p>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae consequatur libero nihil nisi quos ratione.\n        </p>\n      </div>\n    </ng-container>\n\n    <ng-container *ngSwitchCase=\"WidgetTypes.NETWORK_INFO\">\n      <div class=\"aroio-sidebar__widget__title\">\n        <h4>Netzwerk Widget</h4>\n      </div>\n      <div class=\"aroio-sidebar__widget__content\">\n        <p>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae consequatur libero nihil nisi quos ratione.\n        </p>\n      </div>\n    </ng-container>\n\n    <ng-container *ngSwitchCase=\"WidgetTypes.SYSTEM_INFO\">\n      <div class=\"aroio-sidebar__widget__title\">\n        <h4>System Widget</h4>\n      </div>\n      <div class=\"aroio-sidebar__widget__content\">\n        <p>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae consequatur libero nihil nisi quos ratione.\n        </p>\n      </div>\n    </ng-container>\n\n    <ng-container *ngSwitchCase=\"WidgetTypes.HELPTEXT\">\n      <div class=\"aroio-sidebar__widget__title\" *ngIf=\"widget.title\">\n        <h4>{{ widget.title }}</h4>\n      </div>\n      <div class=\"aroio-sidebar__widget__content\" *ngIf=\"widget.content\">\n        <div [innerHTML]=\"widget.content\"></div>\n      </div>\n    </ng-container>\n\n    <ng-container *ngSwitchDefault>\n      <div class=\"aroio-sidebar__widget__title\">\n        <h4>Noch keine Widgets?</h4>\n      </div>\n      <div class=\"aroio-sidebar__widget__content\">\n        <p>\n          Stellen Sie hier ihre persönlichen Widgets zusammen, so wie Sie es brauchen und nützlich finden. Zudem werden hier nützliche Informationen für Sie angezeigt.\n        </p>\n      </div>\n    </ng-container>\n  </ng-container>\n</div>\n\n\n\n\n\n\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar.component.html":
 /*!*********************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar.component.html ***!
@@ -253,7 +266,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n<div class=\"aroio-sidebar\">\n  <div class=\"aroio-sidebar__widget\">\n    <h4>Item 1</h4>\n    <p>\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem explicabo minus omnis reprehenderit rerum sapiente voluptatem!\n    </p>\n  </div>\n  <div class=\"aroio-sidebar__widget\">\n    <h4>Item 1</h4>\n    <p>\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem explicabo minus omnis reprehenderit rerum sapiente voluptatem!\n    </p>\n  </div>\n  <div class=\"aroio-sidebar__widget\">\n    <h4>Item 1</h4>\n    <p>\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem explicabo minus omnis reprehenderit rerum sapiente voluptatem!\n    </p>\n  </div>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"aroio-sidebar\">\n  <aroio-sidebar-widget *ngFor=\"let widget of widgetService.currentWidgets | orderBy: 'position'\" [widget]=\"widget\" [@slideRightOut]></aroio-sidebar-widget>\n</div>\n");
 
 /***/ }),
 
@@ -357,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--\n  ~ @author Felix Baltruschat <fb@braune-digital.com>\n  ~ @company Braune Digital GmbH\n  -->\n\n<span class=\"progress-bar__stripe\" [ngStyle]=\"applyWidth()\"></span>\n<span class=\"progress-bar__value\">{{ progress }}%</span>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<span class=\"progress-bar__stripe\" [ngStyle]=\"applyWidth()\"></span>\n<span class=\"progress-bar__value\">{{ progress }}%</span>\n");
 
 /***/ }),
 
@@ -1049,6 +1062,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_locales_extra_en__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/locales/extra/en */ "./node_modules/@angular/common/locales/extra/en.js");
 /* harmony import */ var _angular_common_locales_extra_en__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_angular_common_locales_extra_en__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var ngx_bootstrap_chronos__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-bootstrap/chronos */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/chronos/fesm5/ngx-bootstrap-chronos.js");
+/* harmony import */ var _modules_core_services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/core/services/aroio-settings.service */ "./src/app/modules/core/services/aroio-settings.service.ts");
+
 
 
 
@@ -1062,12 +1077,14 @@ __webpack_require__.r(__webpack_exports__);
 Object(_angular_common__WEBPACK_IMPORTED_MODULE_3__["registerLocaleData"])(_angular_common_locales_de__WEBPACK_IMPORTED_MODULE_5___default.a, 'de', _angular_common_locales_extra_de__WEBPACK_IMPORTED_MODULE_6___default.a);
 Object(_angular_common__WEBPACK_IMPORTED_MODULE_3__["registerLocaleData"])(_angular_common_locales_en__WEBPACK_IMPORTED_MODULE_7___default.a, 'en', _angular_common_locales_extra_en__WEBPACK_IMPORTED_MODULE_8___default.a);
 var AroioWiComponent = /** @class */ (function () {
-    function AroioWiComponent(translate) {
+    function AroioWiComponent(translate, settingsService) {
         var _this = this;
         this.translate = translate;
+        this.settingsService = settingsService;
         this.version = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].version;
         this.currentTranslation = 'en';
         this.isLoading = false;
+        this.class = '';
         this.isLoading = true;
         Object(ngx_bootstrap_chronos__WEBPACK_IMPORTED_MODULE_9__["defineLocale"])('de', ngx_bootstrap_chronos__WEBPACK_IMPORTED_MODULE_9__["deLocale"]);
         this.translate.use(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].defaultLocale).subscribe(function () {
@@ -1075,9 +1092,20 @@ var AroioWiComponent = /** @class */ (function () {
             _this.isLoading = false;
         });
     }
+    AroioWiComponent.prototype.ngOnInit = function () {
+        // this.settingsService.getAroioSettings().subscribe(_ => {
+        //   if (_.configuration.webinterface.dark_mode) {
+        //     this.class = 'aroio-wi--dark';
+        //   }
+        // })
+    };
     AroioWiComponent.ctorParameters = function () { return [
-        { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"] }
+        { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateService"] },
+        { type: _modules_core_services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_10__["AroioSettingsService"] }
     ]; };
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('class')
+    ], AroioWiComponent.prototype, "class", void 0);
     AroioWiComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'aroio-wi-root',
@@ -1238,6 +1266,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_index_index_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/index/index.component */ "./src/app/modules/aroio-wi/modules/audio/components/index/index.component.ts");
 /* harmony import */ var ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-swiper-wrapper */ "./node_modules/ngx-swiper-wrapper/__ivy_ngcc__/fesm5/ngx-swiper-wrapper.js");
 /* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/tabs/fesm5/ngx-bootstrap-tabs.js");
+/* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../core/core.module */ "./src/app/modules/core/core.module.ts");
+/* harmony import */ var _braune_digital_form_utilities__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @braune-digital/form-utilities */ "./node_modules/@braune-digital/form-utilities/__ivy_ngcc__/fesm5/braune-digital-form-utilities.js");
+
+
 
 
 
@@ -1263,8 +1295,10 @@ var AroioAudioModule = /** @class */ (function () {
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"],
+                _braune_digital_form_utilities__WEBPACK_IMPORTED_MODULE_11__["FormUtilitiesModule"],
                 ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_9__["TabsModule"],
                 _layout_layout_module__WEBPACK_IMPORTED_MODULE_6__["AroioLayoutModule"],
+                _core_core_module__WEBPACK_IMPORTED_MODULE_10__["AroioCoreModule"],
                 ngx_swiper_wrapper__WEBPACK_IMPORTED_MODULE_8__["SwiperModule"]
             ],
             declarations: [
@@ -1304,6 +1338,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_configs_audio_configuration__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../utils/configs/audio-configuration */ "./src/app/utils/configs/audio-configuration.ts");
 /* harmony import */ var _core_services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../core/services/aroio-settings.service */ "./src/app/modules/core/services/aroio-settings.service.ts");
 /* harmony import */ var _core_services_alert_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../core/services/alert.service */ "./src/app/modules/core/services/alert.service.ts");
+/* harmony import */ var _utils_configs_startvolumes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../utils/configs/startvolumes */ "./src/app/utils/configs/startvolumes.ts");
+/* harmony import */ var _utils_configs_bufferSizes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../utils/configs/bufferSizes */ "./src/app/utils/configs/bufferSizes.ts");
+/* harmony import */ var _utils_configs_jackperiods__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../utils/configs/jackperiods */ "./src/app/utils/configs/jackperiods.ts");
+/* harmony import */ var _utils_configs_jackpuffer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../utils/configs/jackpuffer */ "./src/app/utils/configs/jackpuffer.ts");
+/* harmony import */ var _utils_configs_resampling__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../utils/configs/resampling */ "./src/app/utils/configs/resampling.ts");
+/* harmony import */ var _utils_configs_shairplaySamplingFrequences__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../utils/configs/shairplaySamplingFrequences */ "./src/app/utils/configs/shairplaySamplingFrequences.ts");
+/* harmony import */ var _utils_configs_soundcards__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../utils/configs/soundcards */ "./src/app/utils/configs/soundcards.ts");
+/* harmony import */ var _utils_configs_brutefirPartitions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../../../utils/configs/brutefirPartitions */ "./src/app/utils/configs/brutefirPartitions.ts");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/__ivy_ngcc__/modal/fesm5/ngx-bootstrap-modal.js");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1311,13 +1363,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AudioIndexComponent = /** @class */ (function () {
-    function AudioIndexComponent(settingsSerivce, alert) {
+    function AudioIndexComponent(settingsSerivce, alert, modalService) {
         this.settingsSerivce = settingsSerivce;
         this.alert = alert;
+        this.modalService = modalService;
+        // Import Select Configs
         this.audioOutputs = _utils_configs_audio_configuration__WEBPACK_IMPORTED_MODULE_3__["AroioOutputs"];
+        this.brutefirPartitions = _utils_configs_brutefirPartitions__WEBPACK_IMPORTED_MODULE_13__["BrutefirPartitions"];
+        this.bufferSizes = _utils_configs_bufferSizes__WEBPACK_IMPORTED_MODULE_7__["BufferSizes"];
+        this.jackPeriods = _utils_configs_jackperiods__WEBPACK_IMPORTED_MODULE_8__["AroioJackperiods"];
+        this.jackPuffer = _utils_configs_jackpuffer__WEBPACK_IMPORTED_MODULE_9__["AroioJackpuffer"];
+        this.resamplingFrequencies = _utils_configs_resampling__WEBPACK_IMPORTED_MODULE_10__["ResamplingFrequencies"];
+        this.shairplayFrequences = _utils_configs_shairplaySamplingFrequences__WEBPACK_IMPORTED_MODULE_11__["ShairplaySamplingFrequences"];
+        this.soundcards = _utils_configs_soundcards__WEBPACK_IMPORTED_MODULE_12__["AroioSoundcards"];
+        this.startvolumes = _utils_configs_startvolumes__WEBPACK_IMPORTED_MODULE_6__["AroioStartVolumes"];
         this.activeOutput = 1;
         this.index = 0;
-        this.switchState = [];
         this.isLoading = true;
         this.subscriptions = [];
         this.config = {
@@ -1327,14 +1388,17 @@ var AudioIndexComponent = /** @class */ (function () {
             centeredSlides: true,
             threshold: 3,
         };
+        // Modal Specific
+        this.modalIndex = 0;
     }
     AudioIndexComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
         this.isLoading = true;
         this.subscriptions.push(this.settingsSerivce.getAroioSettings().subscribe(function (aroioSettings) {
             _this.buildForm(aroioSettings);
+            _this.aroioSettings = aroioSettings;
             _this.audioOutputs.forEach(function (output, index) {
-                if (_this.form.get('audio_output').value === output.value) {
+                if (_this.form.get('output_configuration').get('audio_output').value === output.value) {
                     _this.index = index;
                 }
             });
@@ -1347,61 +1411,102 @@ var AudioIndexComponent = /** @class */ (function () {
     AudioIndexComponent.prototype.buildForm = function (aroioSettings) {
         var _this = this;
         if (aroioSettings === void 0) { aroioSettings = null; }
-        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({});
+        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            audioplayer: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.audioplayer ? aroioSettings.configuration.audio.audioplayer : null),
+            channels: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.channels ? aroioSettings.configuration.audio.channels : null),
+            soundcard: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.soundcard ? aroioSettings.configuration.audio.soundcard : null),
+            resampling: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.resampling ? aroioSettings.configuration.audio.resampling : null),
+            volume_start: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.volume_start ? aroioSettings.configuration.audio.volume_start : null),
+            jackbuffer: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.jackbuffer ? aroioSettings.configuration.audio.jackbuffer : null),
+            jackperiod: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.jackperiod ? aroioSettings.configuration.audio.jackperiod : null),
+            squeeze_maxfrequency: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.squeeze_maxfrequency ? aroioSettings.configuration.audio.squeeze_maxfrequency : null),
+            squeeze_alsabuffer: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.squeeze_alsabuffer ? aroioSettings.configuration.audio.squeeze_alsabuffer : null),
+            squeeze_alsaperiod: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.squeeze_alsaperiod ? aroioSettings.configuration.audio.squeeze_alsaperiod : null),
+            squeeze_intbuffer: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.squeeze_intbuffer ? aroioSettings.configuration.audio.squeeze_intbuffer : null),
+            squeeze_outbuffer: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.squeeze_outbuffer ? aroioSettings.configuration.audio.squeeze_outbuffer : null),
+            sp_outbuffer: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.sp_outbuffer ? aroioSettings.configuration.audio.sp_outbuffer : null),
+            sp_period: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.sp_period ? aroioSettings.configuration.audio.sp_period : null),
+            sp_samplerate: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.sp_samplerate ? aroioSettings.configuration.audio.sp_samplerate : null),
+            bf_partitions: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.bf_partitions ? aroioSettings.configuration.audio.bf_partitions : null),
+            output_configuration: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+                audio_output: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration.audio_output ? aroioSettings.configuration.audio.output_configuration.audio_output : null),
+                rate: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration.rate ? aroioSettings.configuration.audio.output_configuration.rate : null),
+            }),
+        });
         this.audioOutputs.forEach(function (output) {
-            _this.form.addControl(output.id, new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({}));
-            _this.form.addControl('audio_output', new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration.audio_output ? aroioSettings.configuration.audio.output_configuration.audio_output : ''));
+            _this.form.get('output_configuration').addControl(output.id, new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({}));
             output.player.forEach(function (player) {
-                _this.form.get(output.id).addControl(player.id, new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration[output.id][player.id] ? aroioSettings.configuration.audio.output_configuration[output.id][player.id] : false));
-                _this.form.get(output.id).addControl('mscoding', new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration[output.id]['mscoding'] ? aroioSettings.configuration.audio.output_configuration[output.id]['mscoding'] : false));
-                _this.form.get(output.id).addControl('measurement_output', new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration[output.id]['measurement_output'] ? aroioSettings.configuration.audio.output_configuration[output.id]['measurement_output'] : ''));
-                _this.form.get(output.id).addControl('rate', new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration[output.id]['rate'] ? aroioSettings.configuration.audio.output_configuration[output.id]['rate'] : 0));
-                _this.form.get(output.id).addControl('sprate', new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration[output.id]['sprate'] ? aroioSettings.configuration.audio.output_configuration[output.id]['sprate'] : 0));
-                _this.form.get(output.id).addControl('channels', new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration[output.id]['channels'] ? aroioSettings.configuration.audio.output_configuration[output.id]['channels'] : 0));
+                _this.form.get('output_configuration').get(output.id).addControl(player.id, new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration[output.id][player.id] ? aroioSettings.configuration.audio.output_configuration[output.id][player.id] : false));
+                _this.form.get('output_configuration').get(output.id).addControl('mscoding', new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration[output.id]['mscoding'] ? aroioSettings.configuration.audio.output_configuration[output.id]['mscoding'] : false));
+                _this.form.get('output_configuration').get(output.id).addControl('measurement_output', new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](aroioSettings.configuration.audio.output_configuration[output.id]['measurement_output'] ? aroioSettings.configuration.audio.output_configuration[output.id]['measurement_output'] : ''));
             });
         });
     };
     AudioIndexComponent.prototype.submitForm = function (event) {
         var _this = this;
-        this.subscriptions.push(this.settingsSerivce.setAroioSettingsAudioOutputConfig(this.form.getRawValue()).subscribe(function (_) {
+        this.subscriptions.push(this.settingsSerivce.setAroioSettingsAudio(this.form.getRawValue()).subscribe(function (_) {
             _this.alert.alert$.next({ message: 'Das Audiosetup erfolgreich gespeichert', type: 'success' });
         }, function (error) {
             _this.alert.alert$.next({ message: 'Es ist ein Fehler aufgetreten.', type: 'error' });
         }));
+    };
+    AudioIndexComponent.prototype.setResamplingConfig = function (event) {
+        var _this = this;
+        if (this.aroioSettings.configuration.webinterface.advanced_configuration) {
+            this.currentAdvancedSetup = event;
+            this.modalRef = this.modalService.show(this.setAdvancedSetupModal, { class: 'modal--lg' });
+        }
+        else {
+            Object.keys(event.config).forEach(function (key) {
+                _this.form.get(key).setValue(event.config[key]);
+            });
+        }
+    };
+    AudioIndexComponent.prototype.changeStereo = function (outputID, value) {
+        this.form.get('output_configuration').get(outputID).get('mscoding').setValue(value);
     };
     AudioIndexComponent.prototype.changeRadio = function (outputID, playerID) {
         var _this = this;
         this.audioOutputs.forEach(function (output) {
             output.player.forEach(function (player) {
                 if (player.id !== playerID) {
-                    _this.form.get(outputID).get(player.id).setValue(false);
+                    _this.form.get('output_configuration').get(outputID).get(player.id).setValue(false);
                 }
             });
         });
-        this.form.get(outputID).get(playerID).setValue(!this.form.get(outputID).get(playerID).value);
+        this.form.get('output_configuration').get(outputID).get(playerID).setValue(!this.form.get('output_configuration').get(outputID).get(playerID).value);
     };
-    AudioIndexComponent.prototype.getChildForm = function (formGrouoName) {
-        return this.form.get(formGrouoName);
-    };
-    AudioIndexComponent.prototype.changeStatus = function (switchState, id) {
-        console.log('changeStatus', id);
-        if (this.switchState[id]) {
-            this.switchState[id] = false;
+    // Modal Specific
+    // -----------------------
+    AudioIndexComponent.prototype.saveRate = function (overwriteAdvancedSetup) {
+        var _this = this;
+        if (overwriteAdvancedSetup) {
+            Object.keys(this.currentAdvancedSetup.config).forEach(function (key) {
+                _this.form.get(key).setValue(_this.currentAdvancedSetup.config[key]);
+            });
         }
         else {
-            this.switchState[id] = true;
+            this.form.get('output_configuration').get('rate').setValue(this.currentAdvancedSetup.value);
         }
+        this.currentAdvancedSetup = null;
+        this.modalRef.hide();
+        this.modalRef = null;
     };
-    AudioIndexComponent.prototype.changeSelect = function (index) {
-        setTimeout(function (_) {
-            console.log(index);
-            // this.activeOutput = index;
-        }, 0);
+    AudioIndexComponent.prototype.modalClose = function (_index) {
+        this.subscriptions.forEach(function (_) {
+            _.unsubscribe();
+        });
+        this.modalRef.hide();
+        this.modalRef = null;
     };
     AudioIndexComponent.ctorParameters = function () { return [
         { type: _core_services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_4__["AroioSettingsService"] },
-        { type: _core_services_alert_service__WEBPACK_IMPORTED_MODULE_5__["AroioAlertService"] }
+        { type: _core_services_alert_service__WEBPACK_IMPORTED_MODULE_5__["AroioAlertService"] },
+        { type: ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_14__["BsModalService"] }
     ]; };
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('setAdvancedSetupModal')
+    ], AudioIndexComponent.prototype, "setAdvancedSetupModal", void 0);
     AudioIndexComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: '<aroio-audio-index-component>',
@@ -1511,15 +1616,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
 /* harmony import */ var _layout_animations_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../layout/animations/animations */ "./src/app/modules/aroio-wi/modules/layout/animations/animations.ts");
+/* harmony import */ var _core_services_meassurement_socket_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../core/services/meassurement-socket.service */ "./src/app/modules/core/services/meassurement-socket.service.ts");
+/* harmony import */ var angular_archwizard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angular-archwizard */ "./node_modules/angular-archwizard/__ivy_ngcc__/fesm5/angular-archwizard.js");
+/* harmony import */ var _utils_configs_wizard_steps__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../utils/configs/wizard-steps */ "./src/app/utils/configs/wizard-steps.ts");
+/* harmony import */ var _core_services_sidebar_widgets_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../core/services/sidebar-widgets.service */ "./src/app/modules/core/services/sidebar-widgets.service.ts");
+/* harmony import */ var _utils_configs_widgets__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../utils/configs/widgets */ "./src/app/utils/configs/widgets.ts");
+/* harmony import */ var _utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../utils/configs/commands */ "./src/app/utils/configs/commands.ts");
+
+
+
+
+
+
 
 
 
 
 
 var ConvolverWizardComponent = /** @class */ (function () {
-    function ConvolverWizardComponent(_api) {
+    function ConvolverWizardComponent(_api, _socketService, widgetService) {
         this._api = _api;
+        this._socketService = _socketService;
+        this.widgetService = widgetService;
         this.convolutionEnabled = true;
+        this.progress = 0;
+        this.micPlugged = false;
+        this.stepNames = [
+            _utils_configs_wizard_steps__WEBPACK_IMPORTED_MODULE_7__["WIZARD_STEPS"].STARTUP,
+            _utils_configs_wizard_steps__WEBPACK_IMPORTED_MODULE_7__["WIZARD_STEPS"].POSITIONING,
+            _utils_configs_wizard_steps__WEBPACK_IMPORTED_MODULE_7__["WIZARD_STEPS"].MEASSUREMENT_START,
+            _utils_configs_wizard_steps__WEBPACK_IMPORTED_MODULE_7__["WIZARD_STEPS"].MEASSUREMENT_RUNNING,
+            _utils_configs_wizard_steps__WEBPACK_IMPORTED_MODULE_7__["WIZARD_STEPS"].FILTER,
+            _utils_configs_wizard_steps__WEBPACK_IMPORTED_MODULE_7__["WIZARD_STEPS"].FINISH
+        ];
     }
     ConvolverWizardComponent.prototype.ngOnInit = function () {
         this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
@@ -1531,9 +1660,89 @@ var ConvolverWizardComponent = /** @class */ (function () {
             platform: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
         });
     };
+    ConvolverWizardComponent.prototype.ngAfterViewInit = function () { };
+    ConvolverWizardComponent.prototype.ngOnDestroy = function () {
+        this.widgetService.remove(_utils_configs_widgets__WEBPACK_IMPORTED_MODULE_9__["Widgets"]['meassurement_links']);
+    };
+    ConvolverWizardComponent.prototype.enterStepAndSave = function () {
+        var _this = this;
+        switch (this.wizard.currentStep.stepId) {
+            ///////////////
+            // Startup
+            ///////////////
+            case this.stepNames[0]:
+                this.widgetService.add(_utils_configs_widgets__WEBPACK_IMPORTED_MODULE_9__["Widgets"]['meassurement_links']);
+                this.socketClose();
+                break;
+            ///////////////
+            // Begin with measurement routine and adjust microphone
+            ///////////////
+            case this.stepNames[1]:
+                this.socketOpen();
+                this.socketSend(_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["AroioCommands"][_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["MeassurementCommands"].MEASUREMENT_01_BEGINN]);
+                this.socketSend(_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["AroioCommands"][_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["MeassurementCommands"].MEASUREMENT_02_MICROPHONE_ADJUSTMENT]);
+                break;
+            ///////////////
+            // Start Meassurement
+            ///////////////
+            case this.stepNames[2]:
+                this.socketSend(_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["AroioCommands"][_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["MeassurementCommands"].MESSUREMENT_03_START]);
+                this.widgetService.remove(_utils_configs_widgets__WEBPACK_IMPORTED_MODULE_9__["Widgets"]['meassurement_links']);
+                break;
+            ///////////////
+            // meassurement progress
+            ///////////////
+            case this.stepNames[3]:
+                this.socketSend(_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["AroioCommands"][_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["MeassurementCommands"].MESSUREMENT_04_RUNNING]);
+                this._socketService.openProgress().subscribe(function (_) {
+                    console.log(_);
+                    _this._socketService.sendProgress(_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["AroioCommands"][_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["MeassurementCommands"].MESSUREMENT_04_RUNNING]);
+                });
+                break;
+            ///////////////
+            // creat filter
+            ///////////////
+            case this.stepNames[4]:
+                this._socketService.closeProgress();
+                this.socketSend(_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["AroioCommands"][_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["MeassurementCommands"].MEASUREMENT_05_CREATE_FILTER]);
+                break;
+            ///////////////
+            // save filter and finish
+            ///////////////
+            case this.stepNames[5]:
+                this.socketSend(_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["AroioCommands"][_utils_configs_commands__WEBPACK_IMPORTED_MODULE_10__["MeassurementCommands"].MEASUREMENT_06_SAVE_FILTER]);
+                break;
+        }
+    };
+    //////////////////////////////////////////////////
+    // Fuctions for cpen and close Websocket to API
+    ConvolverWizardComponent.prototype.socketSend = function (content) {
+        this._socketService.send(content);
+    };
+    ConvolverWizardComponent.prototype.socketOpen = function () {
+        var _this = this;
+        this._socketService.open().subscribe(function (_) {
+            console.log(_);
+            if (_["command"] === 'mic_plugged') {
+                console.log('true');
+                _this.micPlugged = _.value;
+            }
+        });
+    };
+    ConvolverWizardComponent.prototype.socketClose = function () {
+        this._socketService.close();
+    };
     ConvolverWizardComponent.ctorParameters = function () { return [
-        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+        { type: _core_services_meassurement_socket_service__WEBPACK_IMPORTED_MODULE_5__["MeassurementSocketService"] },
+        { type: _core_services_sidebar_widgets_service__WEBPACK_IMPORTED_MODULE_8__["SidebarWidgetsService"] }
     ]; };
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(angular_archwizard__WEBPACK_IMPORTED_MODULE_6__["WizardComponent"])
+    ], ConvolverWizardComponent.prototype, "wizard", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])(angular_archwizard__WEBPACK_IMPORTED_MODULE_6__["WizardStepComponent"])
+    ], ConvolverWizardComponent.prototype, "wizardSteps", void 0);
     ConvolverWizardComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: '<aroio-convolver-wizard-component>',
@@ -2341,6 +2550,7 @@ var AroioHeaderComponent = /** @class */ (function () {
     }
     AroioHeaderComponent.prototype.buildForm = function (aroioSettings) {
         if (aroioSettings === void 0) { aroioSettings = null; }
+        this.aroioSettings = aroioSettings;
         this.formBase = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormGroup"]({
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](aroioSettings.username ? aroioSettings.username : ''),
             password: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](aroioSettings.password ? aroioSettings.password : ''),
@@ -2369,6 +2579,9 @@ var AroioHeaderComponent = /** @class */ (function () {
             _this.alert.alert$.next({ message: 'Es ist ein Fehler aufgetreten.', type: 'error' });
         }), this.settingsSerivce.setAroioSettingsWebinterface(this.formWebinterface.getRawValue()).subscribe(function (_) {
             _this.alert.alert$.next({ message: 'Die Webinterfacekonfiguration erfolgreich gespeichert.', type: 'success' });
+            if (_.advanced_configuration !== _this.aroioSettings.configuration.webinterface.advanced_configuration) {
+                location.reload();
+            }
         }, function (error) {
             _this.alert.alert$.next({ message: 'Es ist ein Fehler aufgetreten.', type: 'error' });
         }));
@@ -2474,6 +2687,42 @@ var AroioInputComponent = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar-widget/aroio-sidebar-widget.component.ts":
+/*!*********************************************************************************************************************************!*\
+  !*** ./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar-widget/aroio-sidebar-widget.component.ts ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: AroioSidebarWidgetComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioSidebarWidgetComponent", function() { return AroioSidebarWidgetComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _utils_configs_widgets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../utils/configs/widgets */ "./src/app/utils/configs/widgets.ts");
+
+
+
+var AroioSidebarWidgetComponent = /** @class */ (function () {
+    function AroioSidebarWidgetComponent() {
+        this.WidgetTypes = _utils_configs_widgets__WEBPACK_IMPORTED_MODULE_2__["WidgetTypes"];
+    }
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], AroioSidebarWidgetComponent.prototype, "widget", void 0);
+    AroioSidebarWidgetComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'aroio-sidebar-widget',
+            template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./aroio-sidebar-widget.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar-widget/aroio-sidebar-widget.component.html")).default
+        })
+    ], AroioSidebarWidgetComponent);
+    return AroioSidebarWidgetComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar.component.ts":
 /*!*****************************************************************************************************!*\
   !*** ./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar.component.ts ***!
@@ -2488,14 +2737,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _core_services_navigation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../core/services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
+/* harmony import */ var _core_services_sidebar_widgets_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../core/services/sidebar-widgets.service */ "./src/app/modules/core/services/sidebar-widgets.service.ts");
+/* harmony import */ var _animations_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../animations/animations */ "./src/app/modules/aroio-wi/modules/layout/animations/animations.ts");
+
+
 
 
 
 
 var AroioSidebarComponent = /** @class */ (function () {
-    function AroioSidebarComponent(navigationService, translate) {
+    function AroioSidebarComponent(navigationService, translate, widgetService) {
         this.navigationService = navigationService;
         this.translate = translate;
+        this.widgetService = widgetService;
     }
     AroioSidebarComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2508,12 +2762,16 @@ var AroioSidebarComponent = /** @class */ (function () {
     };
     AroioSidebarComponent.ctorParameters = function () { return [
         { type: _core_services_navigation_service__WEBPACK_IMPORTED_MODULE_2__["NavigationService"] },
-        { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"] }
+        { type: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"] },
+        { type: _core_services_sidebar_widgets_service__WEBPACK_IMPORTED_MODULE_4__["SidebarWidgetsService"] }
     ]; };
     AroioSidebarComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'aroio-sidebar',
-            template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./aroio-sidebar.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar.component.html")).default
+            template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./aroio-sidebar.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar.component.html")).default,
+            animations: [
+                _animations_animations__WEBPACK_IMPORTED_MODULE_5__["Animations"].slideRightOut,
+            ]
         })
     ], AroioSidebarComponent);
     return AroioSidebarComponent;
@@ -2744,6 +3002,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/__ivy_ngcc__/fesm5/ngx-order-pipe.js");
 /* harmony import */ var _components_aroio_system_list_aroio_system_list_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/aroio-system-list/aroio-system-list.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-system-list/aroio-system-list.component.ts");
 /* harmony import */ var _components_aroio_system_list_aroio_filter_list_item_aroio_system_list_item_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/aroio-system-list/aroio-filter-list-item/aroio-system-list-item.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-system-list/aroio-filter-list-item/aroio-system-list-item.component.ts");
+/* harmony import */ var _components_aroio_sidebar_aroio_sidebar_widget_aroio_sidebar_widget_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/aroio-sidebar/aroio-sidebar-widget/aroio-sidebar-widget.component */ "./src/app/modules/aroio-wi/modules/layout/components/aroio-sidebar/aroio-sidebar-widget/aroio-sidebar-widget.component.ts");
+
 
 
 
@@ -2815,7 +3075,8 @@ var AroioLayoutModule = /** @class */ (function () {
                 _utils_aroio_loading_aroio_loading_component__WEBPACK_IMPORTED_MODULE_10__["AroioLoadingComponent"],
                 _components_aroio_button_aroio_button_component__WEBPACK_IMPORTED_MODULE_15__["AroioButtonComponent"],
                 _components_aroio_tabset_aroio_tabset_component__WEBPACK_IMPORTED_MODULE_16__["AroioTabsetComponent"],
-                _components_aroio_sidebar_aroio_sidebar_component__WEBPACK_IMPORTED_MODULE_20__["AroioSidebarWidgetComponent"],
+                _components_aroio_sidebar_aroio_sidebar_component__WEBPACK_IMPORTED_MODULE_20__["AroioSidebarComponent"],
+                _components_aroio_sidebar_aroio_sidebar_widget_aroio_sidebar_widget_component__WEBPACK_IMPORTED_MODULE_34__["AroioSidebarWidgetComponent"],
                 _components_aroio_switch_aroio_switch_component__WEBPACK_IMPORTED_MODULE_21__["AroioSwitchComponent"],
                 _components_aroio_form_switch_aroio_form_switch_component__WEBPACK_IMPORTED_MODULE_22__["AroioFormSwitchComponent"],
                 _utils_aroio_loading_aroio_loading_component__WEBPACK_IMPORTED_MODULE_10__["AroioLoadingComponent"],
@@ -2849,7 +3110,8 @@ var AroioLayoutModule = /** @class */ (function () {
                 _utils_aroio_loading_aroio_loading_component__WEBPACK_IMPORTED_MODULE_10__["AroioLoadingComponent"],
                 _components_aroio_button_aroio_button_component__WEBPACK_IMPORTED_MODULE_15__["AroioButtonComponent"],
                 _components_aroio_tabset_aroio_tabset_component__WEBPACK_IMPORTED_MODULE_16__["AroioTabsetComponent"],
-                _components_aroio_sidebar_aroio_sidebar_component__WEBPACK_IMPORTED_MODULE_20__["AroioSidebarWidgetComponent"],
+                _components_aroio_sidebar_aroio_sidebar_component__WEBPACK_IMPORTED_MODULE_20__["AroioSidebarComponent"],
+                _components_aroio_sidebar_aroio_sidebar_widget_aroio_sidebar_widget_component__WEBPACK_IMPORTED_MODULE_34__["AroioSidebarWidgetComponent"],
                 _components_aroio_switch_aroio_switch_component__WEBPACK_IMPORTED_MODULE_21__["AroioSwitchComponent"],
                 _components_aroio_form_switch_aroio_form_switch_component__WEBPACK_IMPORTED_MODULE_22__["AroioFormSwitchComponent"],
                 _components_aroio_input_aroio_input_component__WEBPACK_IMPORTED_MODULE_23__["AroioInputComponent"],
@@ -3544,6 +3806,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm5/ngx-translate-core.js");
 /* harmony import */ var _services_navigation_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/navigation.service */ "./src/app/modules/core/services/navigation.service.ts");
 /* harmony import */ var _services_alert_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/alert.service */ "./src/app/modules/core/services/alert.service.ts");
+/* harmony import */ var _directives_has_advanced_config_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./directives/has-advanced-config.directive */ "./src/app/modules/core/directives/has-advanced-config.directive.ts");
+/* harmony import */ var _directives_has_not_advanced_config_directive__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./directives/has-not-advanced-config.directive */ "./src/app/modules/core/directives/has-not-advanced-config.directive.ts");
+
+
 
 
 
@@ -3561,8 +3827,13 @@ var AroioCoreModule = /** @class */ (function () {
                 _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_4__["TranslateModule"],
             ],
-            declarations: [],
+            declarations: [
+                _directives_has_not_advanced_config_directive__WEBPACK_IMPORTED_MODULE_8__["HasNotAdvancedConfigDirective"],
+                _directives_has_advanced_config_directive__WEBPACK_IMPORTED_MODULE_7__["HasAdvancedConfigDirective"]
+            ],
             exports: [
+                _directives_has_advanced_config_directive__WEBPACK_IMPORTED_MODULE_7__["HasAdvancedConfigDirective"],
+                _directives_has_not_advanced_config_directive__WEBPACK_IMPORTED_MODULE_8__["HasNotAdvancedConfigDirective"],
                 _services_alert_service__WEBPACK_IMPORTED_MODULE_6__["AroioAlertService"]
             ],
             providers: [
@@ -3572,6 +3843,164 @@ var AroioCoreModule = /** @class */ (function () {
         })
     ], AroioCoreModule);
     return AroioCoreModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/core/directives/has-advanced-config.directive.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/modules/core/directives/has-advanced-config.directive.ts ***!
+  \**************************************************************************/
+/*! exports provided: HasAdvancedConfigDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HasAdvancedConfigDirective", function() { return HasAdvancedConfigDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/aroio-settings.service */ "./src/app/modules/core/services/aroio-settings.service.ts");
+
+
+
+var HasAdvancedConfigDirective = /** @class */ (function () {
+    function HasAdvancedConfigDirective(_templateRef, _viewContainer, _settingsService) {
+        this._templateRef = _templateRef;
+        this._viewContainer = _viewContainer;
+        this._settingsService = _settingsService;
+        // Is the element currently rendered
+        this.hasView = false;
+    }
+    HasAdvancedConfigDirective.prototype.ngOnInit = function () {
+        this.handleChange();
+    };
+    HasAdvancedConfigDirective.prototype.ngOnDestroy = function () {
+        if (this.settingsSubscription) {
+            this.settingsSubscription.unsubscribe();
+            this.settingsSubscription = null;
+        }
+    };
+    HasAdvancedConfigDirective.prototype.handleChange = function () {
+        var _this = this;
+        this.settingsSubscription = this._settingsService.getAroioSettings().subscribe(function (settings) {
+            _this.advancedConfiguration = settings.configuration.webinterface.advanced_configuration;
+            if (_this.advancedConfiguration) {
+                _this.show();
+                return;
+            }
+            else {
+                _this.hide();
+            }
+        }, function (error) {
+            _this.hide();
+        });
+    };
+    // Show the element
+    HasAdvancedConfigDirective.prototype.show = function () {
+        if (!this.hasView) {
+            this._viewContainer.createEmbeddedView(this._templateRef);
+            this.hasView = true;
+        }
+    };
+    // Hide the element
+    HasAdvancedConfigDirective.prototype.hide = function () {
+        if (this.hasView) {
+            this._viewContainer.clear();
+            this.hasView = false;
+        }
+    };
+    HasAdvancedConfigDirective.ctorParameters = function () { return [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"] },
+        { type: _services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_2__["AroioSettingsService"] }
+    ]; };
+    HasAdvancedConfigDirective = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+            selector: '[hasAdvanced]'
+        })
+    ], HasAdvancedConfigDirective);
+    return HasAdvancedConfigDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/core/directives/has-not-advanced-config.directive.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/modules/core/directives/has-not-advanced-config.directive.ts ***!
+  \******************************************************************************/
+/*! exports provided: HasNotAdvancedConfigDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HasNotAdvancedConfigDirective", function() { return HasNotAdvancedConfigDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/aroio-settings.service */ "./src/app/modules/core/services/aroio-settings.service.ts");
+
+
+
+var HasNotAdvancedConfigDirective = /** @class */ (function () {
+    function HasNotAdvancedConfigDirective(_templateRef, _viewContainer, _settingsService) {
+        this._templateRef = _templateRef;
+        this._viewContainer = _viewContainer;
+        this._settingsService = _settingsService;
+        // Is the element currently rendered
+        this.hasView = false;
+    }
+    HasNotAdvancedConfigDirective.prototype.ngOnInit = function () {
+        this.handleChange();
+    };
+    HasNotAdvancedConfigDirective.prototype.ngOnDestroy = function () {
+        if (this.settingsSubscription) {
+            this.settingsSubscription.unsubscribe();
+            this.settingsSubscription = null;
+        }
+    };
+    HasNotAdvancedConfigDirective.prototype.handleChange = function () {
+        var _this = this;
+        this.settingsSubscription = this._settingsService.getAroioSettings().subscribe(function (settings) {
+            _this.advancedConfiguration = settings.configuration.webinterface.advanced_configuration;
+            if (!_this.advancedConfiguration) {
+                _this.show();
+                return;
+            }
+            else {
+                _this.hide();
+            }
+        }, function (error) {
+            _this.hide();
+        });
+    };
+    // Show the element
+    HasNotAdvancedConfigDirective.prototype.show = function () {
+        if (!this.hasView) {
+            this._viewContainer.createEmbeddedView(this._templateRef);
+            this.hasView = true;
+        }
+    };
+    // Hide the element
+    HasNotAdvancedConfigDirective.prototype.hide = function () {
+        if (this.hasView) {
+            this._viewContainer.clear();
+            this.hasView = false;
+        }
+    };
+    HasNotAdvancedConfigDirective.ctorParameters = function () { return [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"] },
+        { type: _services_aroio_settings_service__WEBPACK_IMPORTED_MODULE_2__["AroioSettingsService"] }
+    ]; };
+    HasNotAdvancedConfigDirective = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+            selector: '[hasNotAdvanced]'
+        })
+    ], HasNotAdvancedConfigDirective);
+    return HasNotAdvancedConfigDirective;
 }());
 
 
@@ -3673,6 +4102,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+
 
 
 
@@ -3680,42 +4111,58 @@ __webpack_require__.r(__webpack_exports__);
 var AroioSettingsService = /** @class */ (function () {
     function AroioSettingsService(_api) {
         this._api = _api;
+        this._serviceCache = {};
     }
     //////////////////////////
     // Get Routes
     //////////////////////////
     AroioSettingsService.prototype.getAroioSettings = function () {
+        if (!this._serviceCache.settings) {
+            this._serviceCache.settings = this._api.get('/aroio').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["publishReplay"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["refCount"])());
+        }
         return this._api.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + '/aroio');
     };
     //////////////////////////
     // Patch Routes
     //////////////////////////
     AroioSettingsService.prototype.setAroioBaseInformation = function (form) {
+        this.clear();
         return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + '/aroio', form);
     };
     AroioSettingsService.prototype.setAroioSettings = function (form) {
+        this.clear();
         return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + '/config', form);
     };
     AroioSettingsService.prototype.setAroioSettingsNetwork = function (form) {
+        this.clear();
         return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + '/config/network', form);
     };
     AroioSettingsService.prototype.setAroioSettingsAudio = function (form) {
+        this.clear();
         return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + '/config/audio', form);
     };
     AroioSettingsService.prototype.setAroioSettingsAudioOutputConfig = function (form) {
+        this.clear();
         return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + '/config/audio/output-configuration', form);
     };
     AroioSettingsService.prototype.setAroioSettingsWebinterface = function (form) {
+        this.clear();
         return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + '/config/webinterface', form);
     };
     AroioSettingsService.prototype.setAroioSettingsStreaming = function (form) {
+        this.clear();
         return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + '/config/streaming', form);
     };
     AroioSettingsService.prototype.setAroioSettingsConvolver = function (form) {
+        this.clear();
         return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + '/config/convolver', form);
     };
     AroioSettingsService.prototype.setAroioPasswort = function (form) {
+        this.clear();
         return this._api.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api + '/password', form);
+    };
+    AroioSettingsService.prototype.clear = function () {
+        this._serviceCache = {};
     };
     AroioSettingsService.ctorParameters = function () { return [
         { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
@@ -3726,6 +4173,73 @@ var AroioSettingsService = /** @class */ (function () {
         })
     ], AroioSettingsService);
     return AroioSettingsService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/core/services/meassurement-socket.service.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/modules/core/services/meassurement-socket.service.ts ***!
+  \**********************************************************************/
+/*! exports provided: MeassurementSocketService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MeassurementSocketService", function() { return MeassurementSocketService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var rxjs_webSocket__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/webSocket */ "./node_modules/rxjs/_esm5/webSocket/index.js");
+
+
+
+
+var MeassurementSocketService = /** @class */ (function () {
+    function MeassurementSocketService() {
+        this.measssurementSocket = null;
+        this.progressSocket = null;
+    }
+    //////////////////////////
+    // Meassurement Socket
+    //////////////////////////
+    MeassurementSocketService.prototype.send = function (content) {
+        this.measssurementSocket.next(content);
+    };
+    MeassurementSocketService.prototype.open = function () {
+        this.measssurementSocket = Object(rxjs_webSocket__WEBPACK_IMPORTED_MODULE_3__["webSocket"])(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].socket_api + '/meassurement/socket');
+        return this.measssurementSocket;
+    };
+    MeassurementSocketService.prototype.close = function () {
+        if (this.measssurementSocket) {
+            this.measssurementSocket.unsubscribe();
+            this.measssurementSocket = null;
+        }
+    };
+    //////////////////////////
+    // Progress Socket
+    //////////////////////////
+    MeassurementSocketService.prototype.sendProgress = function (content) {
+        this.progressSocket.next(content);
+    };
+    MeassurementSocketService.prototype.openProgress = function () {
+        this.progressSocket = Object(rxjs_webSocket__WEBPACK_IMPORTED_MODULE_3__["webSocket"])(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].socket_api + '/meassurement/progress');
+        return this.progressSocket;
+    };
+    MeassurementSocketService.prototype.closeProgress = function () {
+        if (this.progressSocket) {
+            this.progressSocket.unsubscribe();
+            this.progressSocket = null;
+        }
+    };
+    MeassurementSocketService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], MeassurementSocketService);
+    return MeassurementSocketService;
 }());
 
 
@@ -3758,6 +4272,57 @@ var NavigationService = /** @class */ (function () {
         })
     ], NavigationService);
     return NavigationService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/core/services/sidebar-widgets.service.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/modules/core/services/sidebar-widgets.service.ts ***!
+  \******************************************************************/
+/*! exports provided: SidebarWidgetsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarWidgetsService", function() { return SidebarWidgetsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+
+
+var SidebarWidgetsService = /** @class */ (function () {
+    function SidebarWidgetsService() {
+        this.widgets = [];
+    }
+    Object.defineProperty(SidebarWidgetsService.prototype, "currentWidgets", {
+        get: function () {
+            return this.widgets;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SidebarWidgetsService.prototype.add = function (widget) {
+        if (!this.exists(widget)) {
+            this.widgets.push(widget);
+        }
+    };
+    SidebarWidgetsService.prototype.exists = function (widget) {
+        return this.widgets.includes(widget);
+    };
+    SidebarWidgetsService.prototype.remove = function (widget) {
+        this.widgets = this.widgets.filter(function (_) { return _ !== widget; });
+    };
+    SidebarWidgetsService.prototype.clear = function () {
+        this.widgets = [];
+    };
+    SidebarWidgetsService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], SidebarWidgetsService);
+    return SidebarWidgetsService;
 }());
 
 
@@ -5613,7 +6178,7 @@ var AuthService = /** @class */ (function () {
         var decoded = jwt_decode__WEBPACK_IMPORTED_MODULE_4__(token);
         if (decoded['user']) {
             AuthService_1.user = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({}, decoded['user']), { 'roles': decoded['roles'] });
-            AuthService_1.user.token = token;
+            AuthService_1.user.access_token = token;
             AuthService_1.onAuthenticate.next(AuthService_1.user);
         }
     };
@@ -5631,9 +6196,9 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.getToken = function (credentials, storage) {
         var _this = this;
         return new rxjs__WEBPACK_IMPORTED_MODULE_3__["Observable"](function (observable) {
-            _this.http.post('/token', credentials).subscribe(function (response) {
-                AuthService_1.storeToken(response.token, storage);
-                AuthService_1.setUser(response.token);
+            _this.http.post('/login', credentials).subscribe(function (response) {
+                AuthService_1.storeToken(response.access_token, storage);
+                AuthService_1.setUser(response.access_token);
                 observable.next(response);
             }, function (error) {
                 observable.error(error);
@@ -7704,6 +8269,676 @@ var AroioOutputs = [
 
 /***/ }),
 
+/***/ "./src/app/utils/configs/brutefirPartitions.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/utils/configs/brutefirPartitions.ts ***!
+  \*****************************************************/
+/*! exports provided: BrutefirPartitions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BrutefirPartitions", function() { return BrutefirPartitions; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var BrutefirPartitions = [
+    {
+        value: 1,
+        label: '1'
+    },
+    {
+        value: 2,
+        label: '2'
+    },
+    {
+        value: 4,
+        label: '4'
+    },
+    {
+        value: 8,
+        label: '8'
+    },
+    {
+        value: 16,
+        label: '16'
+    },
+    {
+        value: 32,
+        label: '32'
+    }
+];
+
+
+/***/ }),
+
+/***/ "./src/app/utils/configs/bufferSizes.ts":
+/*!**********************************************!*\
+  !*** ./src/app/utils/configs/bufferSizes.ts ***!
+  \**********************************************/
+/*! exports provided: BufferSizes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BufferSizes", function() { return BufferSizes; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var BufferSizes = [
+    {
+        value: 512,
+        label: '512kB'
+    },
+    {
+        value: 1024,
+        label: '1M'
+    },
+    {
+        value: 2048,
+        label: '2M'
+    },
+    {
+        value: 4096,
+        label: '4M'
+    },
+    {
+        value: 8192,
+        label: '8M'
+    },
+    {
+        value: 16384,
+        label: '16M'
+    },
+    {
+        value: 32768,
+        label: '32M'
+    },
+    {
+        value: 65536,
+        label: '64M'
+    },
+    {
+        value: 131072,
+        label: '128M'
+    },
+    {
+        value: 262144,
+        label: '265M'
+    },
+    {
+        value: 524288,
+        label: '512M'
+    },
+    {
+        value: 1048576,
+        label: '1G'
+    },
+];
+
+
+/***/ }),
+
+/***/ "./src/app/utils/configs/commands.ts":
+/*!*******************************************!*\
+  !*** ./src/app/utils/configs/commands.ts ***!
+  \*******************************************/
+/*! exports provided: MeassurementCommands, AroioCommands */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MeassurementCommands", function() { return MeassurementCommands; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioCommands", function() { return AroioCommands; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var MeassurementCommands;
+(function (MeassurementCommands) {
+    MeassurementCommands["MEASUREMENT_01_BEGINN"] = "measurement_beginn";
+    MeassurementCommands["MEASUREMENT_02_MICROPHONE_ADJUSTMENT"] = "microphone_adjustment";
+    MeassurementCommands["MESSUREMENT_03_START"] = "messurement_start";
+    MeassurementCommands["MESSUREMENT_04_RUNNING"] = "messurement_running";
+    MeassurementCommands["MEASUREMENT_05_CREATE_FILTER"] = "create_filter";
+    MeassurementCommands["MEASUREMENT_06_SAVE_FILTER"] = "save_filter";
+})(MeassurementCommands || (MeassurementCommands = {}));
+var AroioCommands = {
+    measurement_beginn: {
+        command: 'begin_measurement',
+        message: 'Anlegen einer neuen Messung.'
+    },
+    microphone_adjustment: {
+        command: 'microphone_adjustment',
+        message: 'Ausrichtung des Mikrofons.'
+    },
+    messurement_start: {
+        command: 'messurement_start',
+        message: 'Messung wird gestartet.'
+    },
+    messurement_running: {
+        command: 'messurement_running',
+        message: 'Messung läuft.'
+    },
+    create_filter: {
+        command: 'create_filter',
+        message: 'Messung läuft.'
+    },
+    save_filter: {
+        command: 'save_filter',
+        message: 'Messung läuft.'
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/utils/configs/jackperiods.ts":
+/*!**********************************************!*\
+  !*** ./src/app/utils/configs/jackperiods.ts ***!
+  \**********************************************/
+/*! exports provided: AroioJackperiods */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioJackperiods", function() { return AroioJackperiods; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var AroioJackperiods = [
+    {
+        value: 2,
+        label: '2'
+    },
+    {
+        value: 3,
+        label: '3'
+    }
+];
+
+
+/***/ }),
+
+/***/ "./src/app/utils/configs/jackpuffer.ts":
+/*!*********************************************!*\
+  !*** ./src/app/utils/configs/jackpuffer.ts ***!
+  \*********************************************/
+/*! exports provided: AroioJackpuffer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioJackpuffer", function() { return AroioJackpuffer; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var AroioJackpuffer = [
+    {
+        value: 32,
+        label: '32K'
+    },
+    {
+        value: 64,
+        label: '64K'
+    },
+    {
+        value: 128,
+        label: '128K'
+    },
+    {
+        value: 256,
+        label: '256K'
+    },
+    {
+        value: 512,
+        label: '512K'
+    },
+    {
+        value: 1024,
+        label: '1M'
+    },
+    {
+        value: 2048,
+        label: '2M'
+    },
+    {
+        value: 4096,
+        label: '4M'
+    },
+    {
+        value: 8192,
+        label: '8M'
+    },
+    {
+        value: 16384,
+        label: '16M'
+    }
+];
+
+
+/***/ }),
+
+/***/ "./src/app/utils/configs/resampling.ts":
+/*!*********************************************!*\
+  !*** ./src/app/utils/configs/resampling.ts ***!
+  \*********************************************/
+/*! exports provided: ResamplingFrequencies */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResamplingFrequencies", function() { return ResamplingFrequencies; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var ResamplingFrequencies = [
+    {
+        value: 44100,
+        label: '44.1kHz',
+        config: {
+            jackbuffer: 4096,
+            jackperiod: 3,
+            squeeze_alsabuffer: 16384,
+            squeeze_alsaperiod: 4,
+            squeeze_intbuffer: 16384,
+            squeeze_outbuffer: 8192,
+            sp_outbuffer: 32768,
+            sp_period: 2,
+            bf_partitions: 2,
+            resampling: 'speexrate_medium',
+            sp_samplerate: 44100
+        }
+    },
+    {
+        value: 48000,
+        label: '48kHz',
+        config: {
+            jackbuffer: 4096,
+            jackperiod: 3,
+            squeeze_alsabuffer: 16384,
+            squeeze_alsaperiod: 4,
+            squeeze_intbuffer: 8192,
+            squeeze_outbuffer: 8192,
+            sp_outbuffer: 32768,
+            sp_period: 2,
+            bf_partitions: 2,
+            resampling: 'speexrate_medium',
+            sp_samplerate: 44100,
+        }
+    },
+    {
+        value: 88000,
+        label: '88kHz',
+        config: {
+            jackbuffer: 8192,
+            jackperiod: 3,
+            squeeze_alsabuffer: 8192,
+            squeeze_alsaperiod: 4,
+            squeeze_intbuffer: 4096,
+            squeeze_outbuffer: 4096,
+            sp_outbuffer: 32768,
+            sp_period: 2,
+            bf_partitions: 2,
+            resampling: 'speexrate_medium',
+            sp_samplerate: 44100,
+        }
+    },
+    {
+        value: 96000,
+        label: '96kHz',
+        config: {
+            jackbuffer: 8192,
+            jackperiod: 3,
+            squeeze_alsabuffer: 8192,
+            squeeze_alsaperiod: 4,
+            squeeze_intbuffer: 4096,
+            squeeze_outbuffer: 4096,
+            sp_outbuffer: 32768,
+            sp_period: 2,
+            bf_partitions: 2,
+            resampling: 'speexrate_medium',
+            sp_samplerate: 44100,
+        }
+    },
+    {
+        value: 174000,
+        label: '174kHz',
+        config: {
+            jackbuffer: 8192,
+            jackperiod: 3,
+            squeeze_alsabuffer: 4096,
+            squeeze_alsaperiod: 2,
+            squeeze_intbuffer: 4096,
+            squeeze_outbuffer: 4096,
+            sp_outbuffer: 32768,
+            sp_period: 2,
+            bf_partitions: 2,
+            resampling: 'speexrate_medium',
+            sp_samplerate: 44100,
+        }
+    },
+    {
+        value: 192000,
+        label: '192kHz',
+        config: {
+            jackbuffer: 8192,
+            jackperiod: 3,
+            squeeze_alsabuffer: 4096,
+            squeeze_alsaperiod: 2,
+            squeeze_intbuffer: 4096,
+            squeeze_outbuffer: 4096,
+            sp_outbuffer: 32768,
+            sp_period: 2,
+            bf_partitions: 2,
+            resampling: 'speexrate_medium',
+            sp_samplerate: 44100,
+        }
+    },
+    {
+        value: 348000,
+        label: '348kHz',
+        config: {
+            jackbuffer: 8192,
+            jackperiod: 3,
+            squeeze_alsabuffer: 4096,
+            squeeze_alsaperiod: 2,
+            squeeze_intbuffer: 4096,
+            squeeze_outbuffer: 4096,
+            sp_outbuffer: 32768,
+            sp_period: 2,
+            bf_partitions: 2,
+            resampling: 'speexrate_medium',
+            sp_samplerate: 44100,
+        }
+    },
+];
+
+
+/***/ }),
+
+/***/ "./src/app/utils/configs/shairplaySamplingFrequences.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/utils/configs/shairplaySamplingFrequences.ts ***!
+  \**************************************************************/
+/*! exports provided: ShairplaySamplingFrequences */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShairplaySamplingFrequences", function() { return ShairplaySamplingFrequences; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var ShairplaySamplingFrequences = [
+    {
+        value: 44100,
+        label: '44.1k'
+    },
+    {
+        value: 88200,
+        label: '88.2k'
+    }
+];
+
+
+/***/ }),
+
+/***/ "./src/app/utils/configs/soundcards.ts":
+/*!*********************************************!*\
+  !*** ./src/app/utils/configs/soundcards.ts ***!
+  \*********************************************/
+/*! exports provided: AroioSoundcards */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioSoundcards", function() { return AroioSoundcards; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var AroioSoundcards = [
+    {
+        value: 'Internal HDMI audio',
+        label: 'HDMI Intern',
+        rates: [44100, 48000]
+    },
+    {
+        value: 'Internal audio jack',
+        label: 'Interner Audio Ausgang',
+        rates: [44100, 48000]
+    },
+    {
+        value: 'M-Audio Fast Track Pro',
+        label: 'M-Audio Fast Track Pro',
+        rates: [44100, 48000]
+    },
+    {
+        value: 'AudioQuest DragonFly',
+        label: 'AudioQuest DragonFly',
+        rates: [44100, 48000]
+    },
+    {
+        value: 'AudioQuest Beetle',
+        label: 'AudioQuest Beetle',
+        rates: [44100, 48000]
+    },
+    {
+        value: 'RME Fireface UCX',
+        label: 'RME Fireface UCX',
+        rates: [44100, 48000, 96000]
+    },
+    {
+        value: 'Focusrite Scarlett',
+        label: 'Focusrite Scarlett',
+        rates: [44100, 48000, 96000]
+    },
+    {
+        value: 'Dr. DAC prime',
+        label: 'Dr. DAC prime',
+        rates: [44100, 48000, 96000]
+    },
+    {
+        value: 'XMOS Evaluation Board',
+        label: 'XMOS Evaluation Board',
+        rates: [44100, 48000]
+    },
+    {
+        value: 'USB Class Compliant',
+        label: 'USB Class Compliant',
+        rates: [44100, 48000, 96000, 192000]
+    },
+    {
+        value: 'AroioDAC',
+        label: 'ABACUS AroioDAC',
+        rates: [44100, 48000, 96000, 192000]
+    },
+    {
+        value: 'AroioDAC-SRC',
+        label: 'ABACUS AroioDAC-SRC',
+        rates: [44100, 48000, 96000, 192000]
+    },
+    {
+        value: 'IQAudIO DAC',
+        label: 'IQAudIO DAC',
+        rates: [44100, 48000, 96000, 192000]
+    },
+    {
+        value: 'HiFiBerry Digi',
+        label: 'HiFiBerry Digi',
+        rates: [44100, 48000, 96000, 192000]
+    },
+    {
+        value: 'HiFiBerry DAC',
+        label: 'HiFiBerry DAC',
+        rates: [44100, 48000, 96000, 192000]
+    },
+    {
+        value: 'HiFiBerry DAC+',
+        label: 'HiFiBerry DAC+',
+        rates: [44100, 48000, 96000, 192000]
+    },
+    {
+        value: 'HiFiBerry DAC+ ADC',
+        label: 'HiFiBerry DAC+ ADC',
+        rates: [44100, 48000, 96000, 192000]
+    },
+    {
+        value: 'JustBoom DAC',
+        label: 'JustBoom DAC',
+        rates: [44100, 48000]
+    },
+    {
+        value: 'Allo Piano DAC',
+        label: 'Allo Piano DAC',
+        rates: [44100, 48000]
+    },
+    {
+        value: 'Allo Piano 2.1 DAC',
+        label: 'Allo Piano 2.1 DAC',
+        rates: [44100, 48000]
+    },
+    {
+        value: 'Allo Boss DAC',
+        label: 'Allo Boss DAC',
+        rates: [44100, 48000]
+    },
+    {
+        value: 'Allo DigiOne',
+        label: 'Allo DigiOne',
+        rates: ['44100', '48000', '96000', '192000']
+    },
+];
+
+
+/***/ }),
+
+/***/ "./src/app/utils/configs/startvolumes.ts":
+/*!***********************************************!*\
+  !*** ./src/app/utils/configs/startvolumes.ts ***!
+  \***********************************************/
+/*! exports provided: AroioStartVolumes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AroioStartVolumes", function() { return AroioStartVolumes; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var AroioStartVolumes = [
+    {
+        value: 0,
+        label: ' 0 dB'
+    },
+    {
+        value: -5,
+        label: '-5 dB'
+    },
+    {
+        value: -10,
+        label: '-10 dB'
+    },
+    {
+        value: -15,
+        label: '-15 dB'
+    },
+    {
+        value: -20,
+        label: '-20 dB'
+    },
+    {
+        value: -25,
+        label: '-25 dB'
+    },
+    {
+        value: -30,
+        label: '-30 dB'
+    },
+    {
+        value: -35,
+        label: '-35 dB'
+    },
+    {
+        value: -40,
+        label: '-40 dB'
+    },
+    {
+        value: -45,
+        label: '-45 dB'
+    },
+    {
+        value: -50,
+        label: '-50 dB'
+    },
+    {
+        value: -55,
+        label: '-55 dB'
+    },
+    {
+        value: -60,
+        label: '-60 dB'
+    }
+];
+
+
+/***/ }),
+
+/***/ "./src/app/utils/configs/widgets.ts":
+/*!******************************************!*\
+  !*** ./src/app/utils/configs/widgets.ts ***!
+  \******************************************/
+/*! exports provided: WidgetTypes, Widgets */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WidgetTypes", function() { return WidgetTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Widgets", function() { return Widgets; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var WidgetTypes;
+(function (WidgetTypes) {
+    WidgetTypes["SPOTIFY"] = "spotify";
+    WidgetTypes["SYSTEM_INFO"] = "system";
+    WidgetTypes["NETWORK_INFO"] = "network";
+    WidgetTypes["HELPTEXT"] = "help"; // Title and Content are required
+})(WidgetTypes || (WidgetTypes = {}));
+var Widgets = {
+    spotify: {
+        id: WidgetTypes.SPOTIFY,
+        position: 0,
+        title: null,
+        content: null,
+        classModifier: 'spotify'
+    },
+    meassurement_links: {
+        id: WidgetTypes.HELPTEXT,
+        position: 0,
+        title: 'Nützliche Links:',
+        content: 'Hier findest du Hilfe und nützliche Links zu der Messung.',
+        classModifier: 'help'
+    }
+};
+
+
+/***/ }),
+
+/***/ "./src/app/utils/configs/wizard-steps.ts":
+/*!***********************************************!*\
+  !*** ./src/app/utils/configs/wizard-steps.ts ***!
+  \***********************************************/
+/*! exports provided: WIZARD_STEPS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WIZARD_STEPS", function() { return WIZARD_STEPS; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var WIZARD_STEPS;
+(function (WIZARD_STEPS) {
+    WIZARD_STEPS["STARTUP"] = "startup";
+    WIZARD_STEPS["POSITIONING"] = "positioning";
+    WIZARD_STEPS["MEASSUREMENT_START"] = "meassurement_start";
+    WIZARD_STEPS["MEASSUREMENT_RUNNING"] = "meassurement_running";
+    WIZARD_STEPS["FILTER"] = "filter";
+    WIZARD_STEPS["FINISH"] = "finish";
+})(WIZARD_STEPS || (WIZARD_STEPS = {}));
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -7722,6 +8957,7 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     api: 'http://127.0.0.1:8000',
+    socket_api: 'ws://127.0.0.1:8000',
     version: '1.0',
     defaultLocale: 'de',
     defaultPage: {
