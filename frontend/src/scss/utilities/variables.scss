@@ -40,6 +40,14 @@ $base-header-height: spacing(6);
 $base-footer-height: spacing(6);
 
 
+$tooltip-arrow-color: getColor(danger);
+$tooltip-border-radius: $base-border-radius;
+$tooltip-color: getColor(white);
+$tooltip-bg: getColor(danger);
+$tooltip-padding-y: spacing(1);
+$tooltip-padding-x: spacing(2);
+$tooltip-opacity: 1;
+
 // Old Shit
 // ---------------------------------------------------------
 

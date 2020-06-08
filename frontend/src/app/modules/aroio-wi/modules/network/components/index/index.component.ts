@@ -14,6 +14,7 @@ export class NetworkIndexComponent implements AfterViewInit, OnDestroy {
   form: FormGroup = null;
   subscriptions: Array<Subscription> = [];
   isLoading = false;
+  ipPattern = '(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)';
 
   constructor(
     private settingsSerivce: AroioSettingsService,
@@ -35,18 +36,22 @@ export class NetworkIndexComponent implements AfterViewInit, OnDestroy {
     this.form = new FormGroup({
       hostname: new FormControl(aroioSettings && aroioSettings.configuration.network.hostname ? aroioSettings.configuration.network.hostname : '', Validators.required),
       wifi: new FormControl(aroioSettings && aroioSettings.configuration.network.wifi ? aroioSettings.configuration.network.wifi : false, Validators.required),
-      lan_dhcp: new FormControl(aroioSettings && aroioSettings.configuration.network.lan_dhcp ? aroioSettings.configuration.network.lan_dhcp : false, Validators.required),
-      lan_ipaddr: new FormControl(aroioSettings && aroioSettings.configuration.network.lan_ipaddr ? aroioSettings.configuration.network.lan_ipaddr : ''),
-      lan_gateway: new FormControl(aroioSettings && aroioSettings.configuration.network.lan_gateway ? aroioSettings.configuration.network.lan_gateway : ''),
-      lan_netmask: new FormControl(aroioSettings && aroioSettings.configuration.network.lan_netmask ? aroioSettings.configuration.network.lan_netmask : ''),
-      lan_dnsserv: new FormControl(aroioSettings && aroioSettings.configuration.network.lan_dnsserv ? aroioSettings.configuration.network.lan_dnsserv : ''),
-      wlan_dhcp: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan_dhcp ? aroioSettings.configuration.network.wlan_dhcp : false, Validators.required),
-      wlan_ipaddr: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan_ipaddr ? aroioSettings.configuration.network.wlan_ipaddr : ''),
-      wlan_gateway: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan_gateway ? aroioSettings.configuration.network.wlan_gateway : ''),
-      wlan_netmask: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan_netmask ? aroioSettings.configuration.network.wlan_netmask : ''),
-      wlan_dnsserv: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan_dnsserv ? aroioSettings.configuration.network.wlan_dnsserv : ''),
-      wlanpwd: new FormControl(aroioSettings && aroioSettings.configuration.network.wlanpwd ? aroioSettings.configuration.network.wlanpwd : ''),
-      wlanssid: new FormControl(aroioSettings && aroioSettings.configuration.network.wlanssid ? aroioSettings.configuration.network.wlanssid : '')
+      lan: new FormGroup({
+        dhcp: new FormControl(aroioSettings && aroioSettings.configuration.network.lan.dhcp ? aroioSettings.configuration.network.lan.dhcp : false, Validators.required),
+        ipaddr: new FormControl(aroioSettings && aroioSettings.configuration.network.lan.ipaddr ? aroioSettings.configuration.network.lan.ipaddr : '', Validators.pattern(this.ipPattern)),
+        gateway: new FormControl(aroioSettings && aroioSettings.configuration.network.lan.gateway ? aroioSettings.configuration.network.lan.gateway : '', Validators.pattern(this.ipPattern)),
+        netmask: new FormControl(aroioSettings && aroioSettings.configuration.network.lan.netmask ? aroioSettings.configuration.network.lan.netmask : '', Validators.pattern(this.ipPattern)),
+        dnsserv: new FormControl(aroioSettings && aroioSettings.configuration.network.lan.dnsserv ? aroioSettings.configuration.network.lan.dnsserv : '', Validators.pattern(this.ipPattern))
+      }),
+      wlan: new FormGroup({
+        dhcp: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan.dhcp ? aroioSettings.configuration.network.wlan.dhcp : false, Validators.required),
+        ipaddr: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan.ipaddr ? aroioSettings.configuration.network.wlan.ipaddr : '', Validators.pattern(this.ipPattern)),
+        gateway: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan.gateway ? aroioSettings.configuration.network.wlan.gateway : '', Validators.pattern(this.ipPattern)),
+        netmask: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan.netmask ? aroioSettings.configuration.network.wlan.netmask : '', Validators.pattern(this.ipPattern)),
+        dnsserv: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan.dnsserv ? aroioSettings.configuration.network.wlan.dnsserv : '', Validators.pattern(this.ipPattern)),
+        pwd: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan.wlanpwd ? aroioSettings.configuration.network.wlan.wlanssid : ''),
+        ssid: new FormControl(aroioSettings && aroioSettings.configuration.network.wlan.wlanssid ? aroioSettings.configuration.network.wlan.wlanpwd : '')
+      }),
     });
   }
 

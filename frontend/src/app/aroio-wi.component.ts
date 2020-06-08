@@ -9,6 +9,7 @@ import localeEN from '@angular/common/locales/en';
 import localeENextra from '@angular/common/locales/extra/en';
 import {defineLocale, deLocale} from 'ngx-bootstrap/chronos';
 import {AroioSettingsService} from './modules/core/services/aroio-settings.service';
+import {TooltipConfig} from 'ngx-bootstrap/tooltip';
 
 registerLocaleData(localeDE, 'de', localeDEextra);
 registerLocaleData(localeEN, 'en', localeENextra);
@@ -16,7 +17,8 @@ registerLocaleData(localeEN, 'en', localeENextra);
 
 @Component({
   selector: 'aroio-wi-root',
-  templateUrl: './aroio-wi.component.html'
+  templateUrl: './aroio-wi.component.html',
+  providers: [TooltipConfig]
 })
 export class AroioWiComponent implements OnInit{
 
@@ -29,9 +31,13 @@ export class AroioWiComponent implements OnInit{
 
   constructor(
     private translate: TranslateService,
-    private settingsService: AroioSettingsService
+    private settingsService: AroioSettingsService,
+    private tooltipConfig: TooltipConfig
   ) {
     this.isLoading = true;
+
+    tooltipConfig.container = 'body';
+    tooltipConfig.placement = 'top';
 
     defineLocale('de', deLocale);
     this.translate.use(environment.defaultLocale).subscribe(() => {

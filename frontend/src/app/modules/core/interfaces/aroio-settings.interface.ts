@@ -1,20 +1,21 @@
-import {strict} from 'assert';
+export interface LanConfigInterface {
+  dhcp?: string,
+  ipaddr?: string,
+  netmask?: string,
+  dnsserv?: string,
+  gateway?: string
+}
+
+export interface WLanConfigInterface extends LanConfigInterface {
+  wlanssid?: string,
+  wlanpwd?: string
+}
 
 export interface NetworkConfigInterface {
   hostname: string,
   wifi: boolean,
-  lan_dhcp?: string,
-  lan_ipaddr?: string,
-  lan_netmask?: string,
-  lan_dnsserv?: string,
-  lan_gateway?: string,
-  wlan_dhcp?: string,
-  wlan_ipaddr?: string,
-  wlan_netmask?: string,
-  wlan_dnsserv?: string,
-  wlan_gateway?: string,
-  wlanssid?: string,
-  wlanpwd?: string
+  lan: LanConfigInterface,
+  wlan: WLanConfigInterface
 }
 
 
@@ -35,7 +36,6 @@ export interface StreamingConfigInterface {
   squeezeuser?: string,
   squeezepwd?: string,
   playername: string
-
 }
 
 
@@ -44,7 +44,6 @@ export interface WebinterfaceConfigInterface {
   initial_setup?: boolean
   advanced_configuration?: boolean
 }
-
 
 
 export interface PlayerConfigInterface {

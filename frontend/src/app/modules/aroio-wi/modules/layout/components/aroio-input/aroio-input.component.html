@@ -32,13 +32,12 @@
 
       <bd-form-addon [text]="append" position="append" *ngIf="append"></bd-form-addon>
 
-      <div class="form-errors-sign" *ngIf="errors.length">
-        <div class="form-errors-sign__sign">
+
+      <div class="form-errors-sign" *ngIf="errors.length" >
+        <div class="form-errors-sign__sign" [tooltip]="tooltipErrors">
           <i class="fas fa-exclamation-triangle"></i>
         </div>
-        <bd-form-errors [errors]="errors"></bd-form-errors>
       </div>
-
 
     </div>
   </div>
@@ -46,3 +45,7 @@
   <bd-form-counter [maxLength]="maxLength" [form]="formControl" *ngIf="maxLength && !options.counterBefore"></bd-form-counter>
   <bd-form-help [label]="help" *ngIf="help"></bd-form-help>
 </div>
+
+<ng-template #tooltipErrors>
+  <bd-form-errors [errors]="errors"></bd-form-errors>
+</ng-template>
