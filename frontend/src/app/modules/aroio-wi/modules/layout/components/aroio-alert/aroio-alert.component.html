@@ -1,4 +1,4 @@
-<div [ngClass]="[hasNavbar ? 'alert-box' : 'alert-box  alert-box--no-navigation']">
+<div>
   <div class="alert alert--{{ item.type }} flash"  *ngFor="let item of _alerts" [@slideRightOut] (@slideRightOut.done)="removeAlertWithTimeout(item)">
     <div class="alert__title" *ngIf="item.title">
       {{ item.title | translate }}

@@ -10,6 +10,8 @@ import localeENextra from '@angular/common/locales/extra/en';
 import {defineLocale, deLocale} from 'ngx-bootstrap/chronos';
 import {AroioSettingsService} from './modules/core/services/aroio-settings.service';
 import {TooltipConfig} from 'ngx-bootstrap/tooltip';
+import {SidebarWidgetsService} from './modules/core/services/sidebar-widgets.service';
+import {Widgets} from './utils/configs/widgets';
 
 registerLocaleData(localeDE, 'de', localeDEextra);
 registerLocaleData(localeEN, 'en', localeENextra);
@@ -32,9 +34,12 @@ export class AroioWiComponent implements OnInit{
   constructor(
     private translate: TranslateService,
     private settingsService: AroioSettingsService,
-    private tooltipConfig: TooltipConfig
+    private tooltipConfig: TooltipConfig,
+    private widgetService: SidebarWidgetsService
   ) {
     this.isLoading = true;
+
+    this.widgetService.add(Widgets['system_info']);
 
     tooltipConfig.container = 'body';
     tooltipConfig.placement = 'top';

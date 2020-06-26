@@ -24,10 +24,10 @@
     </ng-container>
 
     <ng-container *ngSwitchCase="WidgetTypes.SYSTEM_INFO">
-      <div class="aroio-sidebar__widget__title">
-        <h4>System Widget</h4>
+      <div class="aroio-sidebar__widget__title" *ngIf="settings">
+        <h4>{{ settings.configuration.streaming.playername }}</h4>
       </div>
-      <div class="aroio-sidebar__widget__content">
+      <div class="aroio-sidebar__widget__content" *ngIf="settings">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae consequatur libero nihil nisi quos ratione.
         </p>

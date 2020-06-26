@@ -32,6 +32,7 @@ import {OrderModule} from 'ngx-order-pipe';
 import {AroioSystemListComponent} from './components/aroio-system-list/aroio-system-list.component';
 import {AroioSystemListItemComponent} from './components/aroio-system-list/aroio-filter-list-item/aroio-system-list-item.component';
 import {AroioSidebarWidgetComponent} from './components/aroio-sidebar/aroio-sidebar-widget/aroio-sidebar-widget.component';
+import {AroioContentGroupComponent} from './components/aroio-content-group/aroio-content-group.component';
 
 @NgModule({
   imports: [
@@ -62,6 +63,7 @@ import {AroioSidebarWidgetComponent} from './components/aroio-sidebar/aroio-side
     // ---------------------------
     AroioHeaderComponent,
     AroioContentComponent,
+    AroioContentGroupComponent,
     AroioFooterComponent,
     AroioLoadingComponent,
     AroioButtonComponent,
@@ -98,6 +100,7 @@ import {AroioSidebarWidgetComponent} from './components/aroio-sidebar/aroio-side
     AroioAlertComponent,
     AroioHeaderComponent,
     AroioContentComponent,
+    AroioContentGroupComponent,
     AroioFooterComponent,
     AroioLoadingComponent,
     AroioButtonComponent,

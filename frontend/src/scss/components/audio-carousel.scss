@@ -19,17 +19,15 @@
       }
     }
 
-    &.swiper-slide {
-      transition: transform ease-in-out .33s, opacity ease-in-out .33s;
-      transform: scale(.8);
-      opacity: .33;
-      pointer-events: none;
+    transition: transform ease-in-out .33s, opacity ease-in-out .33s;
+    transform: scale(.8);
+    opacity: .33;
+    pointer-events: none;
 
-      &.swiper-slide-active {
-        transform: scale(1);
-        opacity: 1;
-        pointer-events: initial;
-      }
+    &.swiper-slide-active {
+      transform: scale(1);
+      opacity: 1;
+      pointer-events: initial;
     }
   }
 }
