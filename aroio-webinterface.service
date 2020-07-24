@@ -1,0 +1,12 @@
+[Unit]
+Description=aroio-webinterafce service
+Requires=network.target checkuserconfig.service
+After=checkuserconfig.service
+
+[Service]
+Type=simple
+ExecStart=/bin/python /opt/aroio-ui/main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
