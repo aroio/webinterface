@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   api: 'http://' +  window.location.hostname + ':8000',
   socket_api: 'ws://localhost:8000',
   cdn: 'https://cdn.stillleben.media/abacus/webinterface/',

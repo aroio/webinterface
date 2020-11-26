@@ -78,13 +78,13 @@ export class AuthService {
       AuthService.retrieveToken(storage).then(token => {
         if (token) {
           const decoded = jwt_decode(token);
-          if (isAfter(new Date(decoded['exp'] * 1000), new Date())) {
             AuthService.setUser(token);
             resolve(true);
-          } else {
-            AuthService.forgetToken(storage);
-            reject(false);
-          }
+          // if (isAfter(new Date(decoded['exp'] * 1000), new Date())) {
+          // } else {
+          //   AuthService.forgetToken(storage);
+          //   reject(false);
+          // }
         } else {
           reject(false);
         }
