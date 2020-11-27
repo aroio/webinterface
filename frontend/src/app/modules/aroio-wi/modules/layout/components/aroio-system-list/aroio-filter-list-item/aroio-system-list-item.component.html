@@ -1,3 +1,6 @@
 <li>
+  <div class="aroio-system-list__item__key">{{ key }}</div>
+  <div class="aroio-system-list__item__value" *ngIf="value">{{ value }}</div>
+  <div class="aroio-system-list__item__value aroio-system-list__item__value--empty" *ngIf="!value">Nicht gesetzt</div>
   <ng-content></ng-content>
 </li>

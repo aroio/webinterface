@@ -26,7 +26,7 @@ export const Widgets: {[key: string]: SidebarWidgetInterface} = {
     id: WidgetTypes.SYSTEM_INFO,
     position: 0,
     title: 'System Informationen:',
-    content: 'Hier findest du Hilfe und nützliche Links zu der Messung.',
+    content: 'Hier sind die wichtigsten Informationen ihres ',
     classModifier: 'help'
   }
 };

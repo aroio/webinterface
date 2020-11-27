@@ -25,12 +25,53 @@
 
     <ng-container *ngSwitchCase="WidgetTypes.SYSTEM_INFO">
       <div class="aroio-sidebar__widget__title" *ngIf="settings">
-        <h4>{{ settings.configuration.streaming.playername }}</h4>
+        <h4>Systeminformationen</h4>
       </div>
       <div class="aroio-sidebar__widget__content" *ngIf="settings">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae consequatur libero nihil nisi quos ratione.
-        </p>
+          <aroio-system-list [title]="'System'">
+            <aroio-system-list-item [key]="'Platfform'" [value]="settings.configuration.system.platform"></aroio-system-list-item>
+            <aroio-system-list-item [key]="'Version'" [value]="settings.configuration.system.known_version"></aroio-system-list-item>
+
+          </aroio-system-list>
+
+
+          <aroio-system-list [title]="'Audio'">
+            <aroio-system-list-item [key]="'Soundkarte'" [value]="settings.configuration.audio.soundcard"></aroio-system-list-item>
+
+            <ng-container [ngSwitch]="settings.configuration.audio.output_configuration.audio_output">
+              <ng-container *ngSwitchCase="'jack'">
+                <aroio-system-list-item [key]="'Aktiver digitaler Audioausgang'" [value]="'Direkt'"></aroio-system-list-item>
+                <aroio-system-list-item [key]="'Cleaner'" [value]="settings.configuration.audio.output_configuration.direct_config.mscoding ? 'Aktiv' : 'Inaktiv'"></aroio-system-list-item>
+              </ng-container>
+              <ng-container *ngSwitchCase="'vol-plug'">
+                <aroio-system-list-item [key]="'Aktiver digitaler Audioausgang'" [value]="'Bus'"></aroio-system-list-item>
+                <aroio-system-list-item [key]="'Cleaner'" [value]="settings.configuration.audio.output_configuration.bus_config.mscoding ? 'Aktiv' : 'Inaktiv'"></aroio-system-list-item>
+              </ng-container>
+              <ng-container *ngSwitchCase="'jack-bf'">
+                <aroio-system-list-item [key]="'Aktiver digitaler Audioausgang'" [value]="'Convolver'"></aroio-system-list-item>
+                <aroio-system-list-item [key]="'Cleaner'" [value]="settings.configuration.audio.output_configuration.convolver_config.mscoding ? 'Aktiv' : 'Inaktiv'"></aroio-system-list-item>
+              </ng-container>
+            </ng-container>
+          </aroio-system-list>
+
+          <aroio-system-list [title]="'Netzwerk'">
+            <aroio-system-list-item [key]="'Hostname'" [value]="settings.configuration.streaming.playername"></aroio-system-list-item>
+            <ng-container *ngIf="settings.configuration.network.wifi; else lanInfo">
+              <aroio-system-list-item [key]="'Verbindung'" [value]="'Drahtlos'"></aroio-system-list-item>
+              <aroio-system-list-item [key]="'DHCP'" [value]="settings.configuration.network.wlan.dhcp ? 'Aktiv' : 'Manuell'"></aroio-system-list-item>
+              <aroio-system-list-item [key]="'SSID'" [value]="settings.configuration.network.wlan.wlanssid"></aroio-system-list-item>
+              <aroio-system-list-item [key]="'IP'" [value]="settings.configuration.network.wlan.ipaddr"></aroio-system-list-item>
+            </ng-container>
+
+            <ng-template #lanInfo>
+              <aroio-system-list-item [key]="'Verbindung'" [value]="'Kabelgebunden'"></aroio-system-list-item>
+              <aroio-system-list-item [key]="'DHCP'" [value]="settings.configuration.network.lan.dhcp ? 'Aktiv' : 'Manuell'"></aroio-system-list-item>
+              <aroio-system-list-item [key]="'IP'" [value]="settings.configuration.network.lan.ipaddr"></aroio-system-list-item>
+            </ng-template>
+
+          </aroio-system-list>
+
+
       </div>
     </ng-container>
 

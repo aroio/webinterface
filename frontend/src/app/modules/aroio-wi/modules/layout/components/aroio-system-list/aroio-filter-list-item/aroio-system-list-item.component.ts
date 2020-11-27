@@ -6,4 +6,7 @@ import {Component, HostBinding, Input, OnInit} from '@angular/core';
 })
 export class AroioSystemListItemComponent {
   @HostBinding('class') class = 'aroio-system-list__item';
+
+  @Input('key') key: string;
+  @Input('value') value: string;
 }

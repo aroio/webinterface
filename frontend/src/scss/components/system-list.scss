@@ -9,12 +9,32 @@ ul {
       padding-bottom: spacing(0);
 
       li {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: spacing(.5);
         margin: 0;
+
+        .aroio-system-list__item__key {
+          opacity: .6;
+          padding-right: spacing(1);
+        }
+
+        .aroio-system-list__item__value {
+          font-weight: bold;
+          text-align: right;
+
+          &.aroio-system-list__item__value--empty {
+            opacity: .3;
+            font-weight: normal;
+          }
+        }
+
       }
 
       &.aroio-system-list__item--title {
         font-size: getFontSize(sm);
         font-weight: bold;
+        margin-bottom: spacing(.5);
       }
     }
   }

@@ -3,6 +3,7 @@ import {NavigationService} from '../../../../../core/services/navigation.service
 import {AroioTabs} from '../../../../../../utils/aroio-tabs';
 import {Subscription} from 'rxjs';
 import {TranslateService} from '@ngx-translate/core';
+import {AroioTabsInterface} from '../../../../../core/interfaces/aroio-tabs.interface';
 
 @Component({
   selector: 'aroio-tabset',
@@ -10,7 +11,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AroioTabsetComponent implements OnInit, OnDestroy {
 
-  aroioTabs = AroioTabs;
+  aroioTabs: AroioTabsInterface[] = AroioTabs;
 
   subscription: Subscription;
 

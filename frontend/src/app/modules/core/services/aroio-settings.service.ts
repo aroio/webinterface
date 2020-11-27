@@ -5,7 +5,7 @@ import {environment} from '../../../../environments/environment';
 import {
   AroioSettingsInterface, AudioConfigInterface,
   ConvolverConfigInterface, NetworkConfigInterface, OutputConfigInterface,
-  StreamingConfigInterface,
+  StreamingConfigInterface, SystemConfigInterface,
   WebinterfaceConfigInterface
 } from '../interfaces/aroio-settings.interface';
 import {publishReplay, refCount, take} from 'rxjs/operators';
@@ -71,6 +71,11 @@ export class AroioSettingsService {
   setAroioSettingsConvolver(form: FormData): Observable<ConvolverConfigInterface> {
     this.clear();
     return this._api.patch<ConvolverConfigInterface>( environment.api + '/config/convolver', form);
+  }
+
+  setAroioSettingsSystem(form: FormData): Observable<SystemConfigInterface> {
+    this.clear();
+    return this._api.patch<SystemConfigInterface>( environment.api + '/config/system', form);
   }
 
   setAroioPasswort(form: FormData): Observable<AroioSettingsInterface> {
