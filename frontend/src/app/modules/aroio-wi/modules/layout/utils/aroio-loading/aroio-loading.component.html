@@ -3,7 +3,7 @@
   ~ @company Braune Digital GmbH
   -->
 
-<ng-container *ngIf="isLoading">
+<ng-container *ngIf="isLoading" [@fadeInOut]>
     <ng-container *ngIf="!overlay">
         <div class="loading">
           <label>
@@ -19,7 +19,7 @@
         </div>
     </ng-container>
     <ng-container *ngIf="overlay">
-        <div class="loading-overlay" [@fadeInOut]>
+        <div class="loading-overlay">
             <div class="loading">
               <label>
                 {{ 'global.loading' | translate }}

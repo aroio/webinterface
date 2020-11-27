@@ -1,10 +1,11 @@
-<p>
+
+<aroio-content-item>
   Hier kann das Ausgang-Routing des Aroio System eingestellt werden. Wählen Sie zuerst den gewünschten Ausgang. In
   Abhängigkeit zu dem Ausgang können Sie dann die gewünschten Player auswhlen. Eine Mehrfachauswahl ist nur bei dem
   Ausgang „Bus“ und „Convolver“ möglich. Am Ende können Sie die Kodierung des physikalischen Audio Ausgangs wählen.
   Mid/Side macht nur in zusammenhang mit unserer Geräte sinn, wenn Sie dort die Hardwareseitige Cleaner-Funktion Nutzen
   können.
-</p>
+</aroio-content-item>
 
 <aroio-loading *ngIf="isLoading"></aroio-loading>
 <form [formGroup]="form" (submit)="submitForm($event)" *ngIf="form && !isLoading">

@@ -18,7 +18,7 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 
 @Component({
   selector: '<aroio-audio-index-component>',
-  templateUrl: './index.component.html'
+  templateUrl: './index.component.html',
 })
 export class AudioIndexComponent implements AfterViewInit, OnDestroy {
 

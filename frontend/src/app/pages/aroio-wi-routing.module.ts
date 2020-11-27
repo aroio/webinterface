@@ -1,4 +1,4 @@
-import {RouterModule, Routes} from '@angular/router';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {environment} from '../../environments/environment';
 import {NgModule} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
@@ -30,7 +30,9 @@ export const routes: Routes = [
     RouterModule.forRoot(routes, {
       onSameUrlNavigation: 'reload',
       paramsInheritanceStrategy: 'always',
-      anchorScrolling: 'enabled'
+      anchorScrolling: 'enabled',
+      initialNavigation: 'enabled',
+      preloadingStrategy: PreloadAllModules
     }),
     TranslateModule,
     SecurityModule,
