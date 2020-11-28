@@ -1,0 +1,88 @@
+$color-dark-black: #000E0E;
+$color-dark-grey-light: #D2D2D2;
+$color-dark-grey-medium: #232C2C;
+$color-dark-text: #DDDDDD;
+
+html {
+  &.aroio-wi--dark {
+    background-color: $color-dark-black;
+    color: $color-dark-text;
+  }
+}
+
+
+.aroio-wi--dark {
+
+  html,
+  body,
+  .tmpl,
+  .header,
+  .footer,
+  .form-control,
+  .aroio-form-switch .aroio-form-switch__head,
+  .switch .slider,
+  .ng-select .ng-select-container,
+  .ng-select.ng-select-opened > .ng-select-container,
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option,
+  .checkbox input[type=checkbox] + label,
+  .radio input[type=radio] + label {
+    background-color: $color-dark-black;
+    color: $color-dark-text;
+  }
+
+  ::placeholder {
+    color: rgba($color-dark-text, .4);
+  }
+
+  .checkbox input[type=checkbox] + label {
+    border-color: rgba($color-dark-grey-light, .3);
+  }
+
+  .radio input[type=radio] + label {
+    box-shadow: inset 0px 0px 0px 3px rgba($color-dark-grey-light, .3);
+  }
+
+
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected, .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+    background-color: $primary;
+  }
+
+  .form-label,
+  .switch input:checked + .slider:before {
+    color: rgba($color-dark-text, .7);
+  }
+
+  .aroio-tabs .aroio-tabs__navigation .aroio-tabs__navigation__item {
+    color: $color-dark-text;
+    background-color: rgba(white, .05);
+
+    &.aroio-tabs__navigation__item--active {
+      color: $color-dark-text;
+      background-color: rgba(white, .07);
+    }
+  }
+
+  .aroio-content-item .aroio-content-item__title {
+    border-bottom-color: $color-dark-text;
+  }
+
+  .modal-dialog {
+    background-color: $color-dark-grey-medium;
+  }
+
+  .aroio-tabs__content, .aroio-sidebar__widget {
+    background-color: rgba(white, .07);
+  }
+
+  .audio-carousel .audio-carousel__item ul li:nth-child(even) {
+    background-color: rgba($color-dark-black, .7);
+  }
+
+  .audio-carousel .audio-carousel__item ul li:nth-child(odd) {
+    background-color: rgba($color-dark-black, .5);
+  }
+
+  .footer .footer__center .footer__center__item:before {
+    background-color: $color-dark-grey-medium;
+  }
+}

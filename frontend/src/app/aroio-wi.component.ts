@@ -1,6 +1,6 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {Component, HostBinding, Inject, OnInit} from '@angular/core';
 import {environment} from '../environments/environment';
-import {registerLocaleData} from '@angular/common';
+import {DOCUMENT, registerLocaleData} from '@angular/common';
 import {TranslateService} from '@ngx-translate/core';
 
 import localeDE from '@angular/common/locales/de';
@@ -22,7 +22,7 @@ registerLocaleData(localeEN, 'en', localeENextra);
   templateUrl: './aroio-wi.component.html',
   providers: [TooltipConfig]
 })
-export class AroioWiComponent implements OnInit{
+export class AroioWiComponent implements OnInit {
 
   version = environment.version;
   currentTranslation = 'en';
@@ -32,6 +32,7 @@ export class AroioWiComponent implements OnInit{
   @HostBinding('class') class = '';
 
   constructor(
+    @Inject(DOCUMENT) private document: Document,
     private translate: TranslateService,
     private settingsService: AroioSettingsService,
     private tooltipConfig: TooltipConfig,
@@ -52,10 +53,12 @@ export class AroioWiComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    // this.settingsService.getAroioSettings().subscribe(_ => {
-    //   if (_.configuration.webinterface.dark_mode) {
-    //     this.class = 'aroio-wi--dark';
-    //   }
-    // })
+    this.settingsService.getAroioSettings().subscribe(_ => {
+      if (_.configuration.webinterface.dark_mode) {
+        document.getElementById('aroio-wi').classList.add('aroio-wi--dark')
+      } else {
+        document.getElementById('aroio-wi').classList.remove('aroio-wi--dark')
+      }
+    })
   }
 }

@@ -47,7 +47,7 @@
 
     &:hover {
       .btn__text {
-        color: getColor(primray);
+        color: $primary;
       }
       box-shadow: 0px 0px 5px 0px rgba(0,0,0,0);
     }
