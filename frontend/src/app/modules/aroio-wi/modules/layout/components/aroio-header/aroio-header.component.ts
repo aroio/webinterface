@@ -69,7 +69,7 @@ export class AroioHeaderComponent {
       }),
       this.settingsSerivce.setAroioSettingsWebinterface(this.formWebinterface.getRawValue()).subscribe(_ => {
         this.alert.alert$.next({message: 'Die Webinterfacekonfiguration erfolgreich gespeichert.', type: 'success'});
-        if (_.advanced_configuration !== this.aroioSettings.configuration.webinterface.advanced_configuration) {
+        if (_ !== this.aroioSettings.configuration.webinterface) {
           location.reload();
         }
       }, error => {

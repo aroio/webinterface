@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
       AuthService.isAuthenticated(this.storage).then(r => {
         resolve(true);
       }, (e) => {
-        this.router.navigate(['/', this.translate.currentLang, 'login' ], { queryParams: { returnUrl: state.url }});
+        this.router.navigate(['/', this.translate.currentLang ? this.translate.currentLang : 'de', 'login' ], { queryParams: { returnUrl: state.url }});
         resolve(false);
       });
     });

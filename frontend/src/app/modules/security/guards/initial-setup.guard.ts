@@ -23,15 +23,15 @@ export class InitialSetupGuard implements CanActivate {
           if (!_.configuration.webinterface.initial_setup) {
             resolve(true);
           } else {
-            this.router.navigate(['/', this.translate.currentLang, 'select-aroio'], {queryParams: {returnUrl: state.url}});
+            this.router.navigate(['/', this.translate.currentLang ? this.translate.currentLang : 'de', 'select-aroio'], {queryParams: {returnUrl: state.url}});
             resolve(false);
           }
         }, error => {
-          this.router.navigate(['/', this.translate.currentLang, 'select-aroio'], {queryParams: {returnUrl: state.url}});
+          this.router.navigate(['/', this.translate.currentLang ? this.translate.currentLang : 'de', 'select-aroio'], {queryParams: {returnUrl: state.url}});
           resolve(false);
         });
       }, (e) => {
-        this.router.navigate(['/', this.translate.currentLang, 'login' ], { queryParams: { returnUrl: state.url }});
+        this.router.navigate(['/', this.translate.currentLang ? this.translate.currentLang : 'de', 'login' ], { queryParams: { returnUrl: state.url }});
         resolve(false);
       });
     });

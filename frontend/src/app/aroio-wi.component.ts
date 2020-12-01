@@ -38,18 +38,22 @@ export class AroioWiComponent implements OnInit {
     private tooltipConfig: TooltipConfig,
     private widgetService: SidebarWidgetsService
   ) {
+
+
     this.isLoading = true;
-
-    this.widgetService.add(Widgets['system_info']);
-
-    tooltipConfig.container = 'body';
-    tooltipConfig.placement = 'top';
 
     defineLocale('de', deLocale);
     this.translate.use(environment.defaultLocale).subscribe(() => {
       this.currentTranslation = this.translate.currentLang;
       this.isLoading = false;
     });
+
+
+    this.widgetService.add(Widgets['system_info']);
+
+    tooltipConfig.container = 'body';
+    tooltipConfig.placement = 'top';
+
   }
 
   ngOnInit(): void {
